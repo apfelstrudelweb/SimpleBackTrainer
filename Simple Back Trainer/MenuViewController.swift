@@ -105,6 +105,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         cell.layoutMargins = UIEdgeInsets.zero
         cell.preservesSuperviewLayoutMargins = false
         cell.backgroundColor = self.tblMenuOptions.backgroundColor
+
         
         let lblTitle : UILabel = cell.contentView.viewWithTag(101) as! UILabel
         let imgIcon : UIImageView = cell.contentView.viewWithTag(100) as! UIImageView
