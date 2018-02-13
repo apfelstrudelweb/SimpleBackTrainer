@@ -14,7 +14,6 @@ class HomeVC: BaseViewController, UICollectionViewDataSource, UICollectionViewDe
 
     @IBOutlet weak var collectionView: UICollectionView!
     
-    @IBOutlet weak var sectionLabel: UILabel!
     var cellWidth : CGFloat!
     var flowLayout : UICollectionViewFlowLayout!
     
@@ -37,16 +36,17 @@ class HomeVC: BaseViewController, UICollectionViewDataSource, UICollectionViewDe
             numberOfItemsPerRow *= 2
         }
 
-        let margin = 0.1*UIScreen.main.bounds.width
+        let margin = 0.08*UIScreen.main.bounds.width
         flowLayout = collectionViewLayout as! UICollectionViewFlowLayout
-        flowLayout.minimumInteritemSpacing = 5
+        flowLayout.minimumInteritemSpacing = 20
+        flowLayout.minimumLineSpacing = 20
         flowLayout.sectionInset = UIEdgeInsetsMake(0, margin, 0, margin)
         let totalSpace = flowLayout.sectionInset.left
             + flowLayout.sectionInset.right
             + (flowLayout.minimumInteritemSpacing * CGFloat(numberOfItemsPerRow - 1))
         let size = CGFloat((collectionView.bounds.width - totalSpace) / CGFloat(numberOfItemsPerRow))
         
-        let fact: CGFloat = UIScreen.main.bounds.width > UIScreen.main.bounds.height ? 1.1 : 1.2
+        let fact: CGFloat = UIScreen.main.bounds.width > UIScreen.main.bounds.height ? 1.1 : 1.3
         
         return CGSize(width: size, height: fact*size)
     }
@@ -64,23 +64,32 @@ class HomeVC: BaseViewController, UICollectionViewDataSource, UICollectionViewDe
         // get a reference to our storyboard cell
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! ItemsCollectionViewCell
         
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            cell.label.font = cell.label.font.withSize(18)
+        }
+
         cell.label.text = items[indexPath.row]["title"]!
         cell.imageView.image = UIImage(named: items[indexPath.row]["icon"]!)
+        cell.screenlightView.layer.masksToBounds = true
+        cell.screenlightView.layer.cornerRadius = 20.0
+        
+        cell.layer.masksToBounds = true
+        cell.layer.cornerRadius = 25.0
         
         var gradientColors: [CGColor]!
         
         switch indexPath.row {
-        case 0: gradientColors = [UIColor.green.withAlphaComponent(1).cgColor, UIColor.green.withAlphaComponent(0.4).cgColor]
+        case 0: gradientColors = [UIColor.green.withAlphaComponent(1).cgColor, UIColor.green.withAlphaComponent(0.6).cgColor]
             break
-        case 1: gradientColors = [UIColor.yellow.withAlphaComponent(1).cgColor, UIColor.yellow.withAlphaComponent(0.4).cgColor]
+        case 1: gradientColors = [UIColor.yellow.withAlphaComponent(1).cgColor, UIColor.yellow.withAlphaComponent(0.6).cgColor]
             break
-        case 2: gradientColors = [UIColor.red.withAlphaComponent(1).cgColor, UIColor.red.withAlphaComponent(0.4).cgColor]
+        case 2: gradientColors = [UIColor.red.withAlphaComponent(1).cgColor, UIColor.red.withAlphaComponent(0.6).cgColor]
             break
-        case 3: gradientColors = [UIColor.blue.withAlphaComponent(1).cgColor, UIColor.blue.withAlphaComponent(0.4).cgColor]
+        case 3: gradientColors = [UIColor.blue.withAlphaComponent(1).cgColor, UIColor.blue.withAlphaComponent(0.6).cgColor]
             break
-        case 4: gradientColors = [UIColor.orange.withAlphaComponent(1).cgColor, UIColor.orange.withAlphaComponent(0.4).cgColor]
+        case 4: gradientColors = [UIColor.orange.withAlphaComponent(1).cgColor, UIColor.orange.withAlphaComponent(0.6).cgColor]
             break
-        case 5: gradientColors = [UIColor.cyan.withAlphaComponent(1).cgColor, UIColor.cyan.withAlphaComponent(0.4).cgColor]
+        case 5: gradientColors = [UIColor.cyan.withAlphaComponent(1).cgColor, UIColor.cyan.withAlphaComponent(0.6).cgColor]
             break
         default:
             gradientColors = [UIColor.red.withAlphaComponent(1).cgColor, UIColor.red.withAlphaComponent(0.4).cgColor]

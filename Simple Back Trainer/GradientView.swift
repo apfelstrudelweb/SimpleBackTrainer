@@ -20,7 +20,6 @@ class GradientView: UIView {
         super.init(coder: aDecoder)
         gradientLayer = self.layer as! CAGradientLayer
         gradientLayer.cornerRadius = 20
-        //gradientLayer.colors = [UIColor.yellow.cgColor, UIColor.red.cgColor]
     }
     
     public func setColors(for colors: NSArray) {

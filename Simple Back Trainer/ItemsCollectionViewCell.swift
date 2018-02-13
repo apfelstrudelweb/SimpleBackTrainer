@@ -15,5 +15,6 @@ class ItemsCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var label: UILabel!
     
+    @IBOutlet weak var screenlightView: UIImageView!
     
 }
