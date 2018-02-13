@@ -33,23 +33,31 @@ class HomeVC: BaseViewController, UICollectionViewDataSource, UICollectionViewDe
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let numberOfItemsPerRow = UIScreen.main.bounds.height > UIScreen.main.bounds.width ? 2 : 4
+        let numberOfItemsPerRow = UIScreen.main.bounds.height > UIScreen.main.bounds.width ? 2 : 3
 
+        let margin = 0.1*UIScreen.main.bounds.width
         flowLayout = collectionViewLayout as! UICollectionViewFlowLayout
-        flowLayout.minimumInteritemSpacing = 20
-        flowLayout.sectionInset = UIEdgeInsetsMake(0, 20, 0, 20)
+        flowLayout.minimumInteritemSpacing = margin
+        flowLayout.sectionInset = UIEdgeInsetsMake(0, margin, 0, margin)
         let totalSpace = flowLayout.sectionInset.left
             + flowLayout.sectionInset.right
             + (flowLayout.minimumInteritemSpacing * CGFloat(numberOfItemsPerRow - 1))
         var size = CGFloat((collectionView.bounds.width - totalSpace) / CGFloat(numberOfItemsPerRow))
         
         if size > 200.0 {
-            size = CGFloat(200)
+            size = 200.0
         }
         
-        flowLayout.itemSize = CGSize(width: size, height: 1.4*size)
+        var fact : CGFloat = 1.4
         
-        return CGSize(width: size, height: 1.4*size)
+        if UIScreen.main.bounds.height < 800.0 {
+            fact += (812.0 / UIScreen.main.bounds.height)
+            fact -= 1.0
+        }
+        
+        flowLayout.itemSize = CGSize(width: size, height: fact*size)
+        
+        return flowLayout.itemSize
     }
     
     // MARK: - UICollectionViewDataSource protocol
@@ -65,8 +73,12 @@ class HomeVC: BaseViewController, UICollectionViewDataSource, UICollectionViewDe
         // get a reference to our storyboard cell
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! ItemsCollectionViewCell
         
-        
+        let cellSize = self.flowLayout.itemSize
         cell.label.text = items[indexPath.row]["title"]!
+        
+        //cell.label.fitTextToBounds(for: CGRect(x: 0, y: 0, width: cellSize.width, height: cellSize.width / 1.8))
+
+
         cell.imageView.image = UIImage(named: items[indexPath.row]["icon"]!)
         
         var gradientColors: [CGColor]!
@@ -101,12 +113,8 @@ class HomeVC: BaseViewController, UICollectionViewDataSource, UICollectionViewDe
 
         gradientLayer.zPosition = -1
         gradientLayer.cornerRadius = 20
-        cell.gradientView.layer.cornerRadius = 20
-        
-        let cellSize = self.flowLayout.itemSize
 
-        
-        gradientLayer.frame = CGRect(x: 0, y: 0, width: cellSize.width, height: cellSize.height/1.4)
+        gradientLayer.frame = CGRect(x: 0, y: 0, width: cellSize.width, height: cellSize.width)
 
         return cell
     }
@@ -119,4 +127,60 @@ class HomeVC: BaseViewController, UICollectionViewDataSource, UICollectionViewDe
         print("You selected cell #\(indexPath.item)!")
     }
 
+}
+
+extension UIFont {
+    
+    /**
+     Will return the best approximated font size which will fit in the bounds.
+     If no font with name `fontName` could be found, nil is returned.
+     */
+    static func bestFitFontSize(for text: String, in bounds: CGRect, fontName: String) -> CGFloat? {
+        var maxFontSize: CGFloat = 32.0 // UIKit best renders with factors of 2
+        guard let maxFont = UIFont(name: fontName, size: maxFontSize) else {
+            return nil
+        }
+        
+        let textWidth = text.width(withConstraintedHeight: bounds.height, font: maxFont)
+        let textHeight = text.height(withConstrainedWidth: bounds.width, font: maxFont)
+        
+        // Determine the font scaling factor that should allow the string to fit in the given rect
+        let scalingFactor = min(bounds.width / textWidth, bounds.height / textHeight)
+        
+        // Adjust font size
+        maxFontSize *= scalingFactor
+        
+        return floor(maxFontSize)
+    }
+}
+
+extension UILabel {
+    
+    /// Will auto resize the contained text to a font size which fits the frames bounds
+    /// Uses the pre-set font to dynamicly determine the proper sizing
+    func fitTextToBounds(for rect: CGRect) {
+        guard let text = text, let currentFont = font else { return }
+        
+        if let dynamicFontSize = UIFont.bestFitFontSize(for: text, in: rect, fontName: currentFont.fontName) {
+            font = UIFont(name: currentFont.fontName, size: dynamicFontSize)
+        }
+    }
+    
+}
+
+fileprivate extension String {
+    
+    func height(withConstrainedWidth width: CGFloat, font: UIFont) -> CGFloat {
+        let constraintRect = CGSize(width: width, height: .greatestFiniteMagnitude)
+        let boundingBox = self.boundingRect(with: constraintRect, options: .usesLineFragmentOrigin, attributes: [NSAttributedStringKey.font: font], context: nil)
+        
+        return ceil(boundingBox.height)
+    }
+    
+    func width(withConstraintedHeight height: CGFloat, font: UIFont) -> CGFloat {
+        let constraintRect = CGSize(width: .greatestFiniteMagnitude, height: height)
+        let boundingBox = self.boundingRect(with: constraintRect, options: .usesLineFragmentOrigin, attributes: [NSAttributedStringKey.font: font], context: nil)
+        
+        return ceil(boundingBox.width)
+    }
 }
