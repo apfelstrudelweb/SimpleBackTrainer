@@ -8,6 +8,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -32,49 +33,38 @@
                                 <rect key="frame" x="0.0" y="104" width="375" height="563"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="zZo-Ym-FO0">
-                                    <size key="itemSize" width="115" height="161"/>
+                                    <size key="itemSize" width="209" height="254"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="HFq-44-xbP" customClass="ItemsCollectionViewCell" customModule="Simple_Back_Trainer" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="115" height="161"/>
+                                        <rect key="frame" x="83" y="0.0" width="209" height="254"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="115" height="161"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="209" height="254"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O8I-aq-HnD">
-                                                    <rect key="frame" x="0.0" y="0.0" width="115" height="115"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O8I-aq-HnD" customClass="GradientView" customModule="Simple_Back_Trainer" customModuleProvider="target">
+                                                    <rect key="frame" x="21" y="0.0" width="167" height="167"/>
                                                     <subviews>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eEa-WA-5uJ" userLabel="DummyView">
-                                                            <rect key="frame" x="0.0" y="0.0" width="115" height="115"/>
-                                                            <subviews>
-                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PII-id-Jex">
-                                                                    <rect key="frame" x="17" y="17" width="81" height="81"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="width" secondItem="PII-id-Jex" secondAttribute="height" multiplier="1:1" id="lFk-iN-R8j"/>
-                                                                    </constraints>
-                                                                </imageView>
-                                                            </subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PII-id-Jex">
+                                                            <rect key="frame" x="16" y="17.5" width="134" height="133.5"/>
                                                             <constraints>
-                                                                <constraint firstItem="PII-id-Jex" firstAttribute="centerY" secondItem="eEa-WA-5uJ" secondAttribute="centerY" id="16b-qg-a2N"/>
-                                                                <constraint firstItem="PII-id-Jex" firstAttribute="centerX" secondItem="eEa-WA-5uJ" secondAttribute="centerX" id="fSe-Tp-2j3"/>
-                                                                <constraint firstItem="PII-id-Jex" firstAttribute="top" secondItem="eEa-WA-5uJ" secondAttribute="top" constant="17" id="gGT-HI-kFd"/>
+                                                                <constraint firstAttribute="width" secondItem="PII-id-Jex" secondAttribute="height" multiplier="1:1" id="3yM-l3-GC0"/>
                                                             </constraints>
-                                                        </view>
+                                                        </imageView>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstItem="eEa-WA-5uJ" firstAttribute="height" secondItem="O8I-aq-HnD" secondAttribute="height" id="9wX-Pz-X4y"/>
-                                                        <constraint firstItem="eEa-WA-5uJ" firstAttribute="centerX" secondItem="O8I-aq-HnD" secondAttribute="centerX" id="HPb-ky-tOt"/>
-                                                        <constraint firstAttribute="width" secondItem="O8I-aq-HnD" secondAttribute="height" multiplier="1:1" id="Xez-ht-qu6"/>
-                                                        <constraint firstItem="eEa-WA-5uJ" firstAttribute="width" secondItem="O8I-aq-HnD" secondAttribute="width" id="qJi-Gb-Wj2"/>
-                                                        <constraint firstItem="eEa-WA-5uJ" firstAttribute="centerY" secondItem="O8I-aq-HnD" secondAttribute="centerY" id="v9R-Fa-CB7"/>
+                                                        <constraint firstItem="PII-id-Jex" firstAttribute="centerX" secondItem="O8I-aq-HnD" secondAttribute="centerX" id="QDq-Q1-ZRA"/>
+                                                        <constraint firstAttribute="width" secondItem="O8I-aq-HnD" secondAttribute="height" multiplier="1:1" id="RF9-TZ-HBT"/>
+                                                        <constraint firstItem="PII-id-Jex" firstAttribute="centerY" secondItem="O8I-aq-HnD" secondAttribute="centerY" id="TJo-dL-jj2"/>
+                                                        <constraint firstItem="PII-id-Jex" firstAttribute="width" secondItem="O8I-aq-HnD" secondAttribute="width" multiplier="0.8" id="lSc-AH-nEr"/>
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="28l-sO-u6R">
-                                                    <rect key="frame" x="8" y="115" width="99" height="38"/>
+                                                    <rect key="frame" x="8" y="167" width="193" height="79"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -82,13 +72,13 @@
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstAttribute="trailingMargin" secondItem="28l-sO-u6R" secondAttribute="trailing" id="Arh-uw-Pc3"/>
-                                            <constraint firstItem="28l-sO-u6R" firstAttribute="leading" secondItem="HFq-44-xbP" secondAttribute="leadingMargin" id="CcN-Bj-lfx"/>
-                                            <constraint firstAttribute="bottomMargin" secondItem="28l-sO-u6R" secondAttribute="bottom" id="K5k-8B-S7O"/>
-                                            <constraint firstAttribute="trailing" secondItem="O8I-aq-HnD" secondAttribute="trailing" id="q2v-YK-iER"/>
-                                            <constraint firstItem="O8I-aq-HnD" firstAttribute="top" secondItem="HFq-44-xbP" secondAttribute="top" id="tWg-sS-S8F"/>
-                                            <constraint firstItem="O8I-aq-HnD" firstAttribute="leading" secondItem="HFq-44-xbP" secondAttribute="leading" id="wTR-Uk-X44"/>
-                                            <constraint firstItem="28l-sO-u6R" firstAttribute="top" secondItem="O8I-aq-HnD" secondAttribute="bottom" id="yWO-3X-n5P"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="28l-sO-u6R" secondAttribute="bottom" id="0jp-bU-Ab2"/>
+                                            <constraint firstItem="28l-sO-u6R" firstAttribute="leading" secondItem="HFq-44-xbP" secondAttribute="leadingMargin" id="1g5-xq-jRh"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="28l-sO-u6R" secondAttribute="trailing" id="9TX-GD-LX4"/>
+                                            <constraint firstItem="O8I-aq-HnD" firstAttribute="top" secondItem="HFq-44-xbP" secondAttribute="top" id="VMU-hp-s29"/>
+                                            <constraint firstItem="O8I-aq-HnD" firstAttribute="width" secondItem="HFq-44-xbP" secondAttribute="width" multiplier="0.8" id="WKU-mD-Kvn"/>
+                                            <constraint firstItem="O8I-aq-HnD" firstAttribute="centerX" secondItem="HFq-44-xbP" secondAttribute="centerX" id="WRL-m6-ccI"/>
+                                            <constraint firstItem="28l-sO-u6R" firstAttribute="top" secondItem="O8I-aq-HnD" secondAttribute="bottom" id="tQL-I7-l23"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="gradientView" destination="O8I-aq-HnD" id="8rK-u5-MZQ"/>
