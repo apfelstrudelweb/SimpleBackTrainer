@@ -30,17 +30,17 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="GTM-bT-963">
-                                <rect key="frame" x="0.0" y="104" width="375" height="563"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="zZo-Ym-FO0">
                                     <size key="itemSize" width="209" height="254"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="headerReferenceSize" width="50" height="50"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="HFq-44-xbP" customClass="ItemsCollectionViewCell" customModule="Simple_Back_Trainer" customModuleProvider="target">
-                                        <rect key="frame" x="83" y="0.0" width="209" height="254"/>
+                                        <rect key="frame" x="83" y="50" width="209" height="254"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="209" height="254"/>
@@ -87,6 +87,23 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="header" id="pkp-e3-tUD">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ihr Trainingsprogramm" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2QR-hv-OHZ">
+                                            <rect key="frame" x="28" y="11.5" width="319" height="29"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="2QR-hv-OHZ" secondAttribute="trailing" constant="20" id="hVO-Y6-2l7"/>
+                                        <constraint firstItem="2QR-hv-OHZ" firstAttribute="centerY" secondItem="pkp-e3-tUD" secondAttribute="centerY" id="rFm-Zp-vDz"/>
+                                        <constraint firstItem="2QR-hv-OHZ" firstAttribute="leading" secondItem="pkp-e3-tUD" secondAttribute="leadingMargin" constant="20" id="x8b-IA-L1F"/>
+                                    </constraints>
+                                </collectionReusableView>
                                 <connections>
                                     <outlet property="dataSource" destination="vXZ-lx-hvc" id="Cag-oB-dM8"/>
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="2Xn-7a-4fe"/>
@@ -98,7 +115,7 @@
                             <constraint firstItem="GTM-bT-963" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="V7S-hd-BEL"/>
                             <constraint firstItem="uE0-fS-86O" firstAttribute="top" secondItem="GTM-bT-963" secondAttribute="bottom" id="bKh-AQ-udA"/>
                             <constraint firstAttribute="trailing" secondItem="GTM-bT-963" secondAttribute="trailing" id="bQH-8u-gEf"/>
-                            <constraint firstItem="GTM-bT-963" firstAttribute="top" secondItem="lZa-u5-V0W" secondAttribute="bottom" constant="40" id="w0P-jT-PZS"/>
+                            <constraint firstItem="GTM-bT-963" firstAttribute="top" secondItem="lZa-u5-V0W" secondAttribute="bottom" id="w0P-jT-PZS"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Simple Back Workout" id="a1u-Ki-tSz"/>

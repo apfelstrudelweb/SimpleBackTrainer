@@ -14,6 +14,7 @@ class HomeVC: BaseViewController, UICollectionViewDataSource, UICollectionViewDe
 
     @IBOutlet weak var collectionView: UICollectionView!
     
+    @IBOutlet weak var sectionLabel: UILabel!
     var cellWidth : CGFloat!
     var flowLayout : UICollectionViewFlowLayout!
     
@@ -45,7 +46,9 @@ class HomeVC: BaseViewController, UICollectionViewDataSource, UICollectionViewDe
             + (flowLayout.minimumInteritemSpacing * CGFloat(numberOfItemsPerRow - 1))
         let size = CGFloat((collectionView.bounds.width - totalSpace) / CGFloat(numberOfItemsPerRow))
         
-        return CGSize(width: size, height: 1.2*size)
+        let fact: CGFloat = UIScreen.main.bounds.width > UIScreen.main.bounds.height ? 1.1 : 1.2
+        
+        return CGSize(width: size, height: fact*size)
     }
     
     // MARK: - UICollectionViewDataSource protocol
@@ -94,6 +97,17 @@ class HomeVC: BaseViewController, UICollectionViewDataSource, UICollectionViewDe
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // handle tap events
         print("You selected cell #\(indexPath.item)!")
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: UIScreen.main.bounds.width, height: 80)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "header", for: indexPath)
+        
+        return header
     }
 
 }
