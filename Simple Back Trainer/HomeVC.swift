@@ -73,6 +73,9 @@ class HomeVC: BaseViewController, UICollectionViewDataSource, UICollectionViewDe
         cell.screenlightView.layer.masksToBounds = true
         cell.screenlightView.layer.cornerRadius = 20.0
         
+        cell.textureView.layer.masksToBounds = true
+        cell.textureView.layer.cornerRadius = 20.0
+        
         cell.layer.masksToBounds = true
         cell.layer.cornerRadius = 25.0
         

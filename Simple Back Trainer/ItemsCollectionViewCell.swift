@@ -17,4 +17,5 @@ class ItemsCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var screenlightView: UIImageView!
     
+    @IBOutlet weak var textureView: UIImageView!
 }

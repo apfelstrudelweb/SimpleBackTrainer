@@ -39,7 +39,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.20000000000000001" contentMode="center" reuseIdentifier="cell" id="HFq-44-xbP" customClass="ItemsCollectionViewCell" customModule="Simple_Back_Trainer" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.0" contentMode="center" reuseIdentifier="cell" id="HFq-44-xbP" customClass="ItemsCollectionViewCell" customModule="Simple_Back_Trainer" customModuleProvider="target">
                                         <rect key="frame" x="83" y="50" width="209" height="254"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -49,6 +49,9 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O8I-aq-HnD" customClass="GradientView" customModule="Simple_Back_Trainer" customModuleProvider="target">
                                                     <rect key="frame" x="21" y="10" width="167" height="167"/>
                                                     <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gold2" translatesAutoresizingMaskIntoConstraints="NO" id="YvY-xg-KXS">
+                                                            <rect key="frame" x="0.0" y="0.0" width="167" height="167"/>
+                                                        </imageView>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PII-id-Jex">
                                                             <rect key="frame" x="16" y="17.5" width="134" height="133.5"/>
                                                             <constraints>
@@ -60,13 +63,17 @@
                                                         </imageView>
                                                     </subviews>
                                                     <constraints>
+                                                        <constraint firstItem="YvY-xg-KXS" firstAttribute="top" secondItem="O8I-aq-HnD" secondAttribute="top" id="4Lv-jA-jGw"/>
                                                         <constraint firstAttribute="trailing" secondItem="oqu-er-tGC" secondAttribute="trailing" id="GM8-bL-pvf"/>
+                                                        <constraint firstAttribute="trailing" secondItem="YvY-xg-KXS" secondAttribute="trailing" id="GUI-IB-cZv"/>
                                                         <constraint firstItem="PII-id-Jex" firstAttribute="centerX" secondItem="O8I-aq-HnD" secondAttribute="centerX" id="QDq-Q1-ZRA"/>
                                                         <constraint firstAttribute="width" secondItem="O8I-aq-HnD" secondAttribute="height" multiplier="1:1" id="RF9-TZ-HBT"/>
                                                         <constraint firstItem="PII-id-Jex" firstAttribute="centerY" secondItem="O8I-aq-HnD" secondAttribute="centerY" id="TJo-dL-jj2"/>
+                                                        <constraint firstAttribute="bottom" secondItem="YvY-xg-KXS" secondAttribute="bottom" id="Uf8-dy-bk0"/>
                                                         <constraint firstItem="oqu-er-tGC" firstAttribute="top" secondItem="O8I-aq-HnD" secondAttribute="top" id="Yzq-he-pjc"/>
                                                         <constraint firstAttribute="bottom" secondItem="oqu-er-tGC" secondAttribute="bottom" id="ci9-a2-2Ed"/>
                                                         <constraint firstItem="PII-id-Jex" firstAttribute="width" secondItem="O8I-aq-HnD" secondAttribute="width" multiplier="0.8" id="lSc-AH-nEr"/>
+                                                        <constraint firstItem="YvY-xg-KXS" firstAttribute="leading" secondItem="O8I-aq-HnD" secondAttribute="leading" id="rti-an-M1d"/>
                                                         <constraint firstItem="oqu-er-tGC" firstAttribute="leading" secondItem="O8I-aq-HnD" secondAttribute="leading" id="uoA-Sl-pnT"/>
                                                     </constraints>
                                                 </view>
@@ -78,7 +85,7 @@
                                                 </label>
                                             </subviews>
                                         </view>
-                                        <color key="backgroundColor" red="0.50925037558779751" green="0.64420818934315915" blue="0.84584080219268798" alpha="0.11820994127516779" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.19452000899252139" green="0.33395138333254959" blue="0.84584080219268798" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="bottomMargin" secondItem="28l-sO-u6R" secondAttribute="bottom" id="0jp-bU-Ab2"/>
                                             <constraint firstItem="28l-sO-u6R" firstAttribute="leading" secondItem="HFq-44-xbP" secondAttribute="leadingMargin" id="1g5-xq-jRh"/>
@@ -93,6 +100,7 @@
                                             <outlet property="imageView" destination="PII-id-Jex" id="U84-N5-g6r"/>
                                             <outlet property="label" destination="28l-sO-u6R" id="ohC-5p-V0l"/>
                                             <outlet property="screenlightView" destination="oqu-er-tGC" id="BbA-5H-moF"/>
+                                            <outlet property="textureView" destination="YvY-xg-KXS" id="Nce-OH-RhA"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -281,6 +289,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="gold2" width="250" height="250"/>
         <image name="screenlight" width="1024" height="1024"/>
     </resources>
 </document>

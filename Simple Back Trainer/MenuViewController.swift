@@ -89,7 +89,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
         
         UIView.animate(withDuration: 0.3, animations: { () -> Void in
-            self.view.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width,height: UIScreen.main.bounds.size.height)
+            self.view.frame = CGRect(x: -UIScreen.main.bounds.size.width, y: 0, width: UIScreen.main.bounds.size.width,height: UIScreen.main.bounds.size.height)
             self.view.layoutIfNeeded()
             self.view.backgroundColor = UIColor.clear
             }, completion: { (finished) -> Void in
