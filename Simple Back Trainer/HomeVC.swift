@@ -26,7 +26,7 @@ class HomeVC: BaseViewController, UICollectionViewDataSource, UICollectionViewDe
     
     
     let reuseIdentifier = "cell" // also enter this string as the cell identifier in the storyboard
-    var items = [["title":"Starker Rücken für Berufe", "icon":"pictogramm"],["title":"Rückenmuskeln für Sportler", "icon":"pictogramm"],["title":"Trainings-Übungen", "icon":"pictogramm"],["title":"Mobilisierungs-Übungen", "icon":"pictogramm"],["title":"Trainingsplan", "icon":"pictogramm"],["title":"Rückenschule", "icon":"pictogramm"]]
+    var items = [["title":"Starker Rücken für Berufe", "icon":"gardener"],["title":"Rückenmuskeln für Sportler", "icon":"biker"],["title":"Trainings-Übungen", "icon":"romanChair"],["title":"Rücken-Mobilisierung", "icon":"cobra"],["title":"Rückenschule", "icon":"sitting"],["title":"Premium-Version", "icon":"pokal"]]
     
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
@@ -46,7 +46,7 @@ class HomeVC: BaseViewController, UICollectionViewDataSource, UICollectionViewDe
             + (flowLayout.minimumInteritemSpacing * CGFloat(numberOfItemsPerRow - 1))
         let size = CGFloat((collectionView.bounds.width - totalSpace) / CGFloat(numberOfItemsPerRow))
         
-        let fact: CGFloat = UIScreen.main.bounds.width > UIScreen.main.bounds.height ? 1.1 : 1.3
+        let fact: CGFloat = 1//UIScreen.main.bounds.width > UIScreen.main.bounds.height ? 1.1 : 1.3
         
         return CGSize(width: size, height: fact*size)
     }
@@ -70,35 +70,11 @@ class HomeVC: BaseViewController, UICollectionViewDataSource, UICollectionViewDe
 
         cell.label.text = items[indexPath.row]["title"]!
         cell.imageView.image = UIImage(named: items[indexPath.row]["icon"]!)
-        cell.screenlightView.layer.masksToBounds = true
-        cell.screenlightView.layer.cornerRadius = 20.0
-        
-        cell.textureView.layer.masksToBounds = true
-        cell.textureView.layer.cornerRadius = 20.0
+        cell.layer.borderColor = UIColor.darkGray.cgColor
+        cell.layer.borderWidth = 1
         
         cell.layer.masksToBounds = true
         cell.layer.cornerRadius = 25.0
-        
-        var gradientColors: [CGColor]!
-        
-        switch indexPath.row {
-        case 0: gradientColors = [UIColor.green.withAlphaComponent(1).cgColor, UIColor.green.withAlphaComponent(0.6).cgColor]
-            break
-        case 1: gradientColors = [UIColor.yellow.withAlphaComponent(1).cgColor, UIColor.yellow.withAlphaComponent(0.6).cgColor]
-            break
-        case 2: gradientColors = [UIColor.red.withAlphaComponent(1).cgColor, UIColor.red.withAlphaComponent(0.6).cgColor]
-            break
-        case 3: gradientColors = [UIColor.blue.withAlphaComponent(1).cgColor, UIColor.blue.withAlphaComponent(0.6).cgColor]
-            break
-        case 4: gradientColors = [UIColor.orange.withAlphaComponent(1).cgColor, UIColor.orange.withAlphaComponent(0.6).cgColor]
-            break
-        case 5: gradientColors = [UIColor.cyan.withAlphaComponent(1).cgColor, UIColor.cyan.withAlphaComponent(0.6).cgColor]
-            break
-        default:
-            gradientColors = [UIColor.red.withAlphaComponent(1).cgColor, UIColor.red.withAlphaComponent(0.4).cgColor]
-        }
-
-        (cell.gradientView as! GradientView).setColors(for: gradientColors! as NSArray)
 
         return cell
     }
