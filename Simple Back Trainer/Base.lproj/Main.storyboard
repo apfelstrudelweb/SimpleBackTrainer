@@ -183,29 +183,38 @@
                                 </connections>
                             </button>
                             <tableView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="54" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="MBe-3e-d5w">
-                                <rect key="frame" x="0.0" y="44" width="230.5" height="980"/>
+                                <rect key="frame" x="0.0" y="44" width="269" height="980"/>
                                 <color key="backgroundColor" red="0.05029296875" green="0.47250461578369141" blue="0.94967108964920044" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="cUm-P1-7Vn" userLabel="HeaderView">
+                                    <rect key="frame" x="0.0" y="0.0" width="269" height="22"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </view>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellMenu" id="kmA-Ah-Pww">
-                                        <rect key="frame" x="0.0" y="22" width="230.5" height="54"/>
+                                        <rect key="frame" x="0.0" y="44" width="269" height="54"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kmA-Ah-Pww" id="PkJ-pF-O9W">
-                                            <rect key="frame" x="0.0" y="0.0" width="230.5" height="54"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="269" height="54"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qcm-8o-Buf">
-                                                    <rect key="frame" x="16" y="12.5" width="30" height="30"/>
+                                                    <rect key="frame" x="16" y="7.5" width="40" height="40"/>
                                                     <color key="tintColor" white="0.78943452380000001" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="30" id="MCY-lN-Jag"/>
-                                                        <constraint firstAttribute="width" constant="30" id="Peg-fU-tKA"/>
+                                                        <constraint firstAttribute="height" constant="30" id="MCY-lN-Jag">
+                                                            <variation key="heightClass=regular-widthClass=regular" constant="40"/>
+                                                        </constraint>
+                                                        <constraint firstAttribute="width" constant="30" id="Peg-fU-tKA">
+                                                            <variation key="heightClass=regular-widthClass=regular" constant="40"/>
+                                                        </constraint>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q60-3k-XSH">
-                                                    <rect key="frame" x="64" y="16" width="153" height="21"/>
+                                                    <rect key="frame" x="74" y="16" width="187" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="AXc-yo-Msu"/>
                                                     </constraints>
@@ -214,7 +223,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KMq-7W-QrW">
-                                                    <rect key="frame" x="64" y="48" width="135" height="1"/>
+                                                    <rect key="frame" x="74" y="48" width="169" height="1"/>
                                                     <color key="backgroundColor" white="0.78943452380952384" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="1" id="Crz-dl-tDU"/>
@@ -244,7 +253,7 @@
                             <constraint firstItem="MBe-3e-d5w" firstAttribute="width" secondItem="WQd-kp-cSW" secondAttribute="width" multiplier="0.6" id="42B-fY-jvb">
                                 <variation key="heightClass=compact-widthClass=regular" constant="0.0"/>
                             </constraint>
-                            <constraint firstItem="MBe-3e-d5w" firstAttribute="width" secondItem="WQd-kp-cSW" secondAttribute="width" multiplier="0.3" id="AuM-uM-cWG"/>
+                            <constraint firstItem="MBe-3e-d5w" firstAttribute="width" secondItem="WQd-kp-cSW" secondAttribute="width" multiplier="0.35" id="AuM-uM-cWG"/>
                             <constraint firstItem="MBe-3e-d5w" firstAttribute="top" secondItem="WQd-kp-cSW" secondAttribute="top" constant="44" id="MV3-4R-tfY">
                                 <variation key="heightClass=compact-widthClass=compact" constant="22"/>
                                 <variation key="heightClass=compact-widthClass=regular" constant="22"/>
@@ -293,7 +302,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q5J-uJ-gia" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-540" y="305.39730134932535"/>
+            <point key="canvasLocation" x="-540.625" y="305.2734375"/>
         </scene>
     </scenes>
 </document>
