@@ -8,12 +8,12 @@
 
 import UIKit
 
-let MAX_MENU_WIDTH : CGFloat = 300.0
+let MAX_MENU_WIDTH : CGFloat = 230.0
 
 class BaseViewController: UIViewController, SlideMenuDelegate {
     
     var menuWidth : CGFloat!
-    var menuVC : MenuViewController?
+    var menuVC : SlideMenuViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -126,7 +126,7 @@ class BaseViewController: UIViewController, SlideMenuDelegate {
         sender.isEnabled = false
         sender.tag = 10
         
-        self.menuVC = self.storyboard!.instantiateViewController(withIdentifier: "MenuViewController") as? MenuViewController
+        self.menuVC = self.storyboard!.instantiateViewController(withIdentifier: "MenuViewController") as? SlideMenuViewController
         menuVC?.btnMenu = sender
         menuVC?.delegate = self
         self.view.addSubview((menuVC?.view)!)

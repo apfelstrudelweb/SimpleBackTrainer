@@ -14,7 +14,7 @@ protocol SlideMenuDelegate {
 
 
 
-class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class SlideMenuViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     
     /**
@@ -48,9 +48,6 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         self.view.backgroundColor = .clear
         UITableView.appearance().separatorColor = .white
         // Do any additional setup after loading the view.
-        
-        
-        
     }
     
 
@@ -66,13 +63,13 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func updateArrayMenuOptions(){
-        arrayMenuOptions.append(["title":"Start", "icon":"start"])
-        arrayMenuOptions.append(["title":"Berufe (Rückentraining)", "icon":"berufe"])
-        arrayMenuOptions.append(["title":"Sportarten (Rückentraining)", "icon":"sport"])
+        arrayMenuOptions.append(["title":"Start", "icon":"home"])
+        arrayMenuOptions.append(["title":"Berufe", "icon":"berufe"])
+        arrayMenuOptions.append(["title":"Sportarten", "icon":"sportarten"])
         arrayMenuOptions.append(["title":"Übungen", "icon":"uebungen"])
         arrayMenuOptions.append(["title":"Premium Version", "icon":"premium"])
         arrayMenuOptions.append(["title":"Einstellungen", "icon":"settings"])
-        arrayMenuOptions.append(["title":"Kontakt", "icon":"kontakt"])
+        arrayMenuOptions.append(["title":"Kontakt", "icon":"contact"])
         
         tblMenuOptions.reloadData()
     }
