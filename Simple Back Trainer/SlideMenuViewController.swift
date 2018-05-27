@@ -105,7 +105,7 @@ class SlideMenuViewController: UIViewController, UITableViewDataSource, UITableV
 
         
         let lblTitle : UILabel = cell.contentView.viewWithTag(101) as! UILabel
-        let fontSize = self.view.frame.size.width / 25
+        let fontSize = min(22, self.view.frame.size.width / 25)
         
         lblTitle.font = UIFont.boldSystemFont(ofSize: fontSize)
         
