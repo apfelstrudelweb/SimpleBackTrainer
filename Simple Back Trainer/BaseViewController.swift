@@ -8,8 +8,6 @@
 
 import UIKit
 
-let MAX_MENU_WIDTH : CGFloat = 230.0
-
 class BaseViewController: UIViewController, SlideMenuDelegate {
     
     var menuWidth : CGFloat!
@@ -21,17 +19,13 @@ class BaseViewController: UIViewController, SlideMenuDelegate {
     }
     
     override func viewDidLayoutSubviews() {
-        menuWidth = 0.7 * UIScreen.main.bounds.size.width
-        if menuWidth > MAX_MENU_WIDTH {
-            menuWidth = MAX_MENU_WIDTH
-        }
         
         if (self.menuVC == nil) {
             return
         }
         
         UIView.animate(withDuration: 0.3, animations: { () -> Void in
-            self.menuVC?.view.frame=CGRect(x: 0, y: 0, width: self.menuWidth, height: UIScreen.main.bounds.size.height);
+            self.menuVC?.view.frame=CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height);
 
         }, completion:nil)
     }
@@ -137,7 +131,7 @@ class BaseViewController: UIViewController, SlideMenuDelegate {
         menuVC?.view.frame=CGRect(x: 0 - UIScreen.main.bounds.size.width, y: 0, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height);
         
         UIView.animate(withDuration: 0.3, animations: { () -> Void in
-            self.menuVC?.view.frame=CGRect(x: 0, y: 0, width: self.menuWidth, height: UIScreen.main.bounds.size.height);
+            self.menuVC?.view.frame=CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height);
             sender.isEnabled = true
             }, completion:nil)
     }

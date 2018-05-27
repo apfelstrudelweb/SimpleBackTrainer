@@ -105,6 +105,11 @@ class SlideMenuViewController: UIViewController, UITableViewDataSource, UITableV
 
         
         let lblTitle : UILabel = cell.contentView.viewWithTag(101) as! UILabel
+        let fontSize = self.view.frame.size.width / 25
+        
+        lblTitle.font = UIFont.boldSystemFont(ofSize: fontSize)
+        
+        
         let imgIcon : UIImageView = cell.contentView.viewWithTag(100) as! UIImageView
         
         imgIcon.image = UIImage(named: arrayMenuOptions[indexPath.row]["icon"]!)
