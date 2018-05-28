@@ -21,6 +21,8 @@ class MainMenu: BaseViewController, UICollectionViewDataSource, UICollectionView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.isNavigationBarHidden = false
+        self.navigationController?.navigationItem.title = "Je suis snob"
         addSlideMenuButton()
     }
     

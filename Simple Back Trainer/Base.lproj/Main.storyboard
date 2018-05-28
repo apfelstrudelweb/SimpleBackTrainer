@@ -12,20 +12,20 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Einfaches Rückentraining-->
+        <!--Hauptmenu-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController restorationIdentifier="Home" storyboardIdentifier="Home" id="vXZ-lx-hvc" customClass="MainMenu" customModule="Simple_Back_Trainer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="Home" storyboardIdentifier="Home" title="Hauptmenu" id="vXZ-lx-hvc" customClass="MainMenu" customModule="Simple_Back_Trainer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="lZa-u5-V0W"/>
-                        <viewControllerLayoutGuide type="bottom" id="uE0-fS-86O"/>
+                        <viewControllerLayoutGuide type="top" id="qah-D7-3TZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="LCl-2s-EEB"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="GTM-bT-963">
-                                <rect key="frame" x="0.0" y="88" width="375" height="690"/>
+                                <rect key="frame" x="0.0" y="88" width="375" height="641"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="zZo-Ym-FO0">
                                     <size key="itemSize" width="272" height="307"/>
@@ -102,12 +102,15 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="GTM-bT-963" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="V7S-hd-BEL"/>
-                            <constraint firstItem="uE0-fS-86O" firstAttribute="top" secondItem="GTM-bT-963" secondAttribute="bottom" id="bKh-AQ-udA"/>
+                            <constraint firstItem="LCl-2s-EEB" firstAttribute="top" secondItem="GTM-bT-963" secondAttribute="bottom" id="bKh-AQ-udA"/>
                             <constraint firstAttribute="trailing" secondItem="GTM-bT-963" secondAttribute="trailing" id="bQH-8u-gEf"/>
-                            <constraint firstItem="GTM-bT-963" firstAttribute="top" secondItem="lZa-u5-V0W" secondAttribute="bottom" id="w0P-jT-PZS"/>
+                            <constraint firstItem="GTM-bT-963" firstAttribute="top" secondItem="qah-D7-3TZ" secondAttribute="bottom" id="w0P-jT-PZS"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Einfaches Rückentraining" id="a1u-Ki-tSz"/>
+                    <tabBarItem key="tabBarItem" title="Übersicht" image="clipboard" id="Ykq-RF-jGl"/>
+                    <navigationItem key="navigationItem" title="Übersicht" id="a1u-Ki-tSz">
+                        <barButtonItem key="backBarButtonItem" title="zurück" id="KTM-cY-tRh"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="GTM-bT-963" id="mYW-Bs-N1t"/>
                         <segue destination="khG-SL-0rk" kind="show" identifier="pushToPlay" id="WvG-AQ-ekI"/>
@@ -115,15 +118,76 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1109.5999999999999" y="305.17241379310349"/>
+            <point key="canvasLocation" x="2052" y="305.17241379310349"/>
+        </scene>
+        <!--Premium-->
+        <scene sceneID="fcX-Gp-AC7">
+            <objects>
+                <viewController title="Premium" id="4MF-OE-poI" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0Lv-Ud-7Df"/>
+                        <viewControllerLayoutGuide type="bottom" id="JvN-4Y-uaI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aEA-wL-70O">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Premium" image="premium" id="p13-kE-f2y"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4ox-GP-sWr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2018" y="1049"/>
+        </scene>
+        <!--Einstellungen-->
+        <scene sceneID="77M-b9-AbX">
+            <objects>
+                <viewController title="Einstellungen" id="jMC-5W-syg" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aOe-Ya-h6e"/>
+                        <viewControllerLayoutGuide type="bottom" id="EMW-4C-576"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ThF-k1-Lsx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Einstellungen" image="zahnrad" id="UUO-lv-yTK"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jOk-HA-PQV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2834" y="1049"/>
+        </scene>
+        <!--Mehr-->
+        <scene sceneID="kTR-EQ-icr">
+            <objects>
+                <viewController id="06L-Dc-odm" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="P9c-UV-yt2"/>
+                        <viewControllerLayoutGuide type="bottom" id="WyH-2L-QG9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="HVy-EK-DBE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Mehr" image="more" id="FMi-Rf-0LM"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nYl-AY-FWe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3649" y="1049"/>
         </scene>
         <!--Play-->
         <scene sceneID="q6l-iR-WN3">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mmn-PL-HS6" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController restorationIdentifier="PlayVC" storyboardIdentifier="PlayVC" id="khG-SL-0rk" customClass="PlayVC" customModule="Simple_Back_Trainer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="7nB-gN-E7d"/>
-                        <viewControllerLayoutGuide type="bottom" id="ykb-8v-9YB"/>
+                        <viewControllerLayoutGuide type="top" id="9nh-S4-wTp"/>
+                        <viewControllerLayoutGuide type="bottom" id="KCN-ST-kLf"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8Tm-V4-HTY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
@@ -132,9 +196,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="Play" id="f24-Ia-thn"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mmn-PL-HS6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1862" y="305"/>
+            <point key="canvasLocation" x="2926" y="305"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="nrt-yR-DmY">
@@ -153,7 +216,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="YTy-Re-Zmr"/>
+                        <segue destination="tAx-2F-BMn" kind="relationship" relationship="rootViewController" id="YTy-Re-Zmr"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XfU-3W-Qcb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -165,8 +228,8 @@
             <objects>
                 <viewController storyboardIdentifier="MenuViewController" id="A8P-iZ-97O" customClass="SlideMenuViewController" customModule="Simple_Back_Trainer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="nC7-H2-b1Y"/>
-                        <viewControllerLayoutGuide type="bottom" id="qX4-o8-saf"/>
+                        <viewControllerLayoutGuide type="top" id="Vlu-Ar-JK9"/>
+                        <viewControllerLayoutGuide type="bottom" id="5Ck-xi-nBa"/>
                     </layoutGuides>
                     <view key="view" opaque="NO" contentMode="scaleToFill" id="WQd-kp-cSW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
@@ -263,7 +326,7 @@
                             <constraint firstItem="fkx-xb-tAP" firstAttribute="top" secondItem="WQd-kp-cSW" secondAttribute="top" id="aAF-Jh-aPx"/>
                             <constraint firstAttribute="bottom" secondItem="MBe-3e-d5w" secondAttribute="bottom" id="bkY-L9-08x"/>
                             <constraint firstItem="MBe-3e-d5w" firstAttribute="leading" secondItem="WQd-kp-cSW" secondAttribute="leading" id="f9O-Rf-T5Q"/>
-                            <constraint firstItem="qX4-o8-saf" firstAttribute="top" secondItem="fkx-xb-tAP" secondAttribute="bottom" id="hfB-2c-RES"/>
+                            <constraint firstItem="5Ck-xi-nBa" firstAttribute="top" secondItem="fkx-xb-tAP" secondAttribute="bottom" id="hfB-2c-RES"/>
                             <constraint firstItem="fkx-xb-tAP" firstAttribute="leading" secondItem="WQd-kp-cSW" secondAttribute="leading" id="ueY-G5-kmV"/>
                         </constraints>
                         <variation key="default">
@@ -304,5 +367,32 @@
             </objects>
             <point key="canvasLocation" x="-540.625" y="305.2734375"/>
         </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="z54-3T-DHK">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="tAx-2F-BMn" customClass="TabBarController" customModule="Simple_Back_Trainer" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="ZKM-96-vtC"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="o3C-Ud-UOd">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="viewControllers" id="9mD-83-s3l"/>
+                        <segue destination="4MF-OE-poI" kind="relationship" relationship="viewControllers" id="SM8-Jg-Zhf"/>
+                        <segue destination="jMC-5W-syg" kind="relationship" relationship="viewControllers" id="PU7-eI-IyP"/>
+                        <segue destination="06L-Dc-odm" kind="relationship" relationship="viewControllers" id="yqD-cC-hxB"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uin-wc-Bma" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1109.5999999999999" y="305.17241379310349"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="clipboard" width="23" height="29"/>
+        <image name="more" width="22" height="6"/>
+        <image name="premium" width="44" height="44"/>
+        <image name="zahnrad" width="33" height="32"/>
+    </resources>
 </document>
