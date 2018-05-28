@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1BC4368320BC8A0D00968F44 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC4368220BC8A0C00968F44 /* TabBarController.swift */; };
 		1BCF8462203206B000F55F64 /* ItemsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCF8461203206B000F55F64 /* ItemsCollectionViewCell.swift */; };
 		753A55C31BB073E900254F27 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753A55C21BB073E900254F27 /* AppDelegate.swift */; };
 		753A55C81BB073E900254F27 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 753A55C61BB073E900254F27 /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1BC4368220BC8A0C00968F44 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		1BCF8461203206B000F55F64 /* ItemsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsCollectionViewCell.swift; sourceTree = "<group>"; };
 		753A55BD1BB073E900254F27 /* Simple Back Trainer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Simple Back Trainer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		753A55C11BB073E900254F27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 				753A55E41BB0755100254F27 /* BaseViewController.swift */,
 				753A55E21BB0753B00254F27 /* SlideMenuViewController.swift */,
 				1BCF8461203206B000F55F64 /* ItemsCollectionViewCell.swift */,
+				1BC4368220BC8A0C00968F44 /* TabBarController.swift */,
 				753A55C61BB073E900254F27 /* Main.storyboard */,
 				753A55C91BB073E900254F27 /* Images.xcassets */,
 				753A55CB1BB073E900254F27 /* LaunchScreen.xib */,
@@ -158,6 +161,7 @@
 				753A55E51BB0755100254F27 /* BaseViewController.swift in Sources */,
 				C6EEF9F81CB7E4E000A3DC6D /* MainMenu.swift in Sources */,
 				753A55E31BB0753B00254F27 /* SlideMenuViewController.swift in Sources */,
+				1BC4368320BC8A0D00968F44 /* TabBarController.swift in Sources */,
 				753A55C31BB073E900254F27 /* AppDelegate.swift in Sources */,
 				1BCF8462203206B000F55F64 /* ItemsCollectionViewCell.swift in Sources */,
 			);
