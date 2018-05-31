@@ -21,14 +21,12 @@ class MainMenu: BaseViewController, UICollectionViewDataSource, UICollectionView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.isNavigationBarHidden = false
-        self.navigationController?.navigationItem.title = "Je suis snob"
         addSlideMenuButton()
     }
     
     
     let reuseIdentifier = "cell" // also enter this string as the cell identifier in the storyboard
-    var items = [["title":"Starker Rücken für Berufe", "icon":"gardener"],["title":"Rückenmuskeln für Sportler", "icon":"biker"],["title":"Trainings-Übungen", "icon":"romanChair"],["title":"Rücken-Mobilisierung", "icon":"cobra"],["title":"Rückenschule", "icon":"sitting"],["title":"Premium-Version", "icon":"pokal"]]
+    var items = [["title":"Starker Rücken für Berufe", "icon":"gardener"],["title":"Rückenmuskeln für Sportler", "icon":"biker"],["title":"Muskel-Anatomie", "icon":"anatomy"], ["title":"Trainingsplan", "icon":"trainingsplan"], ["title":"Trainings-Übungen", "icon":"romanChair"],["title":"Rücken-Mobilisierung", "icon":"cobra"],["title":"Rückenschule", "icon":"sitting"],["title":"Premium-Version", "icon":"pokal"]]
     
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
