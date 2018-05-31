@@ -107,7 +107,7 @@
                             <constraint firstItem="GTM-bT-963" firstAttribute="top" secondItem="qah-D7-3TZ" secondAttribute="bottom" id="w0P-jT-PZS"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Übersicht" image="clipboard" id="Ykq-RF-jGl"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="home" id="Ykq-RF-jGl"/>
                     <navigationItem key="navigationItem" title="Übersicht" id="a1u-Ki-tSz">
                         <barButtonItem key="backBarButtonItem" title="zurück" id="KTM-cY-tRh"/>
                     </navigationItem>
@@ -120,10 +120,10 @@
             </objects>
             <point key="canvasLocation" x="2052" y="305.17241379310349"/>
         </scene>
-        <!--Premium-->
+        <!--Trainingsplan-->
         <scene sceneID="fcX-Gp-AC7">
             <objects>
-                <viewController title="Premium" id="4MF-OE-poI" sceneMemberID="viewController">
+                <viewController title="Trainingsplan" id="4MF-OE-poI" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0Lv-Ud-7Df"/>
                         <viewControllerLayoutGuide type="bottom" id="JvN-4Y-uaI"/>
@@ -133,17 +133,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Premium" image="premium" id="p13-kE-f2y"/>
+                    <tabBarItem key="tabBarItem" title="Plan" image="clipboard" id="p13-kE-f2y"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4ox-GP-sWr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2018" y="1049"/>
         </scene>
-        <!--Einstellungen-->
+        <!--Premium-->
         <scene sceneID="77M-b9-AbX">
             <objects>
-                <viewController title="Einstellungen" id="jMC-5W-syg" sceneMemberID="viewController">
+                <viewController title="Premium" id="jMC-5W-syg" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aOe-Ya-h6e"/>
                         <viewControllerLayoutGuide type="bottom" id="EMW-4C-576"/>
@@ -153,17 +153,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Einstellungen" image="zahnrad" id="UUO-lv-yTK"/>
+                    <tabBarItem key="tabBarItem" title="Premium" image="premium" id="UUO-lv-yTK"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jOk-HA-PQV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2834" y="1049"/>
         </scene>
-        <!--Mehr-->
+        <!--Settings-->
         <scene sceneID="kTR-EQ-icr">
             <objects>
-                <viewController id="06L-Dc-odm" sceneMemberID="viewController">
+                <viewController title="Settings" id="06L-Dc-odm" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="P9c-UV-yt2"/>
                         <viewControllerLayoutGuide type="bottom" id="WyH-2L-QG9"/>
@@ -173,7 +173,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Mehr" image="more" id="FMi-Rf-0LM"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="zahnrad" id="FMi-Rf-0LM"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nYl-AY-FWe" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -391,7 +391,7 @@
     </scenes>
     <resources>
         <image name="clipboard" width="23" height="29"/>
-        <image name="more" width="22" height="6"/>
+        <image name="home" width="30" height="28"/>
         <image name="premium" width="44" height="44"/>
         <image name="zahnrad" width="33" height="32"/>
     </resources>
