@@ -8,11 +8,11 @@
 
 import UIKit
 
-class SettingsController: UIViewController {
+class SettingsController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        addSlideMenuButton()
         // Do any additional setup after loading the view.
     }
 
@@ -21,6 +21,13 @@ class SettingsController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        if self.menuVC != nil {
+            self.hamburgerButton?.tag = 0
+            self.menuVC?.view.removeFromSuperview()
+            self.menuVC?.removeFromParentViewController()
+        }
+    }
 
     /*
     // MARK: - Navigation

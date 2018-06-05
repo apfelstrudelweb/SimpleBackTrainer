@@ -8,11 +8,11 @@
 
 import UIKit
 
-class PlanController: UIViewController {
+class PlanController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        addSlideMenuButton()
         // Do any additional setup after loading the view.
     }
 
@@ -21,7 +21,18 @@ class PlanController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        
+    }
 
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        if self.menuVC != nil {
+            self.hamburgerButton?.tag = 0
+            self.menuVC?.view.removeFromSuperview()
+            self.menuVC?.removeFromParentViewController()
+        }
+    }
     /*
     // MARK: - Navigation
 

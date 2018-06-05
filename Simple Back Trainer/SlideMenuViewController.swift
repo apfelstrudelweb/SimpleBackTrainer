@@ -10,6 +10,7 @@ import UIKit
 
 protocol SlideMenuDelegate {
     func slideMenuItemSelectedAtIndex(_ index : Int32)
+    func changeTitle(title:String)
 }
 
 
@@ -47,7 +48,7 @@ class SlideMenuViewController: UIViewController, UITableViewDataSource, UITableV
         tblMenuOptions.tableFooterView = UIView()
         self.view.backgroundColor = .clear
         UITableView.appearance().separatorColor = .white
-        // Do any additional setup after loading the view.
+        updateArrayMenuOptions()
     }
     
 
@@ -59,7 +60,7 @@ class SlideMenuViewController: UIViewController, UITableViewDataSource, UITableV
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        updateArrayMenuOptions()
+        //updateArrayMenuOptions()
     }
     
     func updateArrayMenuOptions(){
@@ -84,6 +85,7 @@ class SlideMenuViewController: UIViewController, UITableViewDataSource, UITableV
             }
             delegate?.slideMenuItemSelectedAtIndex(index)
         }
+        // self.navigationController?.isNavigationBarHidden = false
         
         UIView.animate(withDuration: 0.3, animations: { () -> Void in
             self.view.frame = CGRect(x: -UIScreen.main.bounds.size.width, y: 0, width: UIScreen.main.bounds.size.width,height: UIScreen.main.bounds.size.height)
@@ -92,6 +94,7 @@ class SlideMenuViewController: UIViewController, UITableViewDataSource, UITableV
             }, completion: { (finished) -> Void in
                 self.view.removeFromSuperview()
                 self.removeFromParentViewController()
+               //self.delegate?.changeTitle(title: "Rocky")
         })
     }
     

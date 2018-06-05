@@ -7,7 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14A7486320C3C2D1002CB7EA /* PlanController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A7486220C3C2D1002CB7EA /* PlanController.swift */; };
+		14A7486520C3C2EC002CB7EA /* PremiumController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A7486420C3C2EC002CB7EA /* PremiumController.swift */; };
+		14A7486720C3C305002CB7EA /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A7486620C3C305002CB7EA /* SettingsController.swift */; };
+		14A7486920C3C344002CB7EA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A7486820C3C344002CB7EA /* Constants.swift */; };
+		14A7486C20C3DF93002CB7EA /* ActivitiesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A7486B20C3DF93002CB7EA /* ActivitiesController.swift */; };
+		14A7486E20C3DFAA002CB7EA /* SportsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A7486D20C3DFAA002CB7EA /* SportsController.swift */; };
+		14A7487020C3DFC5002CB7EA /* ExercisesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A7486F20C3DFC5002CB7EA /* ExercisesController.swift */; };
+		14A7487220C3DFF0002CB7EA /* ContactController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A7487120C3DFF0002CB7EA /* ContactController.swift */; };
+		14A7487620C3E03A002CB7EA /* MobilisationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A7487520C3E03A002CB7EA /* MobilisationsController.swift */; };
+		14A7487820C3E058002CB7EA /* BackTherapyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A7487720C3E058002CB7EA /* BackTherapyController.swift */; };
+		14A7487A20C3E95A002CB7EA /* AnatomyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A7487920C3E95A002CB7EA /* AnatomyController.swift */; };
+		14A7487C20C3E977002CB7EA /* TrainingPlansController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A7487B20C3E977002CB7EA /* TrainingPlansController.swift */; };
 		1BC4368320BC8A0D00968F44 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC4368220BC8A0C00968F44 /* TabBarController.swift */; };
+		1BCF69FC20C7307200E310DF /* PremiumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCF69FB20C7307200E310DF /* PremiumTableViewCell.swift */; };
 		1BCF8462203206B000F55F64 /* ItemsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCF8461203206B000F55F64 /* ItemsCollectionViewCell.swift */; };
 		753A55C31BB073E900254F27 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753A55C21BB073E900254F27 /* AppDelegate.swift */; };
 		753A55C81BB073E900254F27 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 753A55C61BB073E900254F27 /* Main.storyboard */; };
@@ -19,7 +32,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		14A7486220C3C2D1002CB7EA /* PlanController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanController.swift; sourceTree = "<group>"; };
+		14A7486420C3C2EC002CB7EA /* PremiumController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumController.swift; sourceTree = "<group>"; };
+		14A7486620C3C305002CB7EA /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
+		14A7486820C3C344002CB7EA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		14A7486B20C3DF93002CB7EA /* ActivitiesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesController.swift; sourceTree = "<group>"; };
+		14A7486D20C3DFAA002CB7EA /* SportsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsController.swift; sourceTree = "<group>"; };
+		14A7486F20C3DFC5002CB7EA /* ExercisesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesController.swift; sourceTree = "<group>"; };
+		14A7487120C3DFF0002CB7EA /* ContactController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactController.swift; sourceTree = "<group>"; };
+		14A7487520C3E03A002CB7EA /* MobilisationsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobilisationsController.swift; sourceTree = "<group>"; };
+		14A7487720C3E058002CB7EA /* BackTherapyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackTherapyController.swift; sourceTree = "<group>"; };
+		14A7487920C3E95A002CB7EA /* AnatomyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnatomyController.swift; sourceTree = "<group>"; };
+		14A7487B20C3E977002CB7EA /* TrainingPlansController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingPlansController.swift; sourceTree = "<group>"; };
 		1BC4368220BC8A0C00968F44 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		1BCF69FB20C7307200E310DF /* PremiumTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumTableViewCell.swift; sourceTree = "<group>"; };
 		1BCF8461203206B000F55F64 /* ItemsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsCollectionViewCell.swift; sourceTree = "<group>"; };
 		753A55BD1BB073E900254F27 /* Simple Back Trainer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Simple Back Trainer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		753A55C11BB073E900254F27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -43,6 +69,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		14A7485E20C3C277002CB7EA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				14A7486A20C3DEDF002CB7EA /* MenuControllers */,
+				14A7486120C3C2A7002CB7EA /* TabBarControllers */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		14A7486120C3C2A7002CB7EA /* TabBarControllers */ = {
+			isa = PBXGroup;
+			children = (
+				1BC4368220BC8A0C00968F44 /* TabBarController.swift */,
+				C6EEF9F71CB7E4E000A3DC6D /* MainMenu.swift */,
+				14A7486220C3C2D1002CB7EA /* PlanController.swift */,
+				14A7486420C3C2EC002CB7EA /* PremiumController.swift */,
+				14A7486620C3C305002CB7EA /* SettingsController.swift */,
+			);
+			name = TabBarControllers;
+			sourceTree = "<group>";
+		};
+		14A7486A20C3DEDF002CB7EA /* MenuControllers */ = {
+			isa = PBXGroup;
+			children = (
+				14A7486B20C3DF93002CB7EA /* ActivitiesController.swift */,
+				14A7486D20C3DFAA002CB7EA /* SportsController.swift */,
+				14A7486F20C3DFC5002CB7EA /* ExercisesController.swift */,
+				14A7487120C3DFF0002CB7EA /* ContactController.swift */,
+				14A7487520C3E03A002CB7EA /* MobilisationsController.swift */,
+				14A7487720C3E058002CB7EA /* BackTherapyController.swift */,
+				14A7487920C3E95A002CB7EA /* AnatomyController.swift */,
+				14A7487B20C3E977002CB7EA /* TrainingPlansController.swift */,
+			);
+			name = MenuControllers;
+			sourceTree = "<group>";
+		};
 		753A55B41BB073E900254F27 = {
 			isa = PBXGroup;
 			children = (
@@ -62,16 +124,17 @@
 		753A55BF1BB073E900254F27 /* Simple Back Trainer */ = {
 			isa = PBXGroup;
 			children = (
+				14A7486820C3C344002CB7EA /* Constants.swift */,
+				14A7485E20C3C277002CB7EA /* Controller */,
 				753A55C21BB073E900254F27 /* AppDelegate.swift */,
-				C6EEF9F71CB7E4E000A3DC6D /* MainMenu.swift */,
 				753A55E41BB0755100254F27 /* BaseViewController.swift */,
 				753A55E21BB0753B00254F27 /* SlideMenuViewController.swift */,
 				1BCF8461203206B000F55F64 /* ItemsCollectionViewCell.swift */,
-				1BC4368220BC8A0C00968F44 /* TabBarController.swift */,
 				753A55C61BB073E900254F27 /* Main.storyboard */,
 				753A55C91BB073E900254F27 /* Images.xcassets */,
 				753A55CB1BB073E900254F27 /* LaunchScreen.xib */,
 				753A55C01BB073E900254F27 /* Supporting Files */,
+				1BCF69FB20C7307200E310DF /* PremiumTableViewCell.swift */,
 			);
 			path = "Simple Back Trainer";
 			sourceTree = "<group>";
@@ -158,11 +221,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14A7486720C3C305002CB7EA /* SettingsController.swift in Sources */,
 				753A55E51BB0755100254F27 /* BaseViewController.swift in Sources */,
+				14A7487A20C3E95A002CB7EA /* AnatomyController.swift in Sources */,
 				C6EEF9F81CB7E4E000A3DC6D /* MainMenu.swift in Sources */,
 				753A55E31BB0753B00254F27 /* SlideMenuViewController.swift in Sources */,
+				14A7487620C3E03A002CB7EA /* MobilisationsController.swift in Sources */,
+				14A7487C20C3E977002CB7EA /* TrainingPlansController.swift in Sources */,
 				1BC4368320BC8A0D00968F44 /* TabBarController.swift in Sources */,
+				14A7486920C3C344002CB7EA /* Constants.swift in Sources */,
 				753A55C31BB073E900254F27 /* AppDelegate.swift in Sources */,
+				14A7487820C3E058002CB7EA /* BackTherapyController.swift in Sources */,
+				1BCF69FC20C7307200E310DF /* PremiumTableViewCell.swift in Sources */,
+				14A7486520C3C2EC002CB7EA /* PremiumController.swift in Sources */,
+				14A7486E20C3DFAA002CB7EA /* SportsController.swift in Sources */,
+				14A7487020C3DFC5002CB7EA /* ExercisesController.swift in Sources */,
+				14A7487220C3DFF0002CB7EA /* ContactController.swift in Sources */,
+				14A7486320C3C2D1002CB7EA /* PlanController.swift in Sources */,
+				14A7486C20C3DF93002CB7EA /* ActivitiesController.swift in Sources */,
 				1BCF8462203206B000F55F64 /* ItemsCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

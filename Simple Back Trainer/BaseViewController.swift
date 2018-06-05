@@ -8,13 +8,15 @@
 
 import UIKit
 
-class BaseViewController: UIViewController, SlideMenuDelegate {
+class BaseViewController: UIViewController {
     
     var menuWidth : CGFloat!
     var menuVC : SlideMenuViewController?
+    var hamburgerButton:UIButton?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view.
     }
     
@@ -30,45 +32,13 @@ class BaseViewController: UIViewController, SlideMenuDelegate {
         }, completion:nil)
     }
     
-    func slideMenuItemSelectedAtIndex(_ index: Int32) {
-        let topViewController : UIViewController = self.navigationController!.topViewController!
-        print("View Controller is : \(topViewController) \n", terminator: "")
-        switch(index){
-        case 0:
-            print("Home\n", terminator: "")
-
-            self.openViewControllerBasedOnIdentifier("Home")
-            
-            break
-        case 1:
-            print("Play\n", terminator: "")
-            
-            self.openViewControllerBasedOnIdentifier("PlayVC")
-            
-            break
-        default:
-            print("default\n", terminator: "")
-        }
-    }
-    
-    func openViewControllerBasedOnIdentifier(_ strIdentifier:String){
-        let destViewController : UIViewController = self.storyboard!.instantiateViewController(withIdentifier: strIdentifier)
-        
-        let topViewController : UIViewController = self.navigationController!.topViewController!
-        
-        if (topViewController.restorationIdentifier! == destViewController.restorationIdentifier!){
-            print("Same VC")
-        } else {
-            self.navigationController!.pushViewController(destViewController, animated: true)
-        }
-    }
-    
     func addSlideMenuButton(){
-        let btnShowMenu = UIButton(type: UIButtonType.system)
-        btnShowMenu.setImage(self.defaultMenuImage(), for: UIControlState())
-        btnShowMenu.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
-        btnShowMenu.addTarget(self, action: #selector(BaseViewController.onSlideMenuButtonPressed(_:)), for: UIControlEvents.touchUpInside)
-        let customBarItem = UIBarButtonItem(customView: btnShowMenu)
+        hamburgerButton = UIButton(type: UIButtonType.system)
+        hamburgerButton?.setImage(self.defaultMenuImage(), for: UIControlState())
+        hamburgerButton?.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+        hamburgerButton?.addTarget(self, action: #selector(BaseViewController.onSlideMenuButtonPressed(_:)), for: UIControlEvents.touchUpInside)
+        let customBarItem = UIBarButtonItem(customView: hamburgerButton!)
+        
         self.navigationItem.leftBarButtonItem = customBarItem;
     }
 
@@ -99,7 +69,6 @@ class BaseViewController: UIViewController, SlideMenuDelegate {
         {
             // To Hide Menu If it already there
             self.slideMenuItemSelectedAtIndex(-1);
-            
             sender.tag = 0;
             
             let viewMenuBack : UIView = view.subviews.last!
@@ -120,13 +89,22 @@ class BaseViewController: UIViewController, SlideMenuDelegate {
         sender.isEnabled = false
         sender.tag = 10
         
+       // self.tabBarController?.hidesBottomBarWhenPushed = true
+        if self.menuVC != nil {
+            self.menuVC?.view.removeFromSuperview()
+            self.menuVC?.removeFromParentViewController()
+        }
+        
         self.menuVC = self.storyboard!.instantiateViewController(withIdentifier: "MenuViewController") as? SlideMenuViewController
         menuVC?.btnMenu = sender
         menuVC?.delegate = self
+        
+        print(self)
+        
         self.view.addSubview((menuVC?.view)!)
         self.addChildViewController((menuVC)!)
         menuVC?.view.layoutIfNeeded()
-        
+        //self.navigationController?.isNavigationBarHidden = true
         
         menuVC?.view.frame=CGRect(x: 0 - UIScreen.main.bounds.size.width, y: 0, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height);
         
@@ -134,5 +112,127 @@ class BaseViewController: UIViewController, SlideMenuDelegate {
             self.menuVC?.view.frame=CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height);
             sender.isEnabled = true
             }, completion:nil)
+    }
+}
+
+extension BaseViewController: SlideMenuDelegate {
+
+    func changeTitle(title: String) {
+        self.tabBarItem.title = title
+    }
+    
+    func slideMenuItemSelectedAtIndex(_ index: Int32) {
+        switch(index){
+        case 0:
+            print("Home\n", terminator: "")
+            self.openViewControllerBasedOnIdentifier(StoryboardId.home.rawValue)
+            break
+        case 1:
+            print("Play\n", terminator: "")
+            self.openViewControllerBasedOnIdentifier(StoryboardId.activity.rawValue)
+            break
+        case 2:
+            self.openViewControllerBasedOnIdentifier(StoryboardId.sports.rawValue)
+        case 3:
+            self.openViewControllerBasedOnIdentifier(StoryboardId.exercise.rawValue)
+        case 4:
+            print("Settings\n", terminator:"")
+            self.openViewControllerBasedOnIdentifier(StoryboardId.premium.rawValue)
+        case 5:
+            print("Settings\n", terminator:"")
+            self.openViewControllerBasedOnIdentifier(StoryboardId.settings.rawValue)
+        case 6:
+            self.openViewControllerBasedOnIdentifier(StoryboardId.contact.rawValue)
+        default:
+            print("default\n", terminator: "")
+        }
+    }
+    
+    func openViewControllerBasedOnIdentifier(_ strIdentifier:String){
+        guard let topViewController:UIViewController = self.tabBarController?.selectedViewController?.childViewControllers.last else { return }
+        guard let topControllerIdentifier = topViewController.restorationIdentifier else { return }
+        print(topViewController)
+        print(topControllerIdentifier)
+        
+        if (topControllerIdentifier != strIdentifier){
+            if self.isControllerExistInTab(strIdentifier: strIdentifier) == false {
+                guard let destViewController:UIViewController = self.storyboard?.instantiateViewController(withIdentifier: strIdentifier) else {
+                    return
+                }
+                self.navigationController!.pushViewController(destViewController, animated: true)
+                //self.addChild(child: destViewController)
+                //self.addChildToParentController(child: destViewController, parent: topViewController)
+            }
+        }
+    }
+    
+    func addChild(child: UIViewController) {
+        if let parent = self.navigationController?.viewControllers.last {
+            print(parent)
+//            if let view = parent.childViewControllers.first {
+//                let existingClass = NSStringFromClass(view.classForCoder).components(separatedBy: ".").last
+//                switch existingClass! {
+//                case storyboardId.menuController:
+//                    break
+//                default:
+//                    self.removeChildFromViewController(child: view)
+//                    let menuController = MenuRouter.createMenuModule()
+//                    self.addChildToParentController(child: menuController, parent: parent)
+//                    break
+//                }
+//            } else {
+            
+            self.addChildToParentController(child: child, parent: parent)
+           // }
+        }
+    }
+    
+    
+    func addChildToParentController(child:UIViewController, parent: UIViewController) {
+        print(parent)
+        parent.addChildViewController(child)
+        parent.view.addSubview(child.view)
+        //parent.view.insertSubview(child.view, at: 0)
+        child.didMove(toParentViewController: parent)
+    }
+    
+    func removeChildFromViewController(child:UIViewController) {
+        child.willMove(toParentViewController: nil)
+        child.view.removeFromSuperview()
+        child.removeFromParentViewController()
+    }
+    
+    
+    
+    func isControllerExistInTab(strIdentifier:String) -> Bool {
+       // var navigationTile:String?
+        switch strIdentifier {
+        case StoryboardId.home.rawValue:
+            self.tabBarController?.selectedIndex = 0
+         //   navigationTile = StoryboardId.home.title()
+            return true
+        case StoryboardId.plan.rawValue:
+            self.tabBarController?.selectedIndex = 1
+           // navigationTile = StoryboardId.plan.title()
+            return true
+        case StoryboardId.premium.rawValue:
+            self.tabBarController?.selectedIndex = 2
+           // navigationTile = StoryboardId.premium.title()
+            return true
+        case StoryboardId.settings.rawValue:
+            self.tabBarController?.selectedIndex = 3
+           // navigationTile = StoryboardId.settings.title()
+            return true
+        default:
+           // self.tabBarController?.selectedIndex = 0
+          //  self.tabBarItem.title = StoryboardId.home.title()
+            return false
+        }
+//        guard navigationTile == nil else {
+//           // self.tabBarItem.title = navigationTile
+//            return true
+//        }
+
+       // return false
     }
 }

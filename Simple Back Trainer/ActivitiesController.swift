@@ -21,6 +21,10 @@ class ActivitiesController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+    }
 
     /*
     // MARK: - Navigation

@@ -12,14 +12,35 @@ class TabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.title = "Home"
+        //addSlideMenuButton()
     }
+    
+//    override func changeTitle(title: String) {
+//        self.title = self.tabBarItem.title
+//    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        
+    }
+    
+    // UITabBarDelegate
+    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        self.title = item.title ?? ""
+    }
+    
+    
+    
+    // UITabBarControllerDelegate
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        print("Selected view controller")
+    }
+
 
     /*
     // MARK: - Navigation

@@ -22,11 +22,34 @@ class MainMenu: BaseViewController, UICollectionViewDataSource, UICollectionView
     override func viewDidLoad() {
         super.viewDidLoad()
         addSlideMenuButton()
+       // addSlideMenuButton()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.title = "Home"
+        self.navigationController?.tabBarItem.title = "Home"
+    }
+
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        if self.menuVC != nil {
+            self.hamburgerButton?.tag = 0
+            self.menuVC?.view.removeFromSuperview()
+            self.menuVC?.removeFromParentViewController()
+        }
+    }
     
     let reuseIdentifier = "cell" // also enter this string as the cell identifier in the storyboard
-    var items = [["title":"Starker Rücken für Berufe", "icon":"gardener"],["title":"Rückenmuskeln für Sportler", "icon":"biker"],["title":"Muskel-Anatomie", "icon":"anatomy"], ["title":"Trainingsplan", "icon":"trainingsplan"], ["title":"Trainings-Übungen", "icon":"romanChair"],["title":"Rücken-Mobilisierung", "icon":"cobra"],["title":"Rückenschule", "icon":"sitting"],["title":"Premium-Version", "icon":"pokal"]]
+    var items = [
+        ["title":"Starker Rücken für Berufe", "icon":"gardener", "id":StoryboardId.activity.rawValue],
+        ["title":"Rückenmuskeln für Sportler", "icon":"biker", "id":StoryboardId.sports.rawValue],
+        ["title":"Muskel-Anatomie", "icon":"anatomy", "id":StoryboardId.anatomy.rawValue],
+        ["title":"Trainingsplan","icon":"trainingsplan","id":StoryboardId.plan.rawValue],
+        ["title":"Trainings-Übungen", "icon":"romanChair", "id":StoryboardId.exercise.rawValue],
+        ["title":"Rücken-Mobilisierung", "icon":"cobra", "id":StoryboardId.mobilisation.rawValue],
+        ["title":"Rückenschule", "icon":"sitting", "id":StoryboardId.backTherapy.rawValue],
+        ["title":"Premium-Version", "icon":"pokal", "id":StoryboardId.premium.rawValue]
+    ]
     
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
@@ -85,6 +108,19 @@ class MainMenu: BaseViewController, UICollectionViewDataSource, UICollectionView
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // handle tap events
         print("You selected cell #\(indexPath.item)!")
+        let strIdentifier = self.items[indexPath.item]["id"]
+        if strIdentifier == StoryboardId.premium.rawValue {
+            self.tabBarController?.selectedIndex = 2
+        } else if strIdentifier == StoryboardId.plan.rawValue {
+            self.tabBarController?.selectedIndex = 1
+        } else {
+            guard let destViewController:UIViewController = self.storyboard?.instantiateViewController(withIdentifier: strIdentifier!) else {
+                return
+            }
+            self.navigationController!.pushViewController(destViewController, animated: true)
+        }
+       // self.navigationController?.present(destViewController, animated: true, completion: nil)
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
