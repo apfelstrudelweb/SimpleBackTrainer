@@ -12,14 +12,24 @@ class PremiumController: BaseViewController, UITableViewDelegate, UITableViewDat
 
     @IBOutlet weak var premiumButton: UIButton!
     @IBOutlet weak var tableview: UITableView!
+    @IBOutlet weak var buttonWidth: NSLayoutConstraint!
+    
+    let items = [["premiumNoAds", "Komplett ohne Werbung", "Keine Webebanner mehr in der Premium-Version."], ["premiumPlan", "Individuelle Trainingspläne", "Stelle deine eigenen Trainingspläne zusammen und verfolge deinen Fortschritt im Training."], ["premiumVideo", "Mehr Trainingsvideos", "Mehr Trainingsvideos mit Hanteln, Körpergewicht, Widerstandsbändern und Kleingeräten."], ["premiumMobilisation", "Mobilisierungsübungen", "Finde heraus, wie du zusätzlich zur Stärkung des Rückens deine Flexibilität erhöhst und beweglich bleibst."]];
+    let buttonTitle = "Premium App kaufen $ 4,99"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         addSlideMenuButton()
         
+        premiumButton.setTitle(buttonTitle, for: .normal)
         premiumButton.layer.cornerRadius = 10
-        premiumButton.titleEdgeInsets = UIEdgeInsets(top: 4, left: 10, bottom: 4, right: 10)
-        premiumButton.sizeToFit()
+        premiumButton.titleEdgeInsets = UIEdgeInsets(top: 4, left: 20, bottom: 4, right: 20)
+        
+        let textWidth = (buttonTitle as NSString).size(withAttributes:[kCTFontAttributeName as NSAttributedStringKey:premiumButton.titleLabel!.font!]).width
+        let width = textWidth + premiumButton.titleEdgeInsets.left + premiumButton.titleEdgeInsets.right
+        buttonWidth.constant = width
+        
+        premiumButton.layoutIfNeeded()
         // Do any additional setup after loading the view.
     }
 
@@ -46,9 +56,9 @@ class PremiumController: BaseViewController, UITableViewDelegate, UITableViewDat
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "premiumCell", for: indexPath) as! PremiumTableViewCell
-        cell.iconView.image = UIImage(named: "premiumNoAds")
-        cell.titleLabel.text = "Komplett ohne Werbung"
-        cell.explanationLabel.text = "Keine Webebanner mehr in der Premium-Version. Und alles und so ..."
+        cell.iconView.image = UIImage(named: items[indexPath.row][0])
+        cell.titleLabel.text = items[indexPath.row][1]
+        cell.explanationLabel.text = items[indexPath.row][2]
         
         return cell
     }
