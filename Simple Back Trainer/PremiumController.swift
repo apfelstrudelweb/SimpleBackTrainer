@@ -2,7 +2,7 @@
 //  PremiumController.swift
 //  Simple Back Trainer
 //
-//  Created by Rakesh Kumar on 03/06/18.
+//  Created by Ulrich Vormbrock on 03/06/18.
 //  Copyright © 2018 Kode. All rights reserved.
 //
 
@@ -14,7 +14,11 @@ class PremiumController: BaseViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet weak var tableview: UITableView!
     @IBOutlet weak var buttonWidth: NSLayoutConstraint!
     
-    let items = [["premiumNoAds", "Komplett ohne Werbung", "Keine Webebanner mehr in der Premium-Version."], ["premiumPlan", "Individuelle Trainingspläne", "Stelle deine eigenen Trainingspläne zusammen und verfolge deinen Fortschritt im Training."], ["premiumVideo", "Mehr Trainingsvideos", "Mehr Trainingsvideos mit Hanteln, Körpergewicht, Widerstandsbändern und Kleingeräten."], ["premiumMobilisation", "Mobilisierungsübungen", "Finde heraus, wie du zusätzlich zur Stärkung des Rückens deine Flexibilität erhöhst und beweglich bleibst."]];
+    let items = [
+        ["premiumNoAds", "Komplett ohne Werbung", "Keine Webebanner mehr in der Premium-Version."],
+        ["premiumPlan", "Individuelle Trainingspläne", "Stelle deine eigenen Trainingspläne zusammen und verfolge deinen Fortschritt im Training."],
+        ["premiumVideo", "Mehr Trainingsvideos", "Mehr Trainingsvideos mit Hanteln, Körpergewicht, Widerstandsbändern und Kleingeräten."],
+        ["premiumMobilisation", "Mobilisierungsübungen", "Finde heraus, wie du zusätzlich zur Stärkung des Rückens deine Flexibilität erhöhst und beweglich bleibst."]];
     let buttonTitle = "Premium App kaufen $ 4,99"
     
     override func viewDidLoad() {
@@ -27,7 +31,7 @@ class PremiumController: BaseViewController, UITableViewDelegate, UITableViewDat
         
         let textWidth = (buttonTitle as NSString).size(withAttributes:[kCTFontAttributeName as NSAttributedStringKey:premiumButton.titleLabel!.font!]).width
         let width = textWidth + premiumButton.titleEdgeInsets.left + premiumButton.titleEdgeInsets.right
-        buttonWidth.constant = width
+        buttonWidth.constant = width + 10
         
         premiumButton.layoutIfNeeded()
         // Do any additional setup after loading the view.
