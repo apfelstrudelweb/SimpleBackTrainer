@@ -8,7 +8,9 @@
 
 import UIKit
 
-enum StoryboardId:String {
+let adsBottomSpace:CGFloat = 44.0
+
+enum StoryboardId: String {
     case plan = "PlanController"
     case home = "Home"
     case premium = "PremiumController"

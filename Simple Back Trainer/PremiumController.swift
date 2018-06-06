@@ -35,6 +35,10 @@ class PremiumController: BaseViewController, UITableViewDelegate, UITableViewDat
         
         premiumButton.layoutIfNeeded()
         // Do any additional setup after loading the view.
+        
+        // for ADs
+        self.tableview.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: adsBottomSpace, right: 0)
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -66,6 +70,10 @@ class PremiumController: BaseViewController, UITableViewDelegate, UITableViewDat
         
         return cell
     }
+    
+//    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+//        return 100
+//    }
     
     /*
     // MARK: - Navigation

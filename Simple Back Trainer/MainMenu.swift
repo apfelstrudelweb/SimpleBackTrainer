@@ -22,6 +22,9 @@ class MainMenu: BaseViewController, UICollectionViewDataSource, UICollectionView
     override func viewDidLoad() {
         super.viewDidLoad()
         addSlideMenuButton()
+        
+        // for ADs
+        self.collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: adsBottomSpace, right: 0)
        // addSlideMenuButton()
     }
     
