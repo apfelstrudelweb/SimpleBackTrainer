@@ -10,20 +10,24 @@ import UIKit
 
 class PremiumController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
 
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var premiumButton: UIButton!
     @IBOutlet weak var tableview: UITableView!
     @IBOutlet weak var buttonWidth: NSLayoutConstraint!
     
+
     let items = [
-        ["premiumNoAds", "Komplett ohne Werbung", "Keine Webebanner mehr in der Premium-Version."],
-        ["premiumPlan", "Individuelle Trainingspläne", "Stelle deine eigenen Trainingspläne zusammen und verfolge deinen Fortschritt im Training."],
-        ["premiumVideo", "Mehr Trainingsvideos", "Mehr Trainingsvideos mit Hanteln, Körpergewicht, Widerstandsbändern und Kleingeräten."],
-        ["premiumMobilisation", "Mobilisierungsübungen", "Finde heraus, wie du zusätzlich zur Stärkung des Rückens deine Flexibilität erhöhst und beweglich bleibst."]];
-    let buttonTitle = "Premium App kaufen $ 4,99"
+        ["premiumNoAds", NSLocalizedString("PREMIUM_NOADS_TITLE", comment: ""), NSLocalizedString("PREMIUM_NOADS_DESCR", comment: "")],
+        ["premiumPlan", NSLocalizedString("PREMIUM_PLAN_TITLE", comment: ""), NSLocalizedString("PREMIUM_PLAN_DESCR", comment: "")],
+        ["premiumVideo", NSLocalizedString("PREMIUM_VIDEO_TITLE", comment: ""), NSLocalizedString("PREMIUM_VIDEO_DESCR", comment: "")],
+        ["premiumMobilisation", NSLocalizedString("PREMIUM_MOBIL_TITLE", comment: ""), NSLocalizedString("PREMIUM_MOBIL_DESCR", comment: "")]];
+    let buttonTitle = NSLocalizedString("PREMIUM_BUTTON_TEXT", comment: "") + " $ 4,99"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         addSlideMenuButton()
+        
+        titleLabel.text = NSLocalizedString("PREMIUM_TITLE", comment: "")
         
         premiumButton.setTitle(buttonTitle, for: .normal)
         premiumButton.layer.cornerRadius = 10
@@ -38,7 +42,6 @@ class PremiumController: BaseViewController, UITableViewDelegate, UITableViewDat
         
         // for ADs
         self.tableview.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: adsBottomSpace, right: 0)
-
     }
 
     override func didReceiveMemoryWarning() {

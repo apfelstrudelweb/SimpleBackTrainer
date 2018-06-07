@@ -12,6 +12,7 @@ import UIKit
 
 class MainMenu: BaseViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
+ 
     @IBOutlet weak var collectionView: UICollectionView!
     
     var cellWidth : CGFloat!
@@ -22,7 +23,7 @@ class MainMenu: BaseViewController, UICollectionViewDataSource, UICollectionView
     override func viewDidLoad() {
         super.viewDidLoad()
         addSlideMenuButton()
-        
+
         // for ADs
         self.collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: adsBottomSpace, right: 0)
        // addSlideMenuButton()
@@ -44,14 +45,14 @@ class MainMenu: BaseViewController, UICollectionViewDataSource, UICollectionView
     
     let reuseIdentifier = "cell" // also enter this string as the cell identifier in the storyboard
     var items = [
-        ["title":"Starker Rücken für Berufe", "icon":"gardener", "id":StoryboardId.activity.rawValue],
-        ["title":"Rückenmuskeln für Sportler", "icon":"biker", "id":StoryboardId.sports.rawValue],
-        ["title":"Muskel-Anatomie", "icon":"anatomy", "id":StoryboardId.anatomy.rawValue],
-        ["title":"Trainingsplan","icon":"trainingsplan","id":StoryboardId.plan.rawValue],
-        ["title":"Trainings-Übungen", "icon":"romanChair", "id":StoryboardId.exercise.rawValue],
-        ["title":"Rücken-Mobilisierung", "icon":"cobra", "id":StoryboardId.mobilisation.rawValue],
-        ["title":"Rückenschule", "icon":"sitting", "id":StoryboardId.backTherapy.rawValue],
-        ["title":"Premium-Version", "icon":"pokal", "id":StoryboardId.premium.rawValue]
+        ["title":NSLocalizedString("MAINMENU_BACK_FOR_ACTIVITIES", comment: ""), "icon":"gardener", "id":StoryboardId.activity.rawValue],
+        ["title":NSLocalizedString("MAINMENU_BACK_FOR_SPORTS", comment: ""), "icon":"biker", "id":StoryboardId.sports.rawValue],
+        ["title":NSLocalizedString("MAINMENU_BACK_MUSCLE_ANATOMY", comment: ""), "icon":"anatomy", "id":StoryboardId.anatomy.rawValue],
+        ["title":NSLocalizedString("MAINMENU_BACK_TRAININGSPLAN", comment: ""), "icon":"trainingsplan", "id":StoryboardId.plan.rawValue],
+        ["title":NSLocalizedString("MAINMENU_BACK_FOR_EXERCISES", comment: ""), "icon":"romanChair", "id":StoryboardId.exercise.rawValue],
+        ["title":NSLocalizedString("MAINMENU_BACK_FOR_MOBILISATION", comment: ""), "icon":"cobra", "id":StoryboardId.mobilisation.rawValue],
+        ["title":NSLocalizedString("MAINMENU_BACK_FOR_THERAPY", comment: ""), "icon":"sitting", "id":StoryboardId.backTherapy.rawValue],
+        ["title":NSLocalizedString("MAINMENU_PREMIUM_VERSION", comment: ""), "icon":"pokal", "id":StoryboardId.premium.rawValue]
     ]
     
     func collectionView(_ collectionView: UICollectionView,
@@ -132,7 +133,8 @@ class MainMenu: BaseViewController, UICollectionViewDataSource, UICollectionView
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
-        let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "header", for: indexPath)
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "header", for: indexPath) as! CollectionHeaderView
+        header.titleLabel.text = NSLocalizedString("MAINMENU_TITLE", comment: "")
         
         return header
     }

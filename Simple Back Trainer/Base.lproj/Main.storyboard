@@ -73,12 +73,12 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
-                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="header" id="pkp-e3-tUD">
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="header" id="pkp-e3-tUD" customClass="CollectionHeaderView" customModule="Simple_Back_Trainer" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ihr Trainingsprogramm" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2QR-hv-OHZ">
-                                            <rect key="frame" x="28" y="10.666666666666664" width="264" height="29"/>
+                                            <rect key="frame" x="28" y="10.666666666666664" width="319" height="29"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -89,6 +89,9 @@
                                         <constraint firstItem="2QR-hv-OHZ" firstAttribute="centerY" secondItem="pkp-e3-tUD" secondAttribute="centerY" id="rFm-Zp-vDz"/>
                                         <constraint firstItem="2QR-hv-OHZ" firstAttribute="leading" secondItem="pkp-e3-tUD" secondAttribute="leadingMargin" constant="20" id="x8b-IA-L1F"/>
                                     </constraints>
+                                    <connections>
+                                        <outlet property="titleLabel" destination="2QR-hv-OHZ" id="cOd-AD-vic"/>
+                                    </connections>
                                 </collectionReusableView>
                                 <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="oIj-tk-QJa">
                                     <rect key="frame" x="0.0" y="357" width="375" height="50"/>
@@ -217,7 +220,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mehr Trainingsvideos" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xvl-YX-k0H">
                                                     <rect key="frame" x="125" y="21" width="235" height="24.333333333333329"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="24" id="BtX-4R-yWx"/>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="24" id="BtX-4R-yWx"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                                     <nil key="textColor"/>
@@ -271,6 +274,7 @@
                         <outlet property="buttonWidth" destination="z4L-9C-urG" id="Kv6-oW-JMB"/>
                         <outlet property="premiumButton" destination="pEN-VH-Arz" id="pqI-Mv-MbH"/>
                         <outlet property="tableview" destination="mQL-Qs-Hz8" id="s47-Uj-F86"/>
+                        <outlet property="titleLabel" destination="EyZ-Ob-cHC" id="7cv-bl-5In"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jOk-HA-PQV" userLabel="First Responder" sceneMemberID="firstResponder"/>
