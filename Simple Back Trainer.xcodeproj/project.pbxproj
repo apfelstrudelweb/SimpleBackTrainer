@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -25,6 +25,13 @@
 		1BCF6A0520C9905500E310DF /* es.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 1BCF6A0220C9905500E310DF /* es.lproj */; };
 		1BCF6A0620C9905500E310DF /* en.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 1BCF6A0320C9905500E310DF /* en.lproj */; };
 		1BCF6A0820C997C100E310DF /* CollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCF6A0720C997C100E310DF /* CollectionHeaderView.swift */; };
+		1BCF6A1D20C9B3BB00E310DF /* AnatomyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCF6A1C20C9B3BB00E310DF /* AnatomyViewController.swift */; };
+		1BCF6A2420C9B40200E310DF /* TorsoBackView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BCF6A1E20C9B40100E310DF /* TorsoBackView.xib */; };
+		1BCF6A2520C9B40200E310DF /* Torso.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCF6A1F20C9B40100E310DF /* Torso.swift */; };
+		1BCF6A2620C9B40200E310DF /* TorsoBasicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCF6A2020C9B40100E310DF /* TorsoBasicView.swift */; };
+		1BCF6A2720C9B40200E310DF /* TorsoFrontView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCF6A2120C9B40200E310DF /* TorsoFrontView.swift */; };
+		1BCF6A2820C9B40200E310DF /* TorsoBackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCF6A2220C9B40200E310DF /* TorsoBackView.swift */; };
+		1BCF6A2920C9B40200E310DF /* TorsoFrontView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BCF6A2320C9B40200E310DF /* TorsoFrontView.xib */; };
 		1BCF8462203206B000F55F64 /* ItemsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCF8461203206B000F55F64 /* ItemsCollectionViewCell.swift */; };
 		753A55C31BB073E900254F27 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753A55C21BB073E900254F27 /* AppDelegate.swift */; };
 		753A55C81BB073E900254F27 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 753A55C61BB073E900254F27 /* Main.storyboard */; };
@@ -33,6 +40,7 @@
 		753A55E31BB0753B00254F27 /* SlideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753A55E21BB0753B00254F27 /* SlideMenuViewController.swift */; };
 		753A55E51BB0755100254F27 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753A55E41BB0755100254F27 /* BaseViewController.swift */; };
 		C6EEF9F81CB7E4E000A3DC6D /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EEF9F71CB7E4E000A3DC6D /* MainMenu.swift */; };
+		CFEE87CFEC7C9B8E456A5B5E /* Pods_Simple_Back_Trainer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16EE4B69557784C57DD7EB11 /* Pods_Simple_Back_Trainer.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +56,7 @@
 		14A7487720C3E058002CB7EA /* BackTherapyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackTherapyController.swift; sourceTree = "<group>"; };
 		14A7487920C3E95A002CB7EA /* AnatomyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnatomyController.swift; sourceTree = "<group>"; };
 		14A7487B20C3E977002CB7EA /* TrainingPlansController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingPlansController.swift; sourceTree = "<group>"; };
+		16EE4B69557784C57DD7EB11 /* Pods_Simple_Back_Trainer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Simple_Back_Trainer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BC4368220BC8A0C00968F44 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		1BCF69FB20C7307200E310DF /* PremiumTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumTableViewCell.swift; sourceTree = "<group>"; };
 		1BCF69FD20C98F2E00E310DF /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
@@ -58,7 +67,15 @@
 		1BCF6A0220C9905500E310DF /* es.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = es.lproj; sourceTree = "<group>"; };
 		1BCF6A0320C9905500E310DF /* en.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = en.lproj; sourceTree = "<group>"; };
 		1BCF6A0720C997C100E310DF /* CollectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionHeaderView.swift; sourceTree = "<group>"; };
+		1BCF6A1C20C9B3BB00E310DF /* AnatomyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnatomyViewController.swift; sourceTree = "<group>"; };
+		1BCF6A1E20C9B40100E310DF /* TorsoBackView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TorsoBackView.xib; sourceTree = "<group>"; };
+		1BCF6A1F20C9B40100E310DF /* Torso.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Torso.swift; sourceTree = "<group>"; };
+		1BCF6A2020C9B40100E310DF /* TorsoBasicView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TorsoBasicView.swift; sourceTree = "<group>"; };
+		1BCF6A2120C9B40200E310DF /* TorsoFrontView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TorsoFrontView.swift; sourceTree = "<group>"; };
+		1BCF6A2220C9B40200E310DF /* TorsoBackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TorsoBackView.swift; sourceTree = "<group>"; };
+		1BCF6A2320C9B40200E310DF /* TorsoFrontView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TorsoFrontView.xib; sourceTree = "<group>"; };
 		1BCF8461203206B000F55F64 /* ItemsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsCollectionViewCell.swift; sourceTree = "<group>"; };
+		6661853E5EC2C1DF3EB34716 /* Pods-Simple Back Trainer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Simple Back Trainer.release.xcconfig"; path = "Pods/Target Support Files/Pods-Simple Back Trainer/Pods-Simple Back Trainer.release.xcconfig"; sourceTree = "<group>"; };
 		753A55BD1BB073E900254F27 /* Simple Back Trainer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Simple Back Trainer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		753A55C11BB073E900254F27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		753A55C21BB073E900254F27 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +84,7 @@
 		753A55CC1BB073E900254F27 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		753A55E21BB0753B00254F27 /* SlideMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideMenuViewController.swift; sourceTree = "<group>"; };
 		753A55E41BB0755100254F27 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		97E52B6DC9D3DE58464C925E /* Pods-Simple Back Trainer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Simple Back Trainer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Simple Back Trainer/Pods-Simple Back Trainer.debug.xcconfig"; sourceTree = "<group>"; };
 		C6EEF9F71CB7E4E000A3DC6D /* MainMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -75,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFEE87CFEC7C9B8E456A5B5E /* Pods_Simple_Back_Trainer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +131,7 @@
 				14A7487520C3E03A002CB7EA /* MobilisationsController.swift */,
 				14A7487720C3E058002CB7EA /* BackTherapyController.swift */,
 				14A7487920C3E95A002CB7EA /* AnatomyController.swift */,
+				1BCF6A1C20C9B3BB00E310DF /* AnatomyViewController.swift */,
 				14A7487B20C3E977002CB7EA /* TrainingPlansController.swift */,
 			);
 			name = MenuControllers;
@@ -122,6 +142,8 @@
 			children = (
 				753A55BF1BB073E900254F27 /* Simple Back Trainer */,
 				753A55BE1BB073E900254F27 /* Products */,
+				800D1E0BE3896ED046A4BB0A /* Pods */,
+				B9F5C41866EBEDE6401E167B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -148,6 +170,12 @@
 				753A55CB1BB073E900254F27 /* LaunchScreen.xib */,
 				753A55C01BB073E900254F27 /* Supporting Files */,
 				1BCF69FB20C7307200E310DF /* PremiumTableViewCell.swift */,
+				1BCF6A1F20C9B40100E310DF /* Torso.swift */,
+				1BCF6A2220C9B40200E310DF /* TorsoBackView.swift */,
+				1BCF6A1E20C9B40100E310DF /* TorsoBackView.xib */,
+				1BCF6A2020C9B40100E310DF /* TorsoBasicView.swift */,
+				1BCF6A2120C9B40200E310DF /* TorsoFrontView.swift */,
+				1BCF6A2320C9B40200E310DF /* TorsoFrontView.xib */,
 				1BCF6A0120C9905500E310DF /* de.lproj */,
 				1BCF6A0320C9905500E310DF /* en.lproj */,
 				1BCF6A0220C9905500E310DF /* es.lproj */,
@@ -163,6 +191,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		800D1E0BE3896ED046A4BB0A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				97E52B6DC9D3DE58464C925E /* Pods-Simple Back Trainer.debug.xcconfig */,
+				6661853E5EC2C1DF3EB34716 /* Pods-Simple Back Trainer.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B9F5C41866EBEDE6401E167B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				16EE4B69557784C57DD7EB11 /* Pods_Simple_Back_Trainer.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -170,9 +215,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 753A55DC1BB073E900254F27 /* Build configuration list for PBXNativeTarget "Simple Back Trainer" */;
 			buildPhases = (
+				C24743F90DA16F926EAC6C95 /* [CP] Check Pods Manifest.lock */,
 				753A55B91BB073E900254F27 /* Sources */,
 				753A55BA1BB073E900254F27 /* Frameworks */,
 				753A55BB1BB073E900254F27 /* Resources */,
+				04D8C592CCD2EF294619C052 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -192,7 +239,7 @@
 				LastSwiftMigration = 0700;
 				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0900;
-				ORGANIZATIONNAME = Kode;
+				ORGANIZATIONNAME = Rookie;
 				TargetAttributes = {
 					753A55BC1BB073E900254F27 = {
 						CreatedOnToolsVersion = 6.4;
@@ -202,7 +249,7 @@
 				};
 			};
 			buildConfigurationList = 753A55B81BB073E900254F27 /* Build configuration list for PBXProject "Simple Back Trainer" */;
-			compatibilityVersion = "Xcode 8.0";
+			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -227,13 +274,56 @@
 				753A55C81BB073E900254F27 /* Main.storyboard in Resources */,
 				753A55CD1BB073E900254F27 /* LaunchScreen.xib in Resources */,
 				1BCF6A0420C9905500E310DF /* de.lproj in Resources */,
+				1BCF6A2420C9B40200E310DF /* TorsoBackView.xib in Resources */,
 				1BCF6A0520C9905500E310DF /* es.lproj in Resources */,
 				1BCF6A0620C9905500E310DF /* en.lproj in Resources */,
+				1BCF6A2920C9B40200E310DF /* TorsoFrontView.xib in Resources */,
 				753A55CA1BB073E900254F27 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		04D8C592CCD2EF294619C052 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Simple Back Trainer/Pods-Simple Back Trainer-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AMPopTip/AMPopTip.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AMPopTip.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Simple Back Trainer/Pods-Simple Back Trainer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C24743F90DA16F926EAC6C95 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Simple Back Trainer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		753A55B91BB073E900254F27 /* Sources */ = {
@@ -242,10 +332,15 @@
 			files = (
 				14A7486720C3C305002CB7EA /* SettingsController.swift in Sources */,
 				1BCF6A0820C997C100E310DF /* CollectionHeaderView.swift in Sources */,
+				1BCF6A2720C9B40200E310DF /* TorsoFrontView.swift in Sources */,
 				753A55E51BB0755100254F27 /* BaseViewController.swift in Sources */,
 				14A7487A20C3E95A002CB7EA /* AnatomyController.swift in Sources */,
 				C6EEF9F81CB7E4E000A3DC6D /* MainMenu.swift in Sources */,
+				1BCF6A1D20C9B3BB00E310DF /* AnatomyViewController.swift in Sources */,
+				1BCF6A2620C9B40200E310DF /* TorsoBasicView.swift in Sources */,
+				1BCF6A2820C9B40200E310DF /* TorsoBackView.swift in Sources */,
 				753A55E31BB0753B00254F27 /* SlideMenuViewController.swift in Sources */,
+				1BCF6A2520C9B40200E310DF /* Torso.swift in Sources */,
 				14A7487620C3E03A002CB7EA /* MobilisationsController.swift in Sources */,
 				14A7487C20C3E977002CB7EA /* TrainingPlansController.swift in Sources */,
 				1BC4368320BC8A0D00968F44 /* TabBarController.swift in Sources */,
@@ -335,10 +430,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 			};
@@ -383,7 +479,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
@@ -393,11 +489,15 @@
 		};
 		753A55DD1BB073E900254F27 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 97E52B6DC9D3DE58464C925E /* Pods-Simple Back Trainer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = P2EQM7YAFH;
 				INFOPLIST_FILE = "Simple Back Trainer/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = ch.vormbrock.simplebacktrainer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
@@ -408,14 +508,19 @@
 		};
 		753A55DE1BB073E900254F27 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6661853E5EC2C1DF3EB34716 /* Pods-Simple Back Trainer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = P2EQM7YAFH;
 				INFOPLIST_FILE = "Simple Back Trainer/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = ch.vormbrock.simplebacktrainer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

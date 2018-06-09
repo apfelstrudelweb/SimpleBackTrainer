@@ -1,0 +1,20 @@
+PODS:
+  - AMPopTip (3.2.1)
+  - SnapKit (4.0.0)
+
+DEPENDENCIES:
+  - AMPopTip
+  - SnapKit (~> 4.0)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - AMPopTip
+    - SnapKit
+
+SPEC CHECKSUMS:
+  AMPopTip: 31251008f2c00cbc0a3d2b18520f277c5b5ab4da
+  SnapKit: a42d492c16e80209130a3379f73596c3454b7694
+
+PODFILE CHECKSUM: 2c1ca39a6535fd2e2e3c53b3f5721a6bf00aff50
+
+COCOAPODS: 1.5.0
