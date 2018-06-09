@@ -669,10 +669,11 @@
                                     </label>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bay-tn-lnh">
                                         <rect key="frame" x="116" y="11" width="51" height="31"/>
-                                        <color key="onTintColor" red="0.1529663205" green="0.40549850459999998" blue="0.73860585690000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="onTintColor" red="0.14314690232276917" green="0.54835045337677002" blue="0.99667400121688843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </switch>
                                     <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="3" minimumValue="1" maximumValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="8oe-QD-0RA">
                                         <rect key="frame" x="239" y="12" width="94" height="29"/>
+                                        <color key="tintColor" red="0.14314690232276917" green="0.54835045337677002" blue="0.99667400121688843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </stepper>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="beidseitig" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FsH-xQ-E3X">
                                         <rect key="frame" x="216" y="16" width="83" height="21"/>
@@ -683,7 +684,7 @@
                                     </label>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zds-hk-gTq">
                                         <rect key="frame" x="323" y="12" width="51" height="31"/>
-                                        <color key="onTintColor" red="0.1529663205" green="0.40549850459999998" blue="0.73860585690000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="onTintColor" red="0.14314690232276917" green="0.54835045337677002" blue="0.99667400121688843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <variation key="heightClass=regular-widthClass=compact" hidden="YES"/>
                                     </switch>
                                 </subviews>
@@ -787,7 +788,7 @@
                             </button>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yvq-pw-eMX">
                                 <rect key="frame" x="314.66666666666669" y="192" width="35" height="35"/>
-                                <color key="backgroundColor" red="0.1529663205" green="0.40549850459999998" blue="0.73860585690000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.14314690232276917" green="0.54835045337677002" blue="0.99667400121688843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="8Mw-vd-ypf">
                                         <variation key="heightClass=regular-widthClass=regular" constant="45"/>
@@ -944,7 +945,7 @@
                         <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="8AH-df-uSn">
                             <rect key="frame" x="103" y="7" width="169" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" red="0.1529663205" green="0.40549850459999998" blue="0.73860585690000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" red="0.14314690232276917" green="0.54835045337677002" blue="0.99667400121688843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <segments>
                                 <segment title="Rückseite"/>
                                 <segment title="Vorderseite"/>
