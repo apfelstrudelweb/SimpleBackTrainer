@@ -10,9 +10,9 @@ import UIKit
 import SnapKit
 
 protocol TorsoFrontViewDelegate: class {
-    func updateButton(index: Int, sender: TorsoFrontView)
-    func resetButton(sender: TorsoFrontView)
-    func redirect(sender: TorsoFrontView)
+    func updateFrontButton(index: Int, sender: TorsoFrontView)
+    func resetFrontButton(sender: TorsoFrontView)
+    func redirectFront(sender: TorsoFrontView)
 }
 
 @IBDesignable
@@ -22,7 +22,7 @@ class TorsoFrontView: TorsoBasicView, UIScrollViewDelegate {
     
     var contentView:UIView?
     @IBInspectable var nibName:String?
-
+    
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var containerView: UIView!
@@ -45,7 +45,7 @@ class TorsoFrontView: TorsoBasicView, UIScrollViewDelegate {
         view.snp.makeConstraints { (make) -> Void in
             make.edges.equalTo(self).inset(UIEdgeInsetsMake(0, 0, 0, 0))
         }
-
+        
         setAlpha(collection: imageViewCollection, alpha: 0)
         animationSetup(resetViews: true)
         
@@ -54,7 +54,7 @@ class TorsoFrontView: TorsoBasicView, UIScrollViewDelegate {
         basicImageView.addGestureRecognizer(tapGestureRecognizer)
         
         let labels = labelCollection.sorted { $0.tag < $1.tag }
-
+        
         for (index, label) in labels.enumerated() {
             label.alpha = 0
             label.backgroundColor = frontView.dict[index]?.color
@@ -83,7 +83,7 @@ class TorsoFrontView: TorsoBasicView, UIScrollViewDelegate {
         }
     }
     
- 
+    
     public func stepperChanged(value: Float) {
         timeInterval = 6.0 - value
         animationSetup(resetViews: true)
@@ -95,7 +95,7 @@ class TorsoFrontView: TorsoBasicView, UIScrollViewDelegate {
         
         if resetViews {
             setAlpha(collection: imageViewCollection, alpha: 0)
-            self.delegate?.resetButton(sender: self)
+            self.delegate?.resetFrontButton(sender: self)
         }
         
         timer.invalidate()
@@ -106,20 +106,20 @@ class TorsoFrontView: TorsoBasicView, UIScrollViewDelegate {
     public func resetZoomFactor() {
         scrollView.zoomScale = 1
     }
-
+    
     @objc func updateView() {
         
         let imageViews = imageViewCollection.sorted { $0.tag < $1.tag }
-
+        
         let numImageViews = imageViews.count
         counter = counter % numImageViews
-
+        
         for index in 0...numImageViews-1 {
-
+            
             if (counter == index) {
                 UIView.animate(withDuration: TimeInterval(0.5*timeInterval), animations: {
                     imageViews[index].alpha = 1
-                    self.delegate?.updateButton(index: index, sender: self)
+                    self.delegate?.updateFrontButton(index: index, sender: self)
                 }, completion: { (finished: Bool) in
                 })
                 UIView.animate(withDuration: TimeInterval(timeInterval), animations: {
@@ -146,7 +146,7 @@ class TorsoFrontView: TorsoBasicView, UIScrollViewDelegate {
             if torso.tapArea.contains(relativePoint) {
                 tappedMuscleGroupName = torso.muscleName
                 tappedMuscleGroupColor = torso.color
-                self.delegate?.redirect(sender: self)
+                self.delegate?.redirectFront(sender: self)
             }
         }
     }
@@ -163,4 +163,3 @@ class TorsoFrontView: TorsoBasicView, UIScrollViewDelegate {
     }
     
 }
-

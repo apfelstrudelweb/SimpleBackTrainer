@@ -1,6 +1,6 @@
 //
 //  MasterViewController.swift
-//  
+//
 //
 //  Created by Ulrich Vormbrock on 12.03.18.
 //
@@ -18,14 +18,14 @@ enum DisplayMode {
 }
 
 class AnatomyViewController: UIViewController {
-
-
+    
+    
     @IBOutlet weak var infoButton: UIButton!
     @IBOutlet weak var torsoBackView: TorsoBackView!
     @IBOutlet weak var torsoFrontView: TorsoFrontView!
     @IBOutlet weak var backViewButton: UIButton!
     @IBOutlet weak var frontViewButton: UIButton!
-  
+    
     @IBOutlet weak var torsoBackViewLarge: TorsoBackView!
     @IBOutlet weak var torsoFrontViewLarge: TorsoFrontView!
     
@@ -40,7 +40,7 @@ class AnatomyViewController: UIViewController {
     
     
     @IBOutlet weak var controlView: UIView!
-
+    
     @IBOutlet weak var animationTopSpace: NSLayoutConstraint!
     @IBOutlet weak var buttonHeight: NSLayoutConstraint!
     @IBOutlet weak var largeButtonHeight: NSLayoutConstraint!
@@ -49,12 +49,12 @@ class AnatomyViewController: UIViewController {
     
     var displayMode: DisplayMode = .regularBack
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //navigationController?.navigationBar.tintColor = .white
-
+        navigationController?.navigationBar.tintColor = .white
+        
         handleDeviceOrientation()
         
         frontViewButton.layer.cornerRadius = 10
@@ -77,15 +77,16 @@ class AnatomyViewController: UIViewController {
         popTip.offset = 2
         popTip.bubbleOffset = 0
         popTip.edgeInsets = UIEdgeInsetsMake(0, 10, 0, 10)
-
+        
     }
-
+    
     @IBAction func infoButtonTouched(_ sender: UIButton) {
         popTip.bubbleColor = infoButton.backgroundColor!
         popTip.show(text: "Tipp:\nSie können in das Bild hineinzoomen, indem Sie es mit zwei Fingern 'auseinanderziehen'. Wenn Sie weit genug hineinzoomen, erscheinen außerdem die Bezeichnungen zu den einzelnen Muskelgruppen.", direction: .left, maxWidth: 0.7*torsoFrontView.frame.size.width, in: self.view, from: sender.frame, duration: 6)
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        
         super.viewWillTransition(to: size, with: coordinator)
         popTip.hide()
         handleDeviceOrientation()
@@ -94,22 +95,22 @@ class AnatomyViewController: UIViewController {
     @IBAction func switchAnimationChanged(_ sender: UISwitch) {
         
         weak var weakself = self
-
+        
         DispatchQueue.global().async {
             DispatchQueue.main.async(execute: {
                 weakself?.buttonHeight.constant = sender.isOn ? 44 : 0
                 weakself?.largeButtonHeight.constant = sender.isOn ? 50 : 0
-
+                
                 weakself?.torsoBackView.switchChanged(animationActive: sender.isOn)
                 weakself?.torsoFrontView.switchChanged(animationActive: sender.isOn)
-
+                
                 weakself?.torsoBackViewLarge.switchChanged(animationActive: sender.isOn)
                 weakself?.torsoFrontViewLarge.switchChanged(animationActive: sender.isOn)
             })
         }
     }
     
-
+    
     
     @IBAction func switchBothSidesChanged(_ sender: UISwitch) {
         
@@ -136,8 +137,8 @@ class AnatomyViewController: UIViewController {
     }
     
     @IBAction func switchBodySideControlTouched(_ sender: UISegmentedControl) {
-
- 
+        
+        
         if sender.selectedSegmentIndex == 0 {
             // back side
             if displayMode == .regularFront {
@@ -161,7 +162,7 @@ class AnatomyViewController: UIViewController {
         
         let isIPadPortrait = UIDevice.current.orientation.isPortrait && UI_USER_INTERFACE_IDIOM() == .pad
         let isIPadLandscape = UIDevice.current.orientation.isLandscape && UI_USER_INTERFACE_IDIOM() == .pad
-
+        
         if UIDevice.current.orientation.isLandscape {
             displayMode = .regularTwo
         } else if isIPadPortrait {
@@ -174,13 +175,12 @@ class AnatomyViewController: UIViewController {
         } else {
             // iPhone in Portrait
             displayMode = switchBodySideControl.selectedSegmentIndex == 0 ? .regularBack : .regularFront
-            //displayMode = .regularFront
         }
         
         let h = self.view.frame.size.height
         let w = self.view.frame.size.width
         let screenHeight = h > w ? h : w
-
+        
         if isIPadLandscape {
             animationTopSpace.constant = 0.02 * screenHeight
             controlView.isHidden = true
@@ -254,33 +254,33 @@ class AnatomyViewController: UIViewController {
             torsoFrontViewLarge.animationSetup(resetViews: true)
             torsoBackViewLarge.animationSetup(resetViews: true)
         }
-
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showMuscleGroupSegue" {
+//        if segue.identifier == "showMuscleGroupSegue" {
 //            if let viewController = segue.destination as? VideoTableViewController{
-//                
+//
 //                if let button = sender as? UIButton {
 //                    viewController.title = button.titleLabel?.text
 //                    viewController.muscleGroupColor = button.backgroundColor!
 //                }
-//                
+//
 //                if let view = sender as? TorsoBasicView {
 //                    viewController.title = view.tappedMuscleGroupName
 //                    viewController.muscleGroupColor = view.tappedMuscleGroupColor
 //                }
 //            }
-        }
+//        }
     }
 }
 
 
 extension AnatomyViewController: TorsoFrontViewDelegate {
-    func updateButton(index: Int, sender: TorsoFrontView) {
+    func updateFrontButton(index: Int, sender: TorsoFrontView) {
         
         let frontViewItem = FrontView().dict[index]
-
+        
         frontViewButton.backgroundColor = frontViewItem?.color
         frontViewButton.setTitle(frontViewItem?.muscleName, for: .normal)
         
@@ -288,34 +288,35 @@ extension AnatomyViewController: TorsoFrontViewDelegate {
         frontViewButtonLarge.setTitle(frontViewButton.titleLabel?.text, for: .normal)
     }
     
-    func resetButton(sender: TorsoFrontView) {
+    func resetFrontButton(sender: TorsoFrontView) {
         frontViewButton.backgroundColor = Color.Button.inactive
         frontViewButtonLarge.backgroundColor = frontViewButton.backgroundColor
     }
     
-    func redirect(sender: TorsoFrontView) {
+    func redirectFront(sender: TorsoFrontView) {
         self.performSegue(withIdentifier: "showMuscleGroupSegue", sender: sender)
     }
 }
 
 extension AnatomyViewController: TorsoBackViewDelegate {
-//    func updateButton(index: Int, sender: TorsoBackView) {
-//        
-//        let backViewItem = BackView().dict[index]
-//        
-//        backViewButton.backgroundColor = backViewItem?.color
-//        backViewButton.setTitle(backViewItem?.muscleName, for: .normal)
-//        
-//        backViewButtonLarge.backgroundColor = backViewButton.backgroundColor
-//        backViewButtonLarge.setTitle(backViewButton.titleLabel?.text, for: .normal)
-//    }
-//    
-//    func resetButton(sender: TorsoBackView) {
-//        backViewButton.backgroundColor = Color.Button.inactive
-//        backViewButtonLarge.backgroundColor = backViewButton.backgroundColor
-//    }
-//    
-//    func redirect(sender: TorsoBackView) {
-//        self.performSegue(withIdentifier: "showMuscleGroupSegue", sender: sender)
-//    }
+    func updateBackButton(index: Int, sender: TorsoBackView) {
+        
+        let backViewItem = BackView().dict[index]
+        
+        backViewButton.backgroundColor = backViewItem?.color
+        backViewButton.setTitle(backViewItem?.muscleName, for: .normal)
+        
+        backViewButtonLarge.backgroundColor = backViewButton.backgroundColor
+        backViewButtonLarge.setTitle(backViewButton.titleLabel?.text, for: .normal)
+    }
+    
+    func resetBackButton(sender: TorsoBackView) {
+        backViewButton.backgroundColor = Color.Button.inactive
+        backViewButtonLarge.backgroundColor = backViewButton.backgroundColor
+    }
+    
+    func redirectBack(sender: TorsoBackView) {
+        self.performSegue(withIdentifier: "showMuscleGroupSegue", sender: sender)
+    }
 }
+

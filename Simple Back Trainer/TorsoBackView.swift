@@ -1,6 +1,6 @@
 //
 //  TorsoBackView.swift
-//  
+//
 //
 //  Created by Ulrich Vormbrock on 12.03.18.
 //
@@ -9,18 +9,18 @@ import UIKit
 import SnapKit
 
 protocol TorsoBackViewDelegate: class {
-//    func updateButton(index: Int, sender: TorsoBackView)
-//    func resetButton(sender: TorsoBackView)
-//    func redirect(sender: TorsoBackView)
+    func updateBackButton(index: Int, sender: TorsoBackView)
+    func resetBackButton(sender: TorsoBackView)
+    func redirectBack(sender: TorsoBackView)
 }
 
 @IBDesignable
 class TorsoBackView: TorsoBasicView, UIScrollViewDelegate {
     
-    weak var delegate: TorsoBackViewDelegate?
+    weak var delegate:TorsoBackViewDelegate?
     
     @IBInspectable var nibName:String?
-
+    
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet public weak var basicImageView: UIImageView!
@@ -29,7 +29,7 @@ class TorsoBackView: TorsoBasicView, UIScrollViewDelegate {
     
     var backView: BackView = BackView()
     
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         xibSetup()
@@ -59,14 +59,6 @@ class TorsoBackView: TorsoBasicView, UIScrollViewDelegate {
             label.text = backView.dict[index]?.muscleName
             label.layer.cornerRadius = 5
         }
-        
-//        let imageViews = imageViewCollection.sorted { $0.tag < $1.tag }
-//        
-//        let numImageViews = imageViews.count
-//        
-//        for index in 0...numImageViews-1 {
-//            imageViews[index].layer.shouldRasterize = true
-//        }
     }
     
     func loadViewFromNib() -> UIView? {
@@ -101,9 +93,9 @@ class TorsoBackView: TorsoBasicView, UIScrollViewDelegate {
         
         if resetViews {
             setAlpha(collection: imageViewCollection, alpha: 0)
-            //self.delegate?.resetButton(sender: self)
+            self.delegate?.resetBackButton(sender: self)
         }
-
+        
         timer.invalidate()
         counter = 0
         timer = Timer.scheduledTimer(timeInterval: TimeInterval(timeInterval), target: self, selector: (#selector(TorsoBackView.updateView)), userInfo: nil, repeats: true)
@@ -114,7 +106,7 @@ class TorsoBackView: TorsoBasicView, UIScrollViewDelegate {
     }
     
     @objc func updateView() {
-
+        
         let imageViews = imageViewCollection.sorted { $0.tag < $1.tag }
         
         let numImageViews = imageViews.count
@@ -125,7 +117,7 @@ class TorsoBackView: TorsoBasicView, UIScrollViewDelegate {
             if (counter == index) {
                 UIView.animate(withDuration: TimeInterval(0.5*timeInterval), animations: {
                     imageViews[index].alpha = 1
-                    //self.delegate?.updateButton(index: index, sender: self)
+                    self.delegate?.updateBackButton(index: index, sender: self)
                 }, completion: { (finished: Bool) in
                 })
                 UIView.animate(withDuration: TimeInterval(timeInterval), animations: {
@@ -152,7 +144,7 @@ class TorsoBackView: TorsoBasicView, UIScrollViewDelegate {
             if torso.tapArea.contains(relativePoint) {
                 tappedMuscleGroupName = torso.muscleName
                 tappedMuscleGroupColor = torso.color
-                //self.delegate?.redirect(sender: self)
+                self.delegate?.redirectBack(sender: self)
             }
         }
     }
