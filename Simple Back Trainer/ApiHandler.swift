@@ -1,8 +1,8 @@
 //
 //  ApiHandler.swift
 //
-//  Created by Rakesh Kumar on 03/04/18.
-//  Copyright © 2018 Rakesh Kumar. All rights reserved.
+//  Created by Ulrich Vormbrock on 03/04/18.
+//  Copyright © 2018 Ulrich Vormbrock. All rights reserved.
 //
 
 import UIKit

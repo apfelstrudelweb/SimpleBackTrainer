@@ -2,7 +2,7 @@
 //  GroupResponse.swift
 //  Trainingsplan
 //
-//  Created by Rakesh Kumar on 25/04/18.
+//  Created by Ulrich Vormbrock on 25/04/18.
 //  Copyright © 2018 Ulrich Vormbrock. All rights reserved.
 //
 

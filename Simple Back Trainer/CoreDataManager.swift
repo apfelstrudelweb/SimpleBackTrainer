@@ -2,7 +2,7 @@
 //  CoreDataManager.swift
 //  
 //
-//  Created by Rakesh Kumar on 16/04/18.
+//  Created by Ulrich Vormbrock on 16/04/18.
 //
 
 import UIKit
