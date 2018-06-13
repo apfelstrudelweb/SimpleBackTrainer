@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PremiumController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
+class PremiumViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var premiumButton: UIButton!
@@ -21,7 +21,7 @@ class PremiumController: BaseViewController, UITableViewDelegate, UITableViewDat
         ["premiumPlan", NSLocalizedString("PREMIUM_PLAN_TITLE", comment: ""), NSLocalizedString("PREMIUM_PLAN_DESCR", comment: "")],
         ["premiumVideo", NSLocalizedString("PREMIUM_VIDEO_TITLE", comment: ""), NSLocalizedString("PREMIUM_VIDEO_DESCR", comment: "")],
         ["premiumMobilisation", NSLocalizedString("PREMIUM_MOBIL_TITLE", comment: ""), NSLocalizedString("PREMIUM_MOBIL_DESCR", comment: "")]];
-    let buttonTitle = NSLocalizedString("PREMIUM_BUTTON_TEXT", comment: "") + " $ 4,99"
+    let buttonTitle = NSLocalizedString("PREMIUM_BUTTON_TEXT", comment: "") + " $ 4,99" // TODO: get price from Store
     
     override func viewDidLoad() {
         super.viewDidLoad()

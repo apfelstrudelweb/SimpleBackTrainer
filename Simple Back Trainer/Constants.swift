@@ -12,6 +12,7 @@ let adsBottomSpace:CGFloat = 44.0
 
 struct Color {
     
+    // TODO: get from JSON and CoreData
     struct Torso {
         static let yellow = UIColor(red:0.99, green:0.80, blue:0.27, alpha:1.0)
         static let orange = UIColor(red:0.89, green:0.38, blue:0.16, alpha:1.0)

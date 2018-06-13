@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		14A7486320C3C2D1002CB7EA /* PlanController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A7486220C3C2D1002CB7EA /* PlanController.swift */; };
-		14A7486520C3C2EC002CB7EA /* PremiumController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A7486420C3C2EC002CB7EA /* PremiumController.swift */; };
+		14A7486520C3C2EC002CB7EA /* PremiumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A7486420C3C2EC002CB7EA /* PremiumViewController.swift */; };
 		14A7486720C3C305002CB7EA /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A7486620C3C305002CB7EA /* SettingsController.swift */; };
 		14A7486920C3C344002CB7EA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A7486820C3C344002CB7EA /* Constants.swift */; };
 		14A7486C20C3DF93002CB7EA /* ActivitiesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A7486B20C3DF93002CB7EA /* ActivitiesController.swift */; };
@@ -17,7 +17,6 @@
 		14A7487220C3DFF0002CB7EA /* ContactController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A7487120C3DFF0002CB7EA /* ContactController.swift */; };
 		14A7487620C3E03A002CB7EA /* MobilisationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A7487520C3E03A002CB7EA /* MobilisationsController.swift */; };
 		14A7487820C3E058002CB7EA /* BackTherapyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A7487720C3E058002CB7EA /* BackTherapyController.swift */; };
-		14A7487A20C3E95A002CB7EA /* AnatomyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A7487920C3E95A002CB7EA /* AnatomyController.swift */; };
 		14A7487C20C3E977002CB7EA /* TrainingPlansController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A7487B20C3E977002CB7EA /* TrainingPlansController.swift */; };
 		1BC4368320BC8A0D00968F44 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC4368220BC8A0C00968F44 /* TabBarController.swift */; };
 		1BCF69FC20C7307200E310DF /* PremiumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCF69FB20C7307200E310DF /* PremiumTableViewCell.swift */; };
@@ -45,7 +44,7 @@
 
 /* Begin PBXFileReference section */
 		14A7486220C3C2D1002CB7EA /* PlanController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanController.swift; sourceTree = "<group>"; };
-		14A7486420C3C2EC002CB7EA /* PremiumController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumController.swift; sourceTree = "<group>"; };
+		14A7486420C3C2EC002CB7EA /* PremiumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumViewController.swift; sourceTree = "<group>"; };
 		14A7486620C3C305002CB7EA /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		14A7486820C3C344002CB7EA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		14A7486B20C3DF93002CB7EA /* ActivitiesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesController.swift; sourceTree = "<group>"; };
@@ -54,7 +53,6 @@
 		14A7487120C3DFF0002CB7EA /* ContactController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactController.swift; sourceTree = "<group>"; };
 		14A7487520C3E03A002CB7EA /* MobilisationsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobilisationsController.swift; sourceTree = "<group>"; };
 		14A7487720C3E058002CB7EA /* BackTherapyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackTherapyController.swift; sourceTree = "<group>"; };
-		14A7487920C3E95A002CB7EA /* AnatomyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnatomyController.swift; sourceTree = "<group>"; };
 		14A7487B20C3E977002CB7EA /* TrainingPlansController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingPlansController.swift; sourceTree = "<group>"; };
 		16EE4B69557784C57DD7EB11 /* Pods_Simple_Back_Trainer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Simple_Back_Trainer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BC4368220BC8A0C00968F44 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
@@ -115,7 +113,6 @@
 				1BC4368220BC8A0C00968F44 /* TabBarController.swift */,
 				C6EEF9F71CB7E4E000A3DC6D /* MainMenu.swift */,
 				14A7486220C3C2D1002CB7EA /* PlanController.swift */,
-				14A7486420C3C2EC002CB7EA /* PremiumController.swift */,
 				14A7486620C3C305002CB7EA /* SettingsController.swift */,
 			);
 			name = TabBarControllers;
@@ -130,17 +127,90 @@
 				14A7487120C3DFF0002CB7EA /* ContactController.swift */,
 				14A7487520C3E03A002CB7EA /* MobilisationsController.swift */,
 				14A7487720C3E058002CB7EA /* BackTherapyController.swift */,
-				14A7487920C3E95A002CB7EA /* AnatomyController.swift */,
-				1BCF6A1C20C9B3BB00E310DF /* AnatomyViewController.swift */,
 				14A7487B20C3E977002CB7EA /* TrainingPlansController.swift */,
 			);
 			name = MenuControllers;
+			sourceTree = "<group>";
+		};
+		1BBC3A9120D11FDC00B43A61 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				14A7486820C3C344002CB7EA /* Constants.swift */,
+			);
+			name = Utils;
+			path = "Simple Back Trainer";
+			sourceTree = "<group>";
+		};
+		1BCFB6AD20D11DFF003FBF7F /* Anatomy */ = {
+			isa = PBXGroup;
+			children = (
+				1BCF6A1C20C9B3BB00E310DF /* AnatomyViewController.swift */,
+				1BCF6A1F20C9B40100E310DF /* Torso.swift */,
+				1BCF6A2220C9B40200E310DF /* TorsoBackView.swift */,
+				1BCF6A1E20C9B40100E310DF /* TorsoBackView.xib */,
+				1BCF6A2020C9B40100E310DF /* TorsoBasicView.swift */,
+				1BCF6A2120C9B40200E310DF /* TorsoFrontView.swift */,
+				1BCF6A2320C9B40200E310DF /* TorsoFrontView.xib */,
+			);
+			name = Anatomy;
+			sourceTree = "<group>";
+		};
+		1BCFB6AE20D11E26003FBF7F /* Premium */ = {
+			isa = PBXGroup;
+			children = (
+				14A7486420C3C2EC002CB7EA /* PremiumViewController.swift */,
+				1BCF69FB20C7307200E310DF /* PremiumTableViewCell.swift */,
+			);
+			name = Premium;
+			sourceTree = "<group>";
+		};
+		1BCFB6AF20D11E66003FBF7F /* Main Menu */ = {
+			isa = PBXGroup;
+			children = (
+				1BCF8461203206B000F55F64 /* ItemsCollectionViewCell.swift */,
+				1BCF6A0720C997C100E310DF /* CollectionHeaderView.swift */,
+				753A55E41BB0755100254F27 /* BaseViewController.swift */,
+				753A55E21BB0753B00254F27 /* SlideMenuViewController.swift */,
+			);
+			name = "Main Menu";
+			sourceTree = "<group>";
+		};
+		1BCFB6B020D11F30003FBF7F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1BDDDE7D20D11F8F009EE392 /* Language */,
+				1BDDDE7C20D11F74009EE392 /* Gui */,
+			);
+			name = Resources;
+			path = "Simple Back Trainer";
+			sourceTree = "<group>";
+		};
+		1BDDDE7C20D11F74009EE392 /* Gui */ = {
+			isa = PBXGroup;
+			children = (
+				753A55C61BB073E900254F27 /* Main.storyboard */,
+				753A55C91BB073E900254F27 /* Images.xcassets */,
+				753A55CB1BB073E900254F27 /* LaunchScreen.xib */,
+			);
+			name = Gui;
+			sourceTree = "<group>";
+		};
+		1BDDDE7D20D11F8F009EE392 /* Language */ = {
+			isa = PBXGroup;
+			children = (
+				1BCF6A0120C9905500E310DF /* de.lproj */,
+				1BCF6A0320C9905500E310DF /* en.lproj */,
+				1BCF6A0220C9905500E310DF /* es.lproj */,
+			);
+			name = Language;
 			sourceTree = "<group>";
 		};
 		753A55B41BB073E900254F27 = {
 			isa = PBXGroup;
 			children = (
 				753A55BF1BB073E900254F27 /* Simple Back Trainer */,
+				1BBC3A9120D11FDC00B43A61 /* Utils */,
+				1BCFB6B020D11F30003FBF7F /* Resources */,
 				753A55BE1BB073E900254F27 /* Products */,
 				800D1E0BE3896ED046A4BB0A /* Pods */,
 				B9F5C41866EBEDE6401E167B /* Frameworks */,
@@ -158,27 +228,12 @@
 		753A55BF1BB073E900254F27 /* Simple Back Trainer */ = {
 			isa = PBXGroup;
 			children = (
-				14A7486820C3C344002CB7EA /* Constants.swift */,
-				14A7485E20C3C277002CB7EA /* Controller */,
 				753A55C21BB073E900254F27 /* AppDelegate.swift */,
-				753A55E41BB0755100254F27 /* BaseViewController.swift */,
-				753A55E21BB0753B00254F27 /* SlideMenuViewController.swift */,
-				1BCF8461203206B000F55F64 /* ItemsCollectionViewCell.swift */,
-				1BCF6A0720C997C100E310DF /* CollectionHeaderView.swift */,
-				753A55C61BB073E900254F27 /* Main.storyboard */,
-				753A55C91BB073E900254F27 /* Images.xcassets */,
-				753A55CB1BB073E900254F27 /* LaunchScreen.xib */,
+				1BCFB6AF20D11E66003FBF7F /* Main Menu */,
+				1BCFB6AE20D11E26003FBF7F /* Premium */,
+				1BCFB6AD20D11DFF003FBF7F /* Anatomy */,
+				14A7485E20C3C277002CB7EA /* Controller */,
 				753A55C01BB073E900254F27 /* Supporting Files */,
-				1BCF69FB20C7307200E310DF /* PremiumTableViewCell.swift */,
-				1BCF6A1F20C9B40100E310DF /* Torso.swift */,
-				1BCF6A2220C9B40200E310DF /* TorsoBackView.swift */,
-				1BCF6A1E20C9B40100E310DF /* TorsoBackView.xib */,
-				1BCF6A2020C9B40100E310DF /* TorsoBasicView.swift */,
-				1BCF6A2120C9B40200E310DF /* TorsoFrontView.swift */,
-				1BCF6A2320C9B40200E310DF /* TorsoFrontView.xib */,
-				1BCF6A0120C9905500E310DF /* de.lproj */,
-				1BCF6A0320C9905500E310DF /* en.lproj */,
-				1BCF6A0220C9905500E310DF /* es.lproj */,
 			);
 			path = "Simple Back Trainer";
 			sourceTree = "<group>";
@@ -293,11 +348,15 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Simple Back Trainer/Pods-Simple Back Trainer-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AMPopTip/AMPopTip.framework",
+				"${BUILT_PRODUCTS_DIR}/DragDropiOS/DragDropiOS.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AMPopTip.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DragDropiOS.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -334,7 +393,6 @@
 				1BCF6A0820C997C100E310DF /* CollectionHeaderView.swift in Sources */,
 				1BCF6A2720C9B40200E310DF /* TorsoFrontView.swift in Sources */,
 				753A55E51BB0755100254F27 /* BaseViewController.swift in Sources */,
-				14A7487A20C3E95A002CB7EA /* AnatomyController.swift in Sources */,
 				C6EEF9F81CB7E4E000A3DC6D /* MainMenu.swift in Sources */,
 				1BCF6A1D20C9B3BB00E310DF /* AnatomyViewController.swift in Sources */,
 				1BCF6A2620C9B40200E310DF /* TorsoBasicView.swift in Sources */,
@@ -348,7 +406,7 @@
 				753A55C31BB073E900254F27 /* AppDelegate.swift in Sources */,
 				14A7487820C3E058002CB7EA /* BackTherapyController.swift in Sources */,
 				1BCF69FC20C7307200E310DF /* PremiumTableViewCell.swift in Sources */,
-				14A7486520C3C2EC002CB7EA /* PremiumController.swift in Sources */,
+				14A7486520C3C2EC002CB7EA /* PremiumViewController.swift in Sources */,
 				14A7486E20C3DFAA002CB7EA /* SportsController.swift in Sources */,
 				14A7487020C3DFC5002CB7EA /* ExercisesController.swift in Sources */,
 				14A7487220C3DFF0002CB7EA /* ContactController.swift in Sources */,
