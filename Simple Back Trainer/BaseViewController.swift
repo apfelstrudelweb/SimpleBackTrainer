@@ -8,18 +8,18 @@
 
 import UIKit
 
+
 class BaseViewController: UIViewController {
     
     var menuWidth : CGFloat!
     var menuVC : SlideMenuViewController?
     var hamburgerButton:UIButton?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
     }
     
+
     override func viewDidLayoutSubviews() {
         
         if (self.menuVC == nil) {

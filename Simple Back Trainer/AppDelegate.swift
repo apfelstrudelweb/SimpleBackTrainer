@@ -1,24 +1,31 @@
 //
 //  AppDelegate.swift
-//  AKSwiftSlideMenu
+//  Trainingsplan
 //
-//  Created by Ashish on 21/09/15.
-//  Copyright (c) 2015 Kode. All rights reserved.
+//  Created by Ulrich Vormbrock on 06.04.18.
+//  Copyright © 2018 Ulrich Vormbrock. All rights reserved.
 //
 
 import UIKit
+import CoreData
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
+    var db = CoreDataManager.sharedInstance
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
         UINavigationBar.appearance().barStyle = .black
-
+        
+        //clearDB()
+//        let navigationController = window?.rootViewController as! UINavigationController
+//        let firstVC = navigationController.viewControllers[0] as! BaseViewController
+//        firstVC.context = db.managedObjectContext
+        db.managedObjectContext.automaticallyMergesChangesFromParent = true
+        let _ =  db.insertTrainingsPlan(id: 1, workouts: [])
         return true
     }
 

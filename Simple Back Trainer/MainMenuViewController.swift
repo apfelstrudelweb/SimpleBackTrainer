@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import CoreData
+import Kingfisher
 
 
-
-class MainMenu: BaseViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+class MainMenuViewController: BaseViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
  
     @IBOutlet weak var collectionView: UICollectionView!
@@ -18,11 +19,14 @@ class MainMenu: BaseViewController, UICollectionViewDataSource, UICollectionView
     var cellWidth : CGFloat!
     var flowLayout : UICollectionViewFlowLayout!
     
+    var trainingModel = TrainingModel()
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         addSlideMenuButton()
+        
+        self.trainingModel.delegate = self
 
         // for ADs
         self.collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: adsBottomSpace, right: 0)
@@ -32,6 +36,8 @@ class MainMenu: BaseViewController, UICollectionViewDataSource, UICollectionView
     override func viewWillAppear(_ animated: Bool) {
         self.title = "Home"
         self.navigationController?.tabBarItem.title = "Home"
+        
+        self.trainingModel.getWorkouts()
     }
 
     
@@ -138,5 +144,19 @@ class MainMenu: BaseViewController, UICollectionViewDataSource, UICollectionView
         
         return header
     }
+}
 
+extension MainMenuViewController:TrainingModelDelegate {
+    func didRetrieveWorkouts(groups: [Group]) {
+    CoreDataManager.sharedInstance.managedObjectContext.automaticallyMergesChangesFromParent = true
+        CoreDataManager.sharedInstance.updateMusclegroup(serverGroupsData: groups)
+
+    }
+    
+    func showErrorMessage(message: String) {
+        let alert = UIAlertController(title: "", message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(action)
+        self.present(alert, animated: true, completion: nil)
+    }
 }
