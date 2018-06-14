@@ -26,6 +26,7 @@ extension Workout {
     @NSManaged public var name: String?
     @NSManaged public var position: Int16
     @NSManaged public var icon: NSData?
+    @NSManaged public var videoUrl: String?
     @NSManaged public var musclegroupId: Musclegroup?
     @NSManaged public var traininsgplanId: Plan?
 

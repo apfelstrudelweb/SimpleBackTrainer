@@ -88,19 +88,31 @@ class VideoTableViewController: UITableViewController, NSFetchedResultsControlle
         cell.videoLabel.text = workout.name
         
         cell.videoImageView.image = UIImage(data:workout.icon! as Data, scale:1.0)
-//        if let url = URL(string: (workout.imgName)!) {
-//            cell.videoImageView.kf.setImage(with: url)
-//        }
-        
         cell.indexPath = indexPath
         cell.delegate = self
         
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "showVideoSegue", sender: indexPath)
+    }
+    
+    
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
         popTip.hide()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showVideoSegue" {
+ 
+            if let viewController = segue.destination as? VideoPlayerViewController {
+                
+                let workout = fetchedResultsController.object(at: sender as! IndexPath)
+                viewController.videoUrl = workout.videoUrl
+            }
+        }
     }
 }
 

@@ -27,6 +27,7 @@
         <attribute name="musclegroup" attributeType="String" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
         <attribute name="position" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="videoUrl" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="musclegroupId" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Musclegroup" inverseName="workouts" inverseEntity="Musclegroup" syncable="YES"/>
         <relationship name="traininsgplanId" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Plan" inverseName="workouts" inverseEntity="Plan" syncable="YES"/>
         <fetchIndex name="byIndex">
@@ -36,6 +37,6 @@
     <elements>
         <element name="Musclegroup" positionX="-315" positionY="68" width="128" height="120"/>
         <element name="Plan" positionX="-288" positionY="234" width="128" height="73"/>
-        <element name="Workout" positionX="-63" positionY="27" width="128" height="210"/>
+        <element name="Workout" positionX="-63" positionY="27" width="128" height="225"/>
     </elements>
 </model>
