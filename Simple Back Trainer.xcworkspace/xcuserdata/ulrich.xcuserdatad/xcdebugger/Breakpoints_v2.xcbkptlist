@@ -10,23 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Simple Back Trainer/TrainingModel.swift"
-            timestampString = "550667237.414371"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
-            landmarkName = "getWorkouts()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Simple Back Trainer/TrainingModel.swift"
-            timestampString = "550667237.414462"
+            timestampString = "550683279.505514"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "49"
@@ -42,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Simple Back Trainer/MainMenuViewController.swift"
-            timestampString = "550667237.414539"
+            timestampString = "550683279.506084"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "152"
-            endingLineNumber = "152"
+            startingLineNumber = "151"
+            endingLineNumber = "151"
             landmarkName = "didRetrieveWorkouts(groups:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -57,56 +41,8 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Simple Back Trainer/TrainingModel.swift"
-            timestampString = "550667237.414601"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
-            landmarkName = "getWorkouts()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; () in closure #1 (Swift.Bool, Swift.Dictionary&lt;Swift.String, Any&gt;, Swift.Optional&lt;Foundation.Data&gt;) -&gt; () in Simple_Back_Trainer.TrainingModel.getWorkouts() -&gt; ()"
-                  moduleName = "Simple Back Trainer"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ulrich/VideoProjekt/SimpleBackTrainer/Simple%20Back%20Trainer/TrainingModel.swift"
-                  timestampString = "550609382.497182"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "28"
-                  endingLineNumber = "28"
-                  offsetFromSymbolStart = "688">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; () in closure #1 () -&gt; () in closure #1 (Swift.Bool, Swift.Dictionary&lt;Swift.String, Any&gt;, Swift.Optional&lt;Foundation.Data&gt;) -&gt; () in Simple_Back_Trainer.TrainingModel.getWorkouts() -&gt; ()"
-                  moduleName = "Simple Back Trainer"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ulrich/VideoProjekt/SimpleBackTrainer/Simple%20Back%20Trainer/TrainingModel.swift"
-                  timestampString = "550609382.500331"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "29"
-                  endingLineNumber = "29"
-                  offsetFromSymbolStart = "29">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "Simple Back Trainer/Torso.swift"
-            timestampString = "550667237.414673"
+            timestampString = "550683279.506164"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "90"
@@ -122,7 +58,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Simple Back Trainer/VideoTableViewController.swift"
-            timestampString = "550667237.41508"
+            timestampString = "550683279.506626"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "87"
@@ -170,12 +106,60 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Simple Back Trainer/CoreDataManager.swift"
-            timestampString = "550667237.415436"
+            timestampString = "550683279.5067101"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "116"
             endingLineNumber = "116"
             landmarkName = "insertWorkout(id:position:traininsgplanId:name:descr:musclegroup:imgName:isFavorite:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Simple Back Trainer/CoreDataManager.swift"
+            timestampString = "550683279.506797"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "179"
+            endingLineNumber = "179"
+            landmarkName = "updateMusclegroup(serverGroupsData:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Simple Back Trainer/HttpManager.swift"
+            timestampString = "550683279.50688"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "requestToServer(_:params:httpMethod:isZipped:receivedResponse:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Simple Back Trainer/CoreDataManager.swift"
+            timestampString = "550683279.506952"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "182"
+            endingLineNumber = "182"
+            landmarkName = "updateMusclegroup(serverGroupsData:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

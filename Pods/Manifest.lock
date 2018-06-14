@@ -1,28 +1,24 @@
 PODS:
   - AMPopTip (3.2.1)
   - DragDropiOS (0.2.3)
-  - Kingfisher (4.7.0)
   - SnapKit (4.0.0)
 
 DEPENDENCIES:
   - AMPopTip
   - DragDropiOS
-  - Kingfisher (~> 4.0)
   - SnapKit (~> 4.0)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - AMPopTip
     - DragDropiOS
-    - Kingfisher
     - SnapKit
 
 SPEC CHECKSUMS:
   AMPopTip: 31251008f2c00cbc0a3d2b18520f277c5b5ab4da
   DragDropiOS: ea8f1ff41a8c6dab4a9ce1969dc11f12c1c02997
-  Kingfisher: da6b005aa96d37698e3e4f1ccfe96a5b9bbf27d6
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
 
-PODFILE CHECKSUM: d3aab43c2a4260f61b6f0a3015d0fbf66bb39001
+PODFILE CHECKSUM: 38e3f97cd9eae676821325c6fb6e3f743a68b6c3
 
 COCOAPODS: 1.5.0

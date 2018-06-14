@@ -283,6 +283,18 @@ class CoreDataManager: NSObject {
         workout.descr = data.descr
         workout.imgName = data.image
         workout.musclegroup = group
+        
+        if let url = URL(string: (workout.imgName)!) {
+            
+            do {
+                let data:NSData = try NSData(contentsOf: url)
+                workout.icon = data
+            } catch {
+                NSLog("Error fetching file: \(String(describing: url))")
+            }
+            
+        }
+        
         do {
             try self.managedObjectContext.save()
         } catch let error {

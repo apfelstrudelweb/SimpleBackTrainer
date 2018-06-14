@@ -14,6 +14,7 @@ class HttpManager {
         var request = URLRequest(url: URL(string: API.host + urlString!)!)
         request.httpMethod = httpMethod.rawValue
         request.timeoutInterval = 20
+        request.cachePolicy = .reloadIgnoringLocalCacheData
 //        let accessToken = UserDefaultsCustom.getAccessToken()
 //        if accessToken.count > 0{
 //            request.setValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")

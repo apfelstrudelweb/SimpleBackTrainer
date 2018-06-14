@@ -7,6 +7,5 @@ target 'Simple Back Trainer' do
   pod 'SnapKit', '~> 4.0'
   pod 'AMPopTip'
   pod 'DragDropiOS'
-  pod 'Kingfisher', '~> 4.0'
 end
 

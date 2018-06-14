@@ -8,7 +8,6 @@
 
 import UIKit
 import CoreData
-import Kingfisher
 
 
 class MainMenuViewController: BaseViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
