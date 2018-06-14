@@ -27,7 +27,7 @@ class TorsoFrontView: TorsoBasicView, UIScrollViewDelegate {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var basicImageView: UIImageView!
-    @IBOutlet var imageViewCollection: [UIImageView]!
+    @IBOutlet var imageViewCollection: [MuscleGroupImageView]!
     @IBOutlet var labelCollection: [UILabel]!
     
     var frontView: FrontView = FrontView()
@@ -58,6 +58,7 @@ class TorsoFrontView: TorsoBasicView, UIScrollViewDelegate {
         
         for (index, imageView) in images.enumerated() {
             imageView.tintColor = frontView.dict[index]?.color
+            imageView.muscleGroupId = frontView.dict[index]?.index
             
             labels[index].alpha = 0
             labels[index].backgroundColor = frontView.dict[index]?.color
@@ -149,6 +150,8 @@ class TorsoFrontView: TorsoBasicView, UIScrollViewDelegate {
             if torso.tapArea.contains(relativePoint) {
                 tappedMuscleGroupName = torso.muscleName
                 tappedMuscleGroupColor = torso.color
+                muscleGroupId = torso.index
+                
                 self.delegate?.redirectFront(sender: self)
             }
         }

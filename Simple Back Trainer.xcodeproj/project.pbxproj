@@ -35,6 +35,11 @@
 		1BBC3ABA20D1909300B43A61 /* Musclegroup+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBC3AB920D1909300B43A61 /* Musclegroup+CoreDataProperties.swift */; };
 		1BBC3ABE20D1A4D000B43A61 /* String+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBC3ABC20D1A4CF00B43A61 /* String+Custom.swift */; };
 		1BBC3ABF20D1A4D000B43A61 /* UIColor+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBC3ABD20D1A4CF00B43A61 /* UIColor+Custom.swift */; };
+		1BBC3AC120D2617900B43A61 /* VideoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBC3AC020D2617900B43A61 /* VideoTableViewController.swift */; };
+		1BBC3AC420D2641E00B43A61 /* VideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBC3AC220D2641D00B43A61 /* VideoCell.swift */; };
+		1BBC3AC520D2641E00B43A61 /* VideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BBC3AC320D2641E00B43A61 /* VideoCell.xib */; };
+		1BBC3AC720D2673C00B43A61 /* MuscleGroupImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBC3AC620D2673C00B43A61 /* MuscleGroupImageView.swift */; };
+		1BBC3AC920D26B3700B43A61 /* MuscleGroupButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBC3AC820D26B3700B43A61 /* MuscleGroupButton.swift */; };
 		1BC4368320BC8A0D00968F44 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC4368220BC8A0C00968F44 /* TabBarController.swift */; };
 		1BCF69FC20C7307200E310DF /* PremiumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCF69FB20C7307200E310DF /* PremiumTableViewCell.swift */; };
 		1BCF6A0420C9905500E310DF /* de.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 1BCF6A0120C9905500E310DF /* de.lproj */; };
@@ -90,6 +95,11 @@
 		1BBC3AB920D1909300B43A61 /* Musclegroup+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Musclegroup+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		1BBC3ABC20D1A4CF00B43A61 /* String+Custom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Custom.swift"; sourceTree = "<group>"; };
 		1BBC3ABD20D1A4CF00B43A61 /* UIColor+Custom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Custom.swift"; sourceTree = "<group>"; };
+		1BBC3AC020D2617900B43A61 /* VideoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoTableViewController.swift; sourceTree = "<group>"; };
+		1BBC3AC220D2641D00B43A61 /* VideoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCell.swift; sourceTree = "<group>"; };
+		1BBC3AC320D2641E00B43A61 /* VideoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoCell.xib; sourceTree = "<group>"; };
+		1BBC3AC620D2673C00B43A61 /* MuscleGroupImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuscleGroupImageView.swift; sourceTree = "<group>"; };
+		1BBC3AC820D26B3700B43A61 /* MuscleGroupButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuscleGroupButton.swift; sourceTree = "<group>"; };
 		1BC4368220BC8A0C00968F44 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		1BCF69FB20C7307200E310DF /* PremiumTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumTableViewCell.swift; sourceTree = "<group>"; };
 		1BCF69FD20C98F2E00E310DF /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
@@ -214,6 +224,11 @@
 				1BCF6A1E20C9B40100E310DF /* TorsoBackView.xib */,
 				1BCF6A2020C9B40100E310DF /* TorsoBasicView.swift */,
 				1BCF6A2320C9B40200E310DF /* TorsoFrontView.xib */,
+				1BBC3AC020D2617900B43A61 /* VideoTableViewController.swift */,
+				1BBC3AC220D2641D00B43A61 /* VideoCell.swift */,
+				1BBC3AC320D2641E00B43A61 /* VideoCell.xib */,
+				1BBC3AC620D2673C00B43A61 /* MuscleGroupImageView.swift */,
+				1BBC3AC820D26B3700B43A61 /* MuscleGroupButton.swift */,
 			);
 			name = Anatomy;
 			sourceTree = "<group>";
@@ -395,6 +410,7 @@
 				753A55C81BB073E900254F27 /* Main.storyboard in Resources */,
 				753A55CD1BB073E900254F27 /* LaunchScreen.xib in Resources */,
 				1BCF6A0420C9905500E310DF /* de.lproj in Resources */,
+				1BBC3AC520D2641E00B43A61 /* VideoCell.xib in Resources */,
 				1BCF6A2420C9B40200E310DF /* TorsoBackView.xib in Resources */,
 				1BCF6A0520C9905500E310DF /* es.lproj in Resources */,
 				1BCF6A0620C9905500E310DF /* en.lproj in Resources */,
@@ -467,6 +483,8 @@
 				1BBC3AAA20D1227800B43A61 /* TrainingModel.swift in Sources */,
 				C6EEF9F81CB7E4E000A3DC6D /* MainMenuViewController.swift in Sources */,
 				1BBC3AA320D1222200B43A61 /* Plan+CoreDataProperties.swift in Sources */,
+				1BBC3AC420D2641E00B43A61 /* VideoCell.swift in Sources */,
+				1BBC3AC720D2673C00B43A61 /* MuscleGroupImageView.swift in Sources */,
 				1BBC3ABE20D1A4D000B43A61 /* String+Custom.swift in Sources */,
 				1BCF6A1D20C9B3BB00E310DF /* AnatomyViewController.swift in Sources */,
 				1BCF6A2620C9B40200E310DF /* TorsoBasicView.swift in Sources */,
@@ -480,6 +498,7 @@
 				1BC4368320BC8A0D00968F44 /* TabBarController.swift in Sources */,
 				14A7486920C3C344002CB7EA /* Constants.swift in Sources */,
 				753A55C31BB073E900254F27 /* AppDelegate.swift in Sources */,
+				1BBC3AC120D2617900B43A61 /* VideoTableViewController.swift in Sources */,
 				14A7487820C3E058002CB7EA /* BackTherapyController.swift in Sources */,
 				1BBC3AB720D1260D00B43A61 /* HttpManager.swift in Sources */,
 				1BCF69FC20C7307200E310DF /* PremiumTableViewCell.swift in Sources */,
@@ -490,6 +509,7 @@
 				14A7486E20C3DFAA002CB7EA /* SportsController.swift in Sources */,
 				14A7487020C3DFC5002CB7EA /* ExercisesController.swift in Sources */,
 				1BBC3A9F20D1222200B43A61 /* Musclegroup+CoreDataClass.swift in Sources */,
+				1BBC3AC920D26B3700B43A61 /* MuscleGroupButton.swift in Sources */,
 				14A7487220C3DFF0002CB7EA /* ContactController.swift in Sources */,
 				1BBC3AB120D125DB00B43A61 /* ApiHandler.swift in Sources */,
 				14A7486320C3C2D1002CB7EA /* PlanController.swift in Sources */,

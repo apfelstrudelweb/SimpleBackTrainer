@@ -23,14 +23,14 @@ class AnatomyViewController: UIViewController {
     @IBOutlet weak var infoButton: UIButton!
     @IBOutlet weak var torsoBackView: TorsoBackView!
     @IBOutlet weak var torsoFrontView: TorsoFrontView!
-    @IBOutlet weak var backViewButton: UIButton!
-    @IBOutlet weak var frontViewButton: UIButton!
+    @IBOutlet weak var backViewButton: MuscleGroupButton!
+    @IBOutlet weak var frontViewButton: MuscleGroupButton!
     
     @IBOutlet weak var torsoBackViewLarge: TorsoBackView!
     @IBOutlet weak var torsoFrontViewLarge: TorsoFrontView!
     
-    @IBOutlet weak var frontViewButtonLarge: UIButton!
-    @IBOutlet weak var backViewButtonLarge: UIButton!
+    @IBOutlet weak var frontViewButtonLarge: MuscleGroupButton!
+    @IBOutlet weak var backViewButtonLarge: MuscleGroupButton!
     
     @IBOutlet weak var switchShowBothSides: UISwitch!
     @IBOutlet weak var switchBodySideControl: UISegmentedControl!
@@ -239,14 +239,19 @@ class AnatomyViewController: UIViewController {
             infoButton.alpha = 0
         }
         
-        frontViewButton.setTitle("Info", for: .normal)
+        frontViewButton.setTitle("", for: .normal)
         frontViewButton.backgroundColor = Color.Button.inactive
-        backViewButton.setTitle("Info", for: .normal)
+        backViewButton.setTitle("", for: .normal)
         backViewButton.backgroundColor = Color.Button.inactive
-        frontViewButtonLarge.setTitle("Info", for: .normal)
+        frontViewButtonLarge.setTitle("", for: .normal)
         frontViewButtonLarge.backgroundColor = Color.Button.inactive
-        backViewButtonLarge.setTitle("Info", for: .normal)
+        backViewButtonLarge.setTitle("", for: .normal)
         backViewButtonLarge.backgroundColor = Color.Button.inactive
+        
+        frontViewButton.muscleGroupId = -1
+        backViewButton.muscleGroupId = -1
+        frontViewButtonLarge.muscleGroupId = -1
+        backViewButtonLarge.muscleGroupId = -1
         
         if (switchAnimation.isOn) {
             torsoFrontView.animationSetup(resetViews: true)
@@ -258,20 +263,22 @@ class AnatomyViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "showMuscleGroupSegue" {
-//            if let viewController = segue.destination as? VideoTableViewController{
-//
-//                if let button = sender as? UIButton {
-//                    viewController.title = button.titleLabel?.text
-//                    viewController.muscleGroupColor = button.backgroundColor!
-//                }
-//
-//                if let view = sender as? TorsoBasicView {
-//                    viewController.title = view.tappedMuscleGroupName
-//                    viewController.muscleGroupColor = view.tappedMuscleGroupColor
-//                }
-//            }
-//        }
+        if segue.identifier == "showMuscleGroupSegue" {
+            if let viewController = segue.destination as? VideoTableViewController {
+
+                if let button = sender as? MuscleGroupButton {
+                    viewController.title = button.titleLabel?.text
+                    viewController.muscleGroupColor = button.backgroundColor!
+                    viewController.muscleGroupId = button.muscleGroupId!
+                }
+
+                if let view = sender as? TorsoBasicView {
+                    viewController.title = view.tappedMuscleGroupName
+                    viewController.muscleGroupColor = view.tappedMuscleGroupColor
+                    viewController.muscleGroupId = view.muscleGroupId
+                }
+            }
+        }
     }
 }
 
@@ -283,9 +290,11 @@ extension AnatomyViewController: TorsoFrontViewDelegate {
         
         frontViewButton.backgroundColor = frontViewItem?.color
         frontViewButton.setTitle(frontViewItem?.muscleName, for: .normal)
+        frontViewButton.muscleGroupId = frontViewItem?.index
         
         frontViewButtonLarge.backgroundColor = frontViewButton.backgroundColor
         frontViewButtonLarge.setTitle(frontViewButton.titleLabel?.text, for: .normal)
+        frontViewButtonLarge.muscleGroupId = frontViewButton.muscleGroupId
     }
     
     func resetFrontButton(sender: TorsoFrontView) {
@@ -305,9 +314,11 @@ extension AnatomyViewController: TorsoBackViewDelegate {
         
         backViewButton.backgroundColor = backViewItem?.color
         backViewButton.setTitle(backViewItem?.muscleName, for: .normal)
+        backViewButton.muscleGroupId = backViewItem?.index
         
         backViewButtonLarge.backgroundColor = backViewButton.backgroundColor
         backViewButtonLarge.setTitle(backViewButton.titleLabel?.text, for: .normal)
+        backViewButtonLarge.muscleGroupId = backViewButton.muscleGroupId
     }
     
     func resetBackButton(sender: TorsoBackView) {

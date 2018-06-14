@@ -12,6 +12,7 @@ class TorsoBasicView: UIView {
     
     var tappedMuscleGroupName: String = ""
     var tappedMuscleGroupColor: UIColor = .lightGray
+    var muscleGroupId: Int = -1
     
     var counter: Int = 0
     var timeInterval: Float = 2.0
