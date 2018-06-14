@@ -35,6 +35,6 @@
     <elements>
         <element name="Musclegroup" positionX="-315" positionY="68" width="128" height="120"/>
         <element name="Plan" positionX="-288" positionY="234" width="128" height="73"/>
-        <element name="Workout" positionX="-63" positionY="27" width="128" height="193"/>
+        <element name="Workout" positionX="-63" positionY="27" width="128" height="195"/>
     </elements>
 </model>

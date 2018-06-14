@@ -87,10 +87,10 @@ class VideoTableViewController: UITableViewController, NSFetchedResultsControlle
         cell.buttonColor = (navigationController?.navigationBar.barTintColor)!
         cell.videoLabel.text = workout.name
         
-        // TODO: get image from CoreData
-        if let url = URL(string: (workout.imgName)!) {
-            cell.videoImageView.kf.setImage(with: url)
-        }
+        cell.videoImageView.image = UIImage(data:workout.icon! as Data, scale:1.0)
+//        if let url = URL(string: (workout.imgName)!) {
+//            cell.videoImageView.kf.setImage(with: url)
+//        }
         
         cell.indexPath = indexPath
         cell.delegate = self
@@ -118,7 +118,6 @@ extension VideoTableViewController: VideoCellDelegate {
             
             let workout = self.fetchedResultsController.object(at: indexPath)
             
-            // TODO: replace dummy text
             self.popTip.show(text: workout.descr!, direction: .left, maxWidth: tooltipWidth, in: self.view, from: frame, duration: 6)
         }
 

@@ -720,7 +720,7 @@
 				1BBC3AB820D1901800B43A61 /* Trainingsplan 2.xcdatamodel */,
 				1BBC3AAC20D1252400B43A61 /* Trainingsplan.xcdatamodel */,
 			);
-			currentVersion = 1BBC3AAC20D1252400B43A61 /* Trainingsplan.xcdatamodel */;
+			currentVersion = 1BBC3AB820D1901800B43A61 /* Trainingsplan 2.xcdatamodel */;
 			path = Trainingsplan.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
