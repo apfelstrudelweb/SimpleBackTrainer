@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class Torso: NSObject {
     
@@ -14,8 +15,7 @@ class Torso: NSObject {
     var color: UIColor
     var muscleName: String
     var tapArea: UIBezierPath
-    
-    
+
     init(withIndex index: Int, color: UIColor, muscleName: String, tapArea: UIBezierPath) {
         self.index = index
         self.color = color
@@ -30,11 +30,24 @@ class FrontView: NSObject {
     
     var dict: [Int: Torso]
     
+    var fetchedResultsController: NSFetchedResultsController<Workout>!
+    
     init(dict: [Int: Torso]) {
         self.dict = dict
     }
     
     convenience override init() {
+        
+        var frontResult: [Musclegroup]!
+  
+        do {
+            let fetchRequest = NSFetchRequest<Musclegroup>(entityName: "Musclegroup")
+            fetchRequest.predicate = NSPredicate(format: "isFront=1")
+            frontResult = try CoreDataManager.sharedInstance.managedObjectContext.fetch(fetchRequest)
+
+        } catch let error {
+            print ("fetch task failed", error)
+        }
         
         let tapPath_0 = UIBezierPath()
         tapPath_0.move(to: CGPoint(x:0.402542372881356, y:0.804702495201535))
@@ -63,12 +76,17 @@ class FrontView: NSObject {
         tapPath_2.addLine(to: CGPoint(x:0.57909604519774, y:0.367562380038388))
         tapPath_2.close()
         
-        let dict = [
-            0 : Torso(withIndex: 0, color:Color.Torso.red, muscleName: "gerade Bauchmuskeln", tapArea:tapPath_0),
-            1 : Torso(withIndex: 1, color:Color.Torso.orange, muscleName: "schräge Bauchmuskeln", tapArea:tapPath_1),
-            2 : Torso(withIndex: 2, color:Color.Torso.yellow, muscleName: "Halsmuskulatur", tapArea:tapPath_2)
-        ]
+        let tapPaths = [tapPath_0, tapPath_1, tapPath_2]
         
+        var dict : [Int:Torso] = [:]
+        
+        var index: Int = 0
+        
+        for group in frontResult {
+            dict[index] = Torso(withIndex: Int(group.id), color: (group.color?.colorFromString())!, muscleName: group.name!, tapArea: tapPaths[index])
+            index+=1
+        }
+
         self.init(dict: dict)
     }
 
@@ -83,6 +101,17 @@ class BackView: NSObject {
     }
     
     convenience override init() {
+        
+        var backResult: [Musclegroup]!
+        
+        do {
+            let fetchRequest = NSFetchRequest<Musclegroup>(entityName: "Musclegroup")
+            fetchRequest.predicate = NSPredicate(format: "isFront=0")
+            backResult = try CoreDataManager.sharedInstance.managedObjectContext.fetch(fetchRequest)
+            
+        } catch let error {
+            print ("fetch task failed", error)
+        }
 
         let tapPath_0 = UIBezierPath()
         tapPath_0.move(to: CGPoint(x:0.365509761388286, y:0.792772861356932))
@@ -186,16 +215,16 @@ class BackView: NSObject {
         tapPath_7.addLine(to: CGPoint(x:0.665960451977401, y:0.763915547024952))
         tapPath_7.close()
         
-        let dict = [
-            0 : Torso(withIndex: 0, color:Color.Torso.red, muscleName: "Rückenstrecker", tapArea:tapPath_0),
-            1 : Torso(withIndex: 1, color:Color.Torso.orange, muscleName: "schräge Bauchmuskeln", tapArea:tapPath_1),
-            2 : Torso(withIndex: 2, color:Color.Torso.yellow, muscleName: "Halsmuskulatur", tapArea:tapPath_2),
-            3 : Torso(withIndex: 3, color:Color.Torso.lightBlue, muscleName: "unterer mittlerer Trapezmuskel", tapArea:tapPath_3),
-            4 : Torso(withIndex: 4, color:Color.Torso.green, muscleName: "Rund- und Untergrätmuskel", tapArea:tapPath_4),
-            5 : Torso(withIndex: 5, color:Color.Torso.orange, muscleName: "oberer Trapezmuskel", tapArea:tapPath_5),
-            6 : Torso(withIndex: 6, color:Color.Torso.purple, muscleName: "Schulter-Muskulatur", tapArea:tapPath_6),
-            7 : Torso(withIndex: 7, color:Color.Torso.beige, muscleName: "breite Rückenmuskeln", tapArea:tapPath_7)
-        ]
+        let tapPaths = [tapPath_0, tapPath_1, tapPath_2, tapPath_3, tapPath_4, tapPath_5, tapPath_6, tapPath_7]
+        
+        var dict : [Int:Torso] = [:]
+        
+        var index: Int = 0
+        
+        for group in backResult {
+            dict[index] = Torso(withIndex: Int(group.id), color: (group.color?.colorFromString())!, muscleName: group.name!, tapArea: tapPaths[index])
+            index+=1
+        }
         
         self.init(dict: dict)
     }

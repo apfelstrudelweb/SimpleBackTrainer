@@ -17,6 +17,7 @@ struct Group:Codable {
     let id:Int?
     let name:String?
     let color:String?
+    let isFront:Bool?
     let workouts:[WorkoutData]?
 }
 

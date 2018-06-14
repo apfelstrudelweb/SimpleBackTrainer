@@ -94,7 +94,7 @@ class CoreDataManager: NSObject {
         do {
             try fm.removeItem(at:storeURL!)
         } catch {
-            NSLog("Error deleting file: \(storeURL)")
+            NSLog("Error deleting file: \(String(describing: storeURL))")
         }
     }
     
@@ -117,11 +117,12 @@ class CoreDataManager: NSObject {
         return workout
     }
 
-    func insertMusclegroup(name:String?, color:String?, id:Int16, workouts:NSSet?){
+    func insertMusclegroup(name:String?, color:String?, id:Int16, isFront:Bool, workouts:NSSet?){
         let muscleGroup = NSEntityDescription.insertNewObject(forEntityName: "Musclegroup", into: self.managedObjectContext) as! Musclegroup
         muscleGroup.name = name
         muscleGroup.color = color
         muscleGroup.id = id
+        muscleGroup.isFront = isFront
         muscleGroup.workouts = workouts
     
         do {
@@ -188,7 +189,7 @@ class CoreDataManager: NSObject {
                         }
                         print(workoutArray.count)
                         
-                        let _ = self.insertMusclegroup(name: group.name, color: group.color, id: Int16(group.id!), workouts: workoutArray)
+                        let _ = self.insertMusclegroup(name: group.name, color: group.color, id: Int16(group.id!), isFront: group.isFront!, workouts: workoutArray)
                     }
                 }
                 

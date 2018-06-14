@@ -52,12 +52,15 @@ class TorsoBackView: TorsoBasicView, UIScrollViewDelegate {
         basicImageView.addGestureRecognizer(tapGestureRecognizer)
         
         let labels = labelCollection.sorted { $0.tag < $1.tag }
+        let images = imageViewCollection.sorted { $0.tag < $1.tag }
         
-        for (index, label) in labels.enumerated() {
-            label.alpha = 0
-            label.backgroundColor = backView.dict[index]?.color
-            label.text = backView.dict[index]?.muscleName
-            label.layer.cornerRadius = 5
+        for (index, imageView) in images.enumerated() {
+            imageView.tintColor = backView.dict[index]?.color
+            
+            labels[index].alpha = 0
+            labels[index].backgroundColor = backView.dict[index]?.color
+            labels[index].text = backView.dict[index]?.muscleName
+            labels[index].layer.cornerRadius = 5
         }
     }
     

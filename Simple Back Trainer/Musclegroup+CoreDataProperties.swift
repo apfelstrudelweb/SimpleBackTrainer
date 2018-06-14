@@ -1,9 +1,9 @@
 //
 //  Musclegroup+CoreDataProperties.swift
-//  Trainingsplan
+//  Simple Back Trainer
 //
-//  Created by Ulrich Vormbrock on 15.04.18.
-//  Copyright © 2018 Ulrich Vormbrock. All rights reserved.
+//  Created by Ulrich Vormbrock on 13.06.18.
+//  Copyright © 2018 Rookie. All rights reserved.
 //
 //
 
@@ -20,6 +20,7 @@ extension Musclegroup {
     @NSManaged public var color: String?
     @NSManaged public var id: Int16
     @NSManaged public var name: String?
+    @NSManaged public var isFront: Bool
     @NSManaged public var workouts: NSSet?
 
 }
