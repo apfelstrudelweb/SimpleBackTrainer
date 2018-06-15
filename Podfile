@@ -7,5 +7,6 @@ target 'Simple Back Trainer' do
   pod 'SnapKit', '~> 4.0'
   pod 'AMPopTip'
   pod 'DragDropiOS'
+  pod 'RNCryptor', '~> 5.0'
 end
 

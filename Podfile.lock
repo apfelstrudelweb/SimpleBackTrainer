@@ -1,24 +1,28 @@
 PODS:
   - AMPopTip (3.2.1)
   - DragDropiOS (0.2.3)
+  - RNCryptor (5.0.3)
   - SnapKit (4.0.0)
 
 DEPENDENCIES:
   - AMPopTip
   - DragDropiOS
+  - RNCryptor (~> 5.0)
   - SnapKit (~> 4.0)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - AMPopTip
     - DragDropiOS
+    - RNCryptor
     - SnapKit
 
 SPEC CHECKSUMS:
   AMPopTip: 31251008f2c00cbc0a3d2b18520f277c5b5ab4da
   DragDropiOS: ea8f1ff41a8c6dab4a9ce1969dc11f12c1c02997
+  RNCryptor: c93d19029dcf7ff160aca0f24d6c9e7b0d82f664
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
 
-PODFILE CHECKSUM: 38e3f97cd9eae676821325c6fb6e3f743a68b6c3
+PODFILE CHECKSUM: 2cd2a5d699631103c3d24ce851c431b904a7c91a
 
 COCOAPODS: 1.5.0
