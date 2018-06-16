@@ -29,6 +29,13 @@ class VideoPlayerViewController: AVPlayerViewController, AVAssetResourceLoaderDe
         let videoPath = NSString(string: documentPath).appendingPathComponent(subdir) as String
         let destPath = NSString(string: videoPath).appendingPathComponent(fileName) as String
         
+        
+        do {
+            try FileManager.default.createDirectory(atPath: videoPath, withIntermediateDirectories: false, attributes: nil)
+        } catch let error as NSError {
+            print(error.localizedDescription);
+        }
+        
         if FileManager.default.fileExists(atPath: destPath) {
             print("file already exist at \(destPath)")
             
@@ -90,27 +97,73 @@ class VideoPlayerViewController: AVPlayerViewController, AVAssetResourceLoaderDe
         player?.play()
     }
     
-//    func resourceLoader(resourceLoader: AVAssetResourceLoader, shouldWaitForLoadingOfRequestedResource loadingRequest: AVAssetResourceLoadingRequest) -> Bool {
-//
-//        NSLog("This method is never called in case of m3u8 url")
-//
-//        return true
-//    }
-}
+    func resourceLoader(_ resourceLoader: AVAssetResourceLoader, shouldWaitForLoadingOfRequestedResource loadingRequest: AVAssetResourceLoadingRequest) -> Bool {
+        
+        DispatchQueue.main.async() { () -> Void in
+                if let infoRequest = loadingRequest.contentInformationRequest {
+                    infoRequest.contentType = "public.mpeg-4" // UTI
+                    //infoRequest.contentLength = Int64(data.length)
+                    infoRequest.isByteRangeAccessSupported = true
+                }
+                if let request = loadingRequest.dataRequest {
+//                    var decryptedData: Data? = nil
+//                    do {
+//                        let encryptedData = try Data(contentsOf: NSURL(fileURLWithPath: self.destPath!) as URL)
+//                        decryptedData = try RNCryptor.decrypt(data: encryptedData, withPassword: self.password) as Data
+//                        //print(decryptedData)
+//                    } catch let error as NSError  {
+//                        print(error)
+//                    }
+                    let url = URL(string: self.videoUrl!)
+                    let urlData = NSData(contentsOf: url!)
 
-extension AVPlayer {
-    
-    convenience init(data:Data!) {
+                    request.respond(with: urlData! as Data)
+                }
+                loadingRequest.finishLoading()
+            }
+            return true
         
-        if  let urlString = NSString(data: data as Data, encoding: String.Encoding.utf8.rawValue) {
-            self.init(url: NSURL(string: urlString as String)! as URL)
-            
-        } else {
-            self.init()
-        }
-        
+//        var decryptedData: Data? = nil
+//
+//        do {
+//            let encryptedData = try Data(contentsOf: NSURL(fileURLWithPath: destPath!) as URL)
+//            decryptedData = try RNCryptor.decrypt(data: encryptedData, withPassword: self.password) as Data
+//            //print(decryptedData)
+//        } catch let error as NSError  {
+//            print(error)
+//        }
+//
+////        loadingRequest.contentInformationRequest.contentType    = [NSString ut_UTTypeQuickTimeMovie];
+////        loadingRequest.contentInformationRequest.contentLength  = self.doc.decryptedAsset.length;
+////        loadingRequest.contentInformationRequest.byteRangeAccessSupported       = YES;
+////        NSRange range = NSMakeRange((NSUInteger)loadingRequest.dataRequest.requestedOffset, loadingRequest.dataRequest.requestedLength);
+////gRequest.dataRequest respondWithData:[self.doc.decryptedAsset subdataWithRange:range]];
+////            [loadingRequest finishLoading];
+//
+//        //loadingRequest.contentInformationRequest?.contentType = "public.mp4"
+//
+//
+//
+//
+//        loadingRequest.dataRequest?.respond(with: decryptedData!)
+//        loadingRequest.finishLoading()
+//        return true
     }
 }
+
+//extension AVPlayer {
+//
+//    convenience init(data:Data!) {
+//
+//        if  let urlString = NSString(data: data as Data, encoding: String.Encoding.utf8.rawValue) {
+//            self.init(url: NSURL(string: urlString as String)! as URL)
+//
+//        } else {
+//            self.init()
+//        }
+//
+//    }
+//}
 
 extension String {
     
