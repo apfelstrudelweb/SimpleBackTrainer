@@ -24,6 +24,7 @@ private struct AssociatedKeys {
     static var SubtitleKey = "SubtitleKey"
     static var SubtitleHeightKey = "SubtitleHeightKey"
     static var PayloadKey = "PayloadKey"
+    static var DummyViewKey = "DummyViewKey"
 }
 
 public class Subtitles {
@@ -176,6 +177,11 @@ public extension AVPlayerViewController {
         set (value) { objc_setAssociatedObject(self, &AssociatedKeys.PayloadKey, value, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC) }
     }
     
+    fileprivate var dummyView: InfoView? {
+        get { return objc_getAssociatedObject(self, &AssociatedKeys.DummyViewKey) as? InfoView }
+        set (value) { objc_setAssociatedObject(self, &AssociatedKeys.DummyViewKey, value, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC) }
+    }
+    
     // MARK: - Public methods
     func addSubtitles(subtitlePosition: SubtitlePosition) -> Self {
         
@@ -205,19 +211,12 @@ public extension AVPlayerViewController {
             using: { [weak self] (time) -> Void in
                 
                 guard let strongSelf = self else { return }
-                guard let label = strongSelf.subtitleLabel else { return }
+                //guard let label = strongSelf.subtitleLabel else { return }
                 
                 // Search && show subtitles
-                label.text = Subtitles.searchSubtitles(strongSelf.parsedPayload, time.seconds)
-                
-                // Adjust size
-                let baseSize = CGSize(width: label.bounds.width, height: CGFloat.greatestFiniteMagnitude)
-                let rect = label.sizeThatFits(baseSize)
-                if label.text != nil {
-                    strongSelf.subtitleLabelHeightConstraint?.constant = rect.height + 5.0
-                } else {
-                    strongSelf.subtitleLabelHeightConstraint?.constant = rect.height
-                }
+                //label.text = Subtitles.searchSubtitles(strongSelf.parsedPayload, time.seconds)
+                strongSelf.dummyView?.subtitleLabel.text = Subtitles.searchSubtitles(strongSelf.parsedPayload, time.seconds)
+
                 
         })
         
@@ -228,82 +227,28 @@ public extension AVPlayerViewController {
         
         guard let _ = subtitleLabel else {
             
-            // TODO: put the view into a xib
-            
             let subtitleView = UIView()
-            subtitleView.backgroundColor = .red
-            subtitleView.alpha = 0.6
+            let _dummyView: InfoView = UIView.fromNib()
+            dummyView = _dummyView
+            dummyView?.alpha = 1
+            dummyView?.translatesAutoresizingMaskIntoConstraints = false
+
             contentOverlayView?.addSubview(subtitleView)
+            subtitleView.addSubview(dummyView!)
             
-            subtitleLabel = UILabel()
-            subtitleLabel?.textAlignment = .center
-            subtitleLabel?.numberOfLines = 0
-            subtitleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
-            subtitleLabel?.textColor = .white
-        
-            //subtitleLabel?.text = "Subtitle"
-            
-            subtitleLabel?.lineBreakMode = .byWordWrapping
-            
-            subtitleView.addSubview(subtitleLabel!)
-            
-            placeSubtitle(subtitleView: subtitleView, subtitlePosition: subtitlePosition)
-            
+            dummyView?.snp.makeConstraints { (make) -> Void in
+                make.edges.equalTo(contentOverlayView!)
+            }
             return
         }
     }
     
-    
-    fileprivate func placeSubtitle(subtitleView: UIView, subtitlePosition: SubtitlePosition) {
-        
-        if subtitlePosition == .top {
-            subtitleView.snp.makeConstraints { (make) -> Void in
-                make.top.equalTo(contentOverlayView!)
-                make.left.equalTo(contentOverlayView!)
-                make.right.equalTo(contentOverlayView!)
-                make.height.equalTo(contentOverlayView!).multipliedBy(0.25)
-            }
-        } else if subtitlePosition == .bottom {
-            
+}
 
-            subtitleView.snp.makeConstraints { (make) -> Void in
-                
-                //let fact = self.view.frame.size.height > self.view.frame.size.width ? 0.8 : 1.0
-                
-                //make.bottom.equalTo(contentOverlayView!)//.multipliedBy(fact)
-                
-                let top = self.videoBounds.origin.y + self.videoBounds.size.height
-                make.top.equalTo(contentOverlayView!).offset(top)
-                
-                make.left.equalTo(contentOverlayView!)
-                make.right.equalTo(contentOverlayView!)
-                make.height.equalTo(contentOverlayView!).multipliedBy(0.25)
-            }
-        } else if subtitlePosition == .left {
-            subtitleView.snp.makeConstraints { (make) -> Void in
-                make.top.equalTo(contentOverlayView!)
-                make.bottom.equalTo(contentOverlayView!)
-                make.left.equalTo(contentOverlayView!)
-                make.width.equalTo(contentOverlayView!).multipliedBy(0.25)
-            }
-        } else if subtitlePosition == .right {
-            subtitleView.snp.makeConstraints { (make) -> Void in
-                make.top.equalTo(contentOverlayView!)
-                make.bottom.equalTo(contentOverlayView!)
-                make.right.equalTo(contentOverlayView!)
-                make.width.equalTo(contentOverlayView!).multipliedBy(0.25)
-            }
-        }
-        
-        subtitleLabel?.snp.makeConstraints { (make) -> Void in
-            make.centerX.equalTo(subtitleView)
-            make.centerY.equalTo(subtitleView)
-            make.height.equalTo(subtitleView).multipliedBy(0.9)
-            make.width.equalTo(subtitleView).multipliedBy(0.9)
-        }
-        
+extension UIView {
+    class func fromNib<T: UIView>() -> T {
+        return Bundle.main.loadNibNamed(String(describing: T.self), owner: nil, options: nil)![0] as! T
     }
-    
 }
 
 extension String {
