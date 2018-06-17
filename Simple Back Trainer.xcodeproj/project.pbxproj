@@ -19,6 +19,7 @@
 		14A7487820C3E058002CB7EA /* BackTherapyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A7487720C3E058002CB7EA /* BackTherapyController.swift */; };
 		14A7487C20C3E977002CB7EA /* TrainingPlansController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A7487B20C3E977002CB7EA /* TrainingPlansController.swift */; };
 		1B3E45FE20D2F770003C4B96 /* VideoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3E45FD20D2F770003C4B96 /* VideoPlayerViewController.swift */; };
+		1B3E460020D6585E003C4B96 /* Subtitles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3E45FF20D6585E003C4B96 /* Subtitles.swift */; };
 		1BBC3A9520D1220D00B43A61 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBC3A9420D1220D00B43A61 /* CoreDataManager.swift */; };
 		1BBC3A9F20D1222200B43A61 /* Musclegroup+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBC3A9920D1222200B43A61 /* Musclegroup+CoreDataClass.swift */; };
 		1BBC3AA020D1222200B43A61 /* Plan+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBC3A9A20D1222200B43A61 /* Plan+CoreDataClass.swift */; };
@@ -79,6 +80,7 @@
 		14A7487B20C3E977002CB7EA /* TrainingPlansController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingPlansController.swift; sourceTree = "<group>"; };
 		16EE4B69557784C57DD7EB11 /* Pods_Simple_Back_Trainer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Simple_Back_Trainer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B3E45FD20D2F770003C4B96 /* VideoPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerViewController.swift; sourceTree = "<group>"; };
+		1B3E45FF20D6585E003C4B96 /* Subtitles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Subtitles.swift; sourceTree = "<group>"; };
 		1BBC3A9420D1220D00B43A61 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		1BBC3A9920D1222200B43A61 /* Musclegroup+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Musclegroup+CoreDataClass.swift"; sourceTree = "<group>"; };
 		1BBC3A9A20D1222200B43A61 /* Plan+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Plan+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				1B3E45FD20D2F770003C4B96 /* VideoPlayerViewController.swift */,
+				1B3E45FF20D6585E003C4B96 /* Subtitles.swift */,
 			);
 			name = VideoPlayer;
 			sourceTree = "<group>";
@@ -496,6 +499,7 @@
 				1BBC3AA320D1222200B43A61 /* Plan+CoreDataProperties.swift in Sources */,
 				1BBC3AC420D2641E00B43A61 /* VideoCell.swift in Sources */,
 				1BBC3AC720D2673C00B43A61 /* MuscleGroupImageView.swift in Sources */,
+				1B3E460020D6585E003C4B96 /* Subtitles.swift in Sources */,
 				1BBC3ABE20D1A4D000B43A61 /* String+Custom.swift in Sources */,
 				1BCF6A1D20C9B3BB00E310DF /* AnatomyViewController.swift in Sources */,
 				1BCF6A2620C9B40200E310DF /* TorsoBasicView.swift in Sources */,
@@ -668,7 +672,10 @@
 				DEVELOPMENT_TEAM = P2EQM7YAFH;
 				INFOPLIST_FILE = "Simple Back Trainer/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = ch.vormbrock.simplebacktrainer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
@@ -685,7 +692,10 @@
 				DEVELOPMENT_TEAM = P2EQM7YAFH;
 				INFOPLIST_FILE = "Simple Back Trainer/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = ch.vormbrock.simplebacktrainer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_COMPILATION_MODE = wholemodule;

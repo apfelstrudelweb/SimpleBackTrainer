@@ -1066,7 +1066,13 @@
         <!--AV Player View Controller-->
         <scene sceneID="Bjh-Fe-Nvf">
             <objects>
-                <avPlayerViewController videoGravity="AVLayerVideoGravityResizeAspect" id="Ylz-5k-IgQ" customClass="VideoPlayerViewController" customModule="Simple_Back_Trainer" customModuleProvider="target" sceneMemberID="viewController"/>
+                <avPlayerViewController videoGravity="AVLayerVideoGravityResizeAspect" id="Ylz-5k-IgQ" customClass="VideoPlayerViewController" customModule="Simple_Back_Trainer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="e6e-P2-MZR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <viewLayoutGuide key="safeArea" id="TQX-3c-Sht"/>
+                    </view>
+                </avPlayerViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W1p-ZM-nfv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="7890" y="-1046"/>
