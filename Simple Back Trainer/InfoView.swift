@@ -23,7 +23,7 @@ class InfoView: UIView {
     func xibSetup() {
         
         stripeView.backgroundColor = UIColor(patternImage: UIImage(named: "stripe.png")!)
-        watermark.layer.cornerRadius = 0.15*watermark.frame.size.width
+        watermark.layer.cornerRadius = 0.2*watermark.frame.size.width
         
     }
 

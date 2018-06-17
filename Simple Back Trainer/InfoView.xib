@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -7,7 +7,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -21,19 +20,23 @@
                     <rect key="frame" x="0.0" y="300.66666666666669" width="375" height="210.66666666666669"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_25" translatesAutoresizingMaskIntoConstraints="NO" id="wmu-uE-8In">
-                            <rect key="frame" x="20" y="20" width="40" height="40"/>
+                            <rect key="frame" x="20" y="20" width="50" height="50"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="wmu-uE-8In" secondAttribute="height" multiplier="1:1" id="MJf-em-uwg"/>
-                                <constraint firstAttribute="height" constant="40" id="lk8-65-1GO">
-                                    <variation key="heightClass=compact-widthClass=compact" constant="60"/>
+                                <constraint firstAttribute="height" constant="50" id="lk8-65-1GO">
+                                    <variation key="heightClass=compact-widthClass=compact" constant="70"/>
                                 </constraint>
                             </constraints>
                         </imageView>
                     </subviews>
                     <constraints>
-                        <constraint firstItem="wmu-uE-8In" firstAttribute="top" secondItem="kxy-q4-XeX" secondAttribute="top" constant="20" id="1r3-mb-LXD"/>
-                        <constraint firstItem="wmu-uE-8In" firstAttribute="leading" secondItem="kxy-q4-XeX" secondAttribute="leading" constant="20" id="aMk-S9-y5y"/>
+                        <constraint firstItem="wmu-uE-8In" firstAttribute="leading" secondItem="kxy-q4-XeX" secondAttribute="leading" constant="20" id="aMk-S9-y5y">
+                            <variation key="heightClass=compact-widthClass=compact" constant="35"/>
+                        </constraint>
                         <constraint firstAttribute="width" secondItem="kxy-q4-XeX" secondAttribute="height" multiplier="16:9" id="vTM-YO-e8c"/>
+                        <constraint firstItem="wmu-uE-8In" firstAttribute="top" secondItem="kxy-q4-XeX" secondAttribute="top" constant="20" id="zu8-AX-D3z">
+                            <variation key="heightClass=compact-widthClass=compact" constant="35"/>
+                        </constraint>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Egt-SN-adf">
@@ -73,24 +76,32 @@
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="Egt-SN-adf" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="5mQ-Hy-m4z"/>
-                <constraint firstItem="kxy-q4-XeX" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="7Gz-Rg-BwS"/>
+                <constraint firstItem="Egt-SN-adf" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottom" id="5mQ-Hy-m4z"/>
                 <constraint firstItem="Egt-SN-adf" firstAttribute="trailing" secondItem="kxy-q4-XeX" secondAttribute="trailing" id="AiG-yc-Svg"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="kxy-q4-XeX" secondAttribute="trailing" id="Arz-2x-K8M"/>
+                <constraint firstAttribute="trailing" secondItem="kxy-q4-XeX" secondAttribute="trailing" id="Arz-2x-K8M"/>
+                <constraint firstItem="kxy-q4-XeX" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="SfQ-vf-qzd"/>
                 <constraint firstItem="Egt-SN-adf" firstAttribute="top" secondItem="kxy-q4-XeX" secondAttribute="bottom" id="caN-Wn-lCz"/>
                 <constraint firstItem="kxy-q4-XeX" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="dRx-yl-I7d"/>
                 <constraint firstItem="kxy-q4-XeX" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="dsA-XD-S3N"/>
+                <constraint firstItem="kxy-q4-XeX" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="oDp-bb-qZX"/>
+                <constraint firstAttribute="bottom" secondItem="kxy-q4-XeX" secondAttribute="bottom" id="v4p-wD-n3G"/>
                 <constraint firstItem="Egt-SN-adf" firstAttribute="leading" secondItem="kxy-q4-XeX" secondAttribute="leading" id="znD-e0-qHR"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <variation key="default">
                 <mask key="constraints">
+                    <exclude reference="oDp-bb-qZX"/>
+                    <exclude reference="v4p-wD-n3G"/>
                     <exclude reference="5mQ-Hy-m4z"/>
                 </mask>
             </variation>
             <variation key="heightClass=compact-widthClass=compact">
                 <mask key="constraints">
+                    <exclude reference="Arz-2x-K8M"/>
+                    <exclude reference="SfQ-vf-qzd"/>
+                    <include reference="oDp-bb-qZX"/>
+                    <include reference="v4p-wD-n3G"/>
                     <include reference="5mQ-Hy-m4z"/>
+                    <include reference="AiG-yc-Svg"/>
                     <exclude reference="caN-Wn-lCz"/>
                 </mask>
             </variation>

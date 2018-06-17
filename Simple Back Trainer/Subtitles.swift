@@ -228,8 +228,7 @@ public extension AVPlayerViewController {
         guard let _ = subtitleLabel else {
             
             let subtitleView = UIView()
-            let _dummyView: InfoView = UIView.fromNib()
-            dummyView = _dummyView
+            dummyView = UIView.fromNib()
             dummyView?.alpha = 1
             dummyView?.translatesAutoresizingMaskIntoConstraints = false
 
