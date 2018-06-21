@@ -13,7 +13,6 @@
 		14A7486920C3C344002CB7EA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A7486820C3C344002CB7EA /* Constants.swift */; };
 		14A7486C20C3DF93002CB7EA /* ActivitiesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A7486B20C3DF93002CB7EA /* ActivitiesController.swift */; };
 		14A7486E20C3DFAA002CB7EA /* SportsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A7486D20C3DFAA002CB7EA /* SportsController.swift */; };
-		14A7487020C3DFC5002CB7EA /* ExercisesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A7486F20C3DFC5002CB7EA /* ExercisesController.swift */; };
 		14A7487220C3DFF0002CB7EA /* ContactController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A7487120C3DFF0002CB7EA /* ContactController.swift */; };
 		14A7487620C3E03A002CB7EA /* MobilisationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A7487520C3E03A002CB7EA /* MobilisationsController.swift */; };
 		14A7487820C3E058002CB7EA /* BackTherapyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A7487720C3E058002CB7EA /* BackTherapyController.swift */; };
@@ -22,6 +21,7 @@
 		1B3E460020D6585E003C4B96 /* Subtitles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3E45FF20D6585E003C4B96 /* Subtitles.swift */; };
 		1B3E460220D671CB003C4B96 /* InfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B3E460120D671CB003C4B96 /* InfoView.xib */; };
 		1B3E460620D675C5003C4B96 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3E460520D675C5003C4B96 /* InfoView.swift */; };
+		1B3E460820DBF0C9003C4B96 /* ExercisesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3E460720DBF0C9003C4B96 /* ExercisesTableViewController.swift */; };
 		1BBC3A9520D1220D00B43A61 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBC3A9420D1220D00B43A61 /* CoreDataManager.swift */; };
 		1BBC3A9F20D1222200B43A61 /* Musclegroup+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBC3A9920D1222200B43A61 /* Musclegroup+CoreDataClass.swift */; };
 		1BBC3AA020D1222200B43A61 /* Plan+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBC3A9A20D1222200B43A61 /* Plan+CoreDataClass.swift */; };
@@ -75,7 +75,6 @@
 		14A7486820C3C344002CB7EA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		14A7486B20C3DF93002CB7EA /* ActivitiesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesController.swift; sourceTree = "<group>"; };
 		14A7486D20C3DFAA002CB7EA /* SportsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsController.swift; sourceTree = "<group>"; };
-		14A7486F20C3DFC5002CB7EA /* ExercisesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesController.swift; sourceTree = "<group>"; };
 		14A7487120C3DFF0002CB7EA /* ContactController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactController.swift; sourceTree = "<group>"; };
 		14A7487520C3E03A002CB7EA /* MobilisationsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobilisationsController.swift; sourceTree = "<group>"; };
 		14A7487720C3E058002CB7EA /* BackTherapyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackTherapyController.swift; sourceTree = "<group>"; };
@@ -85,6 +84,7 @@
 		1B3E45FF20D6585E003C4B96 /* Subtitles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Subtitles.swift; sourceTree = "<group>"; };
 		1B3E460120D671CB003C4B96 /* InfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoView.xib; sourceTree = "<group>"; };
 		1B3E460520D675C5003C4B96 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
+		1B3E460720DBF0C9003C4B96 /* ExercisesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesTableViewController.swift; sourceTree = "<group>"; };
 		1BBC3A9420D1220D00B43A61 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		1BBC3A9920D1222200B43A61 /* Musclegroup+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Musclegroup+CoreDataClass.swift"; sourceTree = "<group>"; };
 		1BBC3A9A20D1222200B43A61 /* Plan+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Plan+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -178,11 +178,11 @@
 			children = (
 				14A7486B20C3DF93002CB7EA /* ActivitiesController.swift */,
 				14A7486D20C3DFAA002CB7EA /* SportsController.swift */,
-				14A7486F20C3DFC5002CB7EA /* ExercisesController.swift */,
 				14A7487120C3DFF0002CB7EA /* ContactController.swift */,
 				14A7487520C3E03A002CB7EA /* MobilisationsController.swift */,
 				14A7487720C3E058002CB7EA /* BackTherapyController.swift */,
 				14A7487B20C3E977002CB7EA /* TrainingPlansController.swift */,
+				1B3E460720DBF0C9003C4B96 /* ExercisesTableViewController.swift */,
 			);
 			name = MenuControllers;
 			sourceTree = "<group>";
@@ -519,6 +519,7 @@
 				14A7487C20C3E977002CB7EA /* TrainingPlansController.swift in Sources */,
 				1BBC3AAD20D1252400B43A61 /* Trainingsplan.xcdatamodeld in Sources */,
 				1BC4368320BC8A0D00968F44 /* TabBarController.swift in Sources */,
+				1B3E460820DBF0C9003C4B96 /* ExercisesTableViewController.swift in Sources */,
 				14A7486920C3C344002CB7EA /* Constants.swift in Sources */,
 				753A55C31BB073E900254F27 /* AppDelegate.swift in Sources */,
 				1BBC3AC120D2617900B43A61 /* VideoTableViewController.swift in Sources */,
@@ -531,7 +532,6 @@
 				1BBC3A9520D1220D00B43A61 /* CoreDataManager.swift in Sources */,
 				1B3E45FE20D2F770003C4B96 /* VideoPlayerViewController.swift in Sources */,
 				14A7486E20C3DFAA002CB7EA /* SportsController.swift in Sources */,
-				14A7487020C3DFC5002CB7EA /* ExercisesController.swift in Sources */,
 				1BBC3A9F20D1222200B43A61 /* Musclegroup+CoreDataClass.swift in Sources */,
 				1BBC3AC920D26B3700B43A61 /* MuscleGroupButton.swift in Sources */,
 				14A7487220C3DFF0002CB7EA /* ContactController.swift in Sources */,
