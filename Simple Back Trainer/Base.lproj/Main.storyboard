@@ -537,14 +537,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="Qvz-Go-JOv">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="52"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="A1s-yS-mg5">
-                                    <rect key="frame" x="15" y="11.333333333333343" width="345" height="42.666666666666671"/>
+                                    <rect key="frame" x="20" y="5.3333333333333321" width="335" height="41.333333333333343"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R5w-yQ-n1b">
-                                            <rect key="frame" x="0.0" y="0.0" width="56.333333333333336" height="42.666666666666664"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="54.666666666666664" height="41.333333333333336"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="R5w-yQ-n1b" secondAttribute="height" multiplier="58:44" id="7iy-YE-iuN"/>
                                             </constraints>
@@ -557,7 +557,7 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bVr-0P-4qm">
-                                            <rect key="frame" x="71.333333333333329" y="0.0" width="49.333333333333329" height="42.666666666666664"/>
+                                            <rect key="frame" x="69.666666666666671" y="0.0" width="47.666666666666671" height="41.333333333333336"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="bVr-0P-4qm" secondAttribute="height" multiplier="54:47" id="3Dc-nI-gi6"/>
                                             </constraints>
@@ -567,7 +567,7 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DmM-Ij-E8p">
-                                            <rect key="frame" x="135.66666666666666" y="0.0" width="73.666666666666657" height="42.666666666666664"/>
+                                            <rect key="frame" x="132.33333333333334" y="0.0" width="70.333333333333343" height="41.333333333333336"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="DmM-Ij-E8p" secondAttribute="height" multiplier="75:44" id="X8k-a3-eMz"/>
                                             </constraints>
@@ -577,7 +577,7 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TZ2-Ij-mFH">
-                                            <rect key="frame" x="224.33333333333334" y="0.0" width="45.333333333333343" height="42.666666666666664"/>
+                                            <rect key="frame" x="217.66666666666666" y="0.0" width="43.999999999999972" height="41.333333333333336"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="TZ2-Ij-mFH" secondAttribute="height" multiplier="46:44" id="x0U-Nr-GBH"/>
                                             </constraints>
@@ -587,7 +587,7 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dfJ-m9-Hh1">
-                                            <rect key="frame" x="284.66666666666669" y="0.0" width="60.333333333333314" height="42.666666666666664"/>
+                                            <rect key="frame" x="276.66666666666669" y="0.0" width="58.333333333333314" height="41.333333333333336"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="dfJ-m9-Hh1" secondAttribute="height" multiplier="62:44" id="7wZ-iJ-qhO"/>
                                             </constraints>
@@ -602,22 +602,22 @@
                             <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstItem="A1s-yS-mg5" firstAttribute="centerY" secondItem="Qvz-Go-JOv" secondAttribute="centerY" id="YPk-oL-oGT"/>
-                                <constraint firstAttribute="trailing" secondItem="A1s-yS-mg5" secondAttribute="trailing" constant="15" id="mnm-1H-YGP">
+                                <constraint firstAttribute="trailing" secondItem="A1s-yS-mg5" secondAttribute="trailing" constant="20" id="mnm-1H-YGP">
                                     <variation key="heightClass=compact-widthClass=compact" constant="30"/>
                                     <variation key="heightClass=compact-widthClass=regular" constant="30"/>
                                 </constraint>
-                                <constraint firstItem="A1s-yS-mg5" firstAttribute="leading" secondItem="Qvz-Go-JOv" secondAttribute="leading" constant="15" id="ojU-NA-LGK">
+                                <constraint firstItem="A1s-yS-mg5" firstAttribute="leading" secondItem="Qvz-Go-JOv" secondAttribute="leading" constant="20" id="ojU-NA-LGK">
                                     <variation key="heightClass=compact-widthClass=compact" constant="30"/>
                                     <variation key="heightClass=compact-widthClass=regular" constant="30"/>
                                 </constraint>
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="1wI-5z-Ayh">
-                                <rect key="frame" x="0.0" y="93" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="videoCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="videoCell" rowHeight="64" id="1wI-5z-Ayh" customClass="VideoCell" customModule="Simple_Back_Trainer" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="80" width="375" height="64"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1wI-5z-Ayh" id="KKJ-6f-QNB">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="63.666666666666664"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
