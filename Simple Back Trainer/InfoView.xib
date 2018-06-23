@@ -106,7 +106,7 @@
                 <outlet property="subtitleLabel" destination="s2a-J5-glF" id="l8h-A8-GFe"/>
                 <outlet property="watermark" destination="wmu-uE-8In" id="TzO-aE-Qai"/>
             </connections>
-            <point key="canvasLocation" x="-139.5" y="24"/>
+            <point key="canvasLocation" x="-140" y="24"/>
         </view>
     </objects>
     <resources>

@@ -19,6 +19,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         UINavigationBar.appearance().barStyle = .black
+        UINavigationBar.appearance().barTintColor = UIColor(red: 0.149, green: 0.3373, blue: 0.7216, alpha: 1.0)
+        
+        UITabBar.appearance().barTintColor = UIColor(red: 0.9176, green: 0.9176, blue: 0.9176, alpha: 1.0)
+        UITabBar.appearance().tintColor = UINavigationBar.appearance().barTintColor
         
         //clearDB()
 //        let navigationController = window?.rootViewController as! UINavigationController

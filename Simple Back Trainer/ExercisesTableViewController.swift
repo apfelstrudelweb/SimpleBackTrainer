@@ -18,7 +18,8 @@ class ExercisesTableViewController: UITableViewController, NSFetchedResultsContr
     var fetchedResultsController: NSFetchedResultsController<Workout>!
     var fetchRequest: NSFetchRequest<Workout>!
 
-
+    @IBOutlet weak var headerView: UIView!
+    
     @IBOutlet weak var buttonHandweight: UIButton!
     @IBOutlet weak var buttonBand: UIButton!
     @IBOutlet weak var buttonMat: UIButton!
@@ -30,6 +31,8 @@ class ExercisesTableViewController: UITableViewController, NSFetchedResultsContr
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        headerView.backgroundColor = UIColor(patternImage: UIImage(named: "bg_filter.png")!)
 
         buttonHandweight.tintColor = self.navigationController?.navigationBar.barTintColor
         buttonBand.tintColor = inactiveColor
@@ -207,6 +210,21 @@ class ExercisesTableViewController: UITableViewController, NSFetchedResultsContr
         cell.delegate = self
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "showVideoSegue", sender: indexPath)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showVideoSegue" {
+            
+            if let viewController = segue.destination as? VideoPlayerViewController {
+                
+                let workout = fetchedResultsController.object(at: sender as! IndexPath)
+                viewController.videoUrl = workout.videoUrl
+            }
+        }
     }
 
 }

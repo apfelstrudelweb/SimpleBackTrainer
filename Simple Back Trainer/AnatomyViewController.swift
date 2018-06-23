@@ -38,6 +38,7 @@ class AnatomyViewController: UIViewController {
     @IBOutlet weak var switchAnimation: UISwitch!
     @IBOutlet weak var controlViewTop: NSLayoutConstraint!
     
+    @IBOutlet weak var speedStepper: UIStepper!
     
     @IBOutlet weak var controlView: UIView!
     
@@ -68,6 +69,16 @@ class AnatomyViewController: UIViewController {
         torsoBackViewLarge.delegate = self
         
         infoButton.layer.cornerRadius = 0.5*infoButton.frame.size.width
+        
+
+        let fadedColor = UIColor.withAlphaComponent((navigationController?.navigationBar.barTintColor)!)(0.9)
+        
+        infoButton.backgroundColor = fadedColor
+        switchAnimation.onTintColor = fadedColor
+        switchShowBothSides.backgroundColor = fadedColor
+        switchBodySideControl.backgroundColor = .clear
+        speedStepper.tintColor = fadedColor
+        
         
         popTip.font = UIFont(name: "Avenir-Medium", size: UI_USER_INTERFACE_IDIOM() == .pad ? 20 : 14)!
         popTip.shouldDismissOnTap = true
