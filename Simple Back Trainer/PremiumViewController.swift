@@ -32,6 +32,7 @@ class PremiumViewController: BaseViewController, UITableViewDelegate, UITableVie
         premiumButton.setTitle(buttonTitle, for: .normal)
         premiumButton.layer.cornerRadius = 10
         premiumButton.titleEdgeInsets = UIEdgeInsets(top: 4, left: 20, bottom: 4, right: 20)
+        premiumButton.backgroundColor = UIColor.withAlphaComponent((navigationController?.navigationBar.barTintColor)!)(0.9)
         
         let textWidth = (buttonTitle as NSString).size(withAttributes:[kCTFontAttributeName as NSAttributedStringKey:premiumButton.titleLabel!.font!]).width
         let width = textWidth + premiumButton.titleEdgeInsets.left + premiumButton.titleEdgeInsets.right
