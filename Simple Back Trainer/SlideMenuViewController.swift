@@ -48,6 +48,7 @@ class SlideMenuViewController: UIViewController, UITableViewDataSource, UITableV
         tblMenuOptions.tableFooterView = UIView()
         self.view.backgroundColor = .clear
         UITableView.appearance().separatorColor = .white
+        tblMenuOptions.backgroundColor = UIColor(red: 0.2706, green: 0.4314, blue: 0.7569, alpha: 1.0)
         updateArrayMenuOptions()
     }
     
@@ -105,7 +106,7 @@ class SlideMenuViewController: UIViewController, UITableViewDataSource, UITableV
         cell.selectionStyle = UITableViewCellSelectionStyle.none
         cell.layoutMargins = UIEdgeInsets.zero
         cell.preservesSuperviewLayoutMargins = false
-        cell.backgroundColor = self.tblMenuOptions.backgroundColor
+        cell.backgroundColor = .clear//self.tblMenuOptions.backgroundColor
 
         
         let lblTitle : UILabel = cell.contentView.viewWithTag(101) as! UILabel
