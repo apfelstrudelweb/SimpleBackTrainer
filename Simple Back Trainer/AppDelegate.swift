@@ -30,6 +30,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        firstVC.context = db.managedObjectContext
         db.managedObjectContext.automaticallyMergesChangesFromParent = true
         let _ =  db.insertTrainingsPlan(id: 1, workouts: [])
+        
+        Thread.sleep(forTimeInterval: 3.0)
+        
         return true
     }
 
