@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "753A55BC1BB073E900254F27"
-               BuildableName = "Simple Back Trainer.app"
-               BlueprintName = "Simple Back Trainer"
-               ReferencedContainer = "container:Simple Back Trainer.xcodeproj">
+               BuildableName = "Visual Back Trainer.app"
+               BlueprintName = "Visual Back Trainer"
+               ReferencedContainer = "container:Visual Back Trainer.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "753A55BC1BB073E900254F27"
-            BuildableName = "Simple Back Trainer.app"
-            BlueprintName = "Simple Back Trainer"
-            ReferencedContainer = "container:Simple Back Trainer.xcodeproj">
+            BuildableName = "Visual Back Trainer.app"
+            BlueprintName = "Visual Back Trainer"
+            ReferencedContainer = "container:Visual Back Trainer.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "753A55BC1BB073E900254F27"
-            BuildableName = "Simple Back Trainer.app"
-            BlueprintName = "Simple Back Trainer"
-            ReferencedContainer = "container:Simple Back Trainer.xcodeproj">
+            BuildableName = "Visual Back Trainer.app"
+            BlueprintName = "Visual Back Trainer"
+            ReferencedContainer = "container:Visual Back Trainer.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -75,9 +75,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "753A55BC1BB073E900254F27"
-            BuildableName = "Simple Back Trainer.app"
-            BlueprintName = "Simple Back Trainer"
-            ReferencedContainer = "container:Simple Back Trainer.xcodeproj">
+            BuildableName = "Visual Back Trainer.app"
+            BlueprintName = "Visual Back Trainer"
+            ReferencedContainer = "container:Visual Back Trainer.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

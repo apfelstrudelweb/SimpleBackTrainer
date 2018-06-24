@@ -16,14 +16,6 @@
                 <outlet property="basicImageView" destination="SB7-mG-RH9" id="euJ-TC-0s9"/>
                 <outlet property="containerView" destination="KbC-M8-HaH" id="aCF-Bn-VjA"/>
                 <outlet property="scrollView" destination="X50-3N-h0B" id="x28-kc-kCd"/>
-                <outletCollection property="imageViewCollection" destination="DRX-Ty-pIE" collectionClass="NSMutableArray" id="NMw-p3-trZ"/>
-                <outletCollection property="imageViewCollection" destination="myJ-kH-E2S" collectionClass="NSMutableArray" id="Ae1-K5-8ly"/>
-                <outletCollection property="imageViewCollection" destination="Dqn-eX-PMK" collectionClass="NSMutableArray" id="Jnn-8Q-177"/>
-                <outletCollection property="imageViewCollection" destination="Lay-ZS-td2" collectionClass="NSMutableArray" id="gRw-gr-9MB"/>
-                <outletCollection property="imageViewCollection" destination="9Zk-Ez-Ckw" collectionClass="NSMutableArray" id="VFj-kN-11s"/>
-                <outletCollection property="imageViewCollection" destination="w3f-Vp-nnv" collectionClass="NSMutableArray" id="XJv-0z-yhd"/>
-                <outletCollection property="imageViewCollection" destination="Jga-Eq-pvO" collectionClass="NSMutableArray" id="cm9-hE-swI"/>
-                <outletCollection property="imageViewCollection" destination="T5g-vK-t1N" collectionClass="NSMutableArray" id="vxp-11-QvM"/>
                 <outletCollection property="labelCollection" destination="SbN-lP-FNW" collectionClass="NSMutableArray" id="hTu-9W-kWf"/>
                 <outletCollection property="labelCollection" destination="1zg-fg-nMR" collectionClass="NSMutableArray" id="v4e-CQ-8Fy"/>
                 <outletCollection property="labelCollection" destination="fUR-qx-n0s" collectionClass="NSMutableArray" id="whS-FT-ohQ"/>
@@ -32,48 +24,56 @@
                 <outletCollection property="labelCollection" destination="YIl-rm-a7D" collectionClass="NSMutableArray" id="tHV-cO-q3o"/>
                 <outletCollection property="labelCollection" destination="WxL-VX-JcS" collectionClass="NSMutableArray" id="kY1-HI-UDX"/>
                 <outletCollection property="labelCollection" destination="oUU-nB-QMk" collectionClass="NSMutableArray" id="iPO-gR-YJe"/>
+                <outletCollection property="imageViewCollection" destination="DRX-Ty-pIE" collectionClass="NSMutableArray" id="nCk-jT-Jtq"/>
+                <outletCollection property="imageViewCollection" destination="myJ-kH-E2S" collectionClass="NSMutableArray" id="wfN-Kt-cFF"/>
+                <outletCollection property="imageViewCollection" destination="Dqn-eX-PMK" collectionClass="NSMutableArray" id="x4B-YN-Joz"/>
+                <outletCollection property="imageViewCollection" destination="Lay-ZS-td2" collectionClass="NSMutableArray" id="SfP-it-y2J"/>
+                <outletCollection property="imageViewCollection" destination="T5g-vK-t1N" collectionClass="NSMutableArray" id="fpb-pM-bUV"/>
+                <outletCollection property="imageViewCollection" destination="Jga-Eq-pvO" collectionClass="NSMutableArray" id="qOr-M3-YuO"/>
+                <outletCollection property="imageViewCollection" destination="w3f-Vp-nnv" collectionClass="NSMutableArray" id="Bza-dz-wYn"/>
+                <outletCollection property="imageViewCollection" destination="9Zk-Ez-Ckw" collectionClass="NSMutableArray" id="rhY-n1-wVp"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" restorationIdentifier="TorsoBackView" id="iN0-l3-epB" customClass="TorsoBackView" customModule="Simple_Back_Trainer">
-            <rect key="frame" x="0.0" y="0.0" width="542" height="813"/>
+        <view contentMode="scaleToFill" restorationIdentifier="TorsoBackView" id="iN0-l3-epB" customClass="TorsoBackView" customModule="Visual_Back_Trainer">
+            <rect key="frame" x="0.0" y="0.0" width="657" height="1047"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" maximumZoomScale="3" translatesAutoresizingMaskIntoConstraints="NO" id="X50-3N-h0B">
-                    <rect key="frame" x="0.0" y="0.0" width="542" height="813"/>
+                    <rect key="frame" x="0.0" y="0.0" width="657" height="1047"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KbC-M8-HaH">
-                            <rect key="frame" x="0.0" y="0.0" width="542" height="813"/>
+                            <rect key="frame" x="0.0" y="0.0" width="657" height="1047"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pdfBackView" translatesAutoresizingMaskIntoConstraints="NO" id="SB7-mG-RH9">
-                                    <rect key="frame" x="0.0" y="0.0" width="542" height="813"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="657" height="1047"/>
                                 </imageView>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pdfRückenstrecker" translatesAutoresizingMaskIntoConstraints="NO" id="DRX-Ty-pIE" customClass="MuscleGroupImageView" customModule="Simple_Back_Trainer" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="542" height="813"/>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pdfRückenstrecker" translatesAutoresizingMaskIntoConstraints="NO" id="DRX-Ty-pIE" customClass="MuscleGroupImageView" customModule="Visual_Back_Trainer" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="657" height="1047"/>
                                 </imageView>
-                                <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pdfSchrägeBauchmuskelnHinten" translatesAutoresizingMaskIntoConstraints="NO" id="myJ-kH-E2S" customClass="MuscleGroupImageView" customModule="Simple_Back_Trainer" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="542" height="813"/>
+                                <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pdfSchrägeBauchmuskelnHinten" translatesAutoresizingMaskIntoConstraints="NO" id="myJ-kH-E2S" customClass="MuscleGroupImageView" customModule="Visual_Back_Trainer" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="657" height="1047"/>
                                 </imageView>
-                                <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pdfHalsmuskulaturHinten" translatesAutoresizingMaskIntoConstraints="NO" id="Dqn-eX-PMK" customClass="MuscleGroupImageView" customModule="Simple_Back_Trainer" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="542" height="813"/>
+                                <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pdfHalsmuskulaturHinten" translatesAutoresizingMaskIntoConstraints="NO" id="Dqn-eX-PMK" customClass="MuscleGroupImageView" customModule="Visual_Back_Trainer" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="657" height="1047"/>
                                 </imageView>
-                                <imageView userInteractionEnabled="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pdfMittlererUndUntererTrapezmuskel" translatesAutoresizingMaskIntoConstraints="NO" id="Lay-ZS-td2" customClass="MuscleGroupImageView" customModule="Simple_Back_Trainer" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="542" height="813"/>
+                                <imageView userInteractionEnabled="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pdfMittlererUndUntererTrapezmuskel" translatesAutoresizingMaskIntoConstraints="NO" id="Lay-ZS-td2" customClass="MuscleGroupImageView" customModule="Visual_Back_Trainer" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="657" height="1047"/>
                                 </imageView>
-                                <imageView userInteractionEnabled="NO" tag="4" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pdfRundUndUntergrätmuskeln" translatesAutoresizingMaskIntoConstraints="NO" id="9Zk-Ez-Ckw" customClass="MuscleGroupImageView" customModule="Simple_Back_Trainer" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="542" height="813"/>
+                                <imageView userInteractionEnabled="NO" tag="4" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pdfRundUndUntergrätmuskeln" translatesAutoresizingMaskIntoConstraints="NO" id="9Zk-Ez-Ckw" customClass="MuscleGroupImageView" customModule="Visual_Back_Trainer" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="657" height="1047"/>
                                 </imageView>
-                                <imageView userInteractionEnabled="NO" tag="5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pdfObererTrapezmuskel" translatesAutoresizingMaskIntoConstraints="NO" id="w3f-Vp-nnv" customClass="MuscleGroupImageView" customModule="Simple_Back_Trainer" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="542" height="813"/>
+                                <imageView userInteractionEnabled="NO" tag="5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pdfObererTrapezmuskel" translatesAutoresizingMaskIntoConstraints="NO" id="w3f-Vp-nnv" customClass="MuscleGroupImageView" customModule="Visual_Back_Trainer" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="657" height="1047"/>
                                 </imageView>
-                                <imageView userInteractionEnabled="NO" tag="6" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pdfSchultermuskulatur" translatesAutoresizingMaskIntoConstraints="NO" id="Jga-Eq-pvO" customClass="MuscleGroupImageView" customModule="Simple_Back_Trainer" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="542" height="813"/>
+                                <imageView userInteractionEnabled="NO" tag="6" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pdfSchultermuskulatur" translatesAutoresizingMaskIntoConstraints="NO" id="Jga-Eq-pvO" customClass="MuscleGroupImageView" customModule="Visual_Back_Trainer" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="657" height="1047"/>
                                 </imageView>
-                                <imageView userInteractionEnabled="NO" tag="7" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pdfBreiteRückenmuskeln" translatesAutoresizingMaskIntoConstraints="NO" id="T5g-vK-t1N" customClass="MuscleGroupImageView" customModule="Simple_Back_Trainer" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="542" height="813"/>
+                                <imageView userInteractionEnabled="NO" tag="7" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pdfBreiteRückenmuskeln" translatesAutoresizingMaskIntoConstraints="NO" id="T5g-vK-t1N" customClass="MuscleGroupImageView" customModule="Visual_Back_Trainer" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="657" height="1047"/>
                                 </imageView>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rückenstrecker" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SbN-lP-FNW" customClass="PaddingLabel" customModule="Simple_Back_Trainer" customModuleProvider="target">
-                                    <rect key="frame" x="239.33333333333334" y="563.33333333333337" width="64.666666666666657" height="12"/>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rückenstrecker" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SbN-lP-FNW" customClass="PaddingLabel" customModule="Visual_Back_Trainer" customModuleProvider="target">
+                                    <rect key="frame" x="297" y="727" width="64.666666666666686" height="12"/>
                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="18" id="VW2-aj-pUb">
@@ -89,8 +89,8 @@
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="8"/>
                                     </variation>
                                 </label>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="schräge Bauchmuskeln" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1zg-fg-nMR" customClass="PaddingLabel" customModule="Simple_Back_Trainer" customModuleProvider="target">
-                                    <rect key="frame" x="115.33333333333334" y="644.33333333333337" width="95.333333333333343" height="12"/>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="schräge Bauchmuskeln" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1zg-fg-nMR" customClass="PaddingLabel" customModule="Visual_Back_Trainer" customModuleProvider="target">
+                                    <rect key="frame" x="150" y="831.66666666666663" width="95.333333333333314" height="12"/>
                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="18" id="0lq-79-1Qu">
@@ -106,8 +106,8 @@
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="8"/>
                                     </variation>
                                 </label>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Halsmuskulatur" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oUU-nB-QMk" customClass="PaddingLabel" customModule="Simple_Back_Trainer" customModuleProvider="target">
-                                    <rect key="frame" x="238.33333333333334" y="213.66666666666666" width="64.666666666666657" height="12"/>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Halsmuskulatur" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oUU-nB-QMk" customClass="PaddingLabel" customModule="Visual_Back_Trainer" customModuleProvider="target">
+                                    <rect key="frame" x="296" y="277" width="64.666666666666686" height="12"/>
                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="20" id="Bh6-eK-3T1"/>
@@ -123,8 +123,8 @@
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="8"/>
                                     </variation>
                                 </label>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="mittlerer und unterer Trapezmuskel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fUR-qx-n0s" customClass="PaddingLabel" customModule="Simple_Back_Trainer" customModuleProvider="target">
-                                    <rect key="frame" x="198" y="339.33333333333331" width="146" height="12"/>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="mittlerer und unterer Trapezmuskel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fUR-qx-n0s" customClass="PaddingLabel" customModule="Visual_Back_Trainer" customModuleProvider="target">
+                                    <rect key="frame" x="255.66666666666663" y="438.66666666666669" width="146" height="12"/>
                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="20" id="R7O-eG-YRK"/>
@@ -140,8 +140,8 @@
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="8"/>
                                     </variation>
                                 </label>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rund- und Untergrätmuskeln" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tE9-Ku-AHp" customClass="PaddingLabel" customModule="Simple_Back_Trainer" customModuleProvider="target">
-                                    <rect key="frame" x="129.66666666666666" y="379.66666666666669" width="119.66666666666666" height="12"/>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rund- und Untergrätmuskeln" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tE9-Ku-AHp" customClass="PaddingLabel" customModule="Visual_Back_Trainer" customModuleProvider="target">
+                                    <rect key="frame" x="170" y="490.66666666666669" width="119.66666666666669" height="12"/>
                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="18" id="E1e-HK-rzD">
@@ -157,8 +157,8 @@
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="8"/>
                                     </variation>
                                 </label>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="oberer Trapezmuskel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jpv-yf-u4k" customClass="PaddingLabel" customModule="Simple_Back_Trainer" customModuleProvider="target">
-                                    <rect key="frame" x="228" y="257.66666666666669" width="87" height="12"/>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="oberer Trapezmuskel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jpv-yf-u4k" customClass="PaddingLabel" customModule="Visual_Back_Trainer" customModuleProvider="target">
+                                    <rect key="frame" x="285.66666666666669" y="333.66666666666669" width="87" height="12"/>
                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="18" id="ae7-RG-F6e">
@@ -174,8 +174,8 @@
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="8"/>
                                     </variation>
                                 </label>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="6" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Schultermuskulatur" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YIl-rm-a7D" customClass="PaddingLabel" customModule="Simple_Back_Trainer" customModuleProvider="target">
-                                    <rect key="frame" x="95" y="299" width="81.333333333333314" height="12"/>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="6" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Schultermuskulatur" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YIl-rm-a7D" customClass="PaddingLabel" customModule="Visual_Back_Trainer" customModuleProvider="target">
+                                    <rect key="frame" x="123.66666666666669" y="386.66666666666669" width="81.333333333333314" height="12"/>
                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="20" id="ClF-xs-ZNs"/>
@@ -191,8 +191,8 @@
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="8"/>
                                     </variation>
                                 </label>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="7" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="breite Rückenmuskeln" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WxL-VX-JcS" customClass="PaddingLabel" customModule="Simple_Back_Trainer" customModuleProvider="target">
-                                    <rect key="frame" x="171.66666666666666" y="481.33333333333331" width="91.333333333333343" height="12"/>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="7" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="breite Rückenmuskeln" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WxL-VX-JcS" customClass="PaddingLabel" customModule="Visual_Back_Trainer" customModuleProvider="target">
+                                    <rect key="frame" x="217.66666666666666" y="621.66666666666663" width="91.333333333333343" height="12"/>
                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="18" id="0hs-0V-cyE">
@@ -293,17 +293,7 @@
                 <constraint firstItem="X50-3N-h0B" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="tqX-6H-Cef"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <connections>
-                <outletCollection property="imageViewCollection" destination="DRX-Ty-pIE" collectionClass="NSMutableArray" id="bOv-i2-cJd"/>
-                <outletCollection property="imageViewCollection" destination="myJ-kH-E2S" collectionClass="NSMutableArray" id="eox-ZF-CLf"/>
-                <outletCollection property="imageViewCollection" destination="Dqn-eX-PMK" collectionClass="NSMutableArray" id="SE0-fo-K07"/>
-                <outletCollection property="imageViewCollection" destination="Lay-ZS-td2" collectionClass="NSMutableArray" id="Ean-n9-ayO"/>
-                <outletCollection property="imageViewCollection" destination="9Zk-Ez-Ckw" collectionClass="NSMutableArray" id="cJ3-Cx-8t5"/>
-                <outletCollection property="imageViewCollection" destination="w3f-Vp-nnv" collectionClass="NSMutableArray" id="Zit-4P-CxH"/>
-                <outletCollection property="imageViewCollection" destination="Jga-Eq-pvO" collectionClass="NSMutableArray" id="KLA-sm-ZiH"/>
-                <outletCollection property="imageViewCollection" destination="T5g-vK-t1N" collectionClass="NSMutableArray" id="CgD-Bl-PWb"/>
-            </connections>
-            <point key="canvasLocation" x="-10" y="-3.5"/>
+            <point key="canvasLocation" x="-10" y="-4"/>
         </view>
     </objects>
     <resources>

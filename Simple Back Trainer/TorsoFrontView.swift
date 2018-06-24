@@ -27,7 +27,10 @@ class TorsoFrontView: TorsoBasicView, UIScrollViewDelegate {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var basicImageView: UIImageView!
+    
     @IBOutlet var imageViewCollection: [MuscleGroupImageView]!
+    
+//    @IBOutlet var imageViewCollection: [MuscleGroupImageView]!
     @IBOutlet var labelCollection: [UILabel]!
     
     var frontView: FrontView = FrontView()

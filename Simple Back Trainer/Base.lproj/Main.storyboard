@@ -16,7 +16,7 @@
         <!--Hauptmenu-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController restorationIdentifier="Home" storyboardIdentifier="Home" title="Hauptmenu" id="vXZ-lx-hvc" customClass="MainMenuViewController" customModule="Simple_Back_Trainer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="Home" storyboardIdentifier="Home" title="Hauptmenu" id="vXZ-lx-hvc" customClass="MainMenuViewController" customModule="Visual_Back_Trainer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -31,7 +31,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.0" contentMode="center" reuseIdentifier="cell" id="HFq-44-xbP" customClass="ItemsCollectionViewCell" customModule="Simple_Back_Trainer" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.0" contentMode="center" reuseIdentifier="cell" id="HFq-44-xbP" customClass="ItemsCollectionViewCell" customModule="Visual_Back_Trainer" customModuleProvider="target">
                                         <rect key="frame" x="51.666666666666664" y="50" width="272" height="307"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -73,7 +73,7 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
-                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="header" id="pkp-e3-tUD" customClass="CollectionHeaderView" customModule="Simple_Back_Trainer" customModuleProvider="target">
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="header" id="pkp-e3-tUD" customClass="CollectionHeaderView" customModule="Visual_Back_Trainer" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
@@ -125,7 +125,7 @@
         <!--Trainingsplan-->
         <scene sceneID="fcX-Gp-AC7">
             <objects>
-                <viewController restorationIdentifier="PlanController" storyboardIdentifier="PlanController" title="Trainingsplan" id="4MF-OE-poI" customClass="PlanController" customModule="Simple_Back_Trainer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="PlanController" storyboardIdentifier="PlanController" title="Trainingsplan" id="4MF-OE-poI" customClass="PlanController" customModule="Visual_Back_Trainer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aEA-wL-70O">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -151,7 +151,7 @@
         <!--Premium-->
         <scene sceneID="77M-b9-AbX">
             <objects>
-                <viewController restorationIdentifier="PremiumController" storyboardIdentifier="PremiumController" title="Premium" id="jMC-5W-syg" customClass="PremiumViewController" customModule="Simple_Back_Trainer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="PremiumController" storyboardIdentifier="PremiumController" title="Premium" id="jMC-5W-syg" customClass="PremiumViewController" customModule="Visual_Back_Trainer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ThF-k1-Lsx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -203,7 +203,7 @@
                                     </constraints>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="premiumCell" rowHeight="105" id="wjX-D1-ruq" customClass="PremiumTableViewCell" customModule="Simple_Back_Trainer" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="premiumCell" rowHeight="105" id="wjX-D1-ruq" customClass="PremiumTableViewCell" customModule="Visual_Back_Trainer" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="72" width="375" height="105"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wjX-D1-ruq" id="q1u-2l-lMj">
@@ -211,7 +211,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EC3-2d-cpO">
-                                                    <rect key="frame" x="25" y="21.666666666666664" width="80" height="81"/>
+                                                    <rect key="frame" x="25" y="21.666666666666664" width="80" height="80"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="80" id="bXV-67-BIe"/>
                                                         <constraint firstAttribute="width" constant="80" id="htv-Kl-Uy0"/>
@@ -284,7 +284,7 @@
         <!--Settings-->
         <scene sceneID="kTR-EQ-icr">
             <objects>
-                <viewController restorationIdentifier="SettingsController" storyboardIdentifier="SettingsController" title="Settings" id="06L-Dc-odm" customClass="SettingsController" customModule="Simple_Back_Trainer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="SettingsController" storyboardIdentifier="SettingsController" title="Settings" id="06L-Dc-odm" customClass="SettingsController" customModule="Visual_Back_Trainer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HVy-EK-DBE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -310,7 +310,7 @@
         <!--Play-->
         <scene sceneID="q6l-iR-WN3">
             <objects>
-                <viewController restorationIdentifier="PlayVC" storyboardIdentifier="PlayVC" id="khG-SL-0rk" customClass="PlayVC" customModule="Simple_Back_Trainer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="PlayVC" storyboardIdentifier="PlayVC" id="khG-SL-0rk" customClass="PlayVC" customModule="Visual_Back_Trainer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8Tm-V4-HTY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -347,7 +347,7 @@
         <!--Slide Menu View Controller-->
         <scene sceneID="7la-Hc-DUD">
             <objects>
-                <viewController storyboardIdentifier="MenuViewController" id="A8P-iZ-97O" customClass="SlideMenuViewController" customModule="Simple_Back_Trainer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MenuViewController" id="A8P-iZ-97O" customClass="SlideMenuViewController" customModule="Visual_Back_Trainer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" opaque="NO" contentMode="scaleToFill" id="WQd-kp-cSW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -485,7 +485,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="z54-3T-DHK">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="tAx-2F-BMn" customClass="TabBarController" customModule="Simple_Back_Trainer" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="tAx-2F-BMn" customClass="TabBarController" customModule="Visual_Back_Trainer" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="ZKM-96-vtC"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="o3C-Ud-UOd">
@@ -507,7 +507,7 @@
         <!--Sports Controller-->
         <scene sceneID="uOq-zE-O0f">
             <objects>
-                <viewController restorationIdentifier="SportsController" storyboardIdentifier="SportsController" id="gbI-cU-vTB" customClass="SportsController" customModule="Simple_Back_Trainer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="SportsController" storyboardIdentifier="SportsController" id="gbI-cU-vTB" customClass="SportsController" customModule="Visual_Back_Trainer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lNc-vi-0Vl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -531,7 +531,7 @@
         <!--Trainingsübungen-->
         <scene sceneID="Hxa-X9-35z">
             <objects>
-                <tableViewController storyboardIdentifier="ExercisesController" title="Trainingsübungen" id="qbX-Tz-7OD" customClass="ExercisesTableViewController" customModule="Simple_Back_Trainer" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="ExercisesController" title="Trainingsübungen" id="qbX-Tz-7OD" customClass="ExercisesTableViewController" customModule="Visual_Back_Trainer" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="yXf-h0-jNY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -613,7 +613,7 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="videoCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="videoCell" rowHeight="64" id="1wI-5z-Ayh" customClass="VideoCell" customModule="Simple_Back_Trainer" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="videoCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="videoCell" rowHeight="64" id="1wI-5z-Ayh" customClass="VideoCell" customModule="Visual_Back_Trainer" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="85" width="375" height="64"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1wI-5z-Ayh" id="KKJ-6f-QNB">
@@ -645,7 +645,7 @@
         <!--Contact Controller-->
         <scene sceneID="Gyg-Le-bwq">
             <objects>
-                <viewController restorationIdentifier="ContactController" storyboardIdentifier="ContactController" id="wHv-uH-FCi" customClass="ContactController" customModule="Simple_Back_Trainer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="ContactController" storyboardIdentifier="ContactController" id="wHv-uH-FCi" customClass="ContactController" customModule="Visual_Back_Trainer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cNg-b8-bsX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -669,7 +669,7 @@
         <!--Activities Controller-->
         <scene sceneID="k4W-DE-ZqQ">
             <objects>
-                <viewController restorationIdentifier="ActivitiesController" storyboardIdentifier="ActivitiesController" modalPresentationStyle="overFullScreen" id="wDA-JT-tR4" customClass="ActivitiesController" customModule="Simple_Back_Trainer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="ActivitiesController" storyboardIdentifier="ActivitiesController" modalPresentationStyle="overFullScreen" id="wDA-JT-tR4" customClass="ActivitiesController" customModule="Visual_Back_Trainer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BAJ-jm-gUq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -693,7 +693,7 @@
         <!--Mobilisations Controller-->
         <scene sceneID="LfV-my-OV0">
             <objects>
-                <viewController restorationIdentifier="MobilisationsController" storyboardIdentifier="MobilisationsController" id="fSQ-ZR-31P" customClass="MobilisationsController" customModule="Simple_Back_Trainer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="MobilisationsController" storyboardIdentifier="MobilisationsController" id="fSQ-ZR-31P" customClass="MobilisationsController" customModule="Visual_Back_Trainer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ca6-yi-CDx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -717,7 +717,7 @@
         <!--Back Therapy Controller-->
         <scene sceneID="09g-yj-sDI">
             <objects>
-                <viewController restorationIdentifier="BackTherapyController" storyboardIdentifier="BackTherapyController" id="EZw-Kg-fiu" customClass="BackTherapyController" customModule="Simple_Back_Trainer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="BackTherapyController" storyboardIdentifier="BackTherapyController" id="EZw-Kg-fiu" customClass="BackTherapyController" customModule="Visual_Back_Trainer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jOL-xk-kwy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -741,7 +741,7 @@
         <!--Anatomy View Controller-->
         <scene sceneID="SN0-6b-1ZN">
             <objects>
-                <viewController restorationIdentifier="AnatomyController" storyboardIdentifier="AnatomyController" id="9cV-ZD-ZA7" customClass="AnatomyViewController" customModule="Simple_Back_Trainer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="AnatomyController" storyboardIdentifier="AnatomyController" id="9cV-ZD-ZA7" customClass="AnatomyViewController" customModule="Visual_Back_Trainer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ROu-7G-yva">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -806,7 +806,7 @@
                                 <variation key="heightClass=compact-widthClass=compact" hidden="YES"/>
                                 <variation key="heightClass=compact-widthClass=regular" hidden="YES"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cRE-24-5gX" customClass="TorsoFrontView" customModule="Simple_Back_Trainer" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cRE-24-5gX" customClass="TorsoFrontView" customModule="Visual_Back_Trainer" customModuleProvider="target">
                                 <rect key="frame" x="-3.3333333333333428" y="153" width="381.66666666666674" height="561"/>
                                 <color key="backgroundColor" red="0.68627450980000004" green="0.094117647060000004" blue="0.054901960780000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -816,7 +816,7 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="nibName" value="TorsoFrontView"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tLm-8l-oEo" customClass="MuscleGroupButton" customModule="Simple_Back_Trainer" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tLm-8l-oEo" customClass="MuscleGroupButton" customModule="Visual_Back_Trainer" customModuleProvider="target">
                                 <rect key="frame" x="26" y="724" width="323" height="44"/>
                                 <color key="backgroundColor" red="0.65949015850000003" green="0.65949015850000003" blue="0.65949015850000003" alpha="0.26000000000000001" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
@@ -827,7 +827,7 @@
                                     <segue destination="ynM-0b-4WO" kind="show" identifier="showMuscleGroupSegue" id="RWg-hz-okG"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xe5-Kt-41i" customClass="MuscleGroupButton" customModule="Simple_Back_Trainer" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xe5-Kt-41i" customClass="MuscleGroupButton" customModule="Visual_Back_Trainer" customModuleProvider="target">
                                 <rect key="frame" x="26" y="724" width="323" height="44"/>
                                 <color key="backgroundColor" red="0.65949015850000003" green="0.65949015850000003" blue="0.65949015850000003" alpha="0.25791736580000002" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -841,14 +841,14 @@
                                     <segue destination="ynM-0b-4WO" kind="show" identifier="showMuscleGroupSegue" id="Z8S-9E-Kd4"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rqN-QH-grF" customClass="TorsoBackView" customModule="Simple_Back_Trainer" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rqN-QH-grF" customClass="TorsoBackView" customModule="Visual_Back_Trainer" customModuleProvider="target">
                                 <rect key="frame" x="-3.3333333333333428" y="153" width="381.66666666666674" height="561"/>
                                 <color key="backgroundColor" red="0.029008777560000001" green="0.68219721499999997" blue="0.032932487070000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="nibName" value="TorsoBackView"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9wh-zs-mq8" userLabel="Torso Back View 2" customClass="TorsoBackView" customModule="Simple_Back_Trainer" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9wh-zs-mq8" userLabel="Torso Back View 2" customClass="TorsoBackView" customModule="Visual_Back_Trainer" customModuleProvider="target">
                                 <rect key="frame" x="45.666666666666657" y="183" width="283.66666666666674" height="417"/>
                                 <color key="backgroundColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -861,7 +861,7 @@
                                 <variation key="heightClass=compact-widthClass=regular" hidden="YES"/>
                                 <variation key="heightClass=regular-widthClass=compact" hidden="YES"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="82c-cy-6m2" userLabel="Torso Front View 2" customClass="TorsoFrontView" customModule="Simple_Back_Trainer" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="82c-cy-6m2" userLabel="Torso Front View 2" customClass="TorsoFrontView" customModule="Visual_Back_Trainer" customModuleProvider="target">
                                 <rect key="frame" x="45.666666666666657" y="183" width="283.66666666666674" height="417"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <userDefinedRuntimeAttributes>
@@ -870,7 +870,7 @@
                                 <variation key="heightClass=compact-widthClass=regular" hidden="YES"/>
                                 <variation key="heightClass=regular-widthClass=compact" hidden="YES"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VVc-v5-106" customClass="MuscleGroupButton" customModule="Simple_Back_Trainer" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VVc-v5-106" customClass="MuscleGroupButton" customModule="Visual_Back_Trainer" customModuleProvider="target">
                                 <rect key="frame" x="45.666666666666657" y="628" width="283.66666666666674" height="50"/>
                                 <color key="backgroundColor" red="0.65949015850000003" green="0.65949015850000003" blue="0.65949015850000003" alpha="0.25791736580000002" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -887,7 +887,7 @@
                                     <segue destination="ynM-0b-4WO" kind="show" identifier="showMuscleGroupSegue" id="LVj-mE-GEn"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="of5-OZ-Z5Y" customClass="MuscleGroupButton" customModule="Simple_Back_Trainer" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="of5-OZ-Z5Y" customClass="MuscleGroupButton" customModule="Visual_Back_Trainer" customModuleProvider="target">
                                 <rect key="frame" x="45.666666666666657" y="628" width="283.66666666666674" height="50"/>
                                 <color key="backgroundColor" white="0.78943452380000001" alpha="0.40936975669999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
@@ -1106,7 +1106,7 @@
         <!--Video Table View Controller-->
         <scene sceneID="cU6-Vw-MC1">
             <objects>
-                <tableViewController id="ynM-0b-4WO" customClass="VideoTableViewController" customModule="Simple_Back_Trainer" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="ynM-0b-4WO" customClass="VideoTableViewController" customModule="Visual_Back_Trainer" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="LAu-D9-rFc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1130,7 +1130,7 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="videoCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="videoCell" rowHeight="69" id="s0H-ke-APN" customClass="VideoCell" customModule="Simple_Back_Trainer" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="videoCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="videoCell" rowHeight="69" id="s0H-ke-APN" customClass="VideoCell" customModule="Visual_Back_Trainer" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="72" width="375" height="69"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="s0H-ke-APN" id="qzy-vu-loP">
@@ -1157,7 +1157,7 @@
         <!--AV Player View Controller-->
         <scene sceneID="Bjh-Fe-Nvf">
             <objects>
-                <avPlayerViewController videoGravity="AVLayerVideoGravityResizeAspect" id="Ylz-5k-IgQ" customClass="VideoPlayerViewController" customModule="Simple_Back_Trainer" customModuleProvider="target" sceneMemberID="viewController">
+                <avPlayerViewController videoGravity="AVLayerVideoGravityResizeAspect" id="Ylz-5k-IgQ" customClass="VideoPlayerViewController" customModule="Visual_Back_Trainer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="e6e-P2-MZR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1175,7 +1175,6 @@
                     <tabBarItem key="tabBarItem" title="Home" image="home" id="vJq-Qi-zZx"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" backIndicatorImage="ic_arrow_black" id="V4Z-RY-5W8">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" red="0.1239974424" green="0.16451942920000001" blue="0.47357922790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1199,7 +1198,6 @@
                     <tabBarItem key="tabBarItem" title="Plan" image="clipboard" id="EFA-mI-M8v"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" backIndicatorImage="ic_arrow_black" id="dFf-3P-5K6">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" red="0.1239974424" green="0.16451942920000001" blue="0.47357922790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1226,7 +1224,6 @@
                     <tabBarItem key="tabBarItem" title="Premium" image="premium" id="SaP-fD-OLQ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" backIndicatorImage="ic_arrow_black" id="esv-OJ-MlZ">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" red="0.12399744242429733" green="0.16451942920684814" blue="0.47357922792434692" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

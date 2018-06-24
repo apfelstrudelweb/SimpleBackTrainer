@@ -127,7 +127,7 @@
 		1BCF6A2320C9B40200E310DF /* TorsoFrontView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TorsoFrontView.xib; sourceTree = "<group>"; };
 		1BCF8461203206B000F55F64 /* ItemsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsCollectionViewCell.swift; sourceTree = "<group>"; };
 		6661853E5EC2C1DF3EB34716 /* Pods-Simple Back Trainer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Simple Back Trainer.release.xcconfig"; path = "Pods/Target Support Files/Pods-Simple Back Trainer/Pods-Simple Back Trainer.release.xcconfig"; sourceTree = "<group>"; };
-		753A55BD1BB073E900254F27 /* Simple Back Trainer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Simple Back Trainer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		753A55BD1BB073E900254F27 /* Visual Back Trainer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Visual Back Trainer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		753A55C11BB073E900254F27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		753A55C21BB073E900254F27 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		753A55C71BB073E900254F27 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -315,7 +315,7 @@
 		753A55BE1BB073E900254F27 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				753A55BD1BB073E900254F27 /* Simple Back Trainer.app */,
+				753A55BD1BB073E900254F27 /* Visual Back Trainer.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -367,9 +367,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		753A55BC1BB073E900254F27 /* Simple Back Trainer */ = {
+		753A55BC1BB073E900254F27 /* Visual Back Trainer */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 753A55DC1BB073E900254F27 /* Build configuration list for PBXNativeTarget "Simple Back Trainer" */;
+			buildConfigurationList = 753A55DC1BB073E900254F27 /* Build configuration list for PBXNativeTarget "Visual Back Trainer" */;
 			buildPhases = (
 				C24743F90DA16F926EAC6C95 /* [CP] Check Pods Manifest.lock */,
 				753A55B91BB073E900254F27 /* Sources */,
@@ -381,9 +381,9 @@
 			);
 			dependencies = (
 			);
-			name = "Simple Back Trainer";
+			name = "Visual Back Trainer";
 			productName = AKSwiftSlideMenu;
-			productReference = 753A55BD1BB073E900254F27 /* Simple Back Trainer.app */;
+			productReference = 753A55BD1BB073E900254F27 /* Visual Back Trainer.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -404,7 +404,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 753A55B81BB073E900254F27 /* Build configuration list for PBXProject "Simple Back Trainer" */;
+			buildConfigurationList = 753A55B81BB073E900254F27 /* Build configuration list for PBXProject "Visual Back Trainer" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -417,7 +417,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				753A55BC1BB073E900254F27 /* Simple Back Trainer */,
+				753A55BC1BB073E900254F27 /* Visual Back Trainer */,
 			);
 		};
 /* End PBXProject section */
@@ -717,7 +717,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		753A55B81BB073E900254F27 /* Build configuration list for PBXProject "Simple Back Trainer" */ = {
+		753A55B81BB073E900254F27 /* Build configuration list for PBXProject "Visual Back Trainer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				753A55DA1BB073E900254F27 /* Debug */,
@@ -726,7 +726,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		753A55DC1BB073E900254F27 /* Build configuration list for PBXNativeTarget "Simple Back Trainer" */ = {
+		753A55DC1BB073E900254F27 /* Build configuration list for PBXNativeTarget "Visual Back Trainer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				753A55DD1BB073E900254F27 /* Debug */,
