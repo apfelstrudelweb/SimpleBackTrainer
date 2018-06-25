@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import SnapKit
 
 class BaseViewController: UIViewController {
     
@@ -17,6 +17,22 @@ class BaseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+
+        let separatorView = UIView()
+        separatorView.backgroundColor = UIColor(red:0.82, green:0.82, blue:0.82, alpha:1.0)
+        separatorView.translatesAutoresizingMaskIntoConstraints = false
+        
+        
+        self.tabBarController?.tabBar.addSubview(separatorView)
+        
+        separatorView.snp.makeConstraints { (make) -> Void in
+            make.height.equalTo(0.6)
+            make.top.equalToSuperview()
+            make.left.equalToSuperview()
+            make.right.equalToSuperview()
+            //make.edges.equalTo((self.tabBarController?.tabBar)!)
+        }
     }
     
 

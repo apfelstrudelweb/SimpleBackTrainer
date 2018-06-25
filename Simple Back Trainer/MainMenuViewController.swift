@@ -29,14 +29,12 @@ class MainMenuViewController: BaseViewController, UICollectionViewDataSource, UI
 
         // for ADs
         self.collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: adsBottomSpace, right: 0)
-       // addSlideMenuButton()
+        self.trainingModel.getWorkouts()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.title = "Home"
         self.navigationController?.tabBarItem.title = "Home"
-        
-        self.trainingModel.getWorkouts()
     }
 
     
@@ -83,7 +81,9 @@ class MainMenuViewController: BaseViewController, UICollectionViewDataSource, UI
         return CGSize(width: size, height: fact*size)
     }
     
+    
     // MARK: - UICollectionViewDataSource protocol
+    
     
     // tell the collection view how many cells to make
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

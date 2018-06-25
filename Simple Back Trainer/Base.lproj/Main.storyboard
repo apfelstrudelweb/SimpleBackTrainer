@@ -537,14 +537,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="Qvz-Go-JOv">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="57"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OFt-UH-iNV">
+                                    <rect key="frame" x="0.0" y="49" width="375" height="16"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vch-L2-O3e">
+                                    <rect key="frame" x="0.0" y="49" width="375" height="1"/>
+                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="0.59999999999999998" id="oem-7d-0iA"/>
+                                    </constraints>
+                                </view>
                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="A1s-yS-mg5">
-                                    <rect key="frame" x="30" y="13.999999999999998" width="315" height="29.333333333333329"/>
+                                    <rect key="frame" x="20" y="10" width="335" height="32.333333333333336"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R5w-yQ-n1b">
-                                            <rect key="frame" x="0.0" y="0.0" width="38.333333333333336" height="29.333333333333332"/>
+                                            <rect key="frame" x="0.0" y="0.33333333333333215" width="42.666666666666664" height="32.333333333333343"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="R5w-yQ-n1b" secondAttribute="height" multiplier="58:44" id="7iy-YE-iuN"/>
                                             </constraints>
@@ -557,7 +568,7 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bVr-0P-4qm">
-                                            <rect key="frame" x="68.333333333333329" y="0.0" width="33.333333333333329" height="29.333333333333332"/>
+                                            <rect key="frame" x="72.666666666666671" y="0.33333333333333215" width="36.666666666666671" height="32.333333333333343"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="bVr-0P-4qm" secondAttribute="height" multiplier="54:47" id="3Dc-nI-gi6"/>
                                             </constraints>
@@ -567,7 +578,7 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DmM-Ij-E8p">
-                                            <rect key="frame" x="131.66666666666666" y="0.0" width="50.666666666666657" height="29.333333333333332"/>
+                                            <rect key="frame" x="139.33333333333334" y="0.33333333333333215" width="55.333333333333343" height="32.333333333333343"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="DmM-Ij-E8p" secondAttribute="height" multiplier="75:44" id="X8k-a3-eMz"/>
                                             </constraints>
@@ -577,7 +588,7 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TZ2-Ij-mFH">
-                                            <rect key="frame" x="212.33333333333334" y="0.0" width="31" height="29.333333333333332"/>
+                                            <rect key="frame" x="224.66666666666666" y="0.33333333333333215" width="34.333333333333343" height="32.333333333333343"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="TZ2-Ij-mFH" secondAttribute="height" multiplier="46:44" id="x0U-Nr-GBH"/>
                                             </constraints>
@@ -587,7 +598,7 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dfJ-m9-Hh1">
-                                            <rect key="frame" x="273.33333333333331" y="0.0" width="41.666666666666686" height="29.333333333333332"/>
+                                            <rect key="frame" x="289" y="0.33333333333333215" width="46" height="32.333333333333343"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="dfJ-m9-Hh1" secondAttribute="height" multiplier="62:44" id="7wZ-iJ-qhO"/>
                                             </constraints>
@@ -601,20 +612,27 @@
                             </subviews>
                             <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
-                                <constraint firstItem="A1s-yS-mg5" firstAttribute="centerY" secondItem="Qvz-Go-JOv" secondAttribute="centerY" id="YPk-oL-oGT"/>
-                                <constraint firstAttribute="trailing" secondItem="A1s-yS-mg5" secondAttribute="trailing" constant="30" id="mnm-1H-YGP">
-                                    <variation key="heightClass=compact-widthClass=compact" constant="30"/>
-                                    <variation key="heightClass=compact-widthClass=regular" constant="30"/>
+                                <constraint firstAttribute="bottom" secondItem="Vch-L2-O3e" secondAttribute="bottom" constant="15" id="9hT-ed-b7e"/>
+                                <constraint firstAttribute="bottom" secondItem="OFt-UH-iNV" secondAttribute="bottom" id="JPs-en-fSP"/>
+                                <constraint firstItem="OFt-UH-iNV" firstAttribute="top" secondItem="Vch-L2-O3e" secondAttribute="top" id="Nks-kk-prB"/>
+                                <constraint firstItem="A1s-yS-mg5" firstAttribute="centerY" secondItem="Qvz-Go-JOv" secondAttribute="centerY" multiplier="0.8" id="YPk-oL-oGT"/>
+                                <constraint firstAttribute="trailing" secondItem="Vch-L2-O3e" secondAttribute="trailing" id="a5q-1W-pY0"/>
+                                <constraint firstItem="Vch-L2-O3e" firstAttribute="leading" secondItem="Qvz-Go-JOv" secondAttribute="leading" id="gVf-VE-xxB"/>
+                                <constraint firstAttribute="trailing" secondItem="A1s-yS-mg5" secondAttribute="trailing" constant="20" id="mnm-1H-YGP">
+                                    <variation key="heightClass=compact-widthClass=compact" constant="50"/>
+                                    <variation key="heightClass=compact-widthClass=regular" constant="50"/>
                                 </constraint>
-                                <constraint firstItem="A1s-yS-mg5" firstAttribute="leading" secondItem="Qvz-Go-JOv" secondAttribute="leading" constant="30" id="ojU-NA-LGK">
-                                    <variation key="heightClass=compact-widthClass=compact" constant="30"/>
-                                    <variation key="heightClass=compact-widthClass=regular" constant="30"/>
+                                <constraint firstItem="A1s-yS-mg5" firstAttribute="leading" secondItem="Qvz-Go-JOv" secondAttribute="leading" constant="20" id="ojU-NA-LGK">
+                                    <variation key="heightClass=compact-widthClass=compact" constant="50"/>
+                                    <variation key="heightClass=compact-widthClass=regular" constant="50"/>
                                 </constraint>
+                                <constraint firstAttribute="trailing" secondItem="OFt-UH-iNV" secondAttribute="trailing" id="see-g0-ai4"/>
+                                <constraint firstItem="OFt-UH-iNV" firstAttribute="leading" secondItem="Qvz-Go-JOv" secondAttribute="leading" id="yPZ-RW-V4C"/>
                             </constraints>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="videoCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="videoCell" rowHeight="64" id="1wI-5z-Ayh" customClass="VideoCell" customModule="Visual_Back_Trainer" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="85" width="375" height="64"/>
+                                <rect key="frame" x="0.0" y="93" width="375" height="64"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1wI-5z-Ayh" id="KKJ-6f-QNB">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="63.666666666666664"/>
@@ -633,7 +651,7 @@
                         <outlet property="buttonHandweight" destination="R5w-yQ-n1b" id="hgO-Bo-cak"/>
                         <outlet property="buttonMachine" destination="dfJ-m9-Hh1" id="lM0-gj-vJk"/>
                         <outlet property="buttonMat" destination="DmM-Ij-E8p" id="OFO-5z-NxC"/>
-                        <outlet property="headerView" destination="Qvz-Go-JOv" id="EMB-OQ-eHZ"/>
+                        <outlet property="headerView" destination="Qvz-Go-JOv" id="Dh4-uB-UNJ"/>
                         <outletCollection property="buttons" destination="dfJ-m9-Hh1" collectionClass="NSMutableArray" id="ZqF-nV-CsN"/>
                         <segue destination="Ylz-5k-IgQ" kind="presentation" identifier="showVideoSegue" id="ZQd-kQ-BxA"/>
                     </connections>
@@ -1116,7 +1134,7 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JfL-Fx-tR3">
-                                    <rect key="frame" x="16" y="12" width="343" height="20.333333333333329"/>
+                                    <rect key="frame" x="16" y="11.999999999999998" width="343" height="20.333333333333329"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
@@ -1175,6 +1193,7 @@
                     <tabBarItem key="tabBarItem" title="Home" image="home" id="vJq-Qi-zZx"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" backIndicatorImage="ic_arrow_black" id="V4Z-RY-5W8">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" red="0.1239974424" green="0.16451942920000001" blue="0.47357922790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1198,6 +1217,7 @@
                     <tabBarItem key="tabBarItem" title="Plan" image="clipboard" id="EFA-mI-M8v"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" backIndicatorImage="ic_arrow_black" id="dFf-3P-5K6">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" red="0.1239974424" green="0.16451942920000001" blue="0.47357922790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1224,6 +1244,7 @@
                     <tabBarItem key="tabBarItem" title="Premium" image="premium" id="SaP-fD-OLQ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" backIndicatorImage="ic_arrow_black" id="esv-OJ-MlZ">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" red="0.12399744242429733" green="0.16451942920684814" blue="0.47357922792434692" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

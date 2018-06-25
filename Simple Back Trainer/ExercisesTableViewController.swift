@@ -31,8 +31,8 @@ class ExercisesTableViewController: UITableViewController, NSFetchedResultsContr
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        headerView.backgroundColor = UIColor(patternImage: UIImage(named: "bg_filter.png")!)
+
+        headerView.backgroundColor = UITabBar.appearance().barTintColor
 
         buttonHandweight.tintColor = self.navigationController?.navigationBar.barTintColor
         buttonBand.tintColor = inactiveColor
@@ -69,6 +69,12 @@ class ExercisesTableViewController: UITableViewController, NSFetchedResultsContr
         
         self.filterHandweight((Any).self)
 
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        
+        headerView.frame.size.height = self.view.frame.size.height > self.view.frame.size.width ? 65 : 80
     }
     
     func clearButtons() {
