@@ -30,7 +30,7 @@ class TorsoFrontView: TorsoBasicView, UIScrollViewDelegate {
     
     @IBOutlet var imageViewCollection: [MuscleGroupImageView]!
     
-//    @IBOutlet var imageViewCollection: [MuscleGroupImageView]!
+
     @IBOutlet var labelCollection: [UILabel]!
     
     var frontView: FrontView = FrontView()
@@ -60,12 +60,12 @@ class TorsoFrontView: TorsoBasicView, UIScrollViewDelegate {
         let images = imageViewCollection.sorted { $0.tag < $1.tag }
         
         for (index, imageView) in images.enumerated() {
-            imageView.tintColor = frontView.dict[index]?.color
-            imageView.muscleGroupId = frontView.dict[index]?.index
+            imageView.tintColor = frontView.dict[index].color
+            imageView.muscleGroupId = frontView.dict[index].index
             
             labels[index].alpha = 0
-            labels[index].backgroundColor = frontView.dict[index]?.color
-            labels[index].text = frontView.dict[index]?.muscleName
+            labels[index].backgroundColor = frontView.dict[index].color
+            labels[index].text = frontView.dict[index].muscleName
             labels[index].layer.cornerRadius = 5
         }
     }
@@ -146,10 +146,10 @@ class TorsoFrontView: TorsoBasicView, UIScrollViewDelegate {
         let h = tapGestureRecognizer.view?.frame.size.height
         
         let relativePoint = CGPoint(x: point.x/w!, y: point.y/h!)
-        //print(relativePoint)
+        print(relativePoint)
         
         frontView.dict.forEach {
-            let torso = $0.value
+            let torso = $0
             if torso.tapArea.contains(relativePoint) {
                 tappedMuscleGroupName = torso.muscleName
                 tappedMuscleGroupColor = torso.color

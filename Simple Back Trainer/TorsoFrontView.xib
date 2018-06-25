@@ -19,9 +19,11 @@
                 <outletCollection property="labelCollection" destination="GKW-c8-g1t" collectionClass="NSMutableArray" id="iGJ-Yt-68h"/>
                 <outletCollection property="labelCollection" destination="nXh-GL-zxI" collectionClass="NSMutableArray" id="mPo-zh-hhc"/>
                 <outletCollection property="labelCollection" destination="mcw-eU-Uqb" collectionClass="NSMutableArray" id="BvS-ZH-UmM"/>
-                <outletCollection property="imageViewCollection" destination="nTZ-Dd-5el" collectionClass="NSMutableArray" id="mcs-Ai-Cjb"/>
-                <outletCollection property="imageViewCollection" destination="dai-I5-Poa" collectionClass="NSMutableArray" id="2MC-3a-fcq"/>
-                <outletCollection property="imageViewCollection" destination="z2a-9T-JCf" collectionClass="NSMutableArray" id="pdx-5a-R4L"/>
+                <outletCollection property="labelCollection" destination="tui-YG-xlg" collectionClass="NSMutableArray" id="Woy-vD-cpA"/>
+                <outletCollection property="imageViewCollection" destination="nTZ-Dd-5el" collectionClass="NSMutableArray" id="MFw-DQ-MSg"/>
+                <outletCollection property="imageViewCollection" destination="dai-I5-Poa" collectionClass="NSMutableArray" id="Aza-0Z-RhZ"/>
+                <outletCollection property="imageViewCollection" destination="z2a-9T-JCf" collectionClass="NSMutableArray" id="B4E-qu-1Zv"/>
+                <outletCollection property="imageViewCollection" destination="Eg0-BX-OwV" collectionClass="NSMutableArray" id="XmM-BA-D2f"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -45,6 +47,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="458" height="674"/>
                                 </imageView>
                                 <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pdfHalsmuskulaturVorne" translatesAutoresizingMaskIntoConstraints="NO" id="z2a-9T-JCf" customClass="MuscleGroupImageView" customModule="Visual_Back_Trainer" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="458" height="674"/>
+                                </imageView>
+                                <imageView userInteractionEnabled="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pdfObererTrapezmuskelVorne" translatesAutoresizingMaskIntoConstraints="NO" id="Eg0-BX-OwV" customClass="MuscleGroupImageView" customModule="Visual_Back_Trainer" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="458" height="674"/>
                                 </imageView>
                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="gerade Bauchmuskeln" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GKW-c8-g1t" customClass="PaddingLabel" customModule="Visual_Back_Trainer" customModuleProvider="target">
@@ -95,31 +100,51 @@
                                     <nil key="highlightedColor"/>
                                     <size key="shadowOffset" width="1" height="1"/>
                                 </label>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="oberer Trapezmuskel" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tui-YG-xlg" customClass="PaddingLabel" customModule="Visual_Back_Trainer" customModuleProvider="target">
+                                    <rect key="frame" x="95.666666666666686" y="236.66666666666666" width="83.333333333333314" height="12"/>
+                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="18" id="0Ub-Na-ztA">
+                                            <variation key="heightClass=regular-widthClass=compact" constant="12"/>
+                                        </constraint>
+                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="20" id="4VT-UC-dDi"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="8"/>
+                                    <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                    <size key="shadowOffset" width="1" height="1"/>
+                                </label>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
+                                <constraint firstItem="Eg0-BX-OwV" firstAttribute="leading" secondItem="Tmt-xh-QNj" secondAttribute="leading" id="14E-Ii-nHe"/>
                                 <constraint firstItem="Tmt-xh-QNj" firstAttribute="trailing" secondItem="dai-I5-Poa" secondAttribute="trailing" id="6pj-bQ-Jxj"/>
                                 <constraint firstItem="Tmt-xh-QNj" firstAttribute="leading" secondItem="nTZ-Dd-5el" secondAttribute="leading" id="7is-2F-jRA"/>
                                 <constraint firstAttribute="width" secondItem="fGj-C7-Zok" secondAttribute="height" multiplier="229:337" id="7kR-id-qXv"/>
                                 <constraint firstItem="nXh-GL-zxI" firstAttribute="centerX" secondItem="fGj-C7-Zok" secondAttribute="centerX" multiplier="0.6" id="BVU-eP-siF"/>
                                 <constraint firstItem="Tmt-xh-QNj" firstAttribute="top" secondItem="fGj-C7-Zok" secondAttribute="top" id="EoG-er-Yf6"/>
                                 <constraint firstItem="Tmt-xh-QNj" firstAttribute="trailing" secondItem="z2a-9T-JCf" secondAttribute="trailing" id="H1K-X9-RLM"/>
+                                <constraint firstItem="Eg0-BX-OwV" firstAttribute="bottom" secondItem="Tmt-xh-QNj" secondAttribute="bottom" id="KTs-2K-sde"/>
                                 <constraint firstItem="Tmt-xh-QNj" firstAttribute="leading" secondItem="fGj-C7-Zok" secondAttribute="leading" id="Kdf-BJ-p2c"/>
+                                <constraint firstItem="tui-YG-xlg" firstAttribute="centerY" secondItem="fGj-C7-Zok" secondAttribute="centerY" multiplier="0.72" id="N8o-lI-xx8"/>
                                 <constraint firstItem="Tmt-xh-QNj" firstAttribute="top" secondItem="dai-I5-Poa" secondAttribute="top" id="Pif-be-W2P"/>
                                 <constraint firstItem="Tmt-xh-QNj" firstAttribute="leading" secondItem="z2a-9T-JCf" secondAttribute="leading" id="QUc-lE-306"/>
                                 <constraint firstItem="Tmt-xh-QNj" firstAttribute="trailing" secondItem="nTZ-Dd-5el" secondAttribute="trailing" id="X3z-rH-Nw1"/>
                                 <constraint firstItem="nXh-GL-zxI" firstAttribute="centerY" secondItem="fGj-C7-Zok" secondAttribute="centerY" multiplier="1.3" id="XxF-kY-a38"/>
                                 <constraint firstAttribute="trailing" secondItem="Tmt-xh-QNj" secondAttribute="trailing" id="f2B-Ix-PuH"/>
+                                <constraint firstItem="Eg0-BX-OwV" firstAttribute="trailing" secondItem="Tmt-xh-QNj" secondAttribute="trailing" id="gLx-wk-0TE"/>
                                 <constraint firstItem="GKW-c8-g1t" firstAttribute="top" secondItem="Tmt-xh-QNj" secondAttribute="centerY" multiplier="1.4" id="mrv-vA-HRt"/>
                                 <constraint firstItem="mcw-eU-Uqb" firstAttribute="centerX" secondItem="fGj-C7-Zok" secondAttribute="centerX" multiplier="1.01" id="qI6-Nq-PBu"/>
                                 <constraint firstItem="Tmt-xh-QNj" firstAttribute="bottom" secondItem="z2a-9T-JCf" secondAttribute="bottom" id="qgi-Hu-7k4"/>
                                 <constraint firstItem="mcw-eU-Uqb" firstAttribute="centerY" secondItem="fGj-C7-Zok" secondAttribute="centerY" multiplier="0.65" id="rTI-PK-Rl0"/>
                                 <constraint firstAttribute="bottom" secondItem="Tmt-xh-QNj" secondAttribute="bottom" id="u5h-A3-BzO"/>
+                                <constraint firstItem="Eg0-BX-OwV" firstAttribute="top" secondItem="Tmt-xh-QNj" secondAttribute="top" id="uvT-tu-xrU"/>
                                 <constraint firstItem="Tmt-xh-QNj" firstAttribute="top" secondItem="nTZ-Dd-5el" secondAttribute="top" id="v0S-Pt-lsI"/>
                                 <constraint firstItem="GKW-c8-g1t" firstAttribute="centerX" secondItem="fGj-C7-Zok" secondAttribute="centerX" id="wdm-w1-IEr"/>
                                 <constraint firstItem="Tmt-xh-QNj" firstAttribute="top" secondItem="z2a-9T-JCf" secondAttribute="top" id="wtg-D6-s7w"/>
                                 <constraint firstItem="Tmt-xh-QNj" firstAttribute="leading" secondItem="dai-I5-Poa" secondAttribute="leading" id="xoK-7D-v2R"/>
                                 <constraint firstItem="Tmt-xh-QNj" firstAttribute="bottom" secondItem="dai-I5-Poa" secondAttribute="bottom" id="z1u-2A-VVP"/>
+                                <constraint firstItem="tui-YG-xlg" firstAttribute="centerX" secondItem="fGj-C7-Zok" secondAttribute="centerX" multiplier="0.6" id="zQY-5u-MqO"/>
                                 <constraint firstItem="Tmt-xh-QNj" firstAttribute="bottom" secondItem="nTZ-Dd-5el" secondAttribute="bottom" id="zuk-wZ-zOO"/>
                             </constraints>
                             <variation key="default">
@@ -157,6 +182,7 @@
         <image name="pdfBauchmuskeln" width="298" height="452"/>
         <image name="pdfFrontView" width="298" height="452"/>
         <image name="pdfHalsmuskulaturVorne" width="298" height="452"/>
+        <image name="pdfObererTrapezmuskelVorne" width="298" height="452"/>
         <image name="pdfSchrägeBauchmuskelnVorne" width="298" height="452"/>
     </resources>
 </document>

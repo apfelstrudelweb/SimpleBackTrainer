@@ -297,11 +297,13 @@ class AnatomyViewController: UIViewController {
 extension AnatomyViewController: TorsoFrontViewDelegate {
     func updateFrontButton(index: Int, sender: TorsoFrontView) {
         
-        let frontViewItem = FrontView().dict[index]
+        let sorted = FrontView().dict.sorted(by: { $0.index < $1.index })
         
-        frontViewButton.backgroundColor = frontViewItem?.color
-        frontViewButton.setTitle(frontViewItem?.muscleName, for: .normal)
-        frontViewButton.muscleGroupId = frontViewItem?.index
+        let frontViewItem = sorted[index]
+        
+        frontViewButton.backgroundColor = frontViewItem.color
+        frontViewButton.setTitle(frontViewItem.muscleName, for: .normal)
+        frontViewButton.muscleGroupId = frontViewItem.index
         
         frontViewButtonLarge.backgroundColor = frontViewButton.backgroundColor
         frontViewButtonLarge.setTitle(frontViewButton.titleLabel?.text, for: .normal)

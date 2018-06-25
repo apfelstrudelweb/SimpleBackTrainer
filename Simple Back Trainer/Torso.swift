@@ -28,11 +28,11 @@ class Torso: NSObject {
 
 class FrontView: NSObject {
     
-    var dict: [Int: Torso]
+    var dict: [Torso]
     
     var fetchedResultsController: NSFetchedResultsController<Workout>!
     
-    init(dict: [Int: Torso]) {
+    init(dict: [Torso]) {
         self.dict = dict
     }
     
@@ -76,14 +76,24 @@ class FrontView: NSObject {
         tapPath_2.addLine(to: CGPoint(x:0.57909604519774, y:0.367562380038388))
         tapPath_2.close()
         
-        let tapPaths = [tapPath_0, tapPath_1, tapPath_2]
+        let tapPath_3 = UIBezierPath()
+        tapPath_3.move(to: CGPoint(x:0.305726872246696, y:0.359066427289048))
+        tapPath_3.addLine(to: CGPoint(x:0.41585900394927, y:0.324356654388044))
+        tapPath_3.addLine(to: CGPoint(x:0.418502175755438, y:0.36744462566273))
+        tapPath_3.close()
+        tapPath_3.move(to: CGPoint(x:0.597356814749966, y:0.366247755834829))
+        tapPath_3.addLine(to: CGPoint(x:0.609691629955947, y:0.328545780969479))
+        tapPath_3.addLine(to: CGPoint(x:0.726872233252168, y:0.361460194339444))
+        tapPath_3.close()
         
-        var dict : [Int:Torso] = [:]
+        let tapPaths = [tapPath_0, tapPath_1, tapPath_2, tapPath_3]
+        
+        var dict : [Torso] = []
         
         var index: Int = 0
         
         for group in frontResult {
-            dict[index] = Torso(withIndex: Int(group.id), color: (group.color?.colorFromString())!, muscleName: group.name!, tapArea: tapPaths[index])
+            dict.append(Torso(withIndex: Int(group.id), color: (group.color?.colorFromString())!, muscleName: group.name!, tapArea: tapPaths[index]))
             index+=1
         }
 
