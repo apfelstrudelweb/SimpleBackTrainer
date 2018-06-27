@@ -555,7 +555,7 @@
                                     <rect key="frame" x="20" y="10" width="335" height="32.333333333333336"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R5w-yQ-n1b">
-                                            <rect key="frame" x="0.0" y="0.33333333333333215" width="42.666666666666664" height="32.333333333333343"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="42.666666666666664" height="32.333333333333336"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="R5w-yQ-n1b" secondAttribute="height" multiplier="58:44" id="7iy-YE-iuN"/>
                                             </constraints>
@@ -568,7 +568,7 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bVr-0P-4qm">
-                                            <rect key="frame" x="72.666666666666671" y="0.33333333333333215" width="36.666666666666671" height="32.333333333333343"/>
+                                            <rect key="frame" x="72.666666666666671" y="0.0" width="36.666666666666671" height="32.333333333333336"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="bVr-0P-4qm" secondAttribute="height" multiplier="54:47" id="3Dc-nI-gi6"/>
                                             </constraints>
@@ -578,7 +578,7 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DmM-Ij-E8p">
-                                            <rect key="frame" x="139.33333333333334" y="0.33333333333333215" width="55.333333333333343" height="32.333333333333343"/>
+                                            <rect key="frame" x="139.33333333333334" y="0.0" width="55.333333333333343" height="32.333333333333336"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="DmM-Ij-E8p" secondAttribute="height" multiplier="75:44" id="X8k-a3-eMz"/>
                                             </constraints>
@@ -588,7 +588,7 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TZ2-Ij-mFH">
-                                            <rect key="frame" x="224.66666666666666" y="0.33333333333333215" width="34.333333333333343" height="32.333333333333343"/>
+                                            <rect key="frame" x="224.66666666666666" y="0.0" width="34.333333333333343" height="32.333333333333336"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="TZ2-Ij-mFH" secondAttribute="height" multiplier="46:44" id="x0U-Nr-GBH"/>
                                             </constraints>
@@ -598,7 +598,7 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dfJ-m9-Hh1">
-                                            <rect key="frame" x="289" y="0.33333333333333215" width="46" height="32.333333333333343"/>
+                                            <rect key="frame" x="289" y="0.0" width="46" height="32.333333333333336"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="dfJ-m9-Hh1" secondAttribute="height" multiplier="62:44" id="7wZ-iJ-qhO"/>
                                             </constraints>
