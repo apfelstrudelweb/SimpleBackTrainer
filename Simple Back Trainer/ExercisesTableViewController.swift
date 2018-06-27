@@ -17,6 +17,11 @@ class ExercisesTableViewController: UITableViewController, NSFetchedResultsContr
     
     var fetchedResultsController: NSFetchedResultsController<Workout>!
     var fetchRequest: NSFetchRequest<Workout>!
+    
+    var toggleButton: UIButton!
+    var spineImage = UIImage.init(named: "tabNoSpine")?.withRenderingMode(.alwaysTemplate)
+    var noSpineImage = UIImage.init(named: "tabSpine")?.withRenderingMode(.alwaysTemplate)
+    var filter: Bool = false
 
     @IBOutlet weak var headerView: UIView!
     
@@ -29,9 +34,24 @@ class ExercisesTableViewController: UITableViewController, NSFetchedResultsContr
     
     @IBOutlet var buttons: [UIButton]!
     
+    @IBOutlet weak var warningBar: UIView!
+    @IBOutlet weak var warningLabel: UILabel!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        toggleButton = UIButton.init(type: .custom)
+        //toggleButton.setImage(spineImage, for: .normal)
+        toggleButton.tintColor = .white
+        toggleButton.addTarget(self, action:#selector(ExercisesTableViewController.toggleFilter), for:.touchUpInside)
+        let barButton = UIBarButtonItem.init(customView: toggleButton)
+        self.navigationItem.rightBarButtonItem = barButton
+        
+        self.toggleFilter()
+        
+        
         headerView.backgroundColor = UITabBar.appearance().barTintColor
 
         buttonHandweight.tintColor = self.navigationController?.navigationBar.barTintColor
@@ -70,11 +90,11 @@ class ExercisesTableViewController: UITableViewController, NSFetchedResultsContr
         self.filterHandweight((Any).self)
 
     }
-    
+
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         
-        headerView.frame.size.height = self.view.frame.size.height > self.view.frame.size.width ? 65 : 80
+        headerView.frame.size.height = self.view.frame.size.height > self.view.frame.size.width ? 90 : 110
     }
     
     func clearButtons() {
@@ -84,6 +104,16 @@ class ExercisesTableViewController: UITableViewController, NSFetchedResultsContr
         buttonMat.tintColor = inactiveColor
         buttonBall.tintColor = inactiveColor
         buttonMachine.tintColor = inactiveColor
+    }
+    
+    @objc func toggleFilter() {
+        let image = filter ? noSpineImage : spineImage
+        toggleButton.setImage(image, for: UIControlState.normal)
+        
+        warningBar.backgroundColor = filter ? UIColor(red: 0.8, green: 0, blue: 0, alpha: 1.0) : UIColor(red: 0.0745, green: 0.498, blue: 0, alpha: 1.0)
+        warningLabel.text = filter ? "nur rückengerechte Übungen" : "alle Übungen uneingeschränkt"
+        
+        filter = !filter
     }
 
     
