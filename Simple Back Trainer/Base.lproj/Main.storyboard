@@ -843,6 +843,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xe5-Kt-41i" customClass="MuscleGroupButton" customModule="Visual_Back_Trainer" customModuleProvider="target">
                                 <rect key="frame" x="26" y="713" width="323" height="55"/>
                                 <color key="backgroundColor" red="0.65949015850000003" green="0.65949015850000003" blue="0.65949015850000003" alpha="0.25791736580000002" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="slF-v6-qFJ"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                 <state key="normal" title="Info"/>
                                 <variation key="heightClass=compact-widthClass=compact" hidden="YES"/>
@@ -980,7 +983,6 @@
                             <constraint firstItem="bgQ-8l-FnJ" firstAttribute="leading" secondItem="ROu-7G-yva" secondAttribute="leadingMargin" id="vQg-Vr-KRn">
                                 <variation key="heightClass=regular-widthClass=regular" constant="40"/>
                             </constraint>
-                            <constraint firstItem="Xe5-Kt-41i" firstAttribute="height" secondItem="cRE-24-5gX" secondAttribute="height" multiplier="0.1" id="w6z-Y6-ZfU"/>
                             <constraint firstItem="rqN-QH-grF" firstAttribute="leading" secondItem="cRE-24-5gX" secondAttribute="trailing" constant="20" id="xQq-9h-s95"/>
                             <constraint firstItem="of5-OZ-Z5Y" firstAttribute="trailing" secondItem="VVc-v5-106" secondAttribute="trailing" id="y9T-KN-q5A"/>
                             <constraint firstItem="9wh-zs-mq8" firstAttribute="top" secondItem="bgQ-8l-FnJ" secondAttribute="bottom" constant="40" id="yox-vH-yES"/>
@@ -1093,6 +1095,7 @@
                         <outlet property="animationTopSpace" destination="ROu-7G-yva" id="DgJ-st-RnY"/>
                         <outlet property="backViewButton" destination="tLm-8l-oEo" id="3ag-cd-HqR"/>
                         <outlet property="backViewButtonLarge" destination="VVc-v5-106" id="Ey8-Kw-oas"/>
+                        <outlet property="buttonHeight" destination="slF-v6-qFJ" id="7FI-96-tci"/>
                         <outlet property="controlView" destination="bgQ-8l-FnJ" id="yj5-gn-MyO"/>
                         <outlet property="controlViewTop" destination="jSq-wA-MUI" id="OHf-fq-bI0"/>
                         <outlet property="frontViewButton" destination="Xe5-Kt-41i" id="Zei-De-dMp"/>
