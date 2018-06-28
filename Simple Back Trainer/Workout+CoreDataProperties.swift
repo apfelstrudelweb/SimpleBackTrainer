@@ -1,8 +1,8 @@
 //
 //  Workout+CoreDataProperties.swift
-//  Simple Back Trainer
+//  Visual Back Trainer
 //
-//  Created by Ulrich Vormbrock on 14.06.18.
+//  Created by Ulrich Vormbrock on 28.06.18.
 //  Copyright © 2018 Rookie. All rights reserved.
 //
 //
@@ -18,6 +18,7 @@ extension Workout {
     }
 
     @NSManaged public var descr: String?
+    @NSManaged public var icon: NSData?
     @NSManaged public var id: Int16
     @NSManaged public var imgName: String?
     @NSManaged public var isFavorite: Bool
@@ -25,8 +26,8 @@ extension Workout {
     @NSManaged public var musclegroup: String?
     @NSManaged public var name: String?
     @NSManaged public var position: Int16
-    @NSManaged public var icon: NSData?
     @NSManaged public var videoUrl: String?
+    @NSManaged public var isLive: Bool
     @NSManaged public var musclegroupId: Musclegroup?
     @NSManaged public var traininsgplanId: Plan?
 

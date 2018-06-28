@@ -26,6 +26,7 @@ struct WorkoutData:Codable {
     let id:Int?
     let image:String?
     let isPremium:Int?
+    let isLive: Int?
     let name:String?
     let videoUrl:String?
 }

@@ -117,9 +117,16 @@ class GenericTableViewController: UITableViewController, NSFetchedResultsControl
         super.viewWillTransition(to: size, with: coordinator)
         popTip.hide()
         
-        self.tableView.beginUpdates()
-        self.tableView.endUpdates()   
+
+        coordinator.animate(alongsideTransition: nil, completion: { _ in
+//            self.tableView.beginUpdates()
+//            self.tableView.endUpdates()
+            self.tableView.reloadData()
+        })
     }
+    
+
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showVideoSegue" {

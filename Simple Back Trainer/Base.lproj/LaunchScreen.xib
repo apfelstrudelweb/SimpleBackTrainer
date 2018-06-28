@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_9" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -24,13 +24,13 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash" translatesAutoresizingMaskIntoConstraints="NO" id="NmU-ex-8vA">
-                    <rect key="frame" x="130" y="64" width="260" height="382"/>
+                    <rect key="frame" x="160.66666666666669" y="109.33333333333334" width="198.66666666666669" height="291.66666666666663"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="NmU-ex-8vA" secondAttribute="height" multiplier="300:441" id="xdC-ga-nas"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Visual Back Trainer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lW1-5b-vXM">
-                    <rect key="frame" x="20" y="486" width="480" height="40"/>
+                    <rect key="frame" x="20" y="441" width="480" height="40"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="ypn-QE-H5g"/>
                     </constraints>
@@ -43,6 +43,7 @@
             <constraints>
                 <constraint firstItem="NmU-ex-8vA" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.5" id="3Ve-NQ-8cO"/>
                 <constraint firstItem="NmU-ex-8vA" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" multiplier="0.7" id="Ct5-6b-XJV"/>
+                <constraint firstItem="NmU-ex-8vA" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.4" id="K9N-0i-tHR"/>
                 <constraint firstAttribute="bottom" secondItem="8ie-xW-0ye" secondAttribute="bottom" constant="40" id="Kzo-t9-V3l"/>
                 <constraint firstItem="8ie-xW-0ye" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" symbolic="YES" id="MfP-vx-nX0"/>
                 <constraint firstAttribute="centerX" secondItem="8ie-xW-0ye" secondAttribute="centerX" id="ZEH-qu-HZ9"/>
@@ -53,6 +54,23 @@
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="K9N-0i-tHR"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=compact-widthClass=compact">
+                <mask key="constraints">
+                    <exclude reference="3Ve-NQ-8cO"/>
+                    <include reference="K9N-0i-tHR"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=compact-widthClass=regular">
+                <mask key="constraints">
+                    <exclude reference="3Ve-NQ-8cO"/>
+                    <include reference="K9N-0i-tHR"/>
+                </mask>
+            </variation>
             <point key="canvasLocation" x="233" y="63.5"/>
         </view>
     </objects>

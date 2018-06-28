@@ -25,7 +25,14 @@ class VideoTableViewController: GenericTableViewController {
         
         let fetchRequest = NSFetchRequest<Workout> (entityName: "Workout")
         fetchRequest.sortDescriptors = [NSSortDescriptor (key: "position", ascending: true)]
-        fetchRequest.predicate = NSPredicate(format: "musclegroupId.id = %d", muscleGroupId)
+        //fetchRequest.predicate = NSPredicate(format: "musclegroupId.id = %d", muscleGroupId)
+        
+        //fetchRequest.predicate = NSPredicate(format: "isLive = %d", true)
+        
+        let predicate1 = NSPredicate(format: "musclegroupId.id = %d", muscleGroupId)
+        let predicate2 = NSPredicate(format: "isLive = %d", true)
+        let compound:NSCompoundPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [predicate1, predicate2])
+        fetchRequest.predicate = compound
         
         self.fetchedResultsController = NSFetchedResultsController<Workout> (
             fetchRequest: fetchRequest,

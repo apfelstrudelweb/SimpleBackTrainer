@@ -98,7 +98,7 @@ class CoreDataManager: NSObject {
         }
     }
     
-    func insertWorkout(id:Int16, position:Int16, traininsgplanId:Plan?, name:String, descr:String,musclegroup:String?, imgName:String?, isFavorite:Bool, videoUrl:String) -> Workout {
+    func insertWorkout(id:Int16, position:Int16, traininsgplanId:Plan?, name:String, descr:String,musclegroup:String?, imgName:String?, isFavorite:Bool, isLive:Bool, videoUrl:String) -> Workout {
         let workout = NSEntityDescription.insertNewObject(forEntityName: "Workout", into: self.managedObjectContext) as! Workout
         workout.id = id
         workout.position = position
@@ -108,6 +108,7 @@ class CoreDataManager: NSObject {
         workout.musclegroup = musclegroup
         workout.imgName = imgName
         workout.isFavorite = isFavorite
+        workout.isLive = isLive
         workout.videoUrl = videoUrl
         
         if let url = URL(string: (workout.imgName)!) {
@@ -182,7 +183,7 @@ class CoreDataManager: NSObject {
                                 let updatedWorkout = self.updateWorkout(workout: localWorkout, data: workout, group: group.name!)
                                 workoutArray.add(updatedWorkout)
                             } else {
-                                let workout11 =  CoreDataManager.sharedInstance.insertWorkout(id: Int16(workout.id!), position: -1, traininsgplanId: nil, name: workout.name!, descr: workout.descr!, musclegroup: group.name, imgName: workout.image, isFavorite: false, videoUrl: workout.videoUrl!)
+                                let workout11 =  CoreDataManager.sharedInstance.insertWorkout(id: Int16(workout.id!), position: -1, traininsgplanId: nil, name: workout.name!, descr: workout.descr!, musclegroup: group.name, imgName: workout.image, isFavorite: false, isLive: workout.isLive==1,  videoUrl: workout.videoUrl!)
                                 workoutArray.add(workout11)
                             }
                         }
@@ -196,7 +197,7 @@ class CoreDataManager: NSObject {
                     let workoutArray = NSMutableSet()
                     if let workouts = group.workouts {
                         for workout in workouts {
-                            let workout11 =  CoreDataManager.sharedInstance.insertWorkout(id: Int16(workout.id!), position: -1, traininsgplanId: nil, name: workout.name!, descr: workout.descr!, musclegroup: group.name, imgName: workout.image, isFavorite: false,  videoUrl: workout.videoUrl!)
+                            let workout11 =  CoreDataManager.sharedInstance.insertWorkout(id: Int16(workout.id!), position: -1, traininsgplanId: nil, name: workout.name!, descr: workout.descr!, musclegroup: group.name, imgName: workout.image, isFavorite: false, isLive: workout.isLive==1, videoUrl: workout.videoUrl!)
                             workoutArray.add(workout11)
                         }
                         print(workoutArray.count)

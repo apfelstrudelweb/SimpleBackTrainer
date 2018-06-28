@@ -23,6 +23,7 @@
         <attribute name="id" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="imgName" attributeType="String" syncable="YES"/>
         <attribute name="isFavorite" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="isLive" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="isPremium" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="musclegroup" attributeType="String" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
@@ -37,6 +38,6 @@
     <elements>
         <element name="Musclegroup" positionX="-315" positionY="68" width="128" height="120"/>
         <element name="Plan" positionX="-288" positionY="234" width="128" height="73"/>
-        <element name="Workout" positionX="-63" positionY="27" width="128" height="225"/>
+        <element name="Workout" positionX="-63" positionY="27" width="128" height="240"/>
     </elements>
 </model>

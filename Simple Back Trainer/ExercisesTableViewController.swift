@@ -49,6 +49,7 @@ class ExercisesTableViewController: GenericTableViewController {
         
     
         self.fetchRequest = NSFetchRequest<Workout> (entityName: "Workout")
+        fetchRequest.predicate = NSPredicate(format: "isLive = %d", true)
         self.fetchRequest.sortDescriptors = [NSSortDescriptor (key: "position", ascending: true)]
         
         self.fetchedResultsController = NSFetchedResultsController<Workout> (
@@ -67,11 +68,6 @@ class ExercisesTableViewController: GenericTableViewController {
         super.viewWillLayoutSubviews()
         headerView.frame.size.height = self.view.frame.size.height > self.view.frame.size.width ? 65 : 80
     }
-    
-//    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-//        super.viewWillTransition(to: size, with: coordinator)
-//        self.tableView.reloadData()
-//    }
     
     func clearButtons() {
     
