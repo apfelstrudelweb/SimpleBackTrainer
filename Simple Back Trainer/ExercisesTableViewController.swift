@@ -241,6 +241,18 @@ class ExercisesTableViewController: UITableViewController, NSFetchedResultsContr
         cell.buttonColor = (navigationController?.navigationBar.barTintColor)!
         cell.videoLabel?.text = workout.name
         
+        if workout.isPremium {
+            cell.premiumImageView.isHidden = false
+            cell.favoriteButton.isHidden = true
+            cell.favoriteDelimter.isHidden = true
+            cell.videoImageView?.alpha = 0.3
+        } else {
+            cell.premiumImageView.isHidden = true
+            cell.favoriteButton.isHidden = false
+            cell.favoriteDelimter.isHidden = false
+            cell.videoImageView?.alpha = 1.0
+        }
+        
         cell.videoImageView?.image = UIImage(data:workout.icon! as Data, scale:1.0)
         cell.indexPath = indexPath
         cell.delegate = self
@@ -249,7 +261,14 @@ class ExercisesTableViewController: UITableViewController, NSFetchedResultsContr
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "showVideoSegue", sender: indexPath)
+        
+        let workout = fetchedResultsController.object(at: indexPath)
+        
+        if workout.isPremium {
+            performSegue(withIdentifier: "showUpgradeSegue", sender: indexPath)
+        } else {
+            performSegue(withIdentifier: "showVideoSegue", sender: indexPath)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -260,6 +279,8 @@ class ExercisesTableViewController: UITableViewController, NSFetchedResultsContr
                 let workout = fetchedResultsController.object(at: sender as! IndexPath)
                 viewController.videoUrl = workout.videoUrl
             }
+        } else if segue.identifier == "showUpgradeSegue" {
+            let _ = segue.destination as? PremiumViewController
         }
     }
 
@@ -267,7 +288,7 @@ class ExercisesTableViewController: UITableViewController, NSFetchedResultsContr
 
 extension ExercisesTableViewController: VideoCellDelegate {
     
-    func infoButtonTouched(_ sender: UIButton, indexPath: IndexPath, x: Int) {
+    func favoriteButtonTouched(_ sender: UIButton, indexPath: IndexPath, x: Int) {
         
         DispatchQueue.main.async {
             let rect = self.tableView.rectForRow(at: indexPath)

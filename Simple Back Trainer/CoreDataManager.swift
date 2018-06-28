@@ -284,6 +284,7 @@ class CoreDataManager: NSObject {
         workout.descr = data.descr
         workout.imgName = data.image
         workout.videoUrl = data.videoUrl
+        workout.isPremium = data.isPremium == 1
         workout.musclegroup = group
         
         if let url = URL(string: (workout.imgName)!) {

@@ -157,7 +157,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mQL-Qs-Hz8">
-                                <rect key="frame" x="0.0" y="88" width="375" height="641"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="685"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="GhF-At-qLN">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -279,7 +279,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jOk-HA-PQV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3738.4000000000001" y="1069.2118226600985"/>
+            <point key="canvasLocation" x="7038" y="-168"/>
         </scene>
         <!--Settings-->
         <scene sceneID="kTR-EQ-icr">
@@ -660,6 +660,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="63.666666666666664"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="jMC-5W-syg" kind="show" identifier="showUpgradeSegue" id="fql-e8-eDg"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -1176,6 +1179,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="68.666666666666671"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="jMC-5W-syg" kind="show" identifier="showUpgradeSegue" id="jHs-hw-0jp"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -1354,6 +1360,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="ZQd-kQ-BxA"/>
-        <segue reference="RWg-hz-okG"/>
+        <segue reference="LVj-mE-GEn"/>
+        <segue reference="fql-e8-eDg"/>
     </inferredMetricsTieBreakers>
 </document>

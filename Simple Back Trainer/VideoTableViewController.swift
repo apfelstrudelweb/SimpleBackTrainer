@@ -31,7 +31,7 @@ class VideoTableViewController: UITableViewController, NSFetchedResultsControlle
         self.tableView.register(UINib(nibName: "VideoCell", bundle: nil), forCellReuseIdentifier: "videoCell")
 
         // TODO: make it generic
-        popTip.font = UIFont(name: "Avenir-Medium", size: UI_USER_INTERFACE_IDIOM() == .pad ? 20 : 14)!
+        popTip.font = UIFont(name: "Avenir-Medium", size: UI_USER_INTERFACE_IDIOM() == .pad ? 22 : 18)!
         popTip.shouldDismissOnTap = true
         popTip.shouldDismissOnTapOutside = true
         popTip.shouldDismissOnSwipeOutside = true
@@ -84,6 +84,31 @@ class VideoTableViewController: UITableViewController, NSFetchedResultsControlle
         
         let workout = fetchedResultsController.object(at: indexPath)
         
+        if workout.isPremium {
+            cell.premiumImageView.isHidden = false
+            cell.favoriteButton.isHidden = true
+            cell.favoriteDelimter.isHidden = true
+            cell.videoImageView?.alpha = 0.5
+        } else {
+            cell.premiumImageView.isHidden = true
+            cell.favoriteButton.isHidden = false
+            cell.favoriteDelimter.isHidden = false
+            cell.videoImageView?.alpha = 1.0
+        }
+        
+        
+        let favoriteImage = workout.isFavorite ? UIImage(named: "favoriteAdded") : UIImage(named: "favorite")
+        
+        cell.favoriteButton.setImage(favoriteImage, for: .normal)
+        
+        // Test
+        if workout.isFavorite {
+            cell.favoriteButton.tintColor = UIColor(red: 0.302, green: 0.698, blue: 0, alpha: 1.0)
+        } else {
+            cell.favoriteButton.tintColor = .lightGray
+        }
+        
+        
         cell.buttonColor = (navigationController?.navigationBar.barTintColor)!
         cell.videoLabel.text = workout.name
         
@@ -95,7 +120,14 @@ class VideoTableViewController: UITableViewController, NSFetchedResultsControlle
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "showVideoSegue", sender: indexPath)
+        
+        let workout = fetchedResultsController.object(at: indexPath)
+        
+        if workout.isPremium {
+            performSegue(withIdentifier: "showUpgradeSegue", sender: indexPath)
+        } else {
+            performSegue(withIdentifier: "showVideoSegue", sender: indexPath)
+        }
     }
     
     
@@ -112,13 +144,15 @@ class VideoTableViewController: UITableViewController, NSFetchedResultsControlle
                 let workout = fetchedResultsController.object(at: sender as! IndexPath)
                 viewController.videoUrl = workout.videoUrl
             }
+        } else if segue.identifier == "showUpgradeSegue" {
+            let _ = segue.destination as? PremiumViewController
         }
     }
 }
 
 extension VideoTableViewController: VideoCellDelegate {
     
-    func infoButtonTouched(_ sender: UIButton, indexPath: IndexPath, x: Int) {
+    func favoriteButtonTouched(_ sender: UIButton, indexPath: IndexPath, x: Int) {
 
         DispatchQueue.main.async {
             let rect = self.tableView.rectForRow(at: indexPath)
@@ -126,11 +160,23 @@ extension VideoTableViewController: VideoCellDelegate {
             let frame = sender.frame.offsetBy(dx: 0, dy: rect.origin.y)
             let tooltipWidth = frame.origin.x - CGFloat(x)
             
-            self.popTip.bubbleColor = sender.backgroundColor!
+            self.popTip.bubbleColor = (self.navigationController?.navigationBar.barTintColor)!
             
             let workout = self.fetchedResultsController.object(at: indexPath)
             
-            self.popTip.show(text: workout.descr!, direction: .left, maxWidth: tooltipWidth, in: self.view, from: frame, duration: 6)
+            let infoText = workout.isFavorite ? "Diese Übung wurde vom Trainingsplan entfernt." : "Diese Übung wurde als Favorit markiert und erscheint nun im Trainingsplan."
+            
+            self.popTip.show(text: infoText, direction: .left, maxWidth: tooltipWidth, in: self.view, from: frame, duration: 3)
+            
+            workout.isFavorite = !workout.isFavorite
+            
+            do {
+                try CoreDataManager.sharedInstance.managedObjectContext.save()
+            } catch let error {
+                print("Failure to save context: \(error.localizedDescription)")
+            }
+            self.tableView.reloadData()
+            
         }
 
     }
