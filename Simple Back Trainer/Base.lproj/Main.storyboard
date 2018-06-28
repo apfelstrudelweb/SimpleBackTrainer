@@ -551,27 +551,8 @@
                                         <constraint firstAttribute="height" constant="0.59999999999999998" id="oem-7d-0iA"/>
                                     </constraints>
                                 </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Aq9-wA-pca">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="25"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="alle Übungen uneingeschränkt" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sNn-XZ-JvK">
-                                            <rect key="frame" x="20" y="2" width="335" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                                            <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <color key="backgroundColor" red="0.029008777560000001" green="0.68219721499999997" blue="0.032932487070000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <constraints>
-                                        <constraint firstItem="sNn-XZ-JvK" firstAttribute="centerY" secondItem="Aq9-wA-pca" secondAttribute="centerY" id="Cgr-Qc-6bd"/>
-                                        <constraint firstAttribute="height" constant="25" id="KDT-Fh-N8Y"/>
-                                        <constraint firstItem="sNn-XZ-JvK" firstAttribute="top" secondItem="Aq9-wA-pca" secondAttribute="top" constant="2" id="nUS-Tj-SzW"/>
-                                        <constraint firstAttribute="trailing" secondItem="sNn-XZ-JvK" secondAttribute="trailing" constant="20" id="rEf-4K-D9c"/>
-                                        <constraint firstItem="sNn-XZ-JvK" firstAttribute="leading" secondItem="Aq9-wA-pca" secondAttribute="leading" constant="20" id="zny-iE-GZW"/>
-                                    </constraints>
-                                </view>
                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="A1s-yS-mg5">
-                                    <rect key="frame" x="20" y="50" width="335" height="32"/>
+                                    <rect key="frame" x="20" y="35" width="335" height="32"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R5w-yQ-n1b">
                                             <rect key="frame" x="0.0" y="0.0" width="43" height="32"/>
@@ -633,12 +614,10 @@
                             <constraints>
                                 <constraint firstAttribute="bottom" secondItem="Vch-L2-O3e" secondAttribute="bottom" constant="15" id="9hT-ed-b7e"/>
                                 <constraint firstAttribute="bottom" secondItem="OFt-UH-iNV" secondAttribute="bottom" id="JPs-en-fSP"/>
-                                <constraint firstItem="Aq9-wA-pca" firstAttribute="top" secondItem="Qvz-Go-JOv" secondAttribute="top" id="JmC-JA-rsK"/>
                                 <constraint firstItem="OFt-UH-iNV" firstAttribute="top" secondItem="Vch-L2-O3e" secondAttribute="top" id="Nks-kk-prB"/>
-                                <constraint firstItem="A1s-yS-mg5" firstAttribute="centerY" secondItem="Qvz-Go-JOv" secondAttribute="centerY" multiplier="1.1" id="YPk-oL-oGT"/>
+                                <constraint firstItem="A1s-yS-mg5" firstAttribute="centerY" secondItem="Qvz-Go-JOv" secondAttribute="centerY" multiplier="0.85" id="YPk-oL-oGT"/>
                                 <constraint firstAttribute="trailing" secondItem="Vch-L2-O3e" secondAttribute="trailing" id="a5q-1W-pY0"/>
                                 <constraint firstItem="Vch-L2-O3e" firstAttribute="leading" secondItem="Qvz-Go-JOv" secondAttribute="leading" id="gVf-VE-xxB"/>
-                                <constraint firstItem="Aq9-wA-pca" firstAttribute="leading" secondItem="Qvz-Go-JOv" secondAttribute="leading" id="igj-AR-UdT"/>
                                 <constraint firstAttribute="trailing" secondItem="A1s-yS-mg5" secondAttribute="trailing" constant="20" id="mnm-1H-YGP">
                                     <variation key="heightClass=compact-widthClass=compact" constant="50"/>
                                     <variation key="heightClass=compact-widthClass=regular" constant="50"/>
@@ -647,7 +626,6 @@
                                     <variation key="heightClass=compact-widthClass=compact" constant="50"/>
                                     <variation key="heightClass=compact-widthClass=regular" constant="50"/>
                                 </constraint>
-                                <constraint firstAttribute="trailing" secondItem="Aq9-wA-pca" secondAttribute="trailing" id="pv8-Iq-AZn"/>
                                 <constraint firstAttribute="trailing" secondItem="OFt-UH-iNV" secondAttribute="trailing" id="see-g0-ai4"/>
                                 <constraint firstItem="OFt-UH-iNV" firstAttribute="leading" secondItem="Qvz-Go-JOv" secondAttribute="leading" id="yPZ-RW-V4C"/>
                             </constraints>
@@ -677,8 +655,6 @@
                         <outlet property="buttonMachine" destination="dfJ-m9-Hh1" id="lM0-gj-vJk"/>
                         <outlet property="buttonMat" destination="DmM-Ij-E8p" id="OFO-5z-NxC"/>
                         <outlet property="headerView" destination="Qvz-Go-JOv" id="Dh4-uB-UNJ"/>
-                        <outlet property="warningBar" destination="Aq9-wA-pca" id="A04-df-YOF"/>
-                        <outlet property="warningLabel" destination="sNn-XZ-JvK" id="nhQ-xZ-TMR"/>
                         <outletCollection property="buttons" destination="dfJ-m9-Hh1" collectionClass="NSMutableArray" id="ZqF-nV-CsN"/>
                         <segue destination="Ylz-5k-IgQ" kind="presentation" identifier="showVideoSegue" id="ZQd-kQ-BxA"/>
                     </connections>

@@ -58,6 +58,7 @@
 		1BCF6A2820C9B40200E310DF /* TorsoBackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCF6A2220C9B40200E310DF /* TorsoBackView.swift */; };
 		1BCF6A2920C9B40200E310DF /* TorsoFrontView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BCF6A2320C9B40200E310DF /* TorsoFrontView.xib */; };
 		1BCF8462203206B000F55F64 /* ItemsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCF8461203206B000F55F64 /* ItemsCollectionViewCell.swift */; };
+		1BD535E420E504D6000F1A37 /* GenericTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD535E320E504D6000F1A37 /* GenericTableViewController.swift */; };
 		753A55C31BB073E900254F27 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753A55C21BB073E900254F27 /* AppDelegate.swift */; };
 		753A55C81BB073E900254F27 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 753A55C61BB073E900254F27 /* Main.storyboard */; };
 		753A55CA1BB073E900254F27 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 753A55C91BB073E900254F27 /* Images.xcassets */; };
@@ -126,6 +127,7 @@
 		1BCF6A2220C9B40200E310DF /* TorsoBackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TorsoBackView.swift; sourceTree = "<group>"; };
 		1BCF6A2320C9B40200E310DF /* TorsoFrontView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TorsoFrontView.xib; sourceTree = "<group>"; };
 		1BCF8461203206B000F55F64 /* ItemsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsCollectionViewCell.swift; sourceTree = "<group>"; };
+		1BD535E320E504D6000F1A37 /* GenericTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericTableViewController.swift; sourceTree = "<group>"; };
 		6661853E5EC2C1DF3EB34716 /* Pods-Simple Back Trainer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Simple Back Trainer.release.xcconfig"; path = "Pods/Target Support Files/Pods-Simple Back Trainer/Pods-Simple Back Trainer.release.xcconfig"; sourceTree = "<group>"; };
 		753A55BD1BB073E900254F27 /* Visual Back Trainer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Visual Back Trainer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		753A55C11BB073E900254F27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -335,6 +337,7 @@
 				1BBC3A9120D11FDC00B43A61 /* Utils */,
 				1BCFB6B020D11F30003FBF7F /* Resources */,
 				753A55C01BB073E900254F27 /* Supporting Files */,
+				1BD535E320E504D6000F1A37 /* GenericTableViewController.swift */,
 			);
 			path = "Simple Back Trainer";
 			sourceTree = "<group>";
@@ -515,6 +518,7 @@
 				753A55E31BB0753B00254F27 /* SlideMenuViewController.swift in Sources */,
 				1BCF6A2520C9B40200E310DF /* Torso.swift in Sources */,
 				14A7487620C3E03A002CB7EA /* MobilisationsController.swift in Sources */,
+				1BD535E420E504D6000F1A37 /* GenericTableViewController.swift in Sources */,
 				1BBC3AB620D1260D00B43A61 /* Utils.swift in Sources */,
 				14A7487C20C3E977002CB7EA /* TrainingPlansController.swift in Sources */,
 				1BBC3AAD20D1252400B43A61 /* Trainingsplan.xcdatamodeld in Sources */,

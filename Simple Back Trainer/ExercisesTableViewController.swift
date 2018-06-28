@@ -10,21 +10,13 @@ import UIKit
 import AMPopTip
 import CoreData
 
-class ExercisesTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
+class ExercisesTableViewController: GenericTableViewController {
     
     let inactiveColor:UIColor = .lightGray
-    var popTip = PopTip()
-    
-    var fetchedResultsController: NSFetchedResultsController<Workout>!
+
     var fetchRequest: NSFetchRequest<Workout>!
     
-    var toggleButton: UIButton!
-    var spineImage = UIImage.init(named: "tabNoSpine")?.withRenderingMode(.alwaysTemplate)
-    var noSpineImage = UIImage.init(named: "tabSpine")?.withRenderingMode(.alwaysTemplate)
-    var filter: Bool = false
-
     @IBOutlet weak var headerView: UIView!
-    
     @IBOutlet weak var buttonHandweight: UIButton!
     @IBOutlet weak var buttonBand: UIButton!
     @IBOutlet weak var buttonMat: UIButton!
@@ -40,18 +32,7 @@ class ExercisesTableViewController: UITableViewController, NSFetchedResultsContr
     
     
     override func viewDidLoad() {
-        super.viewDidLoad()
 
-        toggleButton = UIButton.init(type: .custom)
-        //toggleButton.setImage(spineImage, for: .normal)
-        toggleButton.tintColor = .white
-        toggleButton.addTarget(self, action:#selector(ExercisesTableViewController.toggleFilter), for:.touchUpInside)
-        let barButton = UIBarButtonItem.init(customView: toggleButton)
-        self.navigationItem.rightBarButtonItem = barButton
-        
-        self.toggleFilter()
-        
-        
         headerView.backgroundColor = UITabBar.appearance().barTintColor
 
         buttonHandweight.tintColor = self.navigationController?.navigationBar.barTintColor
@@ -66,36 +47,31 @@ class ExercisesTableViewController: UITableViewController, NSFetchedResultsContr
         buttonBall.setTitle("", for: .normal)
         buttonMachine.setTitle("", for: .normal)
         
-        popTip.font = UIFont(name: "Avenir-Medium", size: UI_USER_INTERFACE_IDIOM() == .pad ? 20 : 14)!
-        popTip.shouldDismissOnTap = true
-        popTip.shouldDismissOnTapOutside = true
-        popTip.shouldDismissOnSwipeOutside = true
-        popTip.edgeMargin = 5
-        popTip.offset = 2
-        popTip.bubbleOffset = 0
-        popTip.edgeInsets = UIEdgeInsetsMake(0, 10, 0, 10)
-        
-        self.tableView.register(UINib(nibName: "VideoCell", bundle: nil), forCellReuseIdentifier: "videoCell")
-        
+    
         self.fetchRequest = NSFetchRequest<Workout> (entityName: "Workout")
         self.fetchRequest.sortDescriptors = [NSSortDescriptor (key: "position", ascending: true)]
         
         self.fetchedResultsController = NSFetchedResultsController<Workout> (
-            fetchRequest: fetchRequest,
+            fetchRequest: self.fetchRequest,
             managedObjectContext: CoreDataManager.sharedInstance.managedObjectContext,
             sectionNameKeyPath: nil,
             cacheName: nil)
         self.fetchedResultsController.delegate = self
         
+        super.viewDidLoad()
+        
         self.filterHandweight((Any).self)
-
     }
 
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        
-        headerView.frame.size.height = self.view.frame.size.height > self.view.frame.size.width ? 90 : 110
+        headerView.frame.size.height = self.view.frame.size.height > self.view.frame.size.width ? 65 : 80
     }
+    
+//    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+//        super.viewWillTransition(to: size, with: coordinator)
+//        self.tableView.reloadData()
+//    }
     
     func clearButtons() {
     
@@ -106,17 +82,7 @@ class ExercisesTableViewController: UITableViewController, NSFetchedResultsContr
         buttonMachine.tintColor = inactiveColor
     }
     
-    @objc func toggleFilter() {
-        let image = filter ? noSpineImage : spineImage
-        toggleButton.setImage(image, for: UIControlState.normal)
-        
-        warningBar.backgroundColor = filter ? UIColor(red: 0.8, green: 0, blue: 0, alpha: 1.0) : UIColor(red: 0.0745, green: 0.498, blue: 0, alpha: 1.0)
-        warningLabel.text = filter ? "nur rückengerechte Übungen" : "alle Übungen uneingeschränkt"
-        
-        filter = !filter
-    }
 
-    
     @IBAction func filterHandweight(_ sender: Any) {
         
         clearButtons()
@@ -212,96 +178,5 @@ class ExercisesTableViewController: UITableViewController, NSFetchedResultsContr
         
         self.tableView.reloadData()
     }
-    
-    // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard fetchedResultsController != nil else {
-            return 0
-        }
-        if let sections = fetchedResultsController.sections {
-            let currentSection = sections[section]
-            return currentSection.numberOfObjects
-        }
-        
-        return 0
-    }
-
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier:"videoCell", for: indexPath) as! VideoCell
-        
-        let workout = fetchedResultsController.object(at: indexPath)
-        
-        cell.buttonColor = (navigationController?.navigationBar.barTintColor)!
-        cell.videoLabel?.text = workout.name
-        
-        if workout.isPremium {
-            cell.premiumImageView.isHidden = false
-            cell.favoriteButton.isHidden = true
-            cell.favoriteDelimter.isHidden = true
-            cell.videoImageView?.alpha = 0.3
-        } else {
-            cell.premiumImageView.isHidden = true
-            cell.favoriteButton.isHidden = false
-            cell.favoriteDelimter.isHidden = false
-            cell.videoImageView?.alpha = 1.0
-        }
-        
-        cell.videoImageView?.image = UIImage(data:workout.icon! as Data, scale:1.0)
-        cell.indexPath = indexPath
-        cell.delegate = self
-        
-        return cell
-    }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        let workout = fetchedResultsController.object(at: indexPath)
-        
-        if workout.isPremium {
-            performSegue(withIdentifier: "showUpgradeSegue", sender: indexPath)
-        } else {
-            performSegue(withIdentifier: "showVideoSegue", sender: indexPath)
-        }
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showVideoSegue" {
-            
-            if let viewController = segue.destination as? VideoPlayerViewController {
-                
-                let workout = fetchedResultsController.object(at: sender as! IndexPath)
-                viewController.videoUrl = workout.videoUrl
-            }
-        } else if segue.identifier == "showUpgradeSegue" {
-            let _ = segue.destination as? PremiumViewController
-        }
-    }
-
-}
-
-extension ExercisesTableViewController: VideoCellDelegate {
-    
-    func favoriteButtonTouched(_ sender: UIButton, indexPath: IndexPath, x: Int) {
-        
-        DispatchQueue.main.async {
-            let rect = self.tableView.rectForRow(at: indexPath)
-            
-            let frame = sender.frame.offsetBy(dx: 0, dy: rect.origin.y)
-            let tooltipWidth = frame.origin.x - CGFloat(x)
-            
-            self.popTip.bubbleColor = sender.backgroundColor!
-            
-            let workout = self.fetchedResultsController.object(at: indexPath)
-            
-            self.popTip.show(text: workout.descr!, direction: .left, maxWidth: tooltipWidth, in: self.view, from: frame, duration: 6)
-        }
-        
-    }
 }
