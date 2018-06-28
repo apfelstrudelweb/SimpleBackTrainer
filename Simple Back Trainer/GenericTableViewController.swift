@@ -119,9 +119,10 @@ class GenericTableViewController: UITableViewController, NSFetchedResultsControl
         
 
         coordinator.animate(alongsideTransition: nil, completion: { _ in
-//            self.tableView.beginUpdates()
-//            self.tableView.endUpdates()
-            self.tableView.reloadData()
+            self.tableView.beginUpdates()
+            self.tableView.endUpdates()
+            self.tableView.layoutIfNeeded()
+            //self.tableView.reloadData()
         })
     }
     
@@ -137,7 +138,9 @@ class GenericTableViewController: UITableViewController, NSFetchedResultsControl
                 viewController.videoUrl = workout.videoUrl
             }
         } else if segue.identifier == "showUpgradeSegue" {
-            let _ = segue.destination as? PremiumViewController
+            if let viewController = segue.destination as? PremiumViewController {
+                viewController.calledFromVideolist = true
+            }
         }
     }
 }

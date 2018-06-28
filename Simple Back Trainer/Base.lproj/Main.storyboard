@@ -540,19 +540,15 @@
                             <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OFt-UH-iNV">
-                                    <rect key="frame" x="0.0" y="104" width="375" height="16"/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vch-L2-O3e">
-                                    <rect key="frame" x="0.0" y="104" width="375" height="1"/>
+                                    <rect key="frame" x="0.0" y="119" width="375" height="1"/>
                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="0.59999999999999998" id="oem-7d-0iA"/>
                                     </constraints>
                                 </view>
                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="A1s-yS-mg5">
-                                    <rect key="frame" x="20" y="35" width="335" height="32"/>
+                                    <rect key="frame" x="20" y="44" width="335" height="32"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R5w-yQ-n1b">
                                             <rect key="frame" x="0.0" y="0.0" width="43" height="32"/>
@@ -612,10 +608,8 @@
                             </subviews>
                             <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
-                                <constraint firstAttribute="bottom" secondItem="Vch-L2-O3e" secondAttribute="bottom" constant="15" id="9hT-ed-b7e"/>
-                                <constraint firstAttribute="bottom" secondItem="OFt-UH-iNV" secondAttribute="bottom" id="JPs-en-fSP"/>
-                                <constraint firstItem="OFt-UH-iNV" firstAttribute="top" secondItem="Vch-L2-O3e" secondAttribute="top" id="Nks-kk-prB"/>
-                                <constraint firstItem="A1s-yS-mg5" firstAttribute="centerY" secondItem="Qvz-Go-JOv" secondAttribute="centerY" multiplier="0.85" id="YPk-oL-oGT"/>
+                                <constraint firstAttribute="bottom" secondItem="Vch-L2-O3e" secondAttribute="bottom" id="9hT-ed-b7e"/>
+                                <constraint firstItem="A1s-yS-mg5" firstAttribute="centerY" secondItem="Qvz-Go-JOv" secondAttribute="centerY" id="YPk-oL-oGT"/>
                                 <constraint firstAttribute="trailing" secondItem="Vch-L2-O3e" secondAttribute="trailing" id="a5q-1W-pY0"/>
                                 <constraint firstItem="Vch-L2-O3e" firstAttribute="leading" secondItem="Qvz-Go-JOv" secondAttribute="leading" id="gVf-VE-xxB"/>
                                 <constraint firstAttribute="trailing" secondItem="A1s-yS-mg5" secondAttribute="trailing" constant="20" id="mnm-1H-YGP">
@@ -626,8 +620,6 @@
                                     <variation key="heightClass=compact-widthClass=compact" constant="50"/>
                                     <variation key="heightClass=compact-widthClass=regular" constant="50"/>
                                 </constraint>
-                                <constraint firstAttribute="trailing" secondItem="OFt-UH-iNV" secondAttribute="trailing" id="see-g0-ai4"/>
-                                <constraint firstItem="OFt-UH-iNV" firstAttribute="leading" secondItem="Qvz-Go-JOv" secondAttribute="leading" id="yPZ-RW-V4C"/>
                             </constraints>
                         </view>
                         <prototypes>

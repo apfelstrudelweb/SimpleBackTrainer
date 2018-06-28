@@ -26,8 +26,7 @@ class ExercisesTableViewController: GenericTableViewController {
     
     @IBOutlet var buttons: [UIButton]!
     
-    @IBOutlet weak var warningBar: UIView!
-    @IBOutlet weak var warningLabel: UILabel!
+
     
     
     
@@ -66,7 +65,8 @@ class ExercisesTableViewController: GenericTableViewController {
 
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        headerView.frame.size.height = self.view.frame.size.height > self.view.frame.size.width ? 65 : 80
+
+        headerView.frame.size.height = self.view.frame.size.height > self.view.frame.size.width ? 50 : 65
     }
     
     func clearButtons() {

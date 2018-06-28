@@ -15,6 +15,8 @@ class PremiumViewController: BaseViewController, UITableViewDelegate, UITableVie
     @IBOutlet weak var tableview: UITableView!
     @IBOutlet weak var buttonWidth: NSLayoutConstraint!
     
+    var calledFromVideolist: Bool! = false
+    
 
     let items = [
         ["premiumNoAds", NSLocalizedString("PREMIUM_NOADS_TITLE", comment: ""), NSLocalizedString("PREMIUM_NOADS_DESCR", comment: "")],
@@ -25,7 +27,10 @@ class PremiumViewController: BaseViewController, UITableViewDelegate, UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        addSlideMenuButton()
+        
+        if calledFromVideolist == false {
+            addSlideMenuButton()
+        }
         
         titleLabel.text = NSLocalizedString("PREMIUM_TITLE", comment: "")
         
