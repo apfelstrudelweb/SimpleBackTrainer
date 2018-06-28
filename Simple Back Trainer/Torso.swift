@@ -49,6 +49,7 @@ class FrontView: NSObject {
             print ("fetch task failed", error)
         }
         
+        // gerade Bauchmuskeln
         let tapPath_0 = UIBezierPath()
         tapPath_0.move(to: CGPoint(x:0.402542372881356, y:0.804702495201535))
         tapPath_0.addLine(to: CGPoint(x:0.406779661016949, y:0.562859884836852))
@@ -56,37 +57,53 @@ class FrontView: NSObject {
         tapPath_0.addLine(to: CGPoint(x:0.616525423728814, y:0.804702495201535))
         tapPath_0.close()
         
+        // innerer schräge Bauchmuskel
         let tapPath_1 = UIBezierPath()
-        tapPath_1.move(to: CGPoint(x:0.298728813559322, y:0.79126679462572))
-        tapPath_1.addLine(to: CGPoint(x:0.282485875706215, y:0.59021113243762))
-        tapPath_1.addLine(to: CGPoint(x:0.379943502824859, y:0.56190019193858))
-        tapPath_1.addLine(to: CGPoint(x:0.375706214689266, y:0.80278310940499))
+        tapPath_1.move(to: CGPoint(x:0.303964744265384, y:0.679832417404202))
+        tapPath_1.addLine(to: CGPoint(x:0.362995567825922, y:0.692998204667864))
+        tapPath_1.addLine(to: CGPoint(x:0.383259898450406, y:0.804308797127469))
+        tapPath_1.addLine(to: CGPoint(x:0.301321572459217, y:0.793536804308797))
         tapPath_1.close()
-        tapPath_1.move(to: CGPoint(x:0.725282485875706, y:0.789827255278311))
-        tapPath_1.addLine(to: CGPoint(x:0.741525423728814, y:0.589251439539347))
-        tapPath_1.addLine(to: CGPoint(x:0.644067796610169, y:0.566218809980806))
-        tapPath_1.addLine(to: CGPoint(x:0.639830508474576, y:0.800383877159309))
+        tapPath_1.move(to: CGPoint(x:0.726872233252168, y:0.676840215439856))
+        tapPath_1.addLine(to: CGPoint(x:0.659911894273128, y:0.691801307445369))
+        tapPath_1.addLine(to: CGPoint(x:0.638766519823789, y:0.803111899904974))
+        tapPath_1.addLine(to: CGPoint(x:0.727753277077024, y:0.791143009863807))
         tapPath_1.close()
         
+        // äussere schräge Bauchmuskel
         let tapPath_2 = UIBezierPath()
-        tapPath_2.move(to: CGPoint(x:0.437853107344633, y:0.36852207293666))
-        tapPath_2.addLine(to: CGPoint(x:0.430084745762712, y:0.272552783109405))
-        tapPath_2.addLine(to: CGPoint(x:0.509180790960452, y:0.295585412667946))
-        tapPath_2.addLine(to: CGPoint(x:0.589689265536723, y:0.273512476007678))
-        tapPath_2.addLine(to: CGPoint(x:0.57909604519774, y:0.367562380038388))
+        tapPath_2.move(to: CGPoint(x:0.274889854397543, y:0.58886894075404))
+        tapPath_2.addLine(to: CGPoint(x:0.385903070256573, y:0.561938958707361))
+        tapPath_2.addLine(to: CGPoint(x:0.362995567825922, y:0.680430879712747))
+        tapPath_2.addLine(to: CGPoint(x:0.298678400653049, y:0.66546976031264))
+        tapPath_2.close()
+        tapPath_2.move(to: CGPoint(x:0.637004391842477, y:0.563135828535261))
+        tapPath_2.addLine(to: CGPoint(x:0.746255479720195, y:0.585876711395099))
+        tapPath_2.addLine(to: CGPoint(x:0.729515405058336, y:0.666666657535135))
+        tapPath_2.addLine(to: CGPoint(x:0.661673981922839, y:0.678635547576302))
         tapPath_2.close()
         
+        // Halsmuskulator
         let tapPath_3 = UIBezierPath()
-        tapPath_3.move(to: CGPoint(x:0.305726872246696, y:0.359066427289048))
-        tapPath_3.addLine(to: CGPoint(x:0.41585900394927, y:0.324356654388044))
-        tapPath_3.addLine(to: CGPoint(x:0.418502175755438, y:0.36744462566273))
-        tapPath_3.close()
-        tapPath_3.move(to: CGPoint(x:0.597356814749966, y:0.366247755834829))
-        tapPath_3.addLine(to: CGPoint(x:0.609691629955947, y:0.328545780969479))
-        tapPath_3.addLine(to: CGPoint(x:0.726872233252168, y:0.361460194339444))
+        tapPath_3.move(to: CGPoint(x:0.437853107344633, y:0.36852207293666))
+        tapPath_3.addLine(to: CGPoint(x:0.430084745762712, y:0.272552783109405))
+        tapPath_3.addLine(to: CGPoint(x:0.509180790960452, y:0.295585412667946))
+        tapPath_3.addLine(to: CGPoint(x:0.589689265536723, y:0.273512476007678))
+        tapPath_3.addLine(to: CGPoint(x:0.57909604519774, y:0.367562380038388))
         tapPath_3.close()
         
-        let tapPaths = [tapPath_0, tapPath_1, tapPath_2, tapPath_3]
+        // oberer Trapezmuskel
+        let tapPath_4 = UIBezierPath()
+        tapPath_4.move(to: CGPoint(x:0.305726872246696, y:0.359066427289048))
+        tapPath_4.addLine(to: CGPoint(x:0.41585900394927, y:0.324356654388044))
+        tapPath_4.addLine(to: CGPoint(x:0.418502175755438, y:0.36744462566273))
+        tapPath_4.close()
+        tapPath_4.move(to: CGPoint(x:0.597356814749966, y:0.366247755834829))
+        tapPath_4.addLine(to: CGPoint(x:0.609691629955947, y:0.328545780969479))
+        tapPath_4.addLine(to: CGPoint(x:0.726872233252168, y:0.361460194339444))
+        tapPath_4.close()
+        
+        let tapPaths = [tapPath_0, tapPath_1, tapPath_2, tapPath_3, tapPath_4]
         
         var dict : [Torso] = []
         

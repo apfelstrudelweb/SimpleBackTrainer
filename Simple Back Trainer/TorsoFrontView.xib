@@ -24,36 +24,41 @@
                 <outletCollection property="imageViewCollection" destination="dai-I5-Poa" collectionClass="NSMutableArray" id="Aza-0Z-RhZ"/>
                 <outletCollection property="imageViewCollection" destination="z2a-9T-JCf" collectionClass="NSMutableArray" id="B4E-qu-1Zv"/>
                 <outletCollection property="imageViewCollection" destination="Eg0-BX-OwV" collectionClass="NSMutableArray" id="XmM-BA-D2f"/>
+                <outletCollection property="imageViewCollection" destination="hMw-fT-CMf" collectionClass="NSMutableArray" id="HrC-bj-M3X"/>
+                <outletCollection property="labelCollection" destination="hLX-xE-3le" collectionClass="NSMutableArray" id="08W-0K-CzY"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" restorationIdentifier="TorsoFrontView" id="iN0-l3-epB" customClass="TorsoFrontView" customModule="Visual_Back_Trainer">
-            <rect key="frame" x="0.0" y="0.0" width="458" height="674"/>
+            <rect key="frame" x="0.0" y="0.0" width="680" height="1064"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" maximumZoomScale="3" translatesAutoresizingMaskIntoConstraints="NO" id="fzT-od-qvZ">
-                    <rect key="frame" x="0.0" y="0.0" width="458" height="674"/>
+                    <rect key="frame" x="0.0" y="0.0" width="680" height="1064"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fGj-C7-Zok">
-                            <rect key="frame" x="0.0" y="0.0" width="458" height="674"/>
+                            <rect key="frame" x="0.0" y="0.0" width="680" height="1064"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pdfFrontView" translatesAutoresizingMaskIntoConstraints="NO" id="Tmt-xh-QNj">
-                                    <rect key="frame" x="0.0" y="0.0" width="458" height="674"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="680" height="1064"/>
                                 </imageView>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pdfBauchmuskeln" translatesAutoresizingMaskIntoConstraints="NO" id="nTZ-Dd-5el" customClass="MuscleGroupImageView" customModule="Visual_Back_Trainer" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="458" height="674"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="680" height="1064"/>
                                 </imageView>
-                                <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pdfSchrägeBauchmuskelnVorne" translatesAutoresizingMaskIntoConstraints="NO" id="dai-I5-Poa" customClass="MuscleGroupImageView" customModule="Visual_Back_Trainer" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="458" height="674"/>
+                                <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pdfInnereSchrägeBauchmuskeln" translatesAutoresizingMaskIntoConstraints="NO" id="dai-I5-Poa" customClass="MuscleGroupImageView" customModule="Visual_Back_Trainer" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="680" height="1064"/>
                                 </imageView>
-                                <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pdfHalsmuskulaturVorne" translatesAutoresizingMaskIntoConstraints="NO" id="z2a-9T-JCf" customClass="MuscleGroupImageView" customModule="Visual_Back_Trainer" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="458" height="674"/>
+                                <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pdfÄussereSchrägeBauchmuskeln" translatesAutoresizingMaskIntoConstraints="NO" id="hMw-fT-CMf" customClass="MuscleGroupImageView" customModule="Visual_Back_Trainer" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="680" height="1064"/>
                                 </imageView>
-                                <imageView userInteractionEnabled="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pdfObererTrapezmuskelVorne" translatesAutoresizingMaskIntoConstraints="NO" id="Eg0-BX-OwV" customClass="MuscleGroupImageView" customModule="Visual_Back_Trainer" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="458" height="674"/>
+                                <imageView userInteractionEnabled="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pdfHalsmuskulaturVorne" translatesAutoresizingMaskIntoConstraints="NO" id="z2a-9T-JCf" customClass="MuscleGroupImageView" customModule="Visual_Back_Trainer" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="680" height="1064"/>
+                                </imageView>
+                                <imageView userInteractionEnabled="NO" tag="4" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pdfObererTrapezmuskelVorne" translatesAutoresizingMaskIntoConstraints="NO" id="Eg0-BX-OwV" customClass="MuscleGroupImageView" customModule="Visual_Back_Trainer" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="680" height="1064"/>
                                 </imageView>
                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="gerade Bauchmuskeln" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GKW-c8-g1t" customClass="PaddingLabel" customModule="Visual_Back_Trainer" customModuleProvider="target">
-                                    <rect key="frame" x="183.66666666666666" y="471.66666666666669" width="90.999999999999972" height="12"/>
+                                    <rect key="frame" x="295" y="744.66666666666663" width="91" height="12"/>
                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="20" id="dum-zS-bRQ"/>
@@ -69,8 +74,25 @@
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="8"/>
                                     </variation>
                                 </label>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="schräge Bauchmuskeln" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nXh-GL-zxI" customClass="PaddingLabel" customModule="Visual_Back_Trainer" customModuleProvider="target">
-                                    <rect key="frame" x="90" y="432" width="95.333333333333314" height="12"/>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="innerer schräge Bauchmuskeln" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hLX-xE-3le" customClass="PaddingLabel" customModule="Visual_Back_Trainer" customModuleProvider="target">
+                                    <rect key="frame" x="412" y="792" width="127.00000000000006" height="12"/>
+                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="18" id="Ksv-CZ-Ass">
+                                            <variation key="heightClass=regular-widthClass=compact" constant="12"/>
+                                        </constraint>
+                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="20" id="wYu-kc-QNy"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                                    <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                    <size key="shadowOffset" width="1" height="1"/>
+                                    <variation key="heightClass=regular-widthClass=compact">
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="8"/>
+                                    </variation>
+                                </label>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="äusserer schräge Bauchmuskeln" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nXh-GL-zxI" customClass="PaddingLabel" customModule="Visual_Back_Trainer" customModuleProvider="target">
+                                    <rect key="frame" x="137.66666666666669" y="632.33333333333337" width="133.66666666666669" height="12"/>
                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="18" id="osc-KP-u1i">
@@ -86,8 +108,8 @@
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="8"/>
                                     </variation>
                                 </label>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Halsmuskulatur" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mcw-eU-Uqb" customClass="PaddingLabel" customModule="Visual_Back_Trainer" customModuleProvider="target">
-                                    <rect key="frame" x="201.66666666666666" y="213" width="60.999999999999972" height="12"/>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Halsmuskulatur" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mcw-eU-Uqb" customClass="PaddingLabel" customModule="Visual_Back_Trainer" customModuleProvider="target">
+                                    <rect key="frame" x="313.66666666666669" y="339.66666666666669" width="61" height="12"/>
                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="20" id="SfM-6k-uuO"/>
@@ -100,8 +122,8 @@
                                     <nil key="highlightedColor"/>
                                     <size key="shadowOffset" width="1" height="1"/>
                                 </label>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="oberer Trapezmuskel" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tui-YG-xlg" customClass="PaddingLabel" customModule="Visual_Back_Trainer" customModuleProvider="target">
-                                    <rect key="frame" x="95.666666666666686" y="236.66666666666666" width="83.333333333333314" height="12"/>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="oberer Trapezmuskel" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tui-YG-xlg" customClass="PaddingLabel" customModule="Visual_Back_Trainer" customModuleProvider="target">
+                                    <rect key="frame" x="162.33333333333334" y="377" width="83.333333333333343" height="12"/>
                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="18" id="0Ub-Na-ztA">
@@ -118,6 +140,8 @@
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstItem="Eg0-BX-OwV" firstAttribute="leading" secondItem="Tmt-xh-QNj" secondAttribute="leading" id="14E-Ii-nHe"/>
+                                <constraint firstAttribute="trailing" secondItem="hMw-fT-CMf" secondAttribute="trailing" id="17f-on-vAz"/>
+                                <constraint firstAttribute="bottom" secondItem="hMw-fT-CMf" secondAttribute="bottom" id="1fU-wQ-OFp"/>
                                 <constraint firstItem="Tmt-xh-QNj" firstAttribute="trailing" secondItem="dai-I5-Poa" secondAttribute="trailing" id="6pj-bQ-Jxj"/>
                                 <constraint firstItem="Tmt-xh-QNj" firstAttribute="leading" secondItem="nTZ-Dd-5el" secondAttribute="leading" id="7is-2F-jRA"/>
                                 <constraint firstAttribute="width" secondItem="fGj-C7-Zok" secondAttribute="height" multiplier="229:337" id="7kR-id-qXv"/>
@@ -128,12 +152,15 @@
                                 <constraint firstItem="Tmt-xh-QNj" firstAttribute="leading" secondItem="fGj-C7-Zok" secondAttribute="leading" id="Kdf-BJ-p2c"/>
                                 <constraint firstItem="tui-YG-xlg" firstAttribute="centerY" secondItem="fGj-C7-Zok" secondAttribute="centerY" multiplier="0.72" id="N8o-lI-xx8"/>
                                 <constraint firstItem="Tmt-xh-QNj" firstAttribute="top" secondItem="dai-I5-Poa" secondAttribute="top" id="Pif-be-W2P"/>
+                                <constraint firstItem="hLX-xE-3le" firstAttribute="centerX" secondItem="fGj-C7-Zok" secondAttribute="centerX" multiplier="1.4" id="QMc-FR-AiH"/>
                                 <constraint firstItem="Tmt-xh-QNj" firstAttribute="leading" secondItem="z2a-9T-JCf" secondAttribute="leading" id="QUc-lE-306"/>
+                                <constraint firstItem="hMw-fT-CMf" firstAttribute="top" secondItem="fGj-C7-Zok" secondAttribute="top" id="Whu-m7-Ky2"/>
                                 <constraint firstItem="Tmt-xh-QNj" firstAttribute="trailing" secondItem="nTZ-Dd-5el" secondAttribute="trailing" id="X3z-rH-Nw1"/>
-                                <constraint firstItem="nXh-GL-zxI" firstAttribute="centerY" secondItem="fGj-C7-Zok" secondAttribute="centerY" multiplier="1.3" id="XxF-kY-a38"/>
+                                <constraint firstItem="nXh-GL-zxI" firstAttribute="centerY" secondItem="fGj-C7-Zok" secondAttribute="centerY" multiplier="1.2" id="XxF-kY-a38"/>
                                 <constraint firstAttribute="trailing" secondItem="Tmt-xh-QNj" secondAttribute="trailing" id="f2B-Ix-PuH"/>
                                 <constraint firstItem="Eg0-BX-OwV" firstAttribute="trailing" secondItem="Tmt-xh-QNj" secondAttribute="trailing" id="gLx-wk-0TE"/>
                                 <constraint firstItem="GKW-c8-g1t" firstAttribute="top" secondItem="Tmt-xh-QNj" secondAttribute="centerY" multiplier="1.4" id="mrv-vA-HRt"/>
+                                <constraint firstItem="hMw-fT-CMf" firstAttribute="leading" secondItem="fGj-C7-Zok" secondAttribute="leading" id="myg-Nu-rCs"/>
                                 <constraint firstItem="mcw-eU-Uqb" firstAttribute="centerX" secondItem="fGj-C7-Zok" secondAttribute="centerX" multiplier="1.01" id="qI6-Nq-PBu"/>
                                 <constraint firstItem="Tmt-xh-QNj" firstAttribute="bottom" secondItem="z2a-9T-JCf" secondAttribute="bottom" id="qgi-Hu-7k4"/>
                                 <constraint firstItem="mcw-eU-Uqb" firstAttribute="centerY" secondItem="fGj-C7-Zok" secondAttribute="centerY" multiplier="0.65" id="rTI-PK-Rl0"/>
@@ -142,6 +169,7 @@
                                 <constraint firstItem="Tmt-xh-QNj" firstAttribute="top" secondItem="nTZ-Dd-5el" secondAttribute="top" id="v0S-Pt-lsI"/>
                                 <constraint firstItem="GKW-c8-g1t" firstAttribute="centerX" secondItem="fGj-C7-Zok" secondAttribute="centerX" id="wdm-w1-IEr"/>
                                 <constraint firstItem="Tmt-xh-QNj" firstAttribute="top" secondItem="z2a-9T-JCf" secondAttribute="top" id="wtg-D6-s7w"/>
+                                <constraint firstItem="hLX-xE-3le" firstAttribute="centerY" secondItem="fGj-C7-Zok" secondAttribute="centerY" multiplier="1.5" id="xhT-EX-1fO"/>
                                 <constraint firstItem="Tmt-xh-QNj" firstAttribute="leading" secondItem="dai-I5-Poa" secondAttribute="leading" id="xoK-7D-v2R"/>
                                 <constraint firstItem="Tmt-xh-QNj" firstAttribute="bottom" secondItem="dai-I5-Poa" secondAttribute="bottom" id="z1u-2A-VVP"/>
                                 <constraint firstItem="tui-YG-xlg" firstAttribute="centerX" secondItem="fGj-C7-Zok" secondAttribute="centerX" multiplier="0.6" id="zQY-5u-MqO"/>
@@ -175,14 +203,15 @@
                 <constraint firstAttribute="bottom" secondItem="fzT-od-qvZ" secondAttribute="bottom" id="mA4-dP-w5e"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="264" y="-94"/>
+            <point key="canvasLocation" x="263" y="-94"/>
         </view>
     </objects>
     <resources>
+        <image name="pdfÄussereSchrägeBauchmuskeln" width="298" height="452"/>
         <image name="pdfBauchmuskeln" width="298" height="452"/>
         <image name="pdfFrontView" width="298" height="452"/>
         <image name="pdfHalsmuskulaturVorne" width="298" height="452"/>
+        <image name="pdfInnereSchrägeBauchmuskeln" width="298" height="452"/>
         <image name="pdfObererTrapezmuskelVorne" width="298" height="452"/>
-        <image name="pdfSchrägeBauchmuskelnVorne" width="298" height="452"/>
     </resources>
 </document>
