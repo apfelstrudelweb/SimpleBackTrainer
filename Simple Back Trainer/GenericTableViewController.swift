@@ -92,7 +92,7 @@ class GenericTableViewController: UITableViewController, NSFetchedResultsControl
         
         
         cell.buttonColor = (navigationController?.navigationBar.barTintColor)!
-        cell.videoLabel.text = "das ist ein sehr langer Name und kann sich durchaus über mehrere Zeilen erstrecken"//workout.name
+        cell.videoLabel.text = workout.name
         
         cell.videoImageView.image = UIImage(data:workout.icon! as Data, scale:1.0)
         cell.indexPath = indexPath
