@@ -149,7 +149,7 @@ extension MainMenuViewController:TrainingModelDelegate {
     func didRetrieveWorkouts(groups: [Group]) {
     CoreDataManager.sharedInstance.managedObjectContext.automaticallyMergesChangesFromParent = true
         CoreDataManager.sharedInstance.updateMusclegroup(serverGroupsData: groups)
-
+        // TODO: completion handler
     }
     
     func showErrorMessage(message: String) {

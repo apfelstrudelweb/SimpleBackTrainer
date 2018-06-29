@@ -21,8 +21,7 @@ class VideoTableViewController: GenericTableViewController {
     override func viewDidLoad() {
 
         headerView.backgroundColor = muscleGroupColor
-        headerLabel.text = "Übungen" //"Übungen für die Muskelgruppe \"\(String(describing: self.title!))\""
-        
+
         let fetchRequest = NSFetchRequest<Workout> (entityName: "Workout")
         fetchRequest.sortDescriptors = [NSSortDescriptor (key: "position", ascending: true)]
         //fetchRequest.predicate = NSPredicate(format: "musclegroupId.id = %d", muscleGroupId)
@@ -41,7 +40,13 @@ class VideoTableViewController: GenericTableViewController {
             cacheName: nil)
         self.fetchedResultsController.delegate = self
         
-
+        do {
+            let count = try CoreDataManager.sharedInstance.managedObjectContext.count(for: fetchRequest)
+            headerLabel.text = "\(count) Übungen"
+        } catch {
+            fatalError("Failed to initialize FetchedResultsController: \(error)")
+        }
+        
         super.viewDidLoad()
         
     }

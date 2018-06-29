@@ -31,8 +31,8 @@ class API {
 }
 
 struct AlertMessage {
-     static let SERVER_NOT_RESPONDING = "Something went wrong while connecting to server!"
+    static let SERVER_NOT_RESPONDING = "Something went wrong while connecting to server!"
     static let NO_INTERNET_CONNECTION = "Unable to connect with the server. Check your internet connection and try again."
- 
+    static let NO_DATA_CHANGED = "Server data don't need to be fetched."
 }
 

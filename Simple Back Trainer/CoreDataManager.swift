@@ -210,6 +210,8 @@ class CoreDataManager: NSObject {
             }
         }
         self.deleteGroupIfNotExistAnymore(serverGroupsData: serverGroupsData)
+        
+        // TODO: completion handler
     }
     
     func deleteWorkoutIfNotExistAnymore(muscleGroup:Musclegroup, workoutArray:NSMutableSet) {
