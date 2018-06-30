@@ -16,7 +16,10 @@ protocol TrainingModelDelegate {
 
 class TrainingModel: NSObject {
     var delegate:TrainingModelDelegate?
-    func getWorkouts() {
+    
+    typealias CompletionHander = () -> ()
+    
+    func getWorkouts(completionHandler : CompletionHander?) {
         ApiHandler.call(apiName: API.Name.workout, params: [:], httpMethod: .GET) { (isSucceeded, response, data) in
             DispatchQueue.main.async {
                 print(response)
@@ -28,6 +31,8 @@ class TrainingModel: NSObject {
                         DispatchQueue.main.async {
                             if let groups = groupResponse.groups {
                                 self.delegate?.didRetrieveWorkouts(groups: groups)
+                                
+                                completionHandler?()
                             }
                         }
                     } catch let err {
@@ -51,9 +56,12 @@ class TrainingModel: NSObject {
                             self.delegate?.showErrorMessage(message: message)
                         }
                     }
+                    
+                    completionHandler?()
                 }
             }
         }
+       
     }
     
 }

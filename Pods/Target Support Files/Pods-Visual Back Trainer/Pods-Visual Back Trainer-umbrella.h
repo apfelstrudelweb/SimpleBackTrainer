@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_Simple_Back_TrainerVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_Simple_Back_TrainerVersionString[];
+FOUNDATION_EXPORT double Pods_Visual_Back_TrainerVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_Visual_Back_TrainerVersionString[];
 

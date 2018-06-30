@@ -8,7 +8,7 @@
 
 import UIKit
 import CoreData
-
+import SwiftSpinner
 
 class MainMenuViewController: BaseViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
@@ -19,8 +19,8 @@ class MainMenuViewController: BaseViewController, UICollectionViewDataSource, UI
     var flowLayout : UICollectionViewFlowLayout!
     
     var trainingModel = TrainingModel()
-
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
         addSlideMenuButton()
@@ -29,7 +29,14 @@ class MainMenuViewController: BaseViewController, UICollectionViewDataSource, UI
 
         // for ADs
         self.collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: adsBottomSpace, right: 0)
-        self.trainingModel.getWorkouts()
+        
+        
+        SwiftSpinner.setTitleFont(UIFont(name: "System", size: 16.0))
+        SwiftSpinner.show("Übungs-Liste wird aktualisiert ...")
+        
+        self.trainingModel.getWorkouts { () in
+            SwiftSpinner.hide()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -144,6 +151,7 @@ class MainMenuViewController: BaseViewController, UICollectionViewDataSource, UI
         return header
     }
 }
+
 
 extension MainMenuViewController:TrainingModelDelegate {
     func didRetrieveWorkouts(groups: [Group]) {

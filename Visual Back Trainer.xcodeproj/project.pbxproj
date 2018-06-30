@@ -65,11 +65,13 @@
 		753A55CD1BB073E900254F27 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 753A55CB1BB073E900254F27 /* LaunchScreen.xib */; };
 		753A55E31BB0753B00254F27 /* SlideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753A55E21BB0753B00254F27 /* SlideMenuViewController.swift */; };
 		753A55E51BB0755100254F27 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753A55E41BB0755100254F27 /* BaseViewController.swift */; };
+		C3E88C606F624B7229EB4512 /* Pods_Visual_Back_Trainer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B16F3D0DCE36AA650ACFAD7 /* Pods_Visual_Back_Trainer.framework */; };
 		C6EEF9F81CB7E4E000A3DC6D /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EEF9F71CB7E4E000A3DC6D /* MainMenuViewController.swift */; };
 		CFEE87CFEC7C9B8E456A5B5E /* Pods_Simple_Back_Trainer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16EE4B69557784C57DD7EB11 /* Pods_Simple_Back_Trainer.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B16F3D0DCE36AA650ACFAD7 /* Pods_Visual_Back_Trainer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Visual_Back_Trainer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		14A7486220C3C2D1002CB7EA /* PlanController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanController.swift; sourceTree = "<group>"; };
 		14A7486420C3C2EC002CB7EA /* PremiumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumViewController.swift; sourceTree = "<group>"; };
 		14A7486620C3C305002CB7EA /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
@@ -128,6 +130,8 @@
 		1BCF6A2320C9B40200E310DF /* TorsoFrontView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TorsoFrontView.xib; sourceTree = "<group>"; };
 		1BCF8461203206B000F55F64 /* ItemsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsCollectionViewCell.swift; sourceTree = "<group>"; };
 		1BD535E320E504D6000F1A37 /* GenericTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericTableViewController.swift; sourceTree = "<group>"; };
+		2A7A661B6EEDE2805E909539 /* Pods-Visual Back Trainer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Visual Back Trainer.release.xcconfig"; path = "Pods/Target Support Files/Pods-Visual Back Trainer/Pods-Visual Back Trainer.release.xcconfig"; sourceTree = "<group>"; };
+		4B0EE30EF5413A93082058A8 /* Pods-Visual Back Trainer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Visual Back Trainer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Visual Back Trainer/Pods-Visual Back Trainer.debug.xcconfig"; sourceTree = "<group>"; };
 		6661853E5EC2C1DF3EB34716 /* Pods-Simple Back Trainer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Simple Back Trainer.release.xcconfig"; path = "Pods/Target Support Files/Pods-Simple Back Trainer/Pods-Simple Back Trainer.release.xcconfig"; sourceTree = "<group>"; };
 		753A55BD1BB073E900254F27 /* Visual Back Trainer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Visual Back Trainer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		753A55C11BB073E900254F27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -147,6 +151,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CFEE87CFEC7C9B8E456A5B5E /* Pods_Simple_Back_Trainer.framework in Frameworks */,
+				C3E88C606F624B7229EB4512 /* Pods_Visual_Back_Trainer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,6 +360,8 @@
 			children = (
 				97E52B6DC9D3DE58464C925E /* Pods-Simple Back Trainer.debug.xcconfig */,
 				6661853E5EC2C1DF3EB34716 /* Pods-Simple Back Trainer.release.xcconfig */,
+				4B0EE30EF5413A93082058A8 /* Pods-Visual Back Trainer.debug.xcconfig */,
+				2A7A661B6EEDE2805E909539 /* Pods-Visual Back Trainer.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -363,6 +370,7 @@
 			isa = PBXGroup;
 			children = (
 				16EE4B69557784C57DD7EB11 /* Pods_Simple_Back_Trainer.framework */,
+				0B16F3D0DCE36AA650ACFAD7 /* Pods_Visual_Back_Trainer.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -452,11 +460,12 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Simple Back Trainer/Pods-Simple Back Trainer-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-Visual Back Trainer/Pods-Visual Back Trainer-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AMPopTip/AMPopTip.framework",
 				"${BUILT_PRODUCTS_DIR}/DragDropiOS/DragDropiOS.framework",
 				"${BUILT_PRODUCTS_DIR}/RNCryptor/RNCryptor.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftSpinner/SwiftSpinner.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -464,10 +473,11 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DragDropiOS.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RNCryptor.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSpinner.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Simple Back Trainer/Pods-Simple Back Trainer-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Visual Back Trainer/Pods-Visual Back Trainer-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C24743F90DA16F926EAC6C95 /* [CP] Check Pods Manifest.lock */ = {
@@ -481,7 +491,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Simple Back Trainer-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Visual Back Trainer-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -678,16 +688,13 @@
 		};
 		753A55DD1BB073E900254F27 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 97E52B6DC9D3DE58464C925E /* Pods-Simple Back Trainer.debug.xcconfig */;
+			baseConfigurationReference = 4B0EE30EF5413A93082058A8 /* Pods-Visual Back Trainer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = P2EQM7YAFH;
 				INFOPLIST_FILE = "Simple Back Trainer/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ch.vormbrock.simplebacktrainer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
@@ -698,16 +705,13 @@
 		};
 		753A55DE1BB073E900254F27 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6661853E5EC2C1DF3EB34716 /* Pods-Simple Back Trainer.release.xcconfig */;
+			baseConfigurationReference = 2A7A661B6EEDE2805E909539 /* Pods-Visual Back Trainer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = P2EQM7YAFH;
 				INFOPLIST_FILE = "Simple Back Trainer/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ch.vormbrock.simplebacktrainer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_COMPILATION_MODE = wholemodule;
