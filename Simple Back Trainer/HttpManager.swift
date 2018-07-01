@@ -9,18 +9,59 @@ import UIKit
 
 class HttpManager {
     
-    static public func requestToServer(_ url: String, params: [String:Any], httpMethod: API.HttpMethod, isZipped:Bool, receivedResponse:@escaping (_ succeeded:Bool, _ response:[String:Any],_ data:Data?) -> ()){
+    static public func hasUpdates(_ url: String, params: [String:Any], httpMethod: API.HttpMethod, receivedResponse:@escaping (_ succeeded:Bool) -> ()) {
         
         let urlString = url.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
-    
+        
         var request = URLRequest(url: URL(string: API.host + urlString!)!)
         request.httpMethod = httpMethod.rawValue
         request.timeoutInterval = 20
         request.cachePolicy = .reloadIgnoringLocalCacheData
-//        let accessToken = UserDefaultsCustom.getAccessToken()
-//        if accessToken.count > 0{
-//            request.setValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
-//        }
+        
+        if(httpMethod == API.HttpMethod.POST) {
+            request.httpBody = try! JSONSerialization.data(withJSONObject: params, options: [])
+        }
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            
+            let storedDate = UserDefaults.standard.object(forKey: "jsonModifiedDate") as? String
+            var lastModifiedDate: String?
+            
+            if (response != nil && data != nil) {
+                
+                if let httpResp: HTTPURLResponse = response as? HTTPURLResponse {
+                    lastModifiedDate = httpResp.allHeaderFields["Last-Modified"] as? String
+                } else {
+                    receivedResponse(false)
+                }
+                
+                if storedDate != lastModifiedDate {
+                    UserDefaults.standard.set(lastModifiedDate!, forKey: "jsonModifiedDate")
+                    UserDefaults.standard.synchronize()
+                    receivedResponse(true)
+                } else {
+                    receivedResponse(false)
+                }
+                
+            } else {
+                receivedResponse(false)
+            }
+        }
+        task.resume()
+    }
+    
+    static public func requestToServer(_ url: String, params: [String:Any], httpMethod: API.HttpMethod, isZipped:Bool, receivedResponse:@escaping (_ succeeded:Bool, _ response:[String:Any],_ data:Data?) -> ()){
+        
+        let urlString = url.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
+        
+        var request = URLRequest(url: URL(string: API.host + urlString!)!)
+        request.httpMethod = httpMethod.rawValue
+        request.timeoutInterval = 20
+        request.cachePolicy = .reloadIgnoringLocalCacheData
+        //        let accessToken = UserDefaultsCustom.getAccessToken()
+        //        if accessToken.count > 0{
+        //            request.setValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
+        //        }
         if(httpMethod == API.HttpMethod.POST) {
             request.httpBody = try! JSONSerialization.data(withJSONObject: params, options: [])
             if isZipped == false {
@@ -33,38 +74,23 @@ class HttpManager {
         }
         let task = URLSession.shared.dataTask(with: request) {data, response, error in
             
-            let storedDate = UserDefaults.standard.object(forKey: "jsonModifiedDate") as? String
-            var lastModifiedDate: String?
-            
-
             if (response != nil && data != nil) {
                 
-                if let httpResp: HTTPURLResponse = response as? HTTPURLResponse {
-                    lastModifiedDate = httpResp.allHeaderFields["Last-Modified"] as? String
-                }
-                
-                if storedDate != lastModifiedDate {
-                    UserDefaults.standard.set(lastModifiedDate!, forKey: "jsonModifiedDate")
-                    UserDefaults.standard.synchronize()
-                    
-                    do {
-                        if let json = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as? [String:Any] {
-                            receivedResponse(true, json, data)
-                        } else {
-                            let jsonStr = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)    // No error thrown, but not NSDictionary
-                            print("Error could not parse JSON: \(jsonStr ?? "")")
-                            receivedResponse(false, [:], nil)
-                        }
-                    } catch let parseError {
-                        print(parseError)                                                          // Log the error thrown by `JSONObjectWithData`
-                        let jsonStr = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
-                        print("Error could not parse JSON: '\(jsonStr ?? "")'")
+                do {
+                    if let json = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as? [String:Any] {
+                        receivedResponse(true, json, data)
+                    } else {
+                        let jsonStr = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)    // No error thrown, but not NSDictionary
+                        print("Error could not parse JSON: \(jsonStr ?? "")")
                         receivedResponse(false, [:], nil)
                     }
-                } else {
-                    receivedResponse(false, ["statusCode":0, "message":AlertMessage.NO_DATA_CHANGED],nil)
+                } catch let parseError {
+                    print(parseError)                                                          // Log the error thrown by `JSONObjectWithData`
+                    let jsonStr = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
+                    print("Error could not parse JSON: '\(jsonStr ?? "")'")
+                    receivedResponse(false, [:], nil)
                 }
- 
+                
             } else {
                 receivedResponse(false, [:], nil)
                 
@@ -72,5 +98,5 @@ class HttpManager {
         }
         task.resume()
     }
-
+    
 }

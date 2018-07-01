@@ -9,5 +9,7 @@ target 'Visual Back Trainer' do
   pod 'DragDropiOS'
   pod 'RNCryptor', '~> 5.0'
   pod 'SwiftSpinner'
+  pod 'ReachabilitySwift'
+  pod 'Alamofire'
 end
 

@@ -17,6 +17,18 @@ protocol TrainingModelDelegate {
 class TrainingModel: NSObject {
     var delegate:TrainingModelDelegate?
     
+    typealias PrecheckCompletionHander = (Bool) -> ()
+    
+    func hasUpdates(completionHandler : PrecheckCompletionHander?)  {
+        
+        ApiHandler.hasUpdates(apiName: API.Name.workout, params: [:], httpMethod: .GET) { (isSucceeded) in
+            
+            DispatchQueue.main.async {
+                completionHandler?(isSucceeded)
+            }
+        }
+    }
+    
     typealias CompletionHander = () -> ()
     
     func getWorkouts(completionHandler : CompletionHander?) {

@@ -17,6 +17,8 @@
 		14A7487620C3E03A002CB7EA /* MobilisationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A7487520C3E03A002CB7EA /* MobilisationsController.swift */; };
 		14A7487820C3E058002CB7EA /* BackTherapyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A7487720C3E058002CB7EA /* BackTherapyController.swift */; };
 		14A7487C20C3E977002CB7EA /* TrainingPlansController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A7487B20C3E977002CB7EA /* TrainingPlansController.swift */; };
+		1B1D742C20E8C759005C1CD0 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1D742B20E8C759005C1CD0 /* NetworkManager.swift */; };
+		1B1D742E20E8CA9A005C1CD0 /* OfflineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1D742D20E8CA9A005C1CD0 /* OfflineViewController.swift */; };
 		1B3E45FE20D2F770003C4B96 /* VideoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3E45FD20D2F770003C4B96 /* VideoPlayerViewController.swift */; };
 		1B3E460020D6585E003C4B96 /* Subtitles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3E45FF20D6585E003C4B96 /* Subtitles.swift */; };
 		1B3E460220D671CB003C4B96 /* InfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B3E460120D671CB003C4B96 /* InfoView.xib */; };
@@ -83,6 +85,8 @@
 		14A7487720C3E058002CB7EA /* BackTherapyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackTherapyController.swift; sourceTree = "<group>"; };
 		14A7487B20C3E977002CB7EA /* TrainingPlansController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingPlansController.swift; sourceTree = "<group>"; };
 		16EE4B69557784C57DD7EB11 /* Pods_Simple_Back_Trainer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Simple_Back_Trainer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B1D742B20E8C759005C1CD0 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		1B1D742D20E8CA9A005C1CD0 /* OfflineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineViewController.swift; sourceTree = "<group>"; };
 		1B3E45FD20D2F770003C4B96 /* VideoPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerViewController.swift; sourceTree = "<group>"; };
 		1B3E45FF20D6585E003C4B96 /* Subtitles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Subtitles.swift; sourceTree = "<group>"; };
 		1B3E460120D671CB003C4B96 /* InfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoView.xib; sourceTree = "<group>"; };
@@ -203,6 +207,7 @@
 				1BBC3AAE20D125DA00B43A61 /* API.swift */,
 				1BBC3AAF20D125DB00B43A61 /* ApiHandler.swift */,
 				14A7486820C3C344002CB7EA /* Constants.swift */,
+				1B1D742B20E8C759005C1CD0 /* NetworkManager.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -343,6 +348,7 @@
 				1BCFB6B020D11F30003FBF7F /* Resources */,
 				753A55C01BB073E900254F27 /* Supporting Files */,
 				1BD535E320E504D6000F1A37 /* GenericTableViewController.swift */,
+				1B1D742D20E8CA9A005C1CD0 /* OfflineViewController.swift */,
 			);
 			path = "Simple Back Trainer";
 			sourceTree = "<group>";
@@ -462,16 +468,20 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Visual Back Trainer/Pods-Visual Back Trainer-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AMPopTip/AMPopTip.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/DragDropiOS/DragDropiOS.framework",
 				"${BUILT_PRODUCTS_DIR}/RNCryptor/RNCryptor.framework",
+				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftSpinner/SwiftSpinner.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AMPopTip.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DragDropiOS.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RNCryptor.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSpinner.framework",
 			);
@@ -527,6 +537,7 @@
 				1BCF6A2820C9B40200E310DF /* TorsoBackView.swift in Sources */,
 				753A55E31BB0753B00254F27 /* SlideMenuViewController.swift in Sources */,
 				1BCF6A2520C9B40200E310DF /* Torso.swift in Sources */,
+				1B1D742C20E8C759005C1CD0 /* NetworkManager.swift in Sources */,
 				14A7487620C3E03A002CB7EA /* MobilisationsController.swift in Sources */,
 				1BD535E420E504D6000F1A37 /* GenericTableViewController.swift in Sources */,
 				1BBC3AB620D1260D00B43A61 /* Utils.swift in Sources */,
@@ -534,6 +545,7 @@
 				1BBC3AAD20D1252400B43A61 /* Trainingsplan.xcdatamodeld in Sources */,
 				1BC4368320BC8A0D00968F44 /* TabBarController.swift in Sources */,
 				1B3E460820DBF0C9003C4B96 /* ExercisesTableViewController.swift in Sources */,
+				1B1D742E20E8CA9A005C1CD0 /* OfflineViewController.swift in Sources */,
 				14A7486920C3C344002CB7EA /* Constants.swift in Sources */,
 				753A55C31BB073E900254F27 /* AppDelegate.swift in Sources */,
 				1BBC3AC120D2617900B43A61 /* VideoTableViewController.swift in Sources */,
@@ -694,7 +706,10 @@
 				DEVELOPMENT_TEAM = P2EQM7YAFH;
 				INFOPLIST_FILE = "Simple Back Trainer/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = ch.vormbrock.simplebacktrainer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
@@ -711,7 +726,10 @@
 				DEVELOPMENT_TEAM = P2EQM7YAFH;
 				INFOPLIST_FILE = "Simple Back Trainer/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = ch.vormbrock.simplebacktrainer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_COMPILATION_MODE = wholemodule;

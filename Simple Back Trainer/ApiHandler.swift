@@ -9,6 +9,23 @@ import UIKit
 import CoreLocation
 
 class ApiHandler {
+    
+    static public func hasUpdates(apiName:String, params: [String : Any]?, httpMethod:API.HttpMethod,receivedResponse:@escaping (_ succeeded:Bool) -> ()) {
+        
+        if IJReachability.isConnectedToNetwork() == true {
+            HttpManager.hasUpdates(apiName, params: params!, httpMethod: httpMethod, receivedResponse: { (isSucceeded) in
+                DispatchQueue.main.async {
+                    if(isSucceeded){
+                        receivedResponse(true)
+                    } else {
+                        receivedResponse(false)
+                    }
+                }
+            })
+        } else {
+            receivedResponse(false)
+        }
+    }
 
     static public func call(apiName:String,params: [String : Any]?,httpMethod:API.HttpMethod,receivedResponse:@escaping (_ succeeded:Bool, _ response:[String:Any], _ data:Data?) -> ()) {
         if IJReachability.isConnectedToNetwork() == true {

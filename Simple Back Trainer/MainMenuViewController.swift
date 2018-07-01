@@ -9,42 +9,63 @@
 import UIKit
 import CoreData
 import SwiftSpinner
+import Reachability
 
 class MainMenuViewController: BaseViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-
- 
+    
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
     var cellWidth : CGFloat!
     var flowLayout : UICollectionViewFlowLayout!
     
     var trainingModel = TrainingModel()
-    
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         addSlideMenuButton()
         
         self.trainingModel.delegate = self
-
+        
         // for ADs
         self.collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: adsBottomSpace, right: 0)
         
-        
-        SwiftSpinner.setTitleFont(UIFont(name: "System", size: 16.0))
-        SwiftSpinner.show("Übungs-Liste wird aktualisiert ...")
-        
-        self.trainingModel.getWorkouts { () in
-            SwiftSpinner.hide()
-        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.title = "Home"
         self.navigationController?.tabBarItem.title = "Home"
+        
+        NetworkManager.isUnreachable { networkManagerInstance in
+
+            let fetchRequest = NSFetchRequest<Workout> (entityName: "Workout")
+            do {
+                
+                let count = try CoreDataManager.sharedInstance.managedObjectContext.count(for: fetchRequest)
+                if count == 0 {
+                    DispatchQueue.main.async {
+                        self.performSegue(withIdentifier: "NetworkUnavailableSegue", sender: self)
+                    }
+                }
+            } catch {
+                fatalError("Failed to initialize FetchedResultsController: \(error)")
+            }
+        }
+
+        self.trainingModel.hasUpdates() { (success)  in
+
+            if success == true {
+                SwiftSpinner.setTitleFont(UIFont(name: "System", size: 16.0))
+                SwiftSpinner.show("Übungs-Liste wird aktualisiert ...")
+
+                self.trainingModel.getWorkouts { () in
+                    SwiftSpinner.hide()
+                }
+            }
+        }
     }
 
-    
     override func viewWillDisappear(_ animated: Bool) {
         if self.menuVC != nil {
             self.hamburgerButton?.tag = 0
@@ -72,7 +93,7 @@ class MainMenuViewController: BaseViewController, UICollectionViewDataSource, UI
         if UIDevice.current.userInterfaceIdiom == .pad {
             numberOfItemsPerRow *= 2
         }
-
+        
         let margin = 0.08*UIScreen.main.bounds.width
         flowLayout = collectionViewLayout as! UICollectionViewFlowLayout
         flowLayout.minimumInteritemSpacing = 20
@@ -106,7 +127,7 @@ class MainMenuViewController: BaseViewController, UICollectionViewDataSource, UI
         if UIDevice.current.userInterfaceIdiom == .pad {
             cell.label.font = cell.label.font.withSize(18)
         }
-
+        
         cell.label.text = items[indexPath.row]["title"]!
         cell.imageView.image = UIImage(named: items[indexPath.row]["icon"]!)
         cell.layer.borderColor = UIColor.darkGray.cgColor
@@ -114,7 +135,7 @@ class MainMenuViewController: BaseViewController, UICollectionViewDataSource, UI
         
         cell.layer.masksToBounds = true
         cell.layer.cornerRadius = 25.0
-
+        
         return cell
     }
     
@@ -135,7 +156,7 @@ class MainMenuViewController: BaseViewController, UICollectionViewDataSource, UI
             }
             self.navigationController!.pushViewController(destViewController, animated: true)
         }
-       // self.navigationController?.present(destViewController, animated: true, completion: nil)
+        // self.navigationController?.present(destViewController, animated: true, completion: nil)
         
     }
     
@@ -155,7 +176,7 @@ class MainMenuViewController: BaseViewController, UICollectionViewDataSource, UI
 
 extension MainMenuViewController:TrainingModelDelegate {
     func didRetrieveWorkouts(groups: [Group]) {
-    CoreDataManager.sharedInstance.managedObjectContext.automaticallyMergesChangesFromParent = true
+        CoreDataManager.sharedInstance.managedObjectContext.automaticallyMergesChangesFromParent = true
         CoreDataManager.sharedInstance.updateMusclegroup(serverGroupsData: groups)
         // TODO: completion handler
     }
