@@ -9,6 +9,7 @@ import UIKit
 
 class HttpManager {
     
+    
     static public func hasUpdates(_ url: String, params: [String:Any], httpMethod: API.HttpMethod, receivedResponse:@escaping (_ succeeded:Bool) -> ()) {
         
         let urlString = url.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)

@@ -92,7 +92,7 @@ class GenericTableViewController: UITableViewController, NSFetchedResultsControl
         
         
         cell.buttonColor = (navigationController?.navigationBar.barTintColor)!
-        cell.videoLabel.text = workout.name
+        cell.videoLabel.text = workout.alias // TODO: localize
         
         cell.videoImageView.image = UIImage(data:workout.icon! as Data, scale:1.0)
         cell.indexPath = indexPath

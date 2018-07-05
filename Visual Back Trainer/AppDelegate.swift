@@ -31,6 +31,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         db.managedObjectContext.automaticallyMergesChangesFromParent = true
         let _ =  db.insertTrainingsPlan(id: 1, workouts: [])
         
+        if  UserDefaults.standard.object(forKey: "jsonLoaded") == nil {
+            UserDefaults.standard.set(false, forKey: "jsonLoaded")
+            UserDefaults.standard.synchronize()
+        }
+       
+        
         Thread.sleep(forTimeInterval: 3.0)
         
         return true
