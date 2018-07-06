@@ -148,7 +148,6 @@ class TorsoFrontView: TorsoBasicView, UIScrollViewDelegate {
         let relativePoint = CGPoint(x: point.x/w!, y: point.y/h!)
         print(relativePoint)
         
-        
         frontView.dict.forEach {
             let torso = $0
             if torso.tapArea.contains(relativePoint) {

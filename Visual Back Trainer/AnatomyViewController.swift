@@ -323,11 +323,13 @@ extension AnatomyViewController: TorsoFrontViewDelegate {
 extension AnatomyViewController: TorsoBackViewDelegate {
     func updateBackButton(index: Int, sender: TorsoBackView) {
         
-        let backViewItem = BackView().dict[index]
+        let sorted = BackView().dict.sorted(by: { $0.index < $1.index })
         
-        backViewButton.backgroundColor = backViewItem?.color
-        backViewButton.setTitle(backViewItem?.muscleName, for: .normal)
-        backViewButton.muscleGroupId = backViewItem?.index
+        let backViewItem = sorted[index]
+        
+        backViewButton.backgroundColor = backViewItem.color
+        backViewButton.setTitle(backViewItem.muscleName, for: .normal)
+        backViewButton.muscleGroupId = backViewItem.index
         
         backViewButtonLarge.backgroundColor = backViewButton.backgroundColor
         backViewButtonLarge.setTitle(backViewButton.titleLabel?.text, for: .normal)

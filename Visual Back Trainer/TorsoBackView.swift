@@ -55,12 +55,12 @@ class TorsoBackView: TorsoBasicView, UIScrollViewDelegate {
         let images = imageViewCollection.sorted { $0.tag < $1.tag }
         
         for (index, imageView) in images.enumerated() {
-            imageView.tintColor = backView.dict[index]?.color
-            imageView.muscleGroupId = backView.dict[index]?.index
+            imageView.tintColor = backView.dict[index].color
+            imageView.muscleGroupId = backView.dict[index].index
             
             labels[index].alpha = 0
-            labels[index].backgroundColor = backView.dict[index]?.color
-            labels[index].text = backView.dict[index]?.muscleName
+            labels[index].backgroundColor = backView.dict[index].color
+            labels[index].text = backView.dict[index].muscleName
             labels[index].layer.cornerRadius = 5
         }
     }
@@ -144,14 +144,16 @@ class TorsoBackView: TorsoBasicView, UIScrollViewDelegate {
         print(relativePoint)
         
         backView.dict.forEach {
-            let torso = $0.value
+            let torso = $0
             if torso.tapArea.contains(relativePoint) {
                 tappedMuscleGroupName = torso.muscleName
                 tappedMuscleGroupColor = torso.color
                 muscleGroupId = torso.index
+                
                 self.delegate?.redirectBack(sender: self)
             }
         }
+        
     }
     
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {

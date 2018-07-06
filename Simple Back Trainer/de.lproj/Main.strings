@@ -1,0 +1,87 @@
+
+/* Class = "UIViewController"; title = "Settings"; ObjectID = "06L-Dc-odm"; */
+"06L-Dc-odm.title" = "Settings";
+
+/* Class = "UILabel"; text = "Back Therapy"; ObjectID = "0Ax-XH-vug"; */
+"0Ax-XH-vug.text" = "Back Therapy";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "28l-sO-u6R"; */
+"28l-sO-u6R.text" = "Label";
+
+/* Class = "UILabel"; text = "Ihr Trainingsprogramm"; ObjectID = "2QR-hv-OHZ"; */
+"2QR-hv-OHZ.text" = "Ihr Trainingsprogramm";
+
+/* Class = "UINavigationItem"; title = "Premium"; ObjectID = "2wj-Rl-qZp"; */
+"2wj-Rl-qZp.title" = "Premium";
+
+/* Class = "UILabel"; text = "Mehr Trainingsvideos mit Hanteln, Körpergewicht, Widerstandsbändern und Kleingeräten."; ObjectID = "3yU-MG-4oZ"; */
+"3yU-MG-4oZ.text" = "Mehr Trainingsvideos mit Hanteln, Körpergewicht, Widerstandsbändern und Kleingeräten.";
+
+/* Class = "UIViewController"; title = "Trainingsplan"; ObjectID = "4MF-OE-poI"; */
+"4MF-OE-poI.title" = "Trainingsplan";
+
+/* Class = "UITabBarItem"; title = "Settings"; ObjectID = "71Q-a3-mPY"; */
+"71Q-a3-mPY.title" = "Settings";
+
+/* Class = "UITabBarItem"; title = "Plan"; ObjectID = "EFA-mI-M8v"; */
+"EFA-mI-M8v.title" = "Plan";
+
+/* Class = "UILabel"; text = "Premium App freischalten"; ObjectID = "EyZ-Ob-cHC"; */
+"EyZ-Ob-cHC.text" = "Premium App freischalten";
+
+/* Class = "UILabel"; text = "Mobilisation"; ObjectID = "GRv-az-KSm"; */
+"GRv-az-KSm.text" = "Mobilisation";
+
+/* Class = "UILabel"; text = "Activities"; ObjectID = "Orp-b6-r8s"; */
+"Orp-b6-r8s.text" = "Activities";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Q60-3k-XSH"; */
+"Q60-3k-XSH.text" = "Label";
+
+/* Class = "UINavigationItem"; title = "Settings"; ObjectID = "Rhz-oX-KHr"; */
+"Rhz-oX-KHr.title" = "Settings";
+
+/* Class = "UITabBarItem"; title = "Premium"; ObjectID = "SaP-fD-OLQ"; */
+"SaP-fD-OLQ.title" = "Premium";
+
+/* Class = "UINavigationItem"; title = "Plan"; ObjectID = "Tdj-MV-Icv"; */
+"Tdj-MV-Icv.title" = "Plan";
+
+/* Class = "UILabel"; text = "Sports"; ObjectID = "V1d-o4-eNI"; */
+"V1d-o4-eNI.text" = "Sports";
+
+/* Class = "UILabel"; text = "Exercise"; ObjectID = "XKa-Tm-Nnr"; */
+"XKa-Tm-Nnr.text" = "Exercise";
+
+/* Class = "UILabel"; text = "settings"; ObjectID = "Yqx-GP-6Sk"; */
+"Yqx-GP-6Sk.text" = "settings";
+
+/* Class = "UINavigationItem"; title = "Home"; ObjectID = "a1u-Ki-tSz"; */
+"a1u-Ki-tSz.title" = "Home";
+
+/* Class = "UILabel"; text = "Contact"; ObjectID = "bO1-Eb-UJ5"; */
+"bO1-Eb-UJ5.text" = "Contact";
+
+/* Class = "UILabel"; text = "Anatomy"; ObjectID = "dQA-3n-bMS"; */
+"dQA-3n-bMS.text" = "Anatomy";
+
+/* Class = "UINavigationItem"; title = "Play"; ObjectID = "f24-Ia-thn"; */
+"f24-Ia-thn.title" = "Play";
+
+/* Class = "UILabel"; text = "Plan"; ObjectID = "fgs-hA-Q37"; */
+"fgs-hA-Q37.text" = "Plan";
+
+/* Class = "UIViewController"; title = "Premium"; ObjectID = "jMC-5W-syg"; */
+"jMC-5W-syg.title" = "Premium";
+
+/* Class = "UIButton"; normalTitle = "Premium Buttton"; ObjectID = "pEN-VH-Arz"; */
+"pEN-VH-Arz.normalTitle" = "Premium Buttton";
+
+/* Class = "UITabBarItem"; title = "Home"; ObjectID = "vJq-Qi-zZx"; */
+"vJq-Qi-zZx.title" = "Home";
+
+/* Class = "UIViewController"; title = "Hauptmenu"; ObjectID = "vXZ-lx-hvc"; */
+"vXZ-lx-hvc.title" = "Hauptmenu";
+
+/* Class = "UILabel"; text = "Mehr Trainingsvideos"; ObjectID = "xvl-YX-k0H"; */
+"xvl-YX-k0H.text" = "Mehr Trainingsvideos";

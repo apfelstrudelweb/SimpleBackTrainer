@@ -1,0 +1,32 @@
+// Main Menu
+"MAINMENU_TITLE" = "Ihr Trainingsprogramm";
+"MAINMENU_BACK_FOR_ACTIVITIES" = "Starker Rücken für Berufe";
+"MAINMENU_BACK_FOR_SPORTS" = "Rückenmuskeln für Sportler";
+"MAINMENU_BACK_MUSCLE_ANATOMY" = "Muskel-Anatomie";
+"MAINMENU_BACK_TRAININGSPLAN" = "Trainingsplan";
+"MAINMENU_BACK_FOR_EXERCISES" = "Trainings-Übungen";
+"MAINMENU_BACK_FOR_MOBILISATION" = "Rücken-Mobilisierung";
+"MAINMENU_BACK_FOR_THERAPY" = "Rückenschule";
+"MAINMENU_PREMIUM_VERSION" = "Premium-Version";
+
+// Side Menu
+"SIDEMENU_HOME" = "Start";
+"SIDEMENU_ACTIVITIES" = "Berufe";
+"SIDEMENU_SPORTS" = "Sportarten";
+"SIDEMENU_EXERCISES" = "Übungen";
+"SIDEMENU_PREMIUM" = "Premium Version";
+"SIDEMENU_SETTINGS" = "Einstellungen";
+"SIDEMENU_CONTACT" = "Kontakt";
+
+// PremiumController
+"PREMIUM_TITLE" = "Premium App freischalten";
+"PREMIUM_BUTTON_TEXT" = "Premium App kaufen";
+
+"PREMIUM_NOADS_TITLE" = "Komplett ohne Werbung";
+"PREMIUM_NOADS_DESCR" = "Keine Webebanner mehr in der Premium-Version.";
+"PREMIUM_PLAN_TITLE" = "Individuelle Trainingspläne";
+"PREMIUM_PLAN_DESCR" = "Stelle deine eigenen Trainingspläne zusammen und verfolge deinen Fortschritt im Training.";
+"PREMIUM_VIDEO_TITLE" = "Mehr Trainingsvideos";
+"PREMIUM_VIDEO_DESCR" = "Mehr Trainingsvideos mit Hanteln, Körpergewicht, Widerstandsbändern und Kleingeräten.";
+"PREMIUM_MOBIL_TITLE" = "Mobilisierungsübungen";
+"PREMIUM_MOBIL_DESCR" = "Finde heraus, wie du zusätzlich zur Stärkung des Rückens deine Flexibilität erhöhst und beweglich bleibst.";
