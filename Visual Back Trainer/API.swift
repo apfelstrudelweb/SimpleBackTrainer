@@ -11,7 +11,7 @@ class API {
     static let host = "http://www.freiwasser.blog/spielwiese/json/"
 
     struct Name {
-        static let workout = "workouts.json"
+        static let workout = "workouts2.json"
     }
     
     enum HttpMethod: String {

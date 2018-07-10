@@ -60,6 +60,12 @@ class MainMenuViewController: BaseViewController, UICollectionViewDataSource, UI
     }
     
     func populateModel() {
+        
+        self.trainingModel.getWorkouts { () in
+
+        }
+        
+        
         self.trainingModel.hasUpdates() { (success)  in
             
             if success == true {
@@ -185,19 +191,19 @@ class MainMenuViewController: BaseViewController, UICollectionViewDataSource, UI
 
 
 extension MainMenuViewController:TrainingModelDelegate {
-    func didRetrieveWorkouts(groups: [Group]) {
+    func didRetrieveWorkouts(workouts: [WorkoutData]) {
         CoreDataManager.sharedInstance.managedObjectContext.automaticallyMergesChangesFromParent = true
         
         // TODO: first populate CoreData with Musclegroups
         
         
-//        CoreDataManager.sharedInstance.updateMusclegroup(serverGroupsData: groups) { () in
-//            // View aktualisieren nachdem die Daten geladen wurden
-//            SwiftSpinner.hide()
-//
-//            UserDefaults.standard.set(true, forKey: "jsonLoaded")
-//            UserDefaults.standard.synchronize()
-//        }
+        CoreDataManager.sharedInstance.updateWorkouts(serverWorkoutsData: workouts) { () in
+            // View aktualisieren nachdem die Daten geladen wurden
+            SwiftSpinner.hide()
+
+            UserDefaults.standard.set(true, forKey: "jsonLoaded")
+            UserDefaults.standard.synchronize()
+        }
     }
     
     func showErrorMessage(message: String) {

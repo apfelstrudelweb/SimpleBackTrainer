@@ -101,24 +101,25 @@ class CoreDataManager: NSObject {
     }
     
     /*
+     @NSManaged public var alias: String?
+     @NSManaged public var icon: NSData?
      @NSManaged public var id: Int16
      @NSManaged public var imgName: String?
+     @NSManaged public var intensity: [Int]?
+     @NSManaged public var isBall: Bool
+     @NSManaged public var isDumbbell: Bool
      @NSManaged public var isFavorite: Bool
      @NSManaged public var isLive: Bool
-     @NSManaged public var isPremium: Bool
-     @NSManaged public var alias: String?
-     @NSManaged public var videoUrl: String?
-     @NSManaged public var isDumbbell: Bool
-     @NSManaged public var isMat: Bool
-     @NSManaged public var isBall: Bool
-     @NSManaged public var isTheraband: Bool
      @NSManaged public var isMachine: Bool
-     @NSManaged public var intensity: Int16
-     @NSManaged public var icon: NSData?
+     @NSManaged public var isMat: Bool
+     @NSManaged public var isPremium: Bool
+     @NSManaged public var isTheraband: Bool
+     @NSManaged public var videoUrl: String?
+     @NSManaged public var groups: [Int]?
      @NSManaged public var musclegroupId: Musclegroup?
      @NSManaged public var traininsgplanId: Plan?
      */
-    func insertWorkout(id:Int16, imgName: String?, isFavorite: Bool, isLive: Bool, isPremium: Bool, alias: String?, videoUrl: String?, isDumbbell: Bool, isMat: Bool, isBall: Bool, isTheraband: Bool, isMachine: Bool, intensity: Int16, musclegroupId: Int16) -> Workout {
+    func insertWorkout(id:Int16, imgName: String?, isFavorite: Bool, isLive: Bool, isPremium: Bool, alias: String?, videoUrl: String?, isDumbbell: Bool, isMat: Bool, isBall: Bool, isTheraband: Bool, isMachine: Bool, intensity: [Int], musclegroupIds: [Int]) -> Workout {
         
         let workout = NSEntityDescription.insertNewObject(forEntityName: "Workout", into: self.managedObjectContext) as! Workout
         
@@ -136,18 +137,30 @@ class CoreDataManager: NSObject {
         workout.isMachine = isMachine
         workout.intensity = intensity
         
+        var predicates = [NSPredicate]()
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Musclegroup")
-        let predicate = NSPredicate(format: "id = %@", musclegroupId)
-        fetchRequest.predicate = predicate
-        
-        // TODO: make sure that the musclegroups are already in SQLite
-        do {
-            let musclegroup = try self.managedObjectContext.fetch(fetchRequest).first as! Musclegroup
-            workout.musclegroupId = musclegroup
-        } catch {
-            NSLog("Musclegroup with id=\(musclegroupId) not found")
+
+        for musclegroupId in musclegroupIds {
+            predicates.append(NSPredicate(format: "id = %d", musclegroupId))
         }
+        
+        let compound:NSCompoundPredicate = NSCompoundPredicate(orPredicateWithSubpredicates: predicates)
+        fetchRequest.predicate = compound
+        
+        do {
+            let musclegroups = try self.managedObjectContext.fetch(fetchRequest)
+            
+            let set = NSSet(array : musclegroups)
  
+            
+            workout.musclegroupId = set
+            print (musclegroups)
+            
+        } catch {
+            NSLog("Musclegroup with ids=\(musclegroupIds) not found")
+        }
+        
+
         if let url = URL(string: (workout.imgName)!) {
             
             do {
@@ -207,9 +220,21 @@ class CoreDataManager: NSObject {
         return trainingsplan
     }
     
-//    func updateMusclegroup(serverGroupsData:[Group]?, completionHandler: CompletionHander?) {
-//        if let groups = serverGroupsData {
-//            for group in groups {
+    func updateWorkouts(serverWorkoutsData:[WorkoutData]?, completionHandler: CompletionHander?) {
+        if let workouts = serverWorkoutsData {
+            for workout in workouts {
+                
+                print (workout)
+                
+                //let _ = CoreDataManager.sharedInstance.insertWorkout(id: Int16(workout.id!), imgName: workout.imageName, isFavorite: false, isLive: workout.isLive==1, isPremium: workout.isPremium==1, alias: workout.alias, videoUrl: workout.videoUrl!, isDumbbell: workout.isDumbbell==1, isMat: workout.isMat==1, isBall: workout.isBall==1, isTheraband: workout.isTheraband==1, isMachine: workout.isMachine==1, intensity: workout.intensity!, musclegroupIds: workout.musclegroups!)
+                
+//                for musclegroupId in workout.musclegroups! {
+//                    if let muscleGroup = self.fetchMuscleGroup(id: musclegroupId) {
+//
+//                    }
+//                }
+                
+                
 //                let id = group.id
 //                if let muscleGroup = self.fetchMuscleGroup(id: id!) {
 //                    let workoutArray = NSMutableSet()
@@ -224,10 +249,10 @@ class CoreDataManager: NSObject {
 //                                workoutArray.add(workout)
 //                            }
 //                        }
-//                        
+//
 //                        self.deleteWorkoutIfNotExistAnymore(muscleGroup: muscleGroup, workoutArray: workoutArray)
 //
-//                        
+//
 //                        let _ = self.updateMusclegroup(muscleGroup: muscleGroup, name: group.name, color:group.color, workouts: workoutArray)
 //                    }
 //                } else {
@@ -238,16 +263,16 @@ class CoreDataManager: NSObject {
 //                            workoutArray.add(workout)
 //                        }
 //                        print(workoutArray.count)
-//                        
+//
 //                        let _ = self.insertMusclegroup(name: group.name, color: group.color, id: Int16(group.id!), isFront: group.isFront!, workouts: workoutArray)
 //                    }
 //                }
-//                
-//            }
-//        }
-//        self.deleteGroupIfNotExistAnymore(serverGroupsData: serverGroupsData)
-//        completionHandler?()
-//    }
+//
+           }
+        }
+        //self.deleteGroupIfNotExistAnymore(serverGroupsData: serverGroupsData)
+        completionHandler?()
+    }
     
     func deleteWorkoutIfNotExistAnymore(muscleGroup:Musclegroup, workoutArray:NSMutableSet) {
         if let existingWorkouts = muscleGroup.workouts {
@@ -274,34 +299,34 @@ class CoreDataManager: NSObject {
         }
     }
     
-    func deleteGroupIfNotExistAnymore(serverGroupsData:[Group]?) {
-        do {
-            let fetchRequest = NSFetchRequest<Musclegroup>(entityName: "Musclegroup")
-            let result = try self.managedObjectContext.fetch(fetchRequest)
-            for group in result {
-                var isAvailable = false
-                if let newGroups = serverGroupsData {
-                    for newGroup in newGroups {
-                        if Int16(newGroup.id!) == group.id {
-                            isAvailable = true
-                            break
-                        }
-                    }
-                }
-                if isAvailable == false {
-                    self.deleteWorkouts(workouts: group.workouts)
-                    self.managedObjectContext.delete(group)
-                    do {
-                        try self.managedObjectContext.save() // <- remember to put this :)
-                    } catch let error {
-                        print("Cannot delete = ",error.localizedDescription)
-                    }
-                }
-            }
-            
-        } catch let error {
-            print ("fetch task failed", error)
-        }
+    func deleteGroupIfNotExistAnymore(serverGroupsData:[WorkoutData]?) {
+//        do {
+//            let fetchRequest = NSFetchRequest<Musclegroup>(entityName: "Musclegroup")
+//            let result = try self.managedObjectContext.fetch(fetchRequest)
+//            for group in result {
+//                var isAvailable = false
+//                if let newGroups = serverGroupsData {
+//                    for newGroup in newGroups {
+//                        if Int16(newGroup.id!) == group.id {
+//                            isAvailable = true
+//                            break
+//                        }
+//                    }
+//                }
+//                if isAvailable == false {
+//                    self.deleteWorkouts(workouts: group.workouts)
+//                    self.managedObjectContext.delete(group)
+//                    do {
+//                        try self.managedObjectContext.save() // <- remember to put this :)
+//                    } catch let error {
+//                        print("Cannot delete = ",error.localizedDescription)
+//                    }
+//                }
+//            }
+//
+//        } catch let error {
+//            print ("fetch task failed", error)
+//        }
     }
     
     func deleteWorkouts(workouts:NSSet?) {

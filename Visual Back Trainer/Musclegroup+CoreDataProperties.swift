@@ -2,7 +2,7 @@
 //  Musclegroup+CoreDataProperties.swift
 //  Visual Back Trainer
 //
-//  Created by Ulrich Vormbrock on 06.07.18.
+//  Created by Ulrich Vormbrock on 10.07.18.
 //  Copyright © 2018 Rookie. All rights reserved.
 //
 //
@@ -17,11 +17,11 @@ extension Musclegroup {
         return NSFetchRequest<Musclegroup>(entityName: "Musclegroup")
     }
 
+    @NSManaged public var alias: String?
+    @NSManaged public var bezierPath: NSData?
     @NSManaged public var color: String?
     @NSManaged public var id: Int16
     @NSManaged public var isFront: Bool
-    @NSManaged public var alias: String?
-    @NSManaged public var bezierPath: NSData?
     @NSManaged public var workouts: NSSet?
 
 }

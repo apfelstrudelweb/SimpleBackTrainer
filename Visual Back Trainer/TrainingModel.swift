@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 
 protocol TrainingModelDelegate {
-    func didRetrieveWorkouts(groups:[Group])
+    func didRetrieveWorkouts(workouts:[WorkoutData])
     func showErrorMessage(message:String)
 }
 
@@ -39,10 +39,13 @@ class TrainingModel: NSObject {
                     guard let data = data else {return}
                     do {
                         let decoder = JSONDecoder()
-                        let groupResponse = try decoder.decode(GroupResponse.self, from: data)
+                        let workoutResponse = try decoder.decode(WorkoutResponse.self, from: data)
+
+                        print(workoutResponse)
+                        
                         DispatchQueue.main.async {
-                            if let groups = groupResponse.groups {
-                                self.delegate?.didRetrieveWorkouts(groups: groups)
+                            if let workouts = workoutResponse.workouts {
+                                self.delegate?.didRetrieveWorkouts(workouts: workouts)
                                 
                                 completionHandler?()
                             }

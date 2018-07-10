@@ -26,11 +26,12 @@ class ExercisesTableViewController: GenericTableViewController {
     
     @IBOutlet var buttons: [UIButton]!
     
+    var soloTitle: String?
+    
 
-    
-    
-    
     override func viewDidLoad() {
+        
+        soloTitle = self.title
 
         headerView.backgroundColor = UITabBar.appearance().barTintColor
 
@@ -48,8 +49,8 @@ class ExercisesTableViewController: GenericTableViewController {
         
     
         self.fetchRequest = NSFetchRequest<Workout> (entityName: "Workout")
-        fetchRequest.predicate = NSPredicate(format: "isLive = %d", true)
-        self.fetchRequest.sortDescriptors = [NSSortDescriptor (key: "position", ascending: true)]
+        fetchRequest.predicate = NSPredicate(format: "ANY isLive = %d", true)
+        self.fetchRequest.sortDescriptors = [NSSortDescriptor (key: "id", ascending: true)]
         
         self.fetchedResultsController = NSFetchedResultsController<Workout> (
             fetchRequest: self.fetchRequest,
@@ -83,14 +84,13 @@ class ExercisesTableViewController: GenericTableViewController {
         
         clearButtons()
         buttonHandweight.tintColor = self.navigationController?.navigationBar.barTintColor
-        
-        let predicate1 = NSPredicate(format: "musclegroupId.id < %d", 5)
-        let predicate2 = NSPredicate(format: "id = %d", 3)
-        let compound:NSCompoundPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [predicate1, predicate2])
-        self.fetchRequest.predicate = compound
+        self.fetchRequest.predicate = NSPredicate(format: "isDumbbell == true")
         
         do {
             try fetchedResultsController.performFetch()
+            let count = try CoreDataManager.sharedInstance.managedObjectContext.count(for: self.fetchRequest)
+            self.title = self.soloTitle! + " (\(count))"
+            
         } catch {
             fatalError("Failed to initialize FetchedResultsController: \(error)")
         }
@@ -104,13 +104,12 @@ class ExercisesTableViewController: GenericTableViewController {
         clearButtons()
         buttonBand.tintColor = self.navigationController?.navigationBar.barTintColor
         
-        let predicate1 = NSPredicate(format: "musclegroupId.id < %d", 5)
-        let predicate2 = NSPredicate(format: "id = %d", 2)
-        let compound:NSCompoundPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [predicate1, predicate2])
-        self.fetchRequest.predicate = compound
+        self.fetchRequest.predicate = NSPredicate(format: "isTheraband == true")
         
         do {
             try fetchedResultsController.performFetch()
+            let count = try CoreDataManager.sharedInstance.managedObjectContext.count(for: self.fetchRequest)
+            self.title = self.soloTitle! + " (\(count))"
         } catch {
             fatalError("Failed to initialize FetchedResultsController: \(error)")
         }
@@ -123,13 +122,12 @@ class ExercisesTableViewController: GenericTableViewController {
         clearButtons()
         buttonMat.tintColor = self.navigationController?.navigationBar.barTintColor
         
-        let predicate1 = NSPredicate(format: "musclegroupId.id < %d", 5)
-        let predicate2 = NSPredicate(format: "id = %d", 1)
-        let compound:NSCompoundPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [predicate1, predicate2])
-        self.fetchRequest.predicate = compound
+        self.fetchRequest.predicate = NSPredicate(format: "isMat == true")
         
         do {
             try fetchedResultsController.performFetch()
+            let count = try CoreDataManager.sharedInstance.managedObjectContext.count(for: self.fetchRequest)
+            self.title = self.soloTitle! + " (\(count))"
         } catch {
             fatalError("Failed to initialize FetchedResultsController: \(error)")
         }
@@ -142,13 +140,12 @@ class ExercisesTableViewController: GenericTableViewController {
         clearButtons()
         buttonBall.tintColor = self.navigationController?.navigationBar.barTintColor
         
-        let predicate1 = NSPredicate(format: "musclegroupId.id >= %d", 5)
-        let predicate2 = NSPredicate(format: "id = %d", 3)
-        let compound:NSCompoundPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [predicate1, predicate2])
-        self.fetchRequest.predicate = compound
+        self.fetchRequest.predicate = NSPredicate(format: "isBall == true")
         
         do {
             try fetchedResultsController.performFetch()
+            let count = try CoreDataManager.sharedInstance.managedObjectContext.count(for: self.fetchRequest)
+            self.title = self.soloTitle! + " (\(count))"
         } catch {
             fatalError("Failed to initialize FetchedResultsController: \(error)")
         }
@@ -161,13 +158,12 @@ class ExercisesTableViewController: GenericTableViewController {
         clearButtons()
         buttonMachine.tintColor = self.navigationController?.navigationBar.barTintColor
         
-        let predicate1 = NSPredicate(format: "musclegroupId.id >= %d", 5)
-        let predicate2 = NSPredicate(format: "id = %d", 2)
-        let compound:NSCompoundPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [predicate1, predicate2])
-        self.fetchRequest.predicate = compound
+        self.fetchRequest.predicate = NSPredicate(format: "isMachine == true")
         
         do {
             try fetchedResultsController.performFetch()
+            let count = try CoreDataManager.sharedInstance.managedObjectContext.count(for: self.fetchRequest)
+            self.title = self.soloTitle! + " (\(count))"
         } catch {
             fatalError("Failed to initialize FetchedResultsController: \(error)")
         }
