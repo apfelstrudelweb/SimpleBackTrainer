@@ -50,10 +50,10 @@
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pdfBackView" translatesAutoresizingMaskIntoConstraints="NO" id="SB7-mG-RH9">
                                     <rect key="frame" x="0.0" y="0.0" width="657" height="1047"/>
                                 </imageView>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pdfRückenstrecker" translatesAutoresizingMaskIntoConstraints="NO" id="DRX-Ty-pIE" customClass="MuscleGroupImageView" customModule="Visual_Back_Trainer" customModuleProvider="target">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pdfSchrägeBauchmuskelnHinten" translatesAutoresizingMaskIntoConstraints="NO" id="myJ-kH-E2S" customClass="MuscleGroupImageView" customModule="Visual_Back_Trainer" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="657" height="1047"/>
                                 </imageView>
-                                <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pdfSchrägeBauchmuskelnHinten" translatesAutoresizingMaskIntoConstraints="NO" id="myJ-kH-E2S" customClass="MuscleGroupImageView" customModule="Visual_Back_Trainer" customModuleProvider="target">
+                                <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pdfRückenstrecker" translatesAutoresizingMaskIntoConstraints="NO" id="DRX-Ty-pIE" customClass="MuscleGroupImageView" customModule="Visual_Back_Trainer" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="657" height="1047"/>
                                 </imageView>
                                 <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pdfBreiteRückenmuskeln" translatesAutoresizingMaskIntoConstraints="NO" id="T5g-vK-t1N" customClass="MuscleGroupImageView" customModule="Visual_Back_Trainer" customModuleProvider="target">

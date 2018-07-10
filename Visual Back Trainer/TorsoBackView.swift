@@ -53,11 +53,12 @@ class TorsoBackView: TorsoBasicView, UIScrollViewDelegate {
         
         let labels = labelCollection.sorted { $0.tag < $1.tag }
         let images = imageViewCollection.sorted { $0.tag < $1.tag }
-        
+
+
         for (index, imageView) in images.enumerated() {
             imageView.tintColor = backView.dict[index].color
             imageView.muscleGroupId = backView.dict[index].index
-            
+
             labels[index].alpha = 0
             labels[index].backgroundColor = backView.dict[index].color
             labels[index].text = backView.dict[index].muscleName

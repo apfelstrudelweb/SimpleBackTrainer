@@ -43,6 +43,7 @@ class FrontView: NSObject {
         do {
             let fetchRequest = NSFetchRequest<Musclegroup>(entityName: "Musclegroup")
             fetchRequest.predicate = NSPredicate(format: "isFront=1")
+            fetchRequest.sortDescriptors = [NSSortDescriptor(key: "id", ascending: true)]
             frontResult = try CoreDataManager.sharedInstance.managedObjectContext.fetch(fetchRequest)
 
         } catch let error {
@@ -76,6 +77,7 @@ class BackView: NSObject {
         do {
             let fetchRequest = NSFetchRequest<Musclegroup>(entityName: "Musclegroup")
             fetchRequest.predicate = NSPredicate(format: "isFront=0")
+            fetchRequest.sortDescriptors = [NSSortDescriptor(key: "id", ascending: true)]
             backResult = try CoreDataManager.sharedInstance.managedObjectContext.fetch(fetchRequest)
             
         } catch let error {
