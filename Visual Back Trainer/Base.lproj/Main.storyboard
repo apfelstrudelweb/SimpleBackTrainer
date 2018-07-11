@@ -1191,12 +1191,12 @@ Please turn on your Internet Conncetion - as soon your device is connected to th
                                     </constraints>
                                 </view>
                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="rM8-5R-709">
-                                    <rect key="frame" x="20" y="17" width="335" height="42"/>
+                                    <rect key="frame" x="20" y="14.666666666666668" width="335" height="46.666666666666657"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SrK-xT-VHx">
-                                            <rect key="frame" x="0.0" y="0.0" width="54.666666666666664" height="42"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="61.333333333333336" height="46.666666666666664"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" secondItem="SrK-xT-VHx" secondAttribute="height" multiplier="58:44" id="F67-EC-X5f"/>
+                                                <constraint firstAttribute="width" secondItem="SrK-xT-VHx" secondAttribute="height" multiplier="69:53" id="F67-EC-X5f"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <state key="normal" title="Easy" image="tabLevel1">
@@ -1208,9 +1208,9 @@ Please turn on your Internet Conncetion - as soon your device is connected to th
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wxW-uI-bQN">
-                                            <rect key="frame" x="84.666666666666671" y="0.0" width="48.333333333333329" height="42"/>
+                                            <rect key="frame" x="91.333333333333329" y="0.0" width="61.666666666666671" height="46.666666666666664"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" secondItem="wxW-uI-bQN" secondAttribute="height" multiplier="54:47" id="z1Z-wV-Q4A"/>
+                                                <constraint firstAttribute="width" secondItem="wxW-uI-bQN" secondAttribute="height" multiplier="69:53" id="z1Z-wV-Q4A"/>
                                             </constraints>
                                             <state key="normal" title="Medium" image="tabLevel2"/>
                                             <connections>
@@ -1219,9 +1219,9 @@ Please turn on your Internet Conncetion - as soon your device is connected to th
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UQt-yG-Lxa">
-                                            <rect key="frame" x="163" y="0.0" width="72" height="42"/>
+                                            <rect key="frame" x="183" y="0.0" width="61" height="46.666666666666664"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" secondItem="UQt-yG-Lxa" secondAttribute="height" multiplier="75:44" id="xIQ-z7-5xU"/>
+                                                <constraint firstAttribute="width" secondItem="UQt-yG-Lxa" secondAttribute="height" multiplier="69:53" id="xIQ-z7-5xU"/>
                                             </constraints>
                                             <state key="normal" title="Hard" image="tabLevel3"/>
                                             <connections>
@@ -1230,9 +1230,9 @@ Please turn on your Internet Conncetion - as soon your device is connected to th
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cy8-d0-AXz">
-                                            <rect key="frame" x="265" y="0.0" width="70" height="42"/>
+                                            <rect key="frame" x="274" y="0.0" width="61" height="46.666666666666664"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" secondItem="cy8-d0-AXz" secondAttribute="height" multiplier="88:53" id="b94-Xb-6al"/>
+                                                <constraint firstAttribute="width" secondItem="cy8-d0-AXz" secondAttribute="height" multiplier="69:53" id="b94-Xb-6al"/>
                                             </constraints>
                                             <state key="normal" title="All" image="tabLevel4"/>
                                             <connections>
@@ -1315,7 +1315,6 @@ Please turn on your Internet Conncetion - as soon your device is connected to th
                     <tabBarItem key="tabBarItem" title="Home" image="home" id="vJq-Qi-zZx"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" backIndicatorImage="ic_arrow_black" id="V4Z-RY-5W8">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" red="0.1239974424" green="0.16451942920000001" blue="0.47357922790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1366,7 +1365,6 @@ Please turn on your Internet Conncetion - as soon your device is connected to th
                     <tabBarItem key="tabBarItem" title="Premium" image="premium" id="SaP-fD-OLQ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" backIndicatorImage="ic_arrow_black" id="esv-OJ-MlZ">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" red="0.12399744242429733" green="0.16451942920684814" blue="0.47357922792434692" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1452,7 +1450,7 @@ Please turn on your Internet Conncetion - as soon your device is connected to th
         <image name="tabLevel1" width="69" height="53"/>
         <image name="tabLevel2" width="69" height="53"/>
         <image name="tabLevel3" width="69" height="53"/>
-        <image name="tabLevel4" width="88" height="53"/>
+        <image name="tabLevel4" width="69" height="53"/>
         <image name="tabMachine" width="62" height="44"/>
         <image name="tabMat" width="75" height="44"/>
         <image name="zahnrad" width="33" height="32"/>
