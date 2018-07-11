@@ -10,31 +10,19 @@
 import UIKit
 
 
-@objc public protocol DragDropTableViewDelegate : NSObjectProtocol {
+@objc public protocol DropTableViewDelegate : NSObjectProtocol {
     
-    @objc optional func tableView(_ tableView: UITableView, indexPathForDragInfo dragInfo: AnyObject) -> IndexPath?
     func tableView(_ tableView: UITableView, dragInfoForIndexPath indexPath: IndexPath) -> AnyObject
-    @objc optional func tableView(_ tableView: UITableView, representationImageAtIndexPath indexPath: IndexPath) -> UIImage?
-    
-    
-    //drag
-    func tableView(_ tableView: UITableView, touchBeginAtIndexPath indexPath:IndexPath) -> Void
-    func tableView(_ tableView: UITableView, canDragAtIndexPath indexPath: IndexPath) -> Bool
-    
-    func tableView(_ tableView: UITableView, dragCompleteWithDragInfo dragInfo:AnyObject, atDragIndexPath dragIndexPath: IndexPath,withDropInfo dropInfo:AnyObject?) -> Void
-    func tableViewStopDragging(_ tableView: UITableView)->Void
-    
     
     //drop
     func tableView(_ tableView: UITableView, canDropWithDragInfo info:AnyObject, AtIndexPath indexPath: IndexPath) -> Bool
     @objc optional func tableView(_ tableView: UITableView, dropOutsideWithDragInfo info:AnyObject) -> Void
     func tableView(_ tableView: UITableView, dropCompleteWithDragInfo dragInfo:AnyObject, atDragIndexPath dragIndexPath: IndexPath?,withDropInfo dropInfo:AnyObject?,atDropIndexPath dropIndexPath:IndexPath) -> Void
     func tableViewStopDropping(_ tableView: UITableView)->Void
-    
 }
 
 
-@objc open class DragDropTableView: UITableView, Draggable, Droppable {
+@objc open class DragDropTableView: UITableView, Droppable {
     
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -45,26 +33,39 @@ import UIKit
     fileprivate var iDataSource : UITableViewDataSource?
     fileprivate var iDelegate : UITableViewDelegate?
     
-    open var dragDropDelegate:DragDropTableViewDelegate?
+    open var dropTableViewDelegate : DropTableViewDelegate?
     
-
+    
     func indexPathForCellOverlappingRect( _ rect : CGRect) -> IndexPath? {
         
         let centerPoint = CGPoint(x: rect.minX + rect.width/2, y: rect.minY + rect.height/2)
-        
+        print("centerPoint == ", centerPoint)
+        //Rakesh Kumar
+        guard visibleCells.count > 0 else {
+            return IndexPath(row: 0, section: 0)
+        }
         
         for cell in visibleCells {
             
             if cell.frame.contains(centerPoint) {
-                
+                //                let indexPath = self.indexPath(for: cell)
+                //                let totalCell = self.numberOfRows(inSection: 0)
+                //                if totalCell > 2 {
+                //                    if indexPath?.row == totalCell - 1 {
+                //                        return nil
+                //                    }
+                //                }
                 return self.indexPath(for: cell)
             }
             
         }
         
-        return nil
+        let totalCell = self.numberOfRows(inSection: 0)
+        return IndexPath(row: totalCell, section: 0)
+        
+        // return nil
     }
-
+    
     open func checkFroEdgesAndScroll(_ item : AnyObject, inRect rect : CGRect) -> Void {
         startDisplayLink()
         
@@ -77,8 +78,6 @@ import UIKit
         dragRectCurrent = normalizedRect
         
     }
-    
-    
     
     
     //scroll relate
@@ -103,6 +102,7 @@ import UIKit
     
     
     @objc func handlerDisplayLinkToContinuousScroll(){
+        
         if dragRectCurrent == nil {
             return
         }
@@ -111,157 +111,43 @@ import UIKit
         var rectForNextScroll : CGRect = currentRect
         
         // Only vertical
-            //        debugPrint("drag view rect: \(dragRectCurrent) ———— super view rect\(currentRect)")
-            let topBoundary = CGRect(x: 0.0, y: -30.0, width: self.frame.size.width, height: 30.0)
-            let bottomBoundary = CGRect(x: 0.0, y: self.frame.size.height, width: self.frame.size.width, height: 30.0)
-            
-            
-            if dragRectCurrent.intersects(topBoundary) == true {
-                rectForNextScroll.origin.y -= 5
-                if rectForNextScroll.origin.y < 0 {
-                    rectForNextScroll.origin.y = 0
-                }
+        //        debugPrint("drag view rect: \(dragRectCurrent) ———— super view rect\(currentRect)")
+        let topBoundary = CGRect(x: 0.0, y: -30.0, width: self.frame.size.width, height: 30.0)
+        let bottomBoundary = CGRect(x: 0.0, y: self.frame.size.height, width: self.frame.size.width, height: 30.0)
+        
+        
+        if dragRectCurrent.intersects(topBoundary) == true {
+            rectForNextScroll.origin.y -= 5
+            if rectForNextScroll.origin.y < 0 {
+                rectForNextScroll.origin.y = 0
             }
-            else if dragRectCurrent.intersects(bottomBoundary) == true {
+        }
+        else if dragRectCurrent.intersects(bottomBoundary) == true {
             //              debugPrint("move in bottomboundary : \(dragRectCurrent)")
-                rectForNextScroll.origin.y += 5
-                if rectForNextScroll.origin.y > self.contentSize.height - self.bounds.size.height {
-                    rectForNextScroll.origin.y = self.contentSize.height - self.bounds.size.height
-                }
+            rectForNextScroll.origin.y += 5
+            if rectForNextScroll.origin.y > self.contentSize.height - self.bounds.size.height {
+                rectForNextScroll.origin.y = self.contentSize.height - self.bounds.size.height
             }
+        }
         
         
         if currentRect.equalTo(rectForNextScroll) == false {
-            
+            print("dragCurrentRect = ", dragRectCurrent)
+            print("rectForNextScroll = ", rectForNextScroll)
             scrollRectToVisible(rectForNextScroll, animated: false)
             
         }
     }
     
     
-    // MARK : Draggable
-    open func canDragAtPoint(_ point : CGPoint) -> Bool {
-        
-        guard self.dragDropDelegate != nil else {
-            return false
-        }
-        if let indexPath = self.indexPathForRow(at: point) {
-            
-            return dragDropDelegate!.tableView(self, canDragAtIndexPath: indexPath)
-            
-        }
-        
-        return self.indexPathForRow(at: point) != nil
-    }
-    
-    open func representationImageAtPoint(_ point : CGPoint) -> UIView? {
-        
-        var imageView : UIView?
-        
-        if let indexPath = self.indexPathForRow(at: point) {
-            
-            if dragDropDelegate != nil && dragDropDelegate!.responds(to: #selector(DragDropTableViewDelegate.tableView(_:representationImageAtIndexPath:))){
-                
-                if let cell = self.cellForRow(at: indexPath) {
-                    let img = dragDropDelegate!.tableView!(self, representationImageAtIndexPath: indexPath)
-                    
-                    imageView = UIImageView(image: img)
-                    imageView?.frame = cell.frame
-                }
-                
-                
-            }else{
-                if let cell = self.cellForRow(at: indexPath) {
-                    UIGraphicsBeginImageContextWithOptions(cell.bounds.size, false, 0)
-                    cell.layer.render(in: UIGraphicsGetCurrentContext()!)
-                    let img = UIGraphicsGetImageFromCurrentImageContext()
-                    UIGraphicsEndImageContext()
-                    
-                    imageView = UIImageView(image: img)
-                    imageView?.frame = cell.frame
-                }
-            }
-            
-            
-        }
-        
-        return imageView
-    }
-    
-    open func dragInfoAtPoint(_ point : CGPoint) -> AnyObject? {
-        
-        var dataItem : AnyObject?
-        
-        if let indexPath = self.indexPathForRow(at: point) {
-            
-            if dragDropDelegate != nil {
-                
-                dataItem = dragDropDelegate!.tableView(self, dragInfoForIndexPath: indexPath)
-                
-            }
-            
-        }
-        return dataItem
-    }
-    
-    
-    
-    open func touchBeginAtPoint(_ point : CGPoint) -> Void {
-        
-        self.draggingPathOfCellBeingDragged = self.indexPathForRow(at: point)
-        
-        if dragDropDelegate != nil {
-            
-            dragDropDelegate!.tableView(self, touchBeginAtIndexPath: self.draggingPathOfCellBeingDragged!)
-            
-        }
-        
-        
-    }
-    
-    
-    
-    open func stopDragging() -> Void {
-        invalidateDisplayLink()
-        
-        if let idx = self.draggingPathOfCellBeingDragged {
-            if let cell = self.cellForRow(at: idx) {
-                cell.isHidden = false
-            }
-        }
-        
-        self.draggingPathOfCellBeingDragged = nil
-        
-        if dragDropDelegate != nil {
-            dragDropDelegate!.tableViewStopDragging(self)
-            
-        }
-        
-        
-    }
-    
-    open func dragComplete(_ dragInfo:AnyObject,dropInfo : AnyObject?) -> Void {
-        
-        if dragDropDelegate != nil {
-            
-            if let dragIndexPath = draggingPathOfCellBeingDragged {
-                
-                dragDropDelegate!.tableView(self, dragCompleteWithDragInfo: dragInfo,atDragIndexPath: dragIndexPath,withDropInfo: dropInfo)
-                
-                
-            }
-            
-        }
-        
-    }
-    
     // MARK : Droppable
     
     open func canDropWithDragInfo(_ item: AnyObject,  inRect rect: CGRect) -> Bool {
+        print("canDropWithDragInfo")
         if let indexPath = self.indexPathForCellOverlappingRect(rect) {
-            if dragDropDelegate != nil {
+            if dropTableViewDelegate != nil {
                 
-                return dragDropDelegate!.tableView(self, canDropWithDragInfo: item, AtIndexPath: indexPath)
+                return dropTableViewDelegate!.tableView(self, canDropWithDragInfo: item, AtIndexPath: indexPath)
                 
             }
         }
@@ -270,42 +156,41 @@ import UIKit
     }
     
     open func dropOverInfoInRect(_ rect: CGRect) -> AnyObject? {
+        print("dropOverInfoInRect")
         if let indexPath = self.indexPathForCellOverlappingRect(rect) {
-            if dragDropDelegate != nil {
-                
-                return dragDropDelegate!.tableView(self, dragInfoForIndexPath: indexPath)
-                
+            if dropTableViewDelegate != nil {
+                return dropTableViewDelegate!.tableView(self, dragInfoForIndexPath: indexPath)
             }
         }
         return nil
     }
     
     open func dropOutside(_ dragInfo: AnyObject, inRect rect: CGRect) {
-        if dragDropDelegate != nil && dragDropDelegate!.responds(to: #selector(DragDropTableViewDelegate.tableView(_:dropOutsideWithDragInfo:))){
-            dragDropDelegate!.tableView!(self, dropOutsideWithDragInfo: dragInfo)
+        if dropTableViewDelegate != nil && dropTableViewDelegate!.responds(to: #selector(DropTableViewDelegate.tableView(_:dropOutsideWithDragInfo:))){
+            dropTableViewDelegate!.tableView!(self, dropOutsideWithDragInfo: dragInfo)
         }
     }
     
     open func stopDropping() {
-        if dragDropDelegate != nil {
-            
-            dragDropDelegate!.tableViewStopDropping(self)
+        if dropTableViewDelegate != nil {
+            invalidateDisplayLink()
+            dropTableViewDelegate!.tableViewStopDropping(self)
             
         }
     }
     
     open func dropComplete(_ dragInfo : AnyObject,dropInfo:AnyObject?, atRect rect: CGRect) -> Void{
-        
+        print("drop complete")
         if let dropIndexPath = self.indexPathForCellOverlappingRect(rect) {
             if  let dragIndexPath = draggingPathOfCellBeingDragged{
-                if dragDropDelegate != nil {
-                    dragDropDelegate!.tableView(self, dropCompleteWithDragInfo: dragInfo, atDragIndexPath: dragIndexPath, withDropInfo: dropInfo, atDropIndexPath: dropIndexPath)
+                if dropTableViewDelegate != nil {
+                    dropTableViewDelegate!.tableView(self, dropCompleteWithDragInfo: dragInfo, atDragIndexPath: dragIndexPath, withDropInfo: dropInfo, atDropIndexPath: dropIndexPath)
                     
                 }
                 
             }else{
-                if dragDropDelegate != nil {
-                    dragDropDelegate!.tableView(self, dropCompleteWithDragInfo: dragInfo, atDragIndexPath: nil, withDropInfo: dropInfo, atDropIndexPath: dropIndexPath)
+                if dropTableViewDelegate != nil {
+                    dropTableViewDelegate!.tableView(self, dropCompleteWithDragInfo: dragInfo, atDragIndexPath: nil, withDropInfo: dropInfo, atDropIndexPath: dropIndexPath)
                     
                 }
             }
@@ -314,10 +199,7 @@ import UIKit
         
         self.draggingPathOfCellBeingDragged = nil
         
-        self.reloadData()
-        
     }
     
-
-
 }
+

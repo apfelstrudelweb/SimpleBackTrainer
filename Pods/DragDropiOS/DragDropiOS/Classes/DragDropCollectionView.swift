@@ -20,7 +20,7 @@ import UIKit
     //drag
     func collectionView(_ collectionView: UICollectionView, touchBeginAtIndexPath indexPath:IndexPath) -> Void
     func collectionView(_ collectionView: UICollectionView, canDragAtIndexPath indexPath: IndexPath) -> Bool
-
+    
     func collectionView(_ collectionView: UICollectionView, dragCompleteWithDragInfo dragInfo:AnyObject, atDragIndexPath dragIndexPath: IndexPath,withDropInfo dropInfo:AnyObject?) -> Void
     func collectionViewStopDragging(_ collectionView: UICollectionView)->Void
     
@@ -35,11 +35,12 @@ import UIKit
 
 
 @objc open class DragDropCollectionView: UICollectionView, Draggable, Droppable {
-
-
+    
+    
+    
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-//        addObserver(self, forKeyPath: "contentSize", options: .old, context: nil)
+        //        addObserver(self, forKeyPath: "contentSize", options: .old, context: nil)
     }
     
     fileprivate var draggingPathOfCellBeingDragged : IndexPath?
@@ -52,13 +53,13 @@ import UIKit
     
     override public init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         super.init(frame: frame, collectionViewLayout: layout)
-//        addObserver(self, forKeyPath: "contentSize", options: .old, context: nil)
+        //        addObserver(self, forKeyPath: "contentSize", options: .old, context: nil)
     }
     
     deinit {
-//        removeObserver(self, forKeyPath: "contentSize")
+        //        removeObserver(self, forKeyPath: "contentSize")
     }
-
+    
     // MARK : Droppable
     func indexPathForCellOverlappingRect( _ rect : CGRect) -> IndexPath? {
         
@@ -73,10 +74,10 @@ import UIKit
             }
             
         }
-
+        
         return nil
     }
- 
+    
     var isHorizontal : Bool {
         return (self.collectionViewLayout as? UICollectionViewFlowLayout)?.scrollDirection == .horizontal
     }
@@ -94,8 +95,8 @@ import UIKit
         dragRectCurrent = normalizedRect
         
     }
-
-
+    
+    
     //scroll relate
     fileprivate var displayLink: CADisplayLink?
     internal var scrollSpeedValue: CGFloat = 10.0
@@ -145,7 +146,7 @@ import UIKit
             }
             
         } else { // is vertical
-//            debugPrint("drag view rect: \(dragRectCurrent) ———— super view rect\(currentRect)")
+            //            debugPrint("drag view rect: \(dragRectCurrent) ———— super view rect\(currentRect)")
             let topBoundary = CGRect(x: 0.0, y: -30.0, width: self.frame.size.width, height: 30.0)
             let bottomBoundary = CGRect(x: 0.0, y: self.frame.size.height, width: self.frame.size.width, height: 30.0)
             
@@ -157,7 +158,7 @@ import UIKit
                 }
             }
             else if dragRectCurrent.intersects(bottomBoundary) == true {
-//                debugPrint("move in bottomboundary : \(dragRectCurrent)")
+                //                debugPrint("move in bottomboundary : \(dragRectCurrent)")
                 rectForNextScroll.origin.y += 5
                 if rectForNextScroll.origin.y > self.contentSize.height - self.bounds.size.height {
                     rectForNextScroll.origin.y = self.contentSize.height - self.bounds.size.height
@@ -168,10 +169,10 @@ import UIKit
         if currentRect.equalTo(rectForNextScroll) == false {
             
             scrollRectToVisible(rectForNextScroll, animated: false)
-
+            
         }
     }
-
+    
 }
 
 //MARK: - Dragable
@@ -277,7 +278,7 @@ extension DragDropCollectionView{
         
         
     }
-
+    
     open func dragComplete(_ dragInfo:AnyObject,dropInfo : AnyObject?) -> Void {
         
         if dragDropDelegate != nil {
@@ -360,11 +361,12 @@ extension DragDropCollectionView{
     }
     
     
-//    open override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-//        if keyPath != nil && keyPath! == "contentSize" {
-//            print("observe")
-//            NotificationCenter.default.post(name: NSNotification.Name(rawValue: DragDropManager.NOTIFICATION_CANCEL_DRAGGING), object: nil)
-//        }
-//    }
-
+    //    open override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+    //        if keyPath != nil && keyPath! == "contentSize" {
+    //            print("observe")
+    //            NotificationCenter.default.post(name: NSNotification.Name(rawValue: DragDropManager.NOTIFICATION_CANCEL_DRAGGING), object: nil)
+    //        }
+    //    }
+    
 }
+

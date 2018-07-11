@@ -112,7 +112,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         muscleGroup = NSEntityDescription.insertNewObject(forEntityName: "Musclegroup", into: db.managedObjectContext) as! Musclegroup
         muscleGroup.id = 4
         muscleGroup.alias = "upper_trapezius"
-        muscleGroup.color = "143,39,217"
+        muscleGroup.color = "137,21,195"
         muscleGroup.isFront = true
         tapPath = UIBezierPath()
         tapPath.move(to: CGPoint(x:0.305726872246696, y:0.359066427289048))

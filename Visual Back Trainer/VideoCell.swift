@@ -10,6 +10,7 @@ import UIKit
 
 protocol VideoCellDelegate: class {
     func favoriteButtonTouched(_ sender: UIButton, indexPath: IndexPath, x: Int)
+    func videoTouched(indexPath: IndexPath)
 }
 
 class VideoCell: UITableViewCell {
@@ -27,6 +28,7 @@ class VideoCell: UITableViewCell {
     
     @IBOutlet weak var favoriteDelimter: UIView!
     @IBOutlet weak var favoriteButton: UIButton!
+    @IBOutlet weak var stackView: UIStackView!
     
     var infoText: String = ""
     var indexPath: IndexPath = IndexPath(row: 0, section: 0)
@@ -35,10 +37,21 @@ class VideoCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
 
-            premiumImageView.tintColor = .lightGray
+        premiumImageView.tintColor = .lightGray
         favoriteDelimter.tintColor = .lightGray
- favoriteButton.setImage(favoriteImage, for: .normal)
+        favoriteButton.setImage(favoriteImage, for: .normal)
         favoriteButton.tintColor = .lightGray
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(VideoCell.videoTouched))
+        
+        videoImageView.addGestureRecognizer(tap)
+        videoImageView.isUserInteractionEnabled = true
+        videoLabel.addGestureRecognizer(tap)
+        videoLabel.isUserInteractionEnabled = true
+    }
+    
+    @objc func videoTouched() {
+        self.delegate?.videoTouched(indexPath: indexPath)
     }
     
     @IBAction func favoriteButtonTouched(_ sender: UIButton) {

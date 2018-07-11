@@ -9,6 +9,20 @@
 import UIKit
 import CoreData
 
+class DragDropItem: NSObject {
+    
+    var objectID: NSManagedObjectID
+    var sourceIndexPath: IndexPath
+    
+    
+    
+    init(withObjectID objectID: NSManagedObjectID, sourceIndexPath: IndexPath) {
+        self.objectID = objectID
+        self.sourceIndexPath = sourceIndexPath
+    }
+    
+}
+
 class Torso: NSObject {
     
     var index: Int

@@ -34,6 +34,7 @@ class GenericTableViewController: UITableViewController, NSFetchedResultsControl
         self.tableView.tableFooterView = UIView(frame: .zero)
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 10
+        self.tableView.allowsSelection = false
  
 
         do {
@@ -82,6 +83,8 @@ class GenericTableViewController: UITableViewController, NSFetchedResultsControl
             cell.videoImageView?.alpha = 1.0
         }
         
+        cell.stackView.isHidden = true
+        
         
         let favoriteImage = workout.isFavorite ? UIImage(named: "favoriteAdded") : UIImage(named: "favorite")
         
@@ -103,19 +106,7 @@ class GenericTableViewController: UITableViewController, NSFetchedResultsControl
         
         return cell
     }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        let workout = fetchedResultsController.object(at: indexPath)
-        
-        if workout.isPremium {
-            performSegue(withIdentifier: "showUpgradeSegue", sender: indexPath)
-        } else {
-            performSegue(withIdentifier: "showVideoSegue", sender: indexPath)
-        }
-    }
-    
-    
+
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
         popTip.hide()
@@ -176,6 +167,16 @@ extension GenericTableViewController: VideoCellDelegate {
             self.tableView.reloadData()
             
         }
+    }
+    
+    func videoTouched(indexPath: IndexPath) {
         
+        let workout = fetchedResultsController.object(at: indexPath)
+        
+        if workout.isPremium {
+            performSegue(withIdentifier: "showUpgradeSegue", sender: indexPath)
+        } else {
+            performSegue(withIdentifier: "showVideoSegue", sender: indexPath)
+        }
     }
 }
