@@ -122,7 +122,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Visual Back Trainer/VideoTableViewController.swift"
-            timestampString = "552989494.985482"
+            timestampString = "552990542.817012"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "45"
@@ -138,7 +138,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Visual Back Trainer/CoreDataManager.swift"
-            timestampString = "552989494.9863009"
+            timestampString = "552990542.817603"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "120"
@@ -154,7 +154,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Visual Back Trainer/MainMenuViewController.swift"
-            timestampString = "552989494.986722"
+            timestampString = "552990542.817977"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "190"
@@ -202,7 +202,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Visual Back Trainer/CoreDataManager.swift"
-            timestampString = "552989494.9867949"
+            timestampString = "552990542.818041"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "139"
@@ -218,44 +218,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Visual Back Trainer/CoreDataManager.swift"
-            timestampString = "552989494.98726"
+            timestampString = "552990542.8183759"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "126"
             endingLineNumber = "126"
             landmarkName = "insertWorkout(id:imgName:isFavorite:isLive:isPremium:alias:videoUrl:isDumbbell:isMat:isBall:isTheraband:isMachine:intensity:musclegroupIds:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Visual Back Trainer/VideoTableViewController.swift"
-            timestampString = "552989494.987834"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Visual Back Trainer/VideoTableViewController.swift"
-            timestampString = "552989494.988616"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
-            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -314,7 +282,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Visual Back Trainer/GenericTableViewController.swift"
-            timestampString = "552989494.989297"
+            timestampString = "552990542.818835"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "73"
