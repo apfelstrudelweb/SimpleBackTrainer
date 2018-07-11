@@ -30,3 +30,18 @@
 "PREMIUM_VIDEO_DESCR" = "Mehr Trainingsvideos mit Hanteln, Körpergewicht, Widerstandsbändern und Kleingeräten.";
 "PREMIUM_MOBIL_TITLE" = "Mobilisierungsübungen";
 "PREMIUM_MOBIL_DESCR" = "Finde heraus, wie du zusätzlich zur Stärkung des Rückens deine Flexibilität erhöhst und beweglich bleibst.";
+
+// muscle groups
+"straight_abdominal" = "Gerade Bauchmuskeln";
+"in_oblique_abdominal" = "Innere schräge Bauchmuskeln";
+"ext_oblique_abdominal" = "Äußere schräge Bauchmuskeln";
+"upper_trapezius" = "Trapezmuskel (oberer Anteil)";
+"head_turners" = "Kopfwender";
+"back_extensors" = "Rückenstrecker";
+"wide_back" = "Breiter Rückenmuskel";
+"middle_lower_trapezius" = "Trapezmuskel (mittlere und untere Teil)";
+"rhomb" = "Rautenmuskel";
+"scapula" = "Schulterblattmuskulatur (Untergrätenmuskel, kleine und große Rundmuskel)";
+"deltoid" = "Deltamuskel (hintere Teil)";
+"upper_trapezius" = "Trapezmuskel (oberer Teil)";
+"neck" = "Halsmuskel (schräger Kopfmuskel, gerader hinterer Kopfmuskel)";

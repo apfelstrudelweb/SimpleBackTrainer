@@ -63,6 +63,11 @@ class AnatomyViewController: UIViewController {
         frontViewButtonLarge.layer.cornerRadius = 10
         backViewButtonLarge.layer.cornerRadius = 10
         
+        frontViewButton.titleLabel?.minimumScaleFactor = 0.8
+        backViewButton.titleLabel?.minimumScaleFactor = 0.8
+        frontViewButtonLarge.titleLabel?.minimumScaleFactor = 0.8
+        backViewButtonLarge.titleLabel?.minimumScaleFactor = 0.8
+        
         torsoFrontView.delegate = self
         torsoBackView.delegate = self
         torsoFrontViewLarge.delegate = self

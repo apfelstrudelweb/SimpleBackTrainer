@@ -54,7 +54,7 @@ class FrontView: NSObject {
         
         for group in frontResult {
             let tapPath = NSKeyedUnarchiver.unarchiveObject(with: group.bezierPath! as Data)  as! UIBezierPath
-            dict.append(Torso(withIndex: Int(group.id), color: (group.color?.colorFromString())!, muscleName: group.alias!, tapArea: tapPath))
+            dict.append(Torso(withIndex: Int(group.id), color: (group.color?.colorFromString())!, muscleName: NSLocalizedString(group.alias!, comment: ""), tapArea: tapPath))
         }
 
         self.init(dict: dict)
@@ -89,7 +89,7 @@ class BackView: NSObject {
         
         for group in backResult {
             let tapPath = NSKeyedUnarchiver.unarchiveObject(with: group.bezierPath! as Data)
-            dict.append(Torso(withIndex: Int(group.id), color: (group.color?.colorFromString())!, muscleName: group.alias!, tapArea: tapPath as! UIBezierPath))
+            dict.append(Torso(withIndex: Int(group.id), color: (group.color?.colorFromString())!, muscleName: NSLocalizedString(group.alias!, comment: ""), tapArea: tapPath as! UIBezierPath))
         }
         
         self.init(dict: dict)

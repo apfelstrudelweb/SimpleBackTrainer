@@ -27,7 +27,7 @@ class VideoTableViewController: GenericTableViewController {
     
     override func viewDidLoad() {
 
-        soloTitle = self.title
+        soloTitle = self.title?.components(separatedBy: "(").first
         stripeView.backgroundColor = muscleGroupColor
         headerView.backgroundColor = UITabBar.appearance().barTintColor
 
