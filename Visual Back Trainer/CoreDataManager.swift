@@ -199,7 +199,7 @@ class CoreDataManager: NSObject {
             for workout in workouts {
                 
                 let isFavorite = favoriteSet.contains(workout.id!)
-                
+
                 let _ = CoreDataManager.sharedInstance.insertWorkout(id: Int16(workout.id!), imgName: workout.imageName, isFavorite: isFavorite, isLive: workout.isLive==1, isPremium: workout.isPremium==1, alias: workout.alias, videoUrl: workout.videoUrl!, isDumbbell: workout.isDumbbell==1, isMat: workout.isMat==1, isBall: workout.isBall==1, isTheraband: workout.isTheraband==1, isMachine: workout.isMachine==1, intensity: Int16(workout.intensity!), musclegroupIds: workout.musclegroups!)
             }
             

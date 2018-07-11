@@ -93,10 +93,9 @@ class GenericTableViewController: UITableViewController, NSFetchedResultsControl
         } else {
             cell.favoriteButton.tintColor = .lightGray
         }
-        
-        
+
         cell.buttonColor = (navigationController?.navigationBar.barTintColor)!
-        cell.videoLabel.text = workout.alias // TODO: localize
+        cell.videoLabel.text = NSLocalizedString(workout.alias!, comment: "")
         
         cell.videoImageView.image = UIImage(data:workout.icon! as Data, scale:1.0)
         cell.indexPath = indexPath
