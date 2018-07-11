@@ -84,7 +84,10 @@ class ExercisesTableViewController: GenericTableViewController {
         
         clearButtons()
         buttonHandweight.tintColor = self.navigationController?.navigationBar.barTintColor
-        self.fetchRequest.predicate = NSPredicate(format: "isDumbbell == true")
+        let predicate1 = NSPredicate(format: "isLive = %d", true)
+        let predicate2 = NSPredicate(format: "isDumbbell == true")
+        let compound:NSCompoundPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [predicate1, predicate2])
+        fetchRequest.predicate = compound
         
         do {
             try fetchedResultsController.performFetch()
@@ -104,7 +107,10 @@ class ExercisesTableViewController: GenericTableViewController {
         clearButtons()
         buttonBand.tintColor = self.navigationController?.navigationBar.barTintColor
         
-        self.fetchRequest.predicate = NSPredicate(format: "isTheraband == true")
+        let predicate1 = NSPredicate(format: "isLive = %d", true)
+        let predicate2 = NSPredicate(format: "isTheraband == true")
+        let compound:NSCompoundPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [predicate1, predicate2])
+        fetchRequest.predicate = compound
         
         do {
             try fetchedResultsController.performFetch()
@@ -122,7 +128,10 @@ class ExercisesTableViewController: GenericTableViewController {
         clearButtons()
         buttonMat.tintColor = self.navigationController?.navigationBar.barTintColor
         
-        self.fetchRequest.predicate = NSPredicate(format: "isMat == true")
+        let predicate1 = NSPredicate(format: "isLive = %d", true)
+        let predicate2 = NSPredicate(format: "isMat == true")
+        let compound:NSCompoundPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [predicate1, predicate2])
+        fetchRequest.predicate = compound
         
         do {
             try fetchedResultsController.performFetch()
@@ -139,8 +148,11 @@ class ExercisesTableViewController: GenericTableViewController {
         
         clearButtons()
         buttonBall.tintColor = self.navigationController?.navigationBar.barTintColor
-        
-        self.fetchRequest.predicate = NSPredicate(format: "isBall == true")
+
+        let predicate1 = NSPredicate(format: "isLive = %d", true)
+        let predicate2 = NSPredicate(format: "isBall == true")
+        let compound:NSCompoundPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [predicate1, predicate2])
+        fetchRequest.predicate = compound
         
         do {
             try fetchedResultsController.performFetch()
@@ -157,8 +169,11 @@ class ExercisesTableViewController: GenericTableViewController {
         
         clearButtons()
         buttonMachine.tintColor = self.navigationController?.navigationBar.barTintColor
-        
-        self.fetchRequest.predicate = NSPredicate(format: "isMachine == true")
+
+        let predicate1 = NSPredicate(format: "isLive = %d", true)
+        let predicate2 = NSPredicate(format: "isMachine == true")
+        let compound:NSCompoundPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [predicate1, predicate2])
+        fetchRequest.predicate = compound
         
         do {
             try fetchedResultsController.performFetch()

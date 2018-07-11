@@ -100,26 +100,8 @@ class CoreDataManager: NSObject {
         }
     }
     
-    /*
-     @NSManaged public var alias: String?
-     @NSManaged public var icon: NSData?
-     @NSManaged public var id: Int16
-     @NSManaged public var imgName: String?
-     @NSManaged public var intensity: [Int]?
-     @NSManaged public var isBall: Bool
-     @NSManaged public var isDumbbell: Bool
-     @NSManaged public var isFavorite: Bool
-     @NSManaged public var isLive: Bool
-     @NSManaged public var isMachine: Bool
-     @NSManaged public var isMat: Bool
-     @NSManaged public var isPremium: Bool
-     @NSManaged public var isTheraband: Bool
-     @NSManaged public var videoUrl: String?
-     @NSManaged public var groups: [Int]?
-     @NSManaged public var musclegroupId: Musclegroup?
-     @NSManaged public var traininsgplanId: Plan?
-     */
-    func insertWorkout(id:Int16, imgName: String?, isFavorite: Bool, isLive: Bool, isPremium: Bool, alias: String?, videoUrl: String?, isDumbbell: Bool, isMat: Bool, isBall: Bool, isTheraband: Bool, isMachine: Bool, intensity: [Int], musclegroupIds: [Int]) -> Workout {
+
+    func insertWorkout(id:Int16, imgName: String?, isFavorite: Bool, isLive: Bool, isPremium: Bool, alias: String?, videoUrl: String?, isDumbbell: Bool, isMat: Bool, isBall: Bool, isTheraband: Bool, isMachine: Bool, intensity: Int16, musclegroupIds: [Int]) -> Workout {
         
         let workout = NSEntityDescription.insertNewObject(forEntityName: "Workout", into: self.managedObjectContext) as! Workout
         
@@ -171,11 +153,11 @@ class CoreDataManager: NSObject {
             }
         }
 
-        do {
-            try self.managedObjectContext.save()
-        } catch let error {
-            NSLog("Failure to save context: \(error.localizedDescription)")
-        }
+//        do {
+//            try self.managedObjectContext.save()
+//        } catch let error {
+//            NSLog("Failure to save context: \(error.localizedDescription)")
+//        }
         
         return workout
     }
@@ -222,55 +204,28 @@ class CoreDataManager: NSObject {
     
     func updateWorkouts(serverWorkoutsData:[WorkoutData]?, completionHandler: CompletionHander?) {
         if let workouts = serverWorkoutsData {
+            
+            // delete old data
+            let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Workout")
+            let request = NSBatchDeleteRequest(fetchRequest: fetch)
+            do {
+                try managedObjectContext.execute(request)
+            } catch let error {
+                NSLog("Failure to delete context: \(error.localizedDescription)")
+            }
+            
+            
             for workout in workouts {
-                
-                print (workout)
-                
-                //let _ = CoreDataManager.sharedInstance.insertWorkout(id: Int16(workout.id!), imgName: workout.imageName, isFavorite: false, isLive: workout.isLive==1, isPremium: workout.isPremium==1, alias: workout.alias, videoUrl: workout.videoUrl!, isDumbbell: workout.isDumbbell==1, isMat: workout.isMat==1, isBall: workout.isBall==1, isTheraband: workout.isTheraband==1, isMachine: workout.isMachine==1, intensity: workout.intensity!, musclegroupIds: workout.musclegroups!)
-                
-//                for musclegroupId in workout.musclegroups! {
-//                    if let muscleGroup = self.fetchMuscleGroup(id: musclegroupId) {
-//
-//                    }
-//                }
-                
-                
-//                let id = group.id
-//                if let muscleGroup = self.fetchMuscleGroup(id: id!) {
-//                    let workoutArray = NSMutableSet()
-//                    if let workouts = group.workouts {
-//                        for workout in workouts {
-//                            let localWorkout = self.fetchWorkout(workoutId:workout.id!, groupId: Int(muscleGroup.id))
-//                            if let localWorkout = localWorkout {
-//                                let updatedWorkout = self.updateWorkout(workout: localWorkout, data: workout, group: group.name!)
-//                                workoutArray.add(updatedWorkout)
-//                            } else {
-//                                let workout =  CoreDataManager.sharedInstance.insertWorkout(id: Int16(workout.id!), imgName: workout.imageName, isFavorite: false, isLive: workout.isLive==1, isPremium: workout.isPremium==1, alias: workout.alias, videoUrl: workout.videoUrl!, isDumbbell: workout.isDumbbell==1, isMat: workout.isMat==1, isBall: workout.isBall==1, isTheraband: workout.isTheraband==1, isMachine: workout.isMachine==1, intensity: Int16(workout.intensity!), musclegroupId: Int16(workout.musclegroupId!))
-//                                workoutArray.add(workout)
-//                            }
-//                        }
-//
-//                        self.deleteWorkoutIfNotExistAnymore(muscleGroup: muscleGroup, workoutArray: workoutArray)
-//
-//
-//                        let _ = self.updateMusclegroup(muscleGroup: muscleGroup, name: group.name, color:group.color, workouts: workoutArray)
-//                    }
-//                } else {
-//                    let workoutArray = NSMutableSet()
-//                    if let workouts = group.workouts {
-//                        for workout in workouts {
-//                            let workout =  CoreDataManager.sharedInstance.insertWorkout(id: Int16(workout.id!), imgName: workout.imageName, isFavorite: false, isLive: workout.isLive==1, isPremium: workout.isPremium==1, alias: workout.alias, videoUrl: workout.videoUrl!, isDumbbell: workout.isDumbbell==1, isMat: workout.isMat==1, isBall: workout.isBall==1, isTheraband: workout.isTheraband==1, isMachine: workout.isMachine==1, intensity: Int16(workout.intensity!), musclegroupId: Int16(workout.musclegroupId!))
-//                            workoutArray.add(workout)
-//                        }
-//                        print(workoutArray.count)
-//
-//                        let _ = self.insertMusclegroup(name: group.name, color: group.color, id: Int16(group.id!), isFront: group.isFront!, workouts: workoutArray)
-//                    }
-//                }
-//
-           }
+                let _ = CoreDataManager.sharedInstance.insertWorkout(id: Int16(workout.id!), imgName: workout.imageName, isFavorite: false, isLive: workout.isLive==1, isPremium: workout.isPremium==1, alias: workout.alias, videoUrl: workout.videoUrl!, isDumbbell: workout.isDumbbell==1, isMat: workout.isMat==1, isBall: workout.isBall==1, isTheraband: workout.isTheraband==1, isMachine: workout.isMachine==1, intensity: Int16(workout.intensity!), musclegroupIds: workout.musclegroups!)
+            }
+            
+            do {
+                try self.managedObjectContext.save()
+            } catch let error {
+                NSLog("Failure to save context: \(error.localizedDescription)")
+            }
         }
-        //self.deleteGroupIfNotExistAnymore(serverGroupsData: serverGroupsData)
+
         completionHandler?()
     }
     

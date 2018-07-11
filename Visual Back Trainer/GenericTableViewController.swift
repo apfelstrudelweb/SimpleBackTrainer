@@ -66,6 +66,10 @@ class GenericTableViewController: UITableViewController, NSFetchedResultsControl
         
         let workout = fetchedResultsController.object(at: indexPath)
         
+//        for intens in workout.intensities {
+//            print(intens)
+//        }
+        
         if workout.isPremium {
             cell.premiumImageView.isHidden = false
             cell.favoriteButton.isHidden = true

@@ -121,7 +121,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3738.4000000000001" y="-350.2463054187192"/>
+            <point key="canvasLocation" x="3738" y="-318"/>
         </scene>
         <!--Trainingsplan-->
         <scene sceneID="fcX-Gp-AC7">
@@ -158,7 +158,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mQL-Qs-Hz8">
-                                <rect key="frame" x="0.0" y="44" width="375" height="685"/>
+                                <rect key="frame" x="0.0" y="88" width="375" height="641"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="GhF-At-qLN">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -377,6 +377,7 @@ Please turn on your Internet Conncetion - as soon your device is connected to th
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="DGj-7d-jfR" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="mjw-Ry-qIh">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="barTintColor" red="0.1239974424" green="0.16451942920000001" blue="0.47357922790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1171,27 +1172,99 @@ Please turn on your Internet Conncetion - as soon your device is connected to th
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="afl-NK-FUN">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="A3h-5J-cfI">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="76"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JfL-Fx-tR3">
-                                    <rect key="frame" x="16" y="11.999999999999998" width="343" height="20.333333333333329"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r5h-Wk-DQY">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="10"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="10" id="JfM-QU-RdQ"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pMD-N4-iIq">
+                                    <rect key="frame" x="0.0" y="75" width="375" height="1"/>
+                                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="0.59999999999999998" id="jdg-l0-NbM"/>
+                                    </constraints>
+                                </view>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="rM8-5R-709">
+                                    <rect key="frame" x="20" y="17" width="335" height="42"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SrK-xT-VHx">
+                                            <rect key="frame" x="0.0" y="0.0" width="54.666666666666664" height="42"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="SrK-xT-VHx" secondAttribute="height" multiplier="58:44" id="F67-EC-X5f"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <state key="normal" title="Easy" image="tabLevel1">
+                                                <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="filterHandweight:" destination="qbX-Tz-7OD" eventType="touchUpInside" id="bOT-Lj-F2l"/>
+                                                <action selector="filterLevel1:" destination="ynM-0b-4WO" eventType="touchUpInside" id="Tme-1D-8Ag"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wxW-uI-bQN">
+                                            <rect key="frame" x="84.666666666666671" y="0.0" width="48.333333333333329" height="42"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="wxW-uI-bQN" secondAttribute="height" multiplier="54:47" id="z1Z-wV-Q4A"/>
+                                            </constraints>
+                                            <state key="normal" title="Medium" image="tabLevel2"/>
+                                            <connections>
+                                                <action selector="filterBand:" destination="qbX-Tz-7OD" eventType="touchUpInside" id="bEV-fw-62x"/>
+                                                <action selector="filterLevel2:" destination="ynM-0b-4WO" eventType="touchUpInside" id="jgT-o7-MaL"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UQt-yG-Lxa">
+                                            <rect key="frame" x="163" y="0.0" width="72" height="42"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="UQt-yG-Lxa" secondAttribute="height" multiplier="75:44" id="xIQ-z7-5xU"/>
+                                            </constraints>
+                                            <state key="normal" title="Hard" image="tabLevel3"/>
+                                            <connections>
+                                                <action selector="filterLevel3:" destination="ynM-0b-4WO" eventType="touchUpInside" id="Jhi-bm-7ae"/>
+                                                <action selector="filterMat:" destination="qbX-Tz-7OD" eventType="touchUpInside" id="DEQ-em-ktM"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cy8-d0-AXz">
+                                            <rect key="frame" x="265" y="0.0" width="70" height="42"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="cy8-d0-AXz" secondAttribute="height" multiplier="88:53" id="b94-Xb-6al"/>
+                                            </constraints>
+                                            <state key="normal" title="All" image="tabLevel4"/>
+                                            <connections>
+                                                <action selector="filterBall:" destination="qbX-Tz-7OD" eventType="touchUpInside" id="VHT-EZ-rUp"/>
+                                                <action selector="filterLevel4:" destination="ynM-0b-4WO" eventType="touchUpInside" id="7Y3-g6-fzi"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </stackView>
                             </subviews>
-                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
-                                <constraint firstItem="JfL-Fx-tR3" firstAttribute="centerY" secondItem="afl-NK-FUN" secondAttribute="centerY" id="AKs-k8-4fP"/>
-                                <constraint firstItem="JfL-Fx-tR3" firstAttribute="leading" secondItem="afl-NK-FUN" secondAttribute="leading" constant="16" id="gJe-bm-ilf"/>
-                                <constraint firstAttribute="trailing" secondItem="JfL-Fx-tR3" secondAttribute="trailing" constant="16" id="jmu-au-Uqp"/>
+                                <constraint firstAttribute="bottom" secondItem="pMD-N4-iIq" secondAttribute="bottom" id="3Ux-Kk-syr"/>
+                                <constraint firstAttribute="trailing" secondItem="pMD-N4-iIq" secondAttribute="trailing" id="BeT-fm-hF8"/>
+                                <constraint firstAttribute="trailing" secondItem="rM8-5R-709" secondAttribute="trailing" constant="20" id="TEn-HV-7Th">
+                                    <variation key="heightClass=compact-widthClass=compact" constant="50"/>
+                                    <variation key="heightClass=compact-widthClass=regular" constant="50"/>
+                                </constraint>
+                                <constraint firstItem="pMD-N4-iIq" firstAttribute="leading" secondItem="A3h-5J-cfI" secondAttribute="leading" id="afn-N6-VPB"/>
+                                <constraint firstItem="r5h-Wk-DQY" firstAttribute="top" secondItem="A3h-5J-cfI" secondAttribute="top" id="hMx-XP-cAO"/>
+                                <constraint firstItem="r5h-Wk-DQY" firstAttribute="leading" secondItem="A3h-5J-cfI" secondAttribute="leading" id="jIz-n1-S8j"/>
+                                <constraint firstItem="rM8-5R-709" firstAttribute="centerY" secondItem="A3h-5J-cfI" secondAttribute="centerY" id="rVe-th-Tcr"/>
+                                <constraint firstAttribute="trailing" secondItem="r5h-Wk-DQY" secondAttribute="trailing" id="sjR-oP-kpr"/>
+                                <constraint firstItem="rM8-5R-709" firstAttribute="leading" secondItem="A3h-5J-cfI" secondAttribute="leading" constant="20" id="tQy-Ze-ljy">
+                                    <variation key="heightClass=compact-widthClass=compact" constant="50"/>
+                                    <variation key="heightClass=compact-widthClass=regular" constant="50"/>
+                                </constraint>
                             </constraints>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="videoCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="videoCell" rowHeight="69" id="s0H-ke-APN" customClass="VideoCell" customModule="Visual_Back_Trainer" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="72" width="375" height="69"/>
+                                <rect key="frame" x="0.0" y="104" width="375" height="69"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="s0H-ke-APN" id="qzy-vu-loP">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="68.666666666666671"/>
@@ -1208,8 +1281,12 @@ Please turn on your Internet Conncetion - as soon your device is connected to th
                         </connections>
                     </tableView>
                     <connections>
-                        <outlet property="headerLabel" destination="JfL-Fx-tR3" id="VSt-u1-Q34"/>
-                        <outlet property="headerView" destination="afl-NK-FUN" id="EkD-OP-IOO"/>
+                        <outlet property="buttonLevel1" destination="SrK-xT-VHx" id="e91-85-hJ6"/>
+                        <outlet property="buttonLevel2" destination="wxW-uI-bQN" id="RES-Ql-Gxr"/>
+                        <outlet property="buttonLevel3" destination="UQt-yG-Lxa" id="IIn-AI-mLa"/>
+                        <outlet property="buttonLevel4" destination="cy8-d0-AXz" id="ldY-6d-rdc"/>
+                        <outlet property="headerView" destination="A3h-5J-cfI" id="9t4-Bd-9t9"/>
+                        <outlet property="stripeView" destination="r5h-Wk-DQY" id="vSu-95-LCH"/>
                         <segue destination="Ylz-5k-IgQ" kind="presentation" identifier="showVideoSegue" id="FHK-eM-ugm"/>
                     </connections>
                 </tableViewController>
@@ -1262,6 +1339,7 @@ Please turn on your Internet Conncetion - as soon your device is connected to th
                     <tabBarItem key="tabBarItem" title="Plan" image="clipboard" id="EFA-mI-M8v"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" backIndicatorImage="ic_arrow_black" id="dFf-3P-5K6">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" red="0.1239974424" green="0.16451942920000001" blue="0.47357922790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1312,6 +1390,7 @@ Please turn on your Internet Conncetion - as soon your device is connected to th
                     <tabBarItem key="tabBarItem" title="Settings" image="zahnrad" id="71Q-a3-mPY"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" backIndicatorImage="ic_arrow_black" id="EkJ-A0-EbV">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1370,14 +1449,18 @@ Please turn on your Internet Conncetion - as soon your device is connected to th
         <image name="tabBall" width="46" height="44"/>
         <image name="tabBand" width="54" height="47"/>
         <image name="tabHandweight" width="58" height="44"/>
+        <image name="tabLevel1" width="69" height="53"/>
+        <image name="tabLevel2" width="69" height="53"/>
+        <image name="tabLevel3" width="69" height="53"/>
+        <image name="tabLevel4" width="88" height="53"/>
         <image name="tabMachine" width="62" height="44"/>
         <image name="tabMat" width="75" height="44"/>
         <image name="zahnrad" width="33" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ZQd-kQ-BxA"/>
+        <segue reference="FHK-eM-ugm"/>
         <segue reference="LVj-mE-GEn"/>
-        <segue reference="fql-e8-eDg"/>
+        <segue reference="jHs-hw-0jp"/>
         <segue reference="QzY-9p-Wcn"/>
     </inferredMetricsTieBreakers>
 </document>

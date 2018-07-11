@@ -24,7 +24,7 @@
         <attribute name="icon" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="id" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="imgName" attributeType="String" syncable="YES"/>
-        <attribute name="intensity" optional="YES" attributeType="Transformable" customClassName="[Int]" syncable="YES"/>
+        <attribute name="intensity" optional="YES" attributeType="Integer 16" valueTransformerName="" defaultValueString="0" usesScalarValueType="YES" customClassName="NSArray" syncable="YES"/>
         <attribute name="isBall" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="isDumbbell" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="isFavorite" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
@@ -43,6 +43,6 @@
     <elements>
         <element name="Musclegroup" positionX="-405" positionY="-9" width="128" height="133"/>
         <element name="Plan" positionX="-423" positionY="431" width="128" height="73"/>
-        <element name="Workout" positionX="-63" positionY="27" width="128" height="298"/>
+        <element name="Workout" positionX="-63" positionY="27" width="128" height="300"/>
     </elements>
 </model>

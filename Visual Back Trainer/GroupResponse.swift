@@ -12,22 +12,12 @@ class WorkoutResponse: Codable {
     let workouts: [WorkoutData]?
 }
 
-//struct Group:Codable {
-//    let descr:String?
-//    let id:Int?
-//    let name:String?
-//    let color:String?
-//    let isFront:Bool?
-//    let workouts:[WorkoutData]?
-//}
-
-
 struct WorkoutData: Codable {
     
     let alias: String?
     let id: Int?
     let imageName: String?
-    let intensity: [Int]?
+    let intensity: Int?
     let isBall: Int?
     let isDumbbell: Int?
     let isLive: Int?
