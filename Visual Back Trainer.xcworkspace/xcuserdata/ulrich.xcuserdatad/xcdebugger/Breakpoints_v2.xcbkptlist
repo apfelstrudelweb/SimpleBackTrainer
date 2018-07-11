@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Visual Back Trainer/Torso.swift"
-            timestampString = "552995184.424958"
+            timestampString = "552997093.593626"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "57"
@@ -122,7 +122,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Visual Back Trainer/VideoTableViewController.swift"
-            timestampString = "552995184.425113"
+            timestampString = "552997093.593763"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "45"
@@ -138,7 +138,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Visual Back Trainer/CoreDataManager.swift"
-            timestampString = "552995184.425861"
+            timestampString = "552997093.5943919"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "120"
@@ -154,7 +154,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Visual Back Trainer/MainMenuViewController.swift"
-            timestampString = "552995184.426326"
+            timestampString = "552997093.5948319"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "190"
@@ -202,7 +202,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Visual Back Trainer/CoreDataManager.swift"
-            timestampString = "552995184.426401"
+            timestampString = "552997093.594897"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "139"
@@ -218,7 +218,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Visual Back Trainer/CoreDataManager.swift"
-            timestampString = "552995184.4268171"
+            timestampString = "552997093.595274"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "126"
@@ -282,12 +282,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Visual Back Trainer/GenericTableViewController.swift"
-            timestampString = "552995184.427411"
+            timestampString = "552997093.595794"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "73"
             endingLineNumber = "73"
             landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Visual Back Trainer/CoreDataManager.swift"
+            timestampString = "552997093.59588"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "192"
+            endingLineNumber = "192"
+            landmarkName = "updateWorkouts(serverWorkoutsData:completionHandler:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

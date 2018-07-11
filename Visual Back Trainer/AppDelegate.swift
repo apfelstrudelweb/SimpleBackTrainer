@@ -48,9 +48,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print ("fetch task failed", error)
             self.populateMusclegroups()
         }
-
-        Thread.sleep(forTimeInterval: 3.0)
         
+        Thread.sleep(forTimeInterval: 2.0)
+ 
         return true
     }
     
