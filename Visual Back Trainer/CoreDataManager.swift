@@ -196,6 +196,12 @@ class CoreDataManager: NSObject {
             fatalError("Failed to delete object: \(error)")
         }
         
+//        do {
+//            try self.managedObjectContext.save()
+//        } catch let error {
+//            print("Failure to save context: \(error.localizedDescription)")
+//        }
+        
 
         // now avoid gaps in position indexes
         let fetchRequest2 = NSFetchRequest<NSFetchRequestResult>(entityName: "Trainingsplan")

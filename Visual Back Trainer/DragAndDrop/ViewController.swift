@@ -23,7 +23,9 @@ class ViewController: BaseViewController, DragDropCollectionViewDelegate, DropTa
     var trainingsplan: Plan!
     
     var droppedWorkout: Workout!
-    //var trainingModel = TrainingModel()
+    
+    var tableData: [Workout]!
+
     
     var addMode = false
     
@@ -74,11 +76,6 @@ class ViewController: BaseViewController, DragDropCollectionViewDelegate, DropTa
         dragDropTableView.allowsSelection = false
         dragDropTableView.register(UINib(nibName: "VideoCell", bundle: nil), forCellReuseIdentifier: "videoCell")
         
-        //self.trainingModel.delegate = self
-        
-//        let planFetchRequest = NSFetchRequest<Plan>(entityName: "Plan")
-//        trainingsplan = try! CoreDataManager.sharedInstance.managedObjectContext.fetch(planFetchRequest).first
-
         self.setDragDropTableView()
         self.setDragDropCollectionView()
         dragDropManager = DragDropManager(canvas: self.view, views: [dragDropCollectionView,dragDropTableView])
@@ -88,8 +85,7 @@ class ViewController: BaseViewController, DragDropCollectionViewDelegate, DropTa
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        //self.trainingModel.getWorkouts()
-        
+
         self.getTrainingsplan()
         self.dragDropTableView.reloadData()
     }
@@ -99,6 +95,9 @@ class ViewController: BaseViewController, DragDropCollectionViewDelegate, DropTa
             try fetchedResultsController1.performFetch()
             let count = try CoreDataManager.sharedInstance.managedObjectContext.count(for: fetchedResultsController1.fetchRequest)
             self.title = self.soloTitle! + " (\(count))"
+            
+            tableData = fetchedResultsController1.fetchedObjects!
+            
             //try fetchedResultsController2.performFetch()
         } catch {
             print("An error occurred")
@@ -194,34 +193,6 @@ class ViewController: BaseViewController, DragDropCollectionViewDelegate, DropTa
             }
             
         })
-    }
-    
-    func updateWorkoutLocations(sourceIndexPath:IndexPath, destinationIndexPath:IndexPath, deleteSource:Bool? = false) {
-//        let sourceWorkout = self.fetchedResultsController1.object(at: sourceIndexPath)
-//        let start = sourceIndexPath.row
-//        let end = destinationIndexPath.row
-//        if start < end {
-//            for i in start..<end {
-//                let indexPath = IndexPath(row: i+1, section: 0)
-//                let workout = self.fetchedResultsController1.object(at: indexPath)
-//                workout.positionInPlan = Int16(i)
-//            }
-//        } else {
-//            for i in (end..<start).reversed() {
-//                print(i)
-//                let indexPath = IndexPath(row: i, section: 0)
-//                let workout = self.fetchedResultsController1.object(at: indexPath)
-//                workout.positionInPlan = Int16(i+1)
-//            }
-//        }
-//        if deleteSource == false {
-//            sourceWorkout.positionInPlan = Int16(end)
-//        }
-//        do {
-//            try CoreDataManager.sharedInstance.managedObjectContext.save()
-//        } catch {
-//            print(error.localizedDescription)
-//        }
     }
 }
 
@@ -362,14 +333,36 @@ extension ViewController:UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+            
+            tableData = fetchedResultsController1.fetchedObjects!
+            
             let workout = self.fetchedResultsController1.object(at: indexPath)
             CoreDataManager.sharedInstance.removeFromTrainingsplan(workout: workout)
         }
     }
     
+    
     func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-        //Rakesh Kumar
-        self.updateWorkoutLocations(sourceIndexPath: sourceIndexPath, destinationIndexPath: destinationIndexPath)
+        
+        tableData = fetchedResultsController1.fetchedObjects!
+        
+        //var sortedTableData = tableData.sorted { ($0.traininsgplanId?.position)! < ($1.traininsgplanId?.position)! }
+        
+        let itemToMove = tableData[sourceIndexPath.row]
+        tableData.remove(at: sourceIndexPath.row)
+        tableData.insert(itemToMove, at: destinationIndexPath.row)
+
+        for (index, workout) in tableData.enumerated() {
+            workout.traininsgplanId?.position = Int16(index)
+        }
+
+        do {
+            try CoreDataManager.sharedInstance.managedObjectContext.save()
+        } catch let error {
+            print("Failure to save context: \(error.localizedDescription)")
+        }
+        
+        //self.dragDropTableView.reloadData()
     }
 }
 
