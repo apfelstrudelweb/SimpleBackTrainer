@@ -31,6 +31,8 @@
 		1B3E460220D671CB003C4B96 /* InfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B3E460120D671CB003C4B96 /* InfoView.xib */; };
 		1B3E460620D675C5003C4B96 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3E460520D675C5003C4B96 /* InfoView.swift */; };
 		1B3E460820DBF0C9003C4B96 /* ExercisesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3E460720DBF0C9003C4B96 /* ExercisesTableViewController.swift */; };
+		1B860D6D20F7556600D709FD /* Trainingsplan+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B860D6B20F7556600D709FD /* Trainingsplan+CoreDataClass.swift */; };
+		1B860D6E20F7556600D709FD /* Trainingsplan+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B860D6C20F7556600D709FD /* Trainingsplan+CoreDataProperties.swift */; };
 		1BBC3A9520D1220D00B43A61 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBC3A9420D1220D00B43A61 /* CoreDataManager.swift */; };
 		1BBC3A9F20D1222200B43A61 /* Musclegroup+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBC3A9920D1222200B43A61 /* Musclegroup+CoreDataClass.swift */; };
 		1BBC3AA020D1222200B43A61 /* Plan+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBC3A9A20D1222200B43A61 /* Plan+CoreDataClass.swift */; };
@@ -105,6 +107,8 @@
 		1B3E460120D671CB003C4B96 /* InfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoView.xib; sourceTree = "<group>"; };
 		1B3E460520D675C5003C4B96 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		1B3E460720DBF0C9003C4B96 /* ExercisesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesTableViewController.swift; sourceTree = "<group>"; };
+		1B860D6B20F7556600D709FD /* Trainingsplan+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Trainingsplan+CoreDataClass.swift"; sourceTree = "<group>"; };
+		1B860D6C20F7556600D709FD /* Trainingsplan+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Trainingsplan+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		1BBC3A9420D1220D00B43A61 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		1BBC3A9920D1222200B43A61 /* Musclegroup+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Musclegroup+CoreDataClass.swift"; sourceTree = "<group>"; };
 		1BBC3A9A20D1222200B43A61 /* Plan+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Plan+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -241,6 +245,8 @@
 		1BBC3A9320D121B100B43A61 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				1B860D6B20F7556600D709FD /* Trainingsplan+CoreDataClass.swift */,
+				1B860D6C20F7556600D709FD /* Trainingsplan+CoreDataProperties.swift */,
 				1BBC3AB920D1909300B43A61 /* Musclegroup+CoreDataProperties.swift */,
 				1BBC3A9920D1222200B43A61 /* Musclegroup+CoreDataClass.swift */,
 				1BBC3A9A20D1222200B43A61 /* Plan+CoreDataClass.swift */,
@@ -555,6 +561,7 @@
 				1BBC3AAA20D1227800B43A61 /* TrainingModel.swift in Sources */,
 				C6EEF9F81CB7E4E000A3DC6D /* MainMenuViewController.swift in Sources */,
 				1BBC3AA320D1222200B43A61 /* Plan+CoreDataProperties.swift in Sources */,
+				1B860D6E20F7556600D709FD /* Trainingsplan+CoreDataProperties.swift in Sources */,
 				1B2F53E120F64B37001A2B6D /* DecorationCollectionViewFlowLayout.swift in Sources */,
 				1BBC3AC420D2641E00B43A61 /* VideoCell.swift in Sources */,
 				1BBC3AC720D2673C00B43A61 /* MuscleGroupImageView.swift in Sources */,
@@ -579,6 +586,7 @@
 				14A7486920C3C344002CB7EA /* Constants.swift in Sources */,
 				1B2F53E020F64B37001A2B6D /* ViewController+DragDropCollectionView.swift in Sources */,
 				753A55C31BB073E900254F27 /* AppDelegate.swift in Sources */,
+				1B860D6D20F7556600D709FD /* Trainingsplan+CoreDataClass.swift in Sources */,
 				1BBC3AC120D2617900B43A61 /* VideoTableViewController.swift in Sources */,
 				1B2F53D220F64A93001A2B6D /* ViewController.swift in Sources */,
 				14A7487820C3E058002CB7EA /* BackTherapyController.swift in Sources */,

@@ -11,23 +11,22 @@
             <fetchIndexElement property="id" type="Binary" order="ascending"/>
         </fetchIndex>
     </entity>
-    <entity name="Plan" representedClassName="Plan" syncable="YES">
-        <attribute name="id" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+    <entity name="Trainingsplan" representedClassName="Trainingsplan" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="position" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="workouts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Workout" inverseName="traininsgplanId" inverseEntity="Workout" syncable="YES"/>
         <fetchIndex name="byIndex">
-            <fetchIndexElement property="id" type="Binary" order="ascending"/>
+            <fetchIndexElement property="position" type="Binary" order="ascending"/>
         </fetchIndex>
     </entity>
     <entity name="Workout" representedClassName="Workout" syncable="YES">
         <attribute name="alias" attributeType="String" syncable="YES"/>
-        <attribute name="groups" optional="YES" attributeType="Transformable" customClassName="[Int]" syncable="YES"/>
         <attribute name="icon" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="id" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="imgName" attributeType="String" syncable="YES"/>
         <attribute name="intensity" optional="YES" attributeType="Integer 16" valueTransformerName="" defaultValueString="0" usesScalarValueType="YES" customClassName="NSArray" syncable="YES"/>
         <attribute name="isBall" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="isDumbbell" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="isFavorite" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="isLive" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="isMachine" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="isMat" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
@@ -35,14 +34,14 @@
         <attribute name="isTheraband" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="videoUrl" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="musclegroupId" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Musclegroup" inverseName="workouts" inverseEntity="Musclegroup" syncable="YES"/>
-        <relationship name="traininsgplanId" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Plan" inverseName="workouts" inverseEntity="Plan" syncable="YES"/>
+        <relationship name="traininsgplanId" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Trainingsplan" inverseName="workouts" inverseEntity="Trainingsplan" syncable="YES"/>
         <fetchIndex name="byIndex">
             <fetchIndexElement property="id" type="Binary" order="ascending"/>
         </fetchIndex>
     </entity>
     <elements>
         <element name="Musclegroup" positionX="-405" positionY="-9" width="128" height="133"/>
-        <element name="Plan" positionX="-423" positionY="431" width="128" height="73"/>
-        <element name="Workout" positionX="-63" positionY="27" width="128" height="300"/>
+        <element name="Trainingsplan" positionX="-423" positionY="431" width="128" height="88"/>
+        <element name="Workout" positionX="-63" positionY="27" width="128" height="270"/>
     </elements>
 </model>

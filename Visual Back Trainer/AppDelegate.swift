@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        let firstVC = navigationController.viewControllers[0] as! BaseViewController
 //        firstVC.context = db.managedObjectContext
         db.managedObjectContext.automaticallyMergesChangesFromParent = true
-        let _ =  db.insertTrainingsPlan(id: 1, workouts: [])
+        //let _ =  db.insertTrainingsPlan(position: 0, workouts: [])
         
         if  UserDefaults.standard.object(forKey: "jsonLoaded") == nil {
             UserDefaults.standard.set(false, forKey: "jsonLoaded")
@@ -49,10 +49,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.populateMusclegroups()
         }
         
-        Thread.sleep(forTimeInterval: 2.0)
- 
+        //Thread.sleep(forTimeInterval: 2.0)
+
         return true
     }
+    
     
     func populateMusclegroups() {
         

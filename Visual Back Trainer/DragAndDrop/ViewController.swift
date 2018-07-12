@@ -112,11 +112,10 @@ class ViewController: BaseViewController, DragDropCollectionViewDelegate, DropTa
         let fetchRequest1 = NSFetchRequest<Workout> (entityName: "Workout")
         
         let predicate1 = NSPredicate(format: "isLive = %d", true)
-        let predicate2 = NSPredicate(format: "isFavorite = true")
+        let predicate2 = NSPredicate(format: "traininsgplanId.position >= 0")
         let compound:NSCompoundPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [predicate1, predicate2])
         fetchRequest1.predicate = compound
-        // TODO: give a position to it
-        fetchRequest1.sortDescriptors = [NSSortDescriptor (key: "id", ascending: true)]
+        fetchRequest1.sortDescriptors = [NSSortDescriptor (key: "traininsgplanId.position", ascending: true)]
         
         self.fetchedResultsController1 = NSFetchedResultsController<Workout> (
             fetchRequest: fetchRequest1,
@@ -197,54 +196,33 @@ class ViewController: BaseViewController, DragDropCollectionViewDelegate, DropTa
         })
     }
     
-    //    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-    //        super.viewWillTransition(to: size, with: coordinator)
-    //
-    //        coordinator.animate(alongsideTransition: nil, completion: {
-    //            _ in
-    //
-    //            let isPortrait = size.width < size.height
-    //            self.addButton.isEnabled = isPortrait
-    //
-    //            self.addMode = false
-    //            self.toggleAddMode()
-    //        })
-    //    }
-    
-    //Rakesh Kumar
-    /*===========================================*/
     func updateWorkoutLocations(sourceIndexPath:IndexPath, destinationIndexPath:IndexPath, deleteSource:Bool? = false) {
-        let sourceWorkout = self.fetchedResultsController1.object(at: sourceIndexPath)
-        let start = sourceIndexPath.row
-        let end = destinationIndexPath.row
+//        let sourceWorkout = self.fetchedResultsController1.object(at: sourceIndexPath)
+//        let start = sourceIndexPath.row
+//        let end = destinationIndexPath.row
 //        if start < end {
 //            for i in start..<end {
 //                let indexPath = IndexPath(row: i+1, section: 0)
 //                let workout = self.fetchedResultsController1.object(at: indexPath)
-//                print(workout.position)
-//                workout.position = Int16(i)
-//                print(workout.position)
+//                workout.positionInPlan = Int16(i)
 //            }
 //        } else {
 //            for i in (end..<start).reversed() {
 //                print(i)
 //                let indexPath = IndexPath(row: i, section: 0)
 //                let workout = self.fetchedResultsController1.object(at: indexPath)
-//                print(workout.position)
-//                workout.position = Int16(i+1)
-//                print(workout.position)
+//                workout.positionInPlan = Int16(i+1)
 //            }
 //        }
 //        if deleteSource == false {
-//            sourceWorkout.position = Int16(end)
+//            sourceWorkout.positionInPlan = Int16(end)
 //        }
 //        do {
-//            try context.save()
+//            try CoreDataManager.sharedInstance.managedObjectContext.save()
 //        } catch {
 //            print(error.localizedDescription)
 //        }
     }
-    /*=======================******============================*/
 }
 
 //MARK: UICollectionViewDelegate
@@ -385,19 +363,17 @@ extension ViewController:UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let workout = self.fetchedResultsController1.object(at: indexPath)
-            workout.isFavorite = false
-            //workout.position = -1
-            workout.traininsgplanId = nil
-            trainingsplan.removeFromWorkouts(workout)
-            //Rakesh Kumar
+//            workout.isFavorite = false
+//            workout.positionInPlan = -1
+
             let destinationPath = IndexPath(row: self.fetchedResultsController1.sections![0].numberOfObjects - 1, section: 0)
             self.updateWorkoutLocations(sourceIndexPath: indexPath, destinationIndexPath: destinationPath, deleteSource: true)
-//            do {
-//                try context.save()
-//            } catch {
-//                // Do something in response to error condition
-//                print(error.localizedDescription)
-//            }
+            
+            do {
+                try CoreDataManager.sharedInstance.managedObjectContext.save()
+            } catch {
+                print(error.localizedDescription)
+            }
         }
     }
     

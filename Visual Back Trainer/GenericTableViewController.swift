@@ -86,12 +86,12 @@ class GenericTableViewController: UITableViewController, NSFetchedResultsControl
         cell.stackView.isHidden = true
         
         
-        let favoriteImage = workout.isFavorite ? UIImage(named: "favoriteAdded") : UIImage(named: "favorite")
+        let favoriteImage = workout.traininsgplanId != nil ? UIImage(named: "favoriteAdded") : UIImage(named: "favorite")
         
         cell.favoriteButton.setImage(favoriteImage, for: .normal)
         
         // Test
-        if workout.isFavorite {
+        if workout.traininsgplanId != nil {
             cell.favoriteButton.tintColor = UIColor(red: 0.302, green: 0.698, blue: 0, alpha: 1.0)
         } else {
             cell.favoriteButton.tintColor = .lightGray
@@ -144,8 +144,8 @@ extension GenericTableViewController: VideoCellDelegate {
     func favoriteButtonTouched(_ sender: UIButton, indexPath: IndexPath, x: Int) {
         
         DispatchQueue.main.async {
-            let rect = self.tableView.rectForRow(at: indexPath)
             
+            let rect = self.tableView.rectForRow(at: indexPath)
             let frame = sender.frame.offsetBy(dx: 0, dy: rect.origin.y)
             let tooltipWidth = frame.origin.x - CGFloat(x)
             
@@ -153,19 +153,19 @@ extension GenericTableViewController: VideoCellDelegate {
             
             let workout = self.fetchedResultsController.object(at: indexPath)
             
-            let infoText = workout.isFavorite ? "Diese Übung wurde vom Trainingsplan entfernt." : "Diese Übung wurde als Favorit markiert und erscheint nun im Trainingsplan."
+            // TODO: localize
+            let infoText = (workout.traininsgplanId != nil) ? "Diese Übung wurde vom Trainingsplan entfernt." : "Diese Übung wurde als Favorit markiert und erscheint nun im Trainingsplan."
             
             self.popTip.show(text: infoText, direction: .left, maxWidth: tooltipWidth, in: self.view, from: frame, duration: 3)
             
-            workout.isFavorite = !workout.isFavorite
             
-            do {
-                try CoreDataManager.sharedInstance.managedObjectContext.save()
-            } catch let error {
-                print("Failure to save context: \(error.localizedDescription)")
+            if workout.traininsgplanId == nil {
+                CoreDataManager.sharedInstance.insertTrainingsPlan(workout: workout)
+            } else {
+                CoreDataManager.sharedInstance.removeFromTrainingsplan(workout: workout)
             }
+  
             self.tableView.reloadData()
-            
         }
     }
     

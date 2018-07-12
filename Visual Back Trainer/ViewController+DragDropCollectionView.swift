@@ -34,9 +34,10 @@ extension ViewController{
 //        let objectID = collectionIDs[indexPath]
 //        let workout = context.object(with: objectID!) as! Workout
 //
-        let workout = self.fetchedResultsController2.object(at: indexPath)
-        print(workout.isFavorite)
-        return !workout.isFavorite
+//        let workout = self.fetchedResultsController2.object(at: indexPath)
+//        print(workout.isFavorite)
+//        return !workout.isFavorite
+        return false
     }
     
     func collectionView(_ collectionView: UICollectionView, dragInfoForIndexPath indexPath: IndexPath) -> AnyObject {

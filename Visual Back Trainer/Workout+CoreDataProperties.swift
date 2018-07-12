@@ -2,7 +2,7 @@
 //  Workout+CoreDataProperties.swift
 //  Visual Back Trainer
 //
-//  Created by Ulrich Vormbrock on 11.07.18.
+//  Created by Ulrich Vormbrock on 12.07.18.
 //  Copyright © 2018 Rookie. All rights reserved.
 //
 //
@@ -18,14 +18,12 @@ extension Workout {
     }
 
     @NSManaged public var alias: String?
-    @NSManaged public var groups: [Int]?
     @NSManaged public var icon: NSData?
     @NSManaged public var id: Int16
     @NSManaged public var imgName: String?
     @NSManaged public var intensity: Int16
     @NSManaged public var isBall: Bool
     @NSManaged public var isDumbbell: Bool
-    @NSManaged public var isFavorite: Bool
     @NSManaged public var isLive: Bool
     @NSManaged public var isMachine: Bool
     @NSManaged public var isMat: Bool
@@ -33,7 +31,7 @@ extension Workout {
     @NSManaged public var isTheraband: Bool
     @NSManaged public var videoUrl: String?
     @NSManaged public var musclegroupId: NSSet?
-    @NSManaged public var traininsgplanId: Plan?
+    @NSManaged public var traininsgplanId: Trainingsplan?
 
 }
 

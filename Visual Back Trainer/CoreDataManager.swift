@@ -101,13 +101,12 @@ class CoreDataManager: NSObject {
     }
     
 
-    func insertWorkout(id:Int16, imgName: String?, isFavorite: Bool, isLive: Bool, isPremium: Bool, alias: String?, videoUrl: String?, isDumbbell: Bool, isMat: Bool, isBall: Bool, isTheraband: Bool, isMachine: Bool, intensity: Int16, musclegroupIds: [Int]) -> Workout {
+    func insertWorkout(id:Int16, imgName: String?, isLive: Bool, isPremium: Bool, alias: String?, videoUrl: String?, isDumbbell: Bool, isMat: Bool, isBall: Bool, isTheraband: Bool, isMachine: Bool, intensity: Int16, musclegroupIds: [Int]) -> Workout {
         
         let workout = NSEntityDescription.insertNewObject(forEntityName: "Workout", into: self.managedObjectContext) as! Workout
         
         workout.id = id
         workout.imgName = imgName
-        workout.isFavorite = isFavorite
         workout.isLive = isLive
         workout.isPremium = isPremium
         workout.alias = alias
@@ -133,8 +132,6 @@ class CoreDataManager: NSObject {
             let musclegroups = try self.managedObjectContext.fetch(fetchRequest)
             
             let set = NSSet(array : musclegroups)
- 
-            
             workout.musclegroupId = set
             print (musclegroups)
             
@@ -155,38 +152,64 @@ class CoreDataManager: NSObject {
     }
 
     
-    func insertTrainingsPlan(id:Int16, workouts:NSSet?) -> Plan {
-        let trainingsplan = NSEntityDescription.insertNewObject(forEntityName: "Plan", into: self.managedObjectContext) as! Plan
-        trainingsplan.id = id
-        trainingsplan.workouts = workouts
+    func insertTrainingsPlan(workout:Workout) {
+        do {
+            
+            let position = try CoreDataManager.sharedInstance.managedObjectContext.count(for: NSFetchRequest<Trainingsplan> (entityName: "Trainingsplan"))
+            
+            let trainingsplan = NSEntityDescription.insertNewObject(forEntityName: "Trainingsplan", into: self.managedObjectContext) as! Trainingsplan
+
+            trainingsplan.id = workout.id
+            trainingsplan.position = Int16(position)
+            trainingsplan.addToWorkouts(workout)
        
+            try self.managedObjectContext.save()
+        } catch let error {
+            print("Failure to save context: \(error.localizedDescription)")
+        }
+    }
+    
+    func removeFromTrainingsplan(workout:Workout) {
+        
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Trainingsplan")
+        let predicate = NSPredicate(format: "id = %d", workout.id)
+        fetchRequest.predicate = predicate
+        
+        do {
+            let plan = try CoreDataManager.sharedInstance.managedObjectContext.fetch(fetchRequest).first as! Trainingsplan
+            CoreDataManager.sharedInstance.managedObjectContext.delete(plan)
+            
+        } catch {
+            fatalError("Failed to delete object: \(error)")
+        }
+        
+
+        // now avoid gaps in position indexes
+        let fetchRequest2 = NSFetchRequest<NSFetchRequestResult>(entityName: "Trainingsplan")
+        fetchRequest2.sortDescriptors = [NSSortDescriptor (key: "position", ascending: true)]
+        
+        do {
+            let plans = try CoreDataManager.sharedInstance.managedObjectContext.fetch(fetchRequest2) as! [Trainingsplan]
+            
+            for (index, plan) in plans.enumerated() {
+                plan.position = Int16(index)
+            }
+            
+        } catch let error {
+            print("Failure to save context: \(error.localizedDescription)")
+        }
+        
         do {
             try self.managedObjectContext.save()
         } catch let error {
             print("Failure to save context: \(error.localizedDescription)")
         }
-        return trainingsplan
+
     }
     
     func updateWorkouts(serverWorkoutsData:[WorkoutData]?, completionHandler: CompletionHander?) {
         if let workouts = serverWorkoutsData {
   
-            // first save all favorites
-            let favoriteSet = NSMutableSet()
-            
-            do {
-                let fetchRequest = NSFetchRequest<Workout>(entityName: "Workout")
-                fetchRequest.predicate = NSPredicate(format: "isFavorite = true")
-                let results = try CoreDataManager.sharedInstance.managedObjectContext.fetch(fetchRequest)
-                
-                for result in results {
-                    favoriteSet.add(result.id)
-                }
-  
-            } catch let error {
-                print ("fetch task failed", error)
-            }
-            
             // delete old data
             let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Workout")
             let request = NSBatchDeleteRequest(fetchRequest: fetch)
@@ -197,10 +220,8 @@ class CoreDataManager: NSObject {
             }
             
             for workout in workouts {
-                
-                let isFavorite = favoriteSet.contains(workout.id!)
 
-                let _ = CoreDataManager.sharedInstance.insertWorkout(id: Int16(workout.id!), imgName: workout.imageName, isFavorite: isFavorite, isLive: workout.isLive==1, isPremium: workout.isPremium==1, alias: workout.alias, videoUrl: workout.videoUrl!, isDumbbell: workout.isDumbbell==1, isMat: workout.isMat==1, isBall: workout.isBall==1, isTheraband: workout.isTheraband==1, isMachine: workout.isMachine==1, intensity: Int16(workout.intensity!), musclegroupIds: workout.musclegroups!)
+                let _ = CoreDataManager.sharedInstance.insertWorkout(id: Int16(workout.id!), imgName: workout.imageName, isLive: workout.isLive==1, isPremium: workout.isPremium==1, alias: workout.alias, videoUrl: workout.videoUrl!, isDumbbell: workout.isDumbbell==1, isMat: workout.isMat==1, isBall: workout.isBall==1, isTheraband: workout.isTheraband==1, isMachine: workout.isMachine==1, intensity: Int16(workout.intensity!), musclegroupIds: workout.musclegroups!)
             }
             
             do {
@@ -212,4 +233,26 @@ class CoreDataManager: NSObject {
 
         completionHandler?()
     }
+    
+    func position(set: Set<Favorite>, id: Int16) -> Int16 {
+        
+        for item in set {
+            if item.id == id {
+                return item.position
+            }
+        }
+        return -1
+    }
+}
+
+class Favorite: NSObject {
+    
+    var id: Int16
+    var position: Int16
+
+    init(withId id: Int16, position: Int16) {
+        self.id = id
+        self.position = position
+    }
+    
 }

@@ -26,13 +26,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Visual Back Trainer/Torso.swift"
-            timestampString = "553030754.171206"
+            timestampString = "553079215.22377"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "71"
             endingLineNumber = "71"
-            landmarkName = "init()"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
             <Locations>
                <Location
                   shouldBeEnabled = "No"
@@ -122,7 +122,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Visual Back Trainer/VideoTableViewController.swift"
-            timestampString = "553015923.0096641"
+            timestampString = "553088357.7177269"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "45"
@@ -138,12 +138,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Visual Back Trainer/CoreDataManager.swift"
-            timestampString = "553009425.507955"
+            timestampString = "553089009.981445"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "120"
-            endingLineNumber = "120"
-            landmarkName = "insertWorkout(id:imgName:isFavorite:isLive:isPremium:alias:videoUrl:isDumbbell:isMat:isBall:isTheraband:isMachine:intensity:musclegroupIds:)"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
+            landmarkName = "insertWorkout(id:imgName:isLive:isPremium:alias:videoUrl:isDumbbell:isMat:isBall:isTheraband:isMachine:intensity:musclegroupIds:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -202,12 +202,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Visual Back Trainer/CoreDataManager.swift"
-            timestampString = "553009425.508041"
+            timestampString = "553089009.981895"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "139"
-            endingLineNumber = "139"
-            landmarkName = "insertWorkout(id:imgName:isFavorite:isLive:isPremium:alias:videoUrl:isDumbbell:isMat:isBall:isTheraband:isMachine:intensity:musclegroupIds:)"
+            startingLineNumber = "138"
+            endingLineNumber = "138"
+            landmarkName = "insertWorkout(id:imgName:isLive:isPremium:alias:videoUrl:isDumbbell:isMat:isBall:isTheraband:isMachine:intensity:musclegroupIds:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -218,12 +218,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Visual Back Trainer/CoreDataManager.swift"
-            timestampString = "553009425.508101"
+            timestampString = "553089009.982205"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "126"
-            endingLineNumber = "126"
-            landmarkName = "insertWorkout(id:imgName:isFavorite:isLive:isPremium:alias:videoUrl:isDumbbell:isMat:isBall:isTheraband:isMachine:intensity:musclegroupIds:)"
+            startingLineNumber = "127"
+            endingLineNumber = "127"
+            landmarkName = "insertWorkout(id:imgName:isLive:isPremium:alias:videoUrl:isDumbbell:isMat:isBall:isTheraband:isMachine:intensity:musclegroupIds:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -234,7 +234,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Visual Back Trainer/TorsoBackView.swift"
-            timestampString = "552927939.893563"
+            timestampString = "553089009.982512"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "154"
@@ -250,7 +250,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Visual Back Trainer/TorsoBackView.swift"
-            timestampString = "552927939.8936369"
+            timestampString = "553089009.982879"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "58"
@@ -282,7 +282,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Visual Back Trainer/GenericTableViewController.swift"
-            timestampString = "553030754.171899"
+            timestampString = "553089009.983214"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "74"
@@ -297,13 +297,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Visual Back Trainer/CoreDataManager.swift"
-            timestampString = "553009425.508532"
+            filePath = "Visual Back Trainer/GenericTableViewController.swift"
+            timestampString = "553089009.983544"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "192"
-            endingLineNumber = "192"
-            landmarkName = "updateWorkouts(serverWorkoutsData:completionHandler:)"
+            startingLineNumber = "176"
+            endingLineNumber = "176"
+            landmarkName = "videoTouched(indexPath:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -313,13 +313,61 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Visual Back Trainer/GenericTableViewController.swift"
-            timestampString = "553030754.1726609"
+            filePath = "Visual Back Trainer/CoreDataManager.swift"
+            timestampString = "553089009.9838459"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "176"
-            endingLineNumber = "176"
-            landmarkName = "videoTouched(indexPath:)"
+            startingLineNumber = "241"
+            endingLineNumber = "241"
+            landmarkName = "position(set:id:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Visual Back Trainer/CoreDataManager.swift"
+            timestampString = "553089009.9841501"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "246"
+            endingLineNumber = "246"
+            landmarkName = "CoreDataManager"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Visual Back Trainer/CoreDataManager.swift"
+            timestampString = "553089009.984519"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "195"
+            endingLineNumber = "195"
+            landmarkName = "removeFromTrainingsplan(workout:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Visual Back Trainer/CoreDataManager.swift"
+            timestampString = "553089009.9848191"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "163"
+            endingLineNumber = "163"
+            landmarkName = "insertTrainingsPlan(workout:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

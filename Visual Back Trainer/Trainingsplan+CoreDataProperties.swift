@@ -1,5 +1,5 @@
 //
-//  Musclegroup+CoreDataProperties.swift
+//  Trainingsplan+CoreDataProperties.swift
 //  Visual Back Trainer
 //
 //  Created by Ulrich Vormbrock on 12.07.18.
@@ -11,23 +11,20 @@ import Foundation
 import CoreData
 
 
-extension Musclegroup {
+extension Trainingsplan {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<Musclegroup> {
-        return NSFetchRequest<Musclegroup>(entityName: "Musclegroup")
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<Trainingsplan> {
+        return NSFetchRequest<Trainingsplan>(entityName: "Trainingsplan")
     }
 
-    @NSManaged public var alias: String?
-    @NSManaged public var bezierPath: NSData?
-    @NSManaged public var color: String?
+    @NSManaged public var position: Int16
     @NSManaged public var id: Int16
-    @NSManaged public var isFront: Bool
     @NSManaged public var workouts: NSSet?
 
 }
 
 // MARK: Generated accessors for workouts
-extension Musclegroup {
+extension Trainingsplan {
 
     @objc(addWorkoutsObject:)
     @NSManaged public func addToWorkouts(_ value: Workout)
