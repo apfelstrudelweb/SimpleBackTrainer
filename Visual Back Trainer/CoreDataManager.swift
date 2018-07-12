@@ -118,18 +118,31 @@ class CoreDataManager: NSObject {
         workout.isMachine = isMachine
         workout.intensity = intensity
         
+        // recover relation to trainingsplan (won't be emptied after deletion of workouts)
+        let fetchRequest1 = NSFetchRequest<NSFetchRequestResult>(entityName: "Trainingsplan")
+        fetchRequest1.predicate = NSPredicate(format: "id = %d", workout.id)
+        
+        do {
+            if let traininsplan = try self.managedObjectContext.fetch(fetchRequest1).first as? Trainingsplan {
+                workout.traininsgplanId = traininsplan
+            }
+            
+        } catch {
+            NSLog("Musclegroup with ids=\(musclegroupIds) not found")
+        }
+        
         var predicates = [NSPredicate]()
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Musclegroup")
+        let fetchRequest2 = NSFetchRequest<NSFetchRequestResult>(entityName: "Musclegroup")
 
         for musclegroupId in musclegroupIds {
             predicates.append(NSPredicate(format: "id = %d", musclegroupId))
         }
         
         let compound:NSCompoundPredicate = NSCompoundPredicate(orPredicateWithSubpredicates: predicates)
-        fetchRequest.predicate = compound
+        fetchRequest2.predicate = compound
         
         do {
-            let musclegroups = try self.managedObjectContext.fetch(fetchRequest)
+            let musclegroups = try self.managedObjectContext.fetch(fetchRequest2)
             
             let set = NSSet(array : musclegroups)
             workout.musclegroupId = set

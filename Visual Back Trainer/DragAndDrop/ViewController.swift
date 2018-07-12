@@ -363,17 +363,7 @@ extension ViewController:UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let workout = self.fetchedResultsController1.object(at: indexPath)
-//            workout.isFavorite = false
-//            workout.positionInPlan = -1
-
-            let destinationPath = IndexPath(row: self.fetchedResultsController1.sections![0].numberOfObjects - 1, section: 0)
-            self.updateWorkoutLocations(sourceIndexPath: indexPath, destinationIndexPath: destinationPath, deleteSource: true)
-            
-            do {
-                try CoreDataManager.sharedInstance.managedObjectContext.save()
-            } catch {
-                print(error.localizedDescription)
-            }
+            CoreDataManager.sharedInstance.removeFromTrainingsplan(workout: workout)
         }
     }
     
