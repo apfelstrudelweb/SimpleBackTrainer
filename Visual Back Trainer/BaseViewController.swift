@@ -140,11 +140,9 @@ extension BaseViewController: SlideMenuDelegate {
     func slideMenuItemSelectedAtIndex(_ index: Int32) {
         switch(index){
         case 0:
-            print("Home\n", terminator: "")
             self.openViewControllerBasedOnIdentifier(StoryboardId.home.rawValue)
             break
         case 1:
-            print("Play\n", terminator: "")
             self.openViewControllerBasedOnIdentifier(StoryboardId.activity.rawValue)
             break
         case 2:
@@ -152,10 +150,8 @@ extension BaseViewController: SlideMenuDelegate {
         case 3:
             self.openViewControllerBasedOnIdentifier(StoryboardId.exercise.rawValue)
         case 4:
-            print("Settings\n", terminator:"")
             self.openViewControllerBasedOnIdentifier(StoryboardId.premium.rawValue)
         case 5:
-            print("Settings\n", terminator:"")
             self.openViewControllerBasedOnIdentifier(StoryboardId.settings.rawValue)
         case 6:
             self.openViewControllerBasedOnIdentifier(StoryboardId.contact.rawValue)

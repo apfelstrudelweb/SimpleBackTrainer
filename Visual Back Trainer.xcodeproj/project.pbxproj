@@ -16,7 +16,6 @@
 		14A7487220C3DFF0002CB7EA /* ContactController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A7487120C3DFF0002CB7EA /* ContactController.swift */; };
 		14A7487620C3E03A002CB7EA /* MobilisationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A7487520C3E03A002CB7EA /* MobilisationsController.swift */; };
 		14A7487820C3E058002CB7EA /* BackTherapyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A7487720C3E058002CB7EA /* BackTherapyController.swift */; };
-		14A7487C20C3E977002CB7EA /* TrainingPlansController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A7487B20C3E977002CB7EA /* TrainingPlansController.swift */; };
 		1B1D742C20E8C759005C1CD0 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1D742B20E8C759005C1CD0 /* NetworkManager.swift */; };
 		1B1D742E20E8CA9A005C1CD0 /* OfflineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1D742D20E8CA9A005C1CD0 /* OfflineViewController.swift */; };
 		1B2F53D220F64A93001A2B6D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2F53D120F64A92001A2B6D /* ViewController.swift */; };
@@ -91,7 +90,6 @@
 		14A7487120C3DFF0002CB7EA /* ContactController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactController.swift; sourceTree = "<group>"; };
 		14A7487520C3E03A002CB7EA /* MobilisationsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobilisationsController.swift; sourceTree = "<group>"; };
 		14A7487720C3E058002CB7EA /* BackTherapyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackTherapyController.swift; sourceTree = "<group>"; };
-		14A7487B20C3E977002CB7EA /* TrainingPlansController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingPlansController.swift; sourceTree = "<group>"; };
 		1B1D742B20E8C759005C1CD0 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		1B1D742D20E8CA9A005C1CD0 /* OfflineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineViewController.swift; sourceTree = "<group>"; };
 		1B1D742F20EE9A46005C1CD0 /* Trainingsplan 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Trainingsplan 3.xcdatamodel"; sourceTree = "<group>"; };
@@ -208,7 +206,6 @@
 				14A7487120C3DFF0002CB7EA /* ContactController.swift */,
 				14A7487520C3E03A002CB7EA /* MobilisationsController.swift */,
 				14A7487720C3E058002CB7EA /* BackTherapyController.swift */,
-				14A7487B20C3E977002CB7EA /* TrainingPlansController.swift */,
 				1B3E460720DBF0C9003C4B96 /* ExercisesTableViewController.swift */,
 			);
 			name = MenuControllers;
@@ -578,7 +575,6 @@
 				1B2F53DC20F64B2E001A2B6D /* DragDropTableViewCell.swift in Sources */,
 				1BD535E420E504D6000F1A37 /* GenericTableViewController.swift in Sources */,
 				1BBC3AB620D1260D00B43A61 /* Utils.swift in Sources */,
-				14A7487C20C3E977002CB7EA /* TrainingPlansController.swift in Sources */,
 				1BBC3AAD20D1252400B43A61 /* Trainingsplan.xcdatamodeld in Sources */,
 				1BC4368320BC8A0D00968F44 /* TabBarController.swift in Sources */,
 				1B3E460820DBF0C9003C4B96 /* ExercisesTableViewController.swift in Sources */,

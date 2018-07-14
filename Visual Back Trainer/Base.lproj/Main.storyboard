@@ -127,7 +127,7 @@
         <!--Trainingsplan-->
         <scene sceneID="KaJ-we-qHG">
             <objects>
-                <viewController id="1gU-rI-Hgh" customClass="ViewController" customModule="Visual_Back_Trainer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Plan" id="1gU-rI-Hgh" customClass="ViewController" customModule="Visual_Back_Trainer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DAd-UW-Q8F">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1620,6 +1620,7 @@ Please turn on your Internet Conncetion - as soon your device is connected to th
         <image name="zahnrad" width="33" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="qbp-6V-Dxe"/>
         <segue reference="ZQd-kQ-BxA"/>
         <segue reference="LVj-mE-GEn"/>
         <segue reference="fql-e8-eDg"/>

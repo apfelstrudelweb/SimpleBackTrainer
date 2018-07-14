@@ -68,9 +68,7 @@ class ViewController: BaseViewController, DragDropCollectionViewDelegate, DropTa
         super.viewDidLoad()
         
         self.title = "Plan"
-        
         soloTitle = self.title
-        
         addSlideMenuButton()
         
         dragDropTableView.allowsSelection = false
@@ -90,15 +88,12 @@ class ViewController: BaseViewController, DragDropCollectionViewDelegate, DropTa
         self.dragDropTableView.reloadData()
     }
     
-    func getTrainingsplan() {
+    public func getTrainingsplan() {
         do {
             try fetchedResultsController1.performFetch()
             let count = try CoreDataManager.sharedInstance.managedObjectContext.count(for: fetchedResultsController1.fetchRequest)
             self.title = self.soloTitle! + " (\(count))"
-            
             tableData = fetchedResultsController1.fetchedObjects!
-            
-            //try fetchedResultsController2.performFetch()
         } catch {
             print("An error occurred")
         }

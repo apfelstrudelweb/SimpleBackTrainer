@@ -63,6 +63,10 @@ class ExercisesTableViewController: GenericTableViewController {
         
         self.filterHandweight((Any).self)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
 
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()

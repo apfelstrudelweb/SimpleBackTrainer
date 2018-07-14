@@ -35,14 +35,20 @@ class GenericTableViewController: UITableViewController, NSFetchedResultsControl
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 10
         self.tableView.allowsSelection = false
- 
 
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
         do {
             try fetchedResultsController.performFetch()
         } catch {
             fatalError("Failed to initialize FetchedResultsController: \(error)")
         }
+        self.tableView.reloadData()
     }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
