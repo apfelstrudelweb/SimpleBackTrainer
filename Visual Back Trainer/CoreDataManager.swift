@@ -196,11 +196,11 @@ class CoreDataManager: NSObject {
             fatalError("Failed to delete object: \(error)")
         }
         
-//        do {
-//            try self.managedObjectContext.save()
-//        } catch let error {
-//            print("Failure to save context: \(error.localizedDescription)")
-//        }
+        do {
+            try self.managedObjectContext.save()
+        } catch let error {
+            print("Failure to save context: \(error.localizedDescription)")
+        }
         
 
         // now avoid gaps in position indexes
@@ -224,6 +224,28 @@ class CoreDataManager: NSObject {
             print("Failure to save context: \(error.localizedDescription)")
         }
 
+    }
+    
+    func syncIndicesInTrainingsplan() {
+        let fetchRequest2 = NSFetchRequest<NSFetchRequestResult>(entityName: "Trainingsplan")
+        fetchRequest2.sortDescriptors = [NSSortDescriptor (key: "position", ascending: true)]
+        
+        do {
+            let plans = try CoreDataManager.sharedInstance.managedObjectContext.fetch(fetchRequest2) as! [Trainingsplan]
+            
+            for (index, plan) in plans.enumerated() {
+                plan.position = Int16(index)
+            }
+            
+        } catch let error {
+            print("Failure to save context: \(error.localizedDescription)")
+        }
+        
+        do {
+            try self.managedObjectContext.save()
+        } catch let error {
+            print("Failure to save context: \(error.localizedDescription)")
+        }
     }
     
     func updateWorkouts(serverWorkoutsData:[WorkoutData]?, completionHandler: CompletionHander?) {

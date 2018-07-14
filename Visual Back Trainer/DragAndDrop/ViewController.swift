@@ -12,7 +12,7 @@ import CoreData
 
 class ViewController: BaseViewController, DragDropCollectionViewDelegate, DropTableViewDelegate {
 
-    var fetchedResultsController1: NSFetchedResultsController<Workout>!
+    var fetchedResultsController1: NSFetchedResultsController<Trainingsplan>!
     var fetchedResultsController2: NSFetchedResultsController<Workout>!
     
     var collectionIDs: [IndexPath : NSManagedObjectID] = Dictionary<IndexPath, NSManagedObjectID>()
@@ -24,7 +24,7 @@ class ViewController: BaseViewController, DragDropCollectionViewDelegate, DropTa
     
     var droppedWorkout: Workout!
     
-    var tableData: [Workout]!
+    var tableData: [Trainingsplan]!
 
     
     var addMode = false
@@ -108,15 +108,11 @@ class ViewController: BaseViewController, DragDropCollectionViewDelegate, DropTa
     }
     
     func configureFetchedResultsController() {
-        let fetchRequest1 = NSFetchRequest<Workout> (entityName: "Workout")
+        let fetchRequest1 = NSFetchRequest<Trainingsplan> (entityName: "Trainingsplan")
+
+        fetchRequest1.sortDescriptors = [NSSortDescriptor (key: "position", ascending: true)]
         
-        let predicate1 = NSPredicate(format: "isLive = %d", true)
-        let predicate2 = NSPredicate(format: "traininsgplanId.position >= 0")
-        let compound:NSCompoundPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [predicate1, predicate2])
-        fetchRequest1.predicate = compound
-        fetchRequest1.sortDescriptors = [NSSortDescriptor (key: "traininsgplanId.position", ascending: true)]
-        
-        self.fetchedResultsController1 = NSFetchedResultsController<Workout> (
+        self.fetchedResultsController1 = NSFetchedResultsController<Trainingsplan> (
             fetchRequest: fetchRequest1,
             managedObjectContext: CoreDataManager.sharedInstance.managedObjectContext,
             sectionNameKeyPath: nil,
@@ -289,6 +285,19 @@ extension ViewController:UITableViewDelegate, UITableViewDataSource {
         
         let workout = fetchedResultsController1.object(at: indexPath)
         
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Workout")
+        let predicate = NSPredicate(format: "id = %d", workout.id)
+        fetchRequest.predicate = predicate
+        
+        var retrievedWorkout: Workout
+        
+        do {
+            retrievedWorkout = try CoreDataManager.sharedInstance.managedObjectContext.fetch(fetchRequest).first as! Workout
+            
+        } catch {
+            fatalError("Failed to delete object: \(error)")
+        }
+        
 
         cell.premiumImageView.isHidden = true
         cell.favoriteButton.isHidden = true
@@ -297,13 +306,13 @@ extension ViewController:UITableViewDelegate, UITableViewDataSource {
         cell.videoImageView?.alpha = 1
 
 
-        cell.videoLabel.text = NSLocalizedString(workout.alias!, comment: "")
-        cell.videoImageView.image = UIImage(data:workout.icon! as Data, scale:1.0)
+        cell.videoLabel.text = String(retrievedWorkout.id) //NSLocalizedString(workout.alias!, comment: "")
+        cell.videoImageView.image = UIImage(data:retrievedWorkout.icon! as Data, scale:1.0)
         //cell.indexPath = indexPath
         
         let colors = NSMutableSet()
         
-        for item in workout.musclegroupId! {
+        for item in retrievedWorkout.musclegroupId! {
             let group = item as! Musclegroup
             colors.add((group.color?.colorFromString())!)
         }
@@ -331,28 +340,60 @@ extension ViewController:UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    // REMINDER: make sure we work with the same fetchedResultsController!!!
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+
+            // Redundancy: workout is fetched twice, also in
+            let workoutInTrainingsplan = self.fetchedResultsController1.object(at: indexPath)
+            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Workout")
+            let predicate = NSPredicate(format: "id = %d", workoutInTrainingsplan.id)
+            fetchRequest.predicate = predicate
             
-            tableData = fetchedResultsController1.fetchedObjects!
+            var retrievedWorkout: Workout
             
-            let workout = self.fetchedResultsController1.object(at: indexPath)
-            CoreDataManager.sharedInstance.removeFromTrainingsplan(workout: workout)
+            do {
+                retrievedWorkout = try CoreDataManager.sharedInstance.managedObjectContext.fetch(fetchRequest).first as! Workout
+                
+            } catch {
+                fatalError("Failed to delete object: \(error)")
+            }
+            
+            CoreDataManager.sharedInstance.removeFromTrainingsplan(workout: retrievedWorkout)
         }
     }
     
     
     func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-        
-        tableData = fetchedResultsController1.fetchedObjects!
-        
-        //var sortedTableData = tableData.sorted { ($0.traininsgplanId?.position)! < ($1.traininsgplanId?.position)! }
-        
-        let itemToMove = tableData[sourceIndexPath.row]
-        tableData.remove(at: sourceIndexPath.row)
-        tableData.insert(itemToMove, at: destinationIndexPath.row)
 
-        for (index, workout) in tableData.enumerated() {
+        tableData = fetchedResultsController1.fetchedObjects!
+        var workouts = [Workout]()
+        
+        let sortedTableData = fetchedResultsController1.fetchedObjects?.sorted { ($0.position) < ($1.position) }
+
+
+        for (index, workout) in (sortedTableData?.enumerated())! {
+            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Workout")
+            let predicate = NSPredicate(format: "id = %d", workout.id)
+            fetchRequest.predicate = predicate
+            
+            var retrievedWorkout: Workout
+            
+            do {
+                retrievedWorkout = try CoreDataManager.sharedInstance.managedObjectContext.fetch(fetchRequest).first as! Workout
+                
+            } catch {
+                fatalError("Failed to delete object: \(error)")
+            }
+
+            workouts.insert(retrievedWorkout, at: index)
+        }
+        
+        let itemToMove = workouts[sourceIndexPath.row]
+        workouts.remove(at: sourceIndexPath.row)
+        workouts.insert(itemToMove, at: destinationIndexPath.row)
+        
+        for (index, workout) in workouts.enumerated() {
             workout.traininsgplanId?.position = Int16(index)
         }
 
@@ -360,9 +401,7 @@ extension ViewController:UITableViewDelegate, UITableViewDataSource {
             try CoreDataManager.sharedInstance.managedObjectContext.save()
         } catch let error {
             print("Failure to save context: \(error.localizedDescription)")
-        }
-        
-        //self.dragDropTableView.reloadData()
+        }  
     }
 }
 
@@ -372,7 +411,7 @@ extension ViewController:NSFetchedResultsControllerDelegate {
     public func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         self.dragDropTableView.beginUpdates()
     }
-    
+
     public func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>,
                            didChange anObject: Any,
                            at indexPath: IndexPath?,
@@ -380,21 +419,17 @@ extension ViewController:NSFetchedResultsControllerDelegate {
                            newIndexPath: IndexPath?) {
         switch type {
         case .insert:
-            print(newIndexPath!)
-            if controller == fetchedResultsController1 {
-                print("ContentOffset = ",self.dragDropTableView.contentOffset)
-                print("content Size = ", self.dragDropTableView.contentSize)
-                print("Number of rows = ", self.dragDropTableView.numberOfRows(inSection: 0))
-                self.dragDropTableView.insertRows(at: [newIndexPath!], with: .middle)
-                //  self.dragDropTableView.layoutIfNeeded()
-                print("ContentOffset = ",self.dragDropTableView.contentOffset)
-                print("content Size = ", self.dragDropTableView.contentSize)
-                // let point = CGPoint(x: 0, y: (newIndexPath?.row)! * 60 + 60)
-                //                    self.dragDropTableView.contentSize = CGSize(width: self.dragDropTableView.contentSize.width, height: CGFloat((newIndexPath?.row)! * 60 + 60))
-                //                    self.dragDropTableView.setContentOffset(point, animated: true)
-            } else {
-                //self.dragDropCollectionView.insertItems(at: [newIndexPath!])
-            }
+           self.dragDropTableView.insertRows(at: [newIndexPath!], with: .middle)
+//            if controller == fetchedResultsController1 {
+//
+//                self.dragDropTableView.insertRows(at: [newIndexPath!], with: .middle)
+//
+//                // let point = CGPoint(x: 0, y: (newIndexPath?.row)! * 60 + 60)
+//                //                    self.dragDropTableView.contentSize = CGSize(width: self.dragDropTableView.contentSize.width, height: CGFloat((newIndexPath?.row)! * 60 + 60))
+//                //                    self.dragDropTableView.setContentOffset(point, animated: true)
+//            } else {
+//                //self.dragDropCollectionView.insertItems(at: [newIndexPath!])
+//            }
         case .delete:
             self.dragDropTableView.deleteRows(at: [indexPath!], with: .automatic)
         case .move:
@@ -403,17 +438,16 @@ extension ViewController:NSFetchedResultsControllerDelegate {
         case .update:
             print(indexPath!)
         }
-        DispatchQueue.main.async {
-            if controller == self.fetchedResultsController1 {
-                self.dragDropTableView.reloadData()
-                //  self.dragDropTableView.layoutIfNeeded()
-                print("ContentOffset = ",self.dragDropTableView.contentOffset)
-                print("content Size = ", self.dragDropTableView.contentSize)
-            } else {
-                self.dragDropCollectionView.reloadData()
-            }
-        }
-        
+//        DispatchQueue.main.async {
+//            if controller == self.fetchedResultsController1 {
+//                self.dragDropTableView.reloadData()
+//                //  self.dragDropTableView.layoutIfNeeded()
+//                print("ContentOffset = ",self.dragDropTableView.contentOffset)
+//                print("content Size = ", self.dragDropTableView.contentSize)
+//            } else {
+//                self.dragDropCollectionView.reloadData()
+//            }
+//        }
     }
     
     
@@ -424,24 +458,24 @@ extension ViewController:NSFetchedResultsControllerDelegate {
     public func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         
         self.dragDropTableView.endUpdates()
-        let dispatchTime = DispatchTime.now() + 0.5
-        DispatchQueue.main.asyncAfter(deadline: dispatchTime) {
-            self.dragDropCollectionView.reloadData()
-            self.dragDropTableView.reloadData()
-            //self.dragDropTableView.layoutIfNeeded()
-            print("ContentOffset = ",self.dragDropTableView.contentOffset)
-            print("content Size = ", self.dragDropTableView.contentSize)
-            print("Table Height = ", self.dragDropTableView.frame.height)
-            print("ContentInset = ",self.dragDropTableView.contentInset)
-            print("================================")
-            //self.dragDropTableView.setContentOffset(CGPoint(x: self.dragDropTableView.contentOffset.x, y:  self.dragDropTableView.contentOffset.y - 60.0), animated: false)
-            //            self.dragDropTableView.setContentOffset(CGPoint(x: 0, y: 100), animated: true)
-            //            self.dragDropTableView.scrollRectToVisible(CGRect(x: 0, y: 60, width: self.dragDropTableView.frame.width, height: 60), animated: true)
-            //            self.dragDropTableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
-        }
-        
-        //        let point = CGPoint(x: 0, y: 100)
-        //        self.dragDropTableView.setContentOffset(point, animated: true)
+//        let dispatchTime = DispatchTime.now() + 0.5
+//        DispatchQueue.main.asyncAfter(deadline: dispatchTime) {
+//            self.dragDropCollectionView.reloadData()
+//            self.dragDropTableView.reloadData()
+//            //self.dragDropTableView.layoutIfNeeded()
+//            print("ContentOffset = ",self.dragDropTableView.contentOffset)
+//            print("content Size = ", self.dragDropTableView.contentSize)
+//            print("Table Height = ", self.dragDropTableView.frame.height)
+//            print("ContentInset = ",self.dragDropTableView.contentInset)
+//            print("================================")
+//            //self.dragDropTableView.setContentOffset(CGPoint(x: self.dragDropTableView.contentOffset.x, y:  self.dragDropTableView.contentOffset.y - 60.0), animated: false)
+//            //            self.dragDropTableView.setContentOffset(CGPoint(x: 0, y: 100), animated: true)
+//            //            self.dragDropTableView.scrollRectToVisible(CGRect(x: 0, y: 60, width: self.dragDropTableView.frame.width, height: 60), animated: true)
+//            //            self.dragDropTableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
+//        }
+//
+//        //        let point = CGPoint(x: 0, y: 100)
+//        //        self.dragDropTableView.setContentOffset(point, animated: true)
     }
 }
 
