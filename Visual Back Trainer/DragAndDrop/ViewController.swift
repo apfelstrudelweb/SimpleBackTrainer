@@ -293,29 +293,38 @@ extension ViewController:UITableViewDelegate, UITableViewDataSource {
             fatalError("Failed to delete object: \(error)")
         }
         
-
         cell.premiumImageView.isHidden = true
         cell.favoriteButton.isHidden = true
         cell.favoriteDelimter.isHidden = true
         cell.stackView.isHidden = false
         cell.videoImageView?.alpha = 1
 
-
-        cell.videoLabel.text = String(retrievedWorkout.id) //NSLocalizedString(workout.alias!, comment: "")
+        cell.videoLabel.text = NSLocalizedString(retrievedWorkout.alias!, comment: "") // String(retrievedWorkout.id) //
         cell.videoImageView.image = UIImage(data:retrievedWorkout.icon! as Data, scale:1.0)
-        //cell.indexPath = indexPath
         
-        let colors = NSMutableSet()
+        var colors = [MusclegroupColor]()
+        
+        
+        //let sortedMusclegroups = retrievedWorkout.musclegroupId?.sorted { (($0 as! Musclegroup).id) < (($1 as! Musclegroup).id) }
         
         for item in retrievedWorkout.musclegroupId! {
             let group = item as! Musclegroup
-            colors.add((group.color?.colorFromString())!)
+            //colors.append((group.color?.colorFromString())!)
+            let musclegroupColor = MusclegroupColor.init(withId: group.id, color: (group.color?.colorFromString())!)
+            colors.append(musclegroupColor)
+            
+//            let test = cell.videoLabel.text! + " (\(String(describing: group.id)))"
+//            cell.videoLabel.text = test
+            
         }
+
         
-        for color in colors {
+        let sortedColors = colors.sorted( by: { $0.id < $1.id } )
+        
+        for musclegroupColor in sortedColors {
  
             let stripe = UIView()
-            stripe.backgroundColor = color as! UIColor
+            stripe.backgroundColor = musclegroupColor.color
             cell.stackView.addArrangedSubview(stripe)
             
             cell.stackView.snp.makeConstraints { (make) -> Void in
@@ -507,6 +516,33 @@ extension ViewController:UIScrollViewDelegate {
             print("TAbleViewHeight = ", self.dragDropTableView.frame.height)
         }
     }
+}
+
+extension UIColor {
+    var hue: CGFloat {
+        var hue: CGFloat = 0
+        var saturation: CGFloat = 0
+        var brightness: CGFloat = 0
+        var alpha: CGFloat = 0
+        
+        self.getHue(&hue,
+                    saturation: &saturation,
+                    brightness: &brightness,
+                    alpha: &alpha)
+        return hue
+    }
+}
+
+class MusclegroupColor: NSObject {
+    
+    var id: Int16
+    var color: UIColor
+    
+    init(withId id: Int16, color: UIColor) {
+        self.id = id
+        self.color = color
+    }
+    
 }
 
 //extension UIView {

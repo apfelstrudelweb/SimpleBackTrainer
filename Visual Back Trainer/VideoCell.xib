@@ -78,12 +78,12 @@
                     <constraint firstAttribute="bottom" secondItem="M91-l3-17N" secondAttribute="bottom" id="AMj-W0-Bhe"/>
                     <constraint firstAttribute="trailing" secondItem="CtG-TN-H2f" secondAttribute="trailing" constant="10" id="Dal-BJ-GGP"/>
                     <constraint firstItem="gYg-Qj-GgR" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="GAV-Fd-PJ0"/>
+                    <constraint firstItem="M91-l3-17N" firstAttribute="leading" secondItem="NOx-os-zH7" secondAttribute="trailing" constant="20" id="JqT-2v-gSM"/>
                     <constraint firstItem="gYg-Qj-GgR" firstAttribute="centerY" secondItem="CtG-TN-H2f" secondAttribute="centerY" id="PNN-lm-k0X"/>
                     <constraint firstItem="CtG-TN-H2f" firstAttribute="height" secondItem="qcA-fB-XAO" secondAttribute="height" multiplier="0.75" id="RXc-f7-jWI"/>
                     <constraint firstItem="ed7-Wb-eg8" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="Ttr-xp-QdB"/>
                     <constraint firstItem="NOx-os-zH7" firstAttribute="top" secondItem="CtG-TN-H2f" secondAttribute="top" id="U7J-UR-NBd"/>
                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="qcA-fB-XAO" secondAttribute="bottom" constant="4" id="UOg-5k-qJh"/>
-                    <constraint firstItem="M91-l3-17N" firstAttribute="leading" secondItem="NOx-os-zH7" secondAttribute="trailing" priority="750" constant="20" id="UuY-jz-f1N"/>
                     <constraint firstItem="qcA-fB-XAO" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="VNs-Jx-Jrv"/>
                     <constraint firstItem="qcA-fB-XAO" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.25" id="YAC-F6-bO3"/>
                     <constraint firstAttribute="trailing" secondItem="M91-l3-17N" secondAttribute="trailing" id="YfU-3v-pH0"/>

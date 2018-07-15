@@ -26,6 +26,12 @@ class VideoTableViewController: GenericTableViewController {
     @IBOutlet weak var buttonLevel4: UIButton!
     
     override func viewDidLoad() {
+        
+        if muscleGroupId == 10 {
+            muscleGroupId = 2
+        } else if muscleGroupId == 17 {
+            muscleGroupId = 4
+        }
 
         soloTitle = self.title?.components(separatedBy: "(").first
         stripeView.backgroundColor = muscleGroupColor
@@ -72,7 +78,7 @@ class VideoTableViewController: GenericTableViewController {
     }
     
     func filter(intensity: Int) {
-        
+
         let predicate1 = NSPredicate(format: "ANY musclegroupId.id = %d", muscleGroupId)
         let predicate2 = NSPredicate(format: "isLive = %d", true)
         let predicate3 = NSPredicate(format: "intensity contains[cd] %d", intensity)
