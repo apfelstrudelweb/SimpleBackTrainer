@@ -2,7 +2,7 @@
 //  Trainingsplan+CoreDataProperties.swift
 //  Visual Back Trainer
 //
-//  Created by Ulrich Vormbrock on 12.07.18.
+//  Created by Ulrich Vormbrock on 20.07.18.
 //  Copyright © 2018 Rookie. All rights reserved.
 //
 //
@@ -17,8 +17,8 @@ extension Trainingsplan {
         return NSFetchRequest<Trainingsplan>(entityName: "Trainingsplan")
     }
 
-    @NSManaged public var position: Int16
     @NSManaged public var id: Int16
+    @NSManaged public var position: Int16
     @NSManaged public var workouts: NSSet?
 
 }

@@ -73,6 +73,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         tapPath.addLine(to: CGPoint(x:0.616525423728814, y:0.804702495201535))
         tapPath.close()
         muscleGroup.bezierPath = NSKeyedArchiver.archivedData(withRootObject: tapPath) as NSData
+        let groupWorkoutMembership1 = NSEntityDescription.insertNewObject(forEntityName: "GroupWorkoutMembership", into: db.managedObjectContext) as! GroupWorkoutMembership
+        muscleGroup.addToMembership(groupWorkoutMembership1)
         
         muscleGroup = NSEntityDescription.insertNewObject(forEntityName: "Musclegroup", into: db.managedObjectContext) as! Musclegroup
         muscleGroup.id = 2
@@ -91,6 +93,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         tapPath.addLine(to: CGPoint(x:0.727753277077024, y:0.791143009863807))
         tapPath.close()
         muscleGroup.bezierPath = NSKeyedArchiver.archivedData(withRootObject: tapPath) as NSData
+        let groupWorkoutMembership2 = NSEntityDescription.insertNewObject(forEntityName: "GroupWorkoutMembership", into: db.managedObjectContext) as! GroupWorkoutMembership
+        muscleGroup.addToMembership(groupWorkoutMembership2)
         
         muscleGroup = NSEntityDescription.insertNewObject(forEntityName: "Musclegroup", into: db.managedObjectContext) as! Musclegroup
         muscleGroup.id = 3
@@ -109,6 +113,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         tapPath.addLine(to: CGPoint(x:0.661673981922839, y:0.678635547576302))
         tapPath.close()
         muscleGroup.bezierPath = NSKeyedArchiver.archivedData(withRootObject: tapPath) as NSData
+        let groupWorkoutMembership3 = NSEntityDescription.insertNewObject(forEntityName: "GroupWorkoutMembership", into: db.managedObjectContext) as! GroupWorkoutMembership
+        muscleGroup.addToMembership(groupWorkoutMembership3)
         
         muscleGroup = NSEntityDescription.insertNewObject(forEntityName: "Musclegroup", into: db.managedObjectContext) as! Musclegroup
         muscleGroup.id = 4
@@ -125,6 +131,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         tapPath.addLine(to: CGPoint(x:0.726872233252168, y:0.361460194339444))
         tapPath.close()
         muscleGroup.bezierPath = NSKeyedArchiver.archivedData(withRootObject: tapPath) as NSData
+        let groupWorkoutMembership4 = NSEntityDescription.insertNewObject(forEntityName: "GroupWorkoutMembership", into: db.managedObjectContext) as! GroupWorkoutMembership
+        muscleGroup.addToMembership(groupWorkoutMembership4)
         
         muscleGroup = NSEntityDescription.insertNewObject(forEntityName: "Musclegroup", into: db.managedObjectContext) as! Musclegroup
         muscleGroup.id = 5
@@ -139,6 +147,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         tapPath.addLine(to: CGPoint(x:0.57909604519774, y:0.367562380038388))
         tapPath.close()
         muscleGroup.bezierPath = NSKeyedArchiver.archivedData(withRootObject: tapPath) as NSData
+        let groupWorkoutMembership5 = NSEntityDescription.insertNewObject(forEntityName: "GroupWorkoutMembership", into: db.managedObjectContext) as! GroupWorkoutMembership
+        muscleGroup.addToMembership(groupWorkoutMembership5)
 
         // Back muscles
         muscleGroup = NSEntityDescription.insertNewObject(forEntityName: "Musclegroup", into: db.managedObjectContext) as! Musclegroup
@@ -156,6 +166,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         tapPath.addLine(to: CGPoint(x:0.704989154013015, y:0.75))
         tapPath.close()
         muscleGroup.bezierPath = NSKeyedArchiver.archivedData(withRootObject: tapPath) as NSData
+        let groupWorkoutMembership10 = NSEntityDescription.insertNewObject(forEntityName: "GroupWorkoutMembership", into: db.managedObjectContext) as! GroupWorkoutMembership
+        muscleGroup.addToMembership(groupWorkoutMembership10)
         
         muscleGroup = NSEntityDescription.insertNewObject(forEntityName: "Musclegroup", into: db.managedObjectContext) as! Musclegroup
         muscleGroup.id = 11
@@ -168,6 +180,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         tapPath.addLine(to: CGPoint(x:0.505422993492408, y:0.553834808259587))
         tapPath.close()
         muscleGroup.bezierPath = NSKeyedArchiver.archivedData(withRootObject: tapPath) as NSData
+        let groupWorkoutMembership11 = NSEntityDescription.insertNewObject(forEntityName: "GroupWorkoutMembership", into: db.managedObjectContext) as! GroupWorkoutMembership
+        muscleGroup.addToMembership(groupWorkoutMembership11)
         
         muscleGroup = NSEntityDescription.insertNewObject(forEntityName: "Musclegroup", into: db.managedObjectContext) as! Musclegroup
         muscleGroup.id = 12
@@ -198,6 +212,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         tapPath.addLine(to: CGPoint(x:0.665960451977401, y:0.763915547024952))
         tapPath.close()
         muscleGroup.bezierPath = NSKeyedArchiver.archivedData(withRootObject: tapPath) as NSData
+        let groupWorkoutMembership12 = NSEntityDescription.insertNewObject(forEntityName: "GroupWorkoutMembership", into: db.managedObjectContext) as! GroupWorkoutMembership
+        muscleGroup.addToMembership(groupWorkoutMembership12)
         
         muscleGroup = NSEntityDescription.insertNewObject(forEntityName: "Musclegroup", into: db.managedObjectContext) as! Musclegroup
         muscleGroup.id = 13
@@ -221,6 +237,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         tapPath.addLine(to: CGPoint(x:0.482819383259912, y:0.583482944344704))
         tapPath.close()
         muscleGroup.bezierPath = NSKeyedArchiver.archivedData(withRootObject: tapPath) as NSData
+        let groupWorkoutMembership13 = NSEntityDescription.insertNewObject(forEntityName: "GroupWorkoutMembership", into: db.managedObjectContext) as! GroupWorkoutMembership
+        muscleGroup.addToMembership(groupWorkoutMembership13)
         
         muscleGroup = NSEntityDescription.insertNewObject(forEntityName: "Musclegroup", into: db.managedObjectContext) as! Musclegroup
         muscleGroup.id = 14
@@ -236,6 +254,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         tapPath.addLine(to: CGPoint(x:0.402643144918433, y:0.48055055025878))
         tapPath.close()
         muscleGroup.bezierPath = NSKeyedArchiver.archivedData(withRootObject: tapPath) as NSData
+        let groupWorkoutMembership14 = NSEntityDescription.insertNewObject(forEntityName: "GroupWorkoutMembership", into: db.managedObjectContext) as! GroupWorkoutMembership
+        muscleGroup.addToMembership(groupWorkoutMembership14)
         
         muscleGroup = NSEntityDescription.insertNewObject(forEntityName: "Musclegroup", into: db.managedObjectContext) as! Musclegroup
         muscleGroup.id = 15
@@ -256,6 +276,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         tapPath.addLine(to: CGPoint(x:0.675847457627119, y:0.412188099808061))
         tapPath.close()
         muscleGroup.bezierPath = NSKeyedArchiver.archivedData(withRootObject: tapPath) as NSData
+        let groupWorkoutMembership15 = NSEntityDescription.insertNewObject(forEntityName: "GroupWorkoutMembership", into: db.managedObjectContext) as! GroupWorkoutMembership
+        muscleGroup.addToMembership(groupWorkoutMembership15)
         
         muscleGroup = NSEntityDescription.insertNewObject(forEntityName: "Musclegroup", into: db.managedObjectContext) as! Musclegroup
         muscleGroup.id = 16
@@ -279,6 +301,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         tapPath.addLine(to: CGPoint(x:0.690677966101695, y:0.400191938579655))
         tapPath.close()
         muscleGroup.bezierPath = NSKeyedArchiver.archivedData(withRootObject: tapPath) as NSData
+        let groupWorkoutMembership16 = NSEntityDescription.insertNewObject(forEntityName: "GroupWorkoutMembership", into: db.managedObjectContext) as! GroupWorkoutMembership
+        muscleGroup.addToMembership(groupWorkoutMembership16)
         
         muscleGroup = NSEntityDescription.insertNewObject(forEntityName: "Musclegroup", into: db.managedObjectContext) as! Musclegroup
         muscleGroup.id = 17
@@ -300,6 +324,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         tapPath.addLine(to: CGPoint(x:0.314971751412429, y:0.374280230326296))
         tapPath.close()
         muscleGroup.bezierPath = NSKeyedArchiver.archivedData(withRootObject: tapPath) as NSData
+        let groupWorkoutMembership17 = NSEntityDescription.insertNewObject(forEntityName: "GroupWorkoutMembership", into: db.managedObjectContext) as! GroupWorkoutMembership
+        muscleGroup.addToMembership(groupWorkoutMembership17)
         
         muscleGroup = NSEntityDescription.insertNewObject(forEntityName: "Musclegroup", into: db.managedObjectContext) as! Musclegroup
         muscleGroup.id = 18
@@ -313,6 +339,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         tapPath.addLine(to: CGPoint(x:0.584598698481562, y:0.297197640117994))
         tapPath.close()
         muscleGroup.bezierPath = NSKeyedArchiver.archivedData(withRootObject: tapPath) as NSData
+        let groupWorkoutMembership18 = NSEntityDescription.insertNewObject(forEntityName: "GroupWorkoutMembership", into: db.managedObjectContext) as! GroupWorkoutMembership
+        muscleGroup.addToMembership(groupWorkoutMembership18)
         
         do {
             try db.managedObjectContext.save()

@@ -2,7 +2,7 @@
 //  Musclegroup+CoreDataProperties.swift
 //  Visual Back Trainer
 //
-//  Created by Ulrich Vormbrock on 12.07.18.
+//  Created by Ulrich Vormbrock on 20.07.18.
 //  Copyright © 2018 Rookie. All rights reserved.
 //
 //
@@ -20,25 +20,25 @@ extension Musclegroup {
     @NSManaged public var alias: String?
     @NSManaged public var bezierPath: NSData?
     @NSManaged public var color: String?
-    @NSManaged public var id: Int16
     @NSManaged public var isFront: Bool
-    @NSManaged public var workouts: NSSet?
+    @NSManaged public var id: Int16
+    @NSManaged public var membership: NSSet?
 
 }
 
-// MARK: Generated accessors for workouts
+// MARK: Generated accessors for membership
 extension Musclegroup {
 
-    @objc(addWorkoutsObject:)
-    @NSManaged public func addToWorkouts(_ value: Workout)
+    @objc(addMembershipObject:)
+    @NSManaged public func addToMembership(_ value: GroupWorkoutMembership)
 
-    @objc(removeWorkoutsObject:)
-    @NSManaged public func removeFromWorkouts(_ value: Workout)
+    @objc(removeMembershipObject:)
+    @NSManaged public func removeFromMembership(_ value: GroupWorkoutMembership)
 
-    @objc(addWorkouts:)
-    @NSManaged public func addToWorkouts(_ values: NSSet)
+    @objc(addMembership:)
+    @NSManaged public func addToMembership(_ values: NSSet)
 
-    @objc(removeWorkouts:)
-    @NSManaged public func removeFromWorkouts(_ values: NSSet)
+    @objc(removeMembership:)
+    @NSManaged public func removeFromMembership(_ values: NSSet)
 
 }

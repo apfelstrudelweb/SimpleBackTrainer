@@ -1603,10 +1603,10 @@ Please turn on your Internet Conncetion - as soon your device is connected to th
     </scenes>
     <resources>
         <image name="clipboard" width="23" height="29"/>
-        <image name="editButton" width="16" height="16"/>
+        <image name="editButton" width="29" height="29"/>
         <image name="home" width="30" height="28"/>
         <image name="ic_arrow_black" width="24" height="24"/>
-        <image name="plusButton" width="16" height="16"/>
+        <image name="plusButton" width="29" height="29"/>
         <image name="premium" width="44" height="44"/>
         <image name="tabBall" width="46" height="44"/>
         <image name="tabBand" width="54" height="47"/>

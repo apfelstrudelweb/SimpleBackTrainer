@@ -29,7 +29,7 @@ class DragDropTableViewCell: UITableViewCell {
     
     func updateData(_ model:Workout){
         self.model = model
-        if model.musclegroupId != nil {
+        if (model.membership?.count)! > 0 {
             selectedStatus()
             contentImageView.image = UIImage(named: model.imgName!)
             contentLabel.text = model.alias

@@ -2,7 +2,7 @@
 //  Workout+CoreDataProperties.swift
 //  Visual Back Trainer
 //
-//  Created by Ulrich Vormbrock on 12.07.18.
+//  Created by Ulrich Vormbrock on 20.07.18.
 //  Copyright © 2018 Rookie. All rights reserved.
 //
 //
@@ -30,24 +30,24 @@ extension Workout {
     @NSManaged public var isPremium: Bool
     @NSManaged public var isTheraband: Bool
     @NSManaged public var videoUrl: String?
-    @NSManaged public var musclegroupId: NSSet?
     @NSManaged public var traininsgplanId: Trainingsplan?
+    @NSManaged public var membership: NSSet?
 
 }
 
-// MARK: Generated accessors for musclegroupId
+// MARK: Generated accessors for membership
 extension Workout {
 
-    @objc(addMusclegroupIdObject:)
-    @NSManaged public func addToMusclegroupId(_ value: Musclegroup)
+    @objc(addMembershipObject:)
+    @NSManaged public func addToMembership(_ value: GroupWorkoutMembership)
 
-    @objc(removeMusclegroupIdObject:)
-    @NSManaged public func removeFromMusclegroupId(_ value: Musclegroup)
+    @objc(removeMembershipObject:)
+    @NSManaged public func removeFromMembership(_ value: GroupWorkoutMembership)
 
-    @objc(addMusclegroupId:)
-    @NSManaged public func addToMusclegroupId(_ values: NSSet)
+    @objc(addMembership:)
+    @NSManaged public func addToMembership(_ values: NSSet)
 
-    @objc(removeMusclegroupId:)
-    @NSManaged public func removeFromMusclegroupId(_ values: NSSet)
+    @objc(removeMembership:)
+    @NSManaged public func removeFromMembership(_ values: NSSet)
 
 }

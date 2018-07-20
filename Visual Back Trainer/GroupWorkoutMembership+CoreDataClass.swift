@@ -1,5 +1,5 @@
 //
-//  Workout+CoreDataClass.swift
+//  GroupWorkoutMembership+CoreDataClass.swift
 //  Visual Back Trainer
 //
 //  Created by Ulrich Vormbrock on 20.07.18.
@@ -10,7 +10,7 @@
 import Foundation
 import CoreData
 
-@objc(Workout)
-public class Workout: NSManagedObject {
+@objc(GroupWorkoutMembership)
+public class GroupWorkoutMembership: NSManagedObject {
 
 }

@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14135" systemVersion="17F77" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="GroupWorkoutMembership" representedClassName="GroupWorkoutMembership" isAbstract="YES" syncable="YES">
+        <relationship name="group" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Musclegroup" inverseName="membership" inverseEntity="Musclegroup" syncable="YES"/>
+        <relationship name="workout" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Workout" inverseName="membership" inverseEntity="Workout" syncable="YES"/>
+    </entity>
     <entity name="Musclegroup" representedClassName="Musclegroup" syncable="YES">
         <attribute name="alias" attributeType="String" syncable="YES"/>
         <attribute name="bezierPath" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="color" attributeType="String" syncable="YES"/>
         <attribute name="id" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="isFront" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
-        <relationship name="workouts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Workout" inverseName="musclegroupId" inverseEntity="Workout" syncable="YES"/>
+        <relationship name="membership" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="GroupWorkoutMembership" inverseName="group" inverseEntity="GroupWorkoutMembership" syncable="YES"/>
         <fetchIndex name="byIndex">
             <fetchIndexElement property="id" type="Binary" order="ascending"/>
         </fetchIndex>
@@ -33,15 +37,16 @@
         <attribute name="isPremium" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="isTheraband" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="videoUrl" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="musclegroupId" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Musclegroup" inverseName="workouts" inverseEntity="Musclegroup" syncable="YES"/>
+        <relationship name="membership" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="GroupWorkoutMembership" inverseName="workout" inverseEntity="GroupWorkoutMembership" syncable="YES"/>
         <relationship name="traininsgplanId" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Trainingsplan" inverseName="workouts" inverseEntity="Trainingsplan" syncable="YES"/>
         <fetchIndex name="byIndex">
             <fetchIndexElement property="id" type="Binary" order="ascending"/>
         </fetchIndex>
     </entity>
     <elements>
-        <element name="Musclegroup" positionX="-405" positionY="-9" width="128" height="133"/>
-        <element name="Trainingsplan" positionX="-423" positionY="431" width="128" height="88"/>
-        <element name="Workout" positionX="-63" positionY="27" width="128" height="270"/>
+        <element name="Musclegroup" positionX="711" positionY="3375" width="128" height="133"/>
+        <element name="Trainingsplan" positionX="855" positionY="3680" width="128" height="88"/>
+        <element name="Workout" positionX="1215" positionY="3276" width="128" height="268"/>
+        <element name="GroupWorkoutMembership" positionX="963" positionY="3393" width="153" height="73"/>
     </elements>
 </model>

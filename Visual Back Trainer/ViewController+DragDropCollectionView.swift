@@ -40,12 +40,12 @@ extension ViewController{
         return false
     }
     
-    func collectionView(_ collectionView: UICollectionView, dragInfoForIndexPath indexPath: IndexPath) -> AnyObject {
-        //let dragInfo = collectionModels[indexPath.item]
-        let objectID = self.fetchedResultsController2.object(at: indexPath).objectID
-        dragDropItem = DragDropItem.init(withObjectID: objectID, sourceIndexPath: indexPath)
-        return dragDropItem
-    }
+//    func collectionView(_ collectionView: UICollectionView, dragInfoForIndexPath indexPath: IndexPath) -> AnyObject {
+//        //let dragInfo = collectionModels[indexPath.item]
+//        let objectID = self.fetchedResultsController2.object(at: indexPath).objectID
+//        dragDropItem = DragDropItem.init(withObjectID: objectID, sourceIndexPath: indexPath)
+//        return dragDropItem
+//    }
     
     func collectionView(_ collectionView: UICollectionView, canDropWithDragInfo dataItem: AnyObject, AtIndexPath indexPath: IndexPath) -> Bool {
         _ = dataItem as! DragDropItem

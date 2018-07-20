@@ -16,6 +16,7 @@ class VideoTableViewController: GenericTableViewController {
     let inactiveColor:UIColor = .lightGray
     
     var fetchRequest: NSFetchRequest<Workout>!
+    var groupfetchResult: [NSManagedObject]? = nil
 
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var stripeView: UIView!
@@ -46,10 +47,9 @@ class VideoTableViewController: GenericTableViewController {
         buttonLevel2.setTitle("", for: .normal)
         buttonLevel3.setTitle("", for: .normal)
         buttonLevel4.setTitle("", for: .normal)
-        
 
         fetchRequest = NSFetchRequest<Workout> (entityName: "Workout")
-        fetchRequest.sortDescriptors = [NSSortDescriptor (key: "id", ascending: true)]
+        fetchRequest?.sortDescriptors = [NSSortDescriptor (key: "id", ascending: true)]
 
         self.fetchedResultsController = NSFetchedResultsController<Workout> (
             fetchRequest: fetchRequest,
@@ -77,28 +77,9 @@ class VideoTableViewController: GenericTableViewController {
         buttonLevel4.tintColor = inactiveColor
     }
     
-    func filter(intensity: Int) {
-
-        let predicate1 = NSPredicate(format: "ANY musclegroupId.id = %d", muscleGroupId)
-        let predicate2 = NSPredicate(format: "isLive = %d", true)
-        let predicate3 = NSPredicate(format: "intensity contains[cd] %d", intensity)
-        let compound:NSCompoundPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [predicate1, predicate2, predicate3])
-        fetchRequest.predicate = compound
-        
-        do {
-            try fetchedResultsController.performFetch()
-            let count = try CoreDataManager.sharedInstance.managedObjectContext.count(for: self.fetchRequest)
-            self.title = self.soloTitle! + " (\(count))"
-            
-        } catch {
-            fatalError("Failed to initialize FetchedResultsController: \(error)")
-        }
-        
-        self.tableView.reloadData()
-    }
-    
+    // TODO: simplify: work with enums in conjunction with intensity
     func resetFilter() {
-        let predicate1 = NSPredicate(format: "ANY musclegroupId.id = %d", muscleGroupId)
+        let predicate1 = NSPredicate(format: "ANY membership.group.id = %d", muscleGroupId)
         let predicate2 = NSPredicate(format: "isLive = %d", true)
         let compound:NSCompoundPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [predicate1, predicate2])
         fetchRequest.predicate = compound
@@ -114,6 +95,27 @@ class VideoTableViewController: GenericTableViewController {
         
         self.tableView.reloadData()
     }
+    
+    func filter(intensity: Int) {
+
+        let predicate1 = NSPredicate(format: "ANY membership.group.id = %d", muscleGroupId)
+        let predicate2 = NSPredicate(format: "isLive = %d", true)
+        let predicate3 = NSPredicate(format: "intensity contains[cd] %d", intensity)
+        let compound:NSCompoundPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [predicate1, predicate2, predicate3])
+        fetchRequest.predicate = compound
+
+        do {
+            try fetchedResultsController.performFetch()
+            let count = try CoreDataManager.sharedInstance.managedObjectContext.count(for: self.fetchRequest)
+            self.title = self.soloTitle! + " (\(count))"
+
+        } catch {
+            fatalError("Failed to initialize FetchedResultsController: \(error)")
+        }
+        
+        self.tableView.reloadData()
+    }
+    
 
     @IBAction func filterLevel1(_ sender: Any) {
         clearButtons()

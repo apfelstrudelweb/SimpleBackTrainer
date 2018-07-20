@@ -10,17 +10,17 @@ import UIKit
 import DragDropiOS
 import CoreData
 
-class ViewController: BaseViewController, DragDropCollectionViewDelegate, DropTableViewDelegate {
+class ViewController: BaseViewController, DropTableViewDelegate { //
 
     var fetchedResultsController1: NSFetchedResultsController<Trainingsplan>!
-    var fetchedResultsController2: NSFetchedResultsController<Workout>!
+    var fetchedResultsController2: NSFetchedResultsController<NSFetchRequestResult>!
     
     var collectionIDs: [IndexPath : NSManagedObjectID] = Dictionary<IndexPath, NSManagedObjectID>()
 
     var dragDropItem: DragDropItem!
     var dragDropManager:DragDropManager!
     
-    var trainingsplan: Plan!
+    var trainingsplan: Trainingsplan!
     
     var droppedWorkout: Workout!
     
@@ -80,6 +80,13 @@ class ViewController: BaseViewController, DragDropCollectionViewDelegate, DropTa
 
         configureFetchedResultsController()
         toggleAddMode()
+        
+        do {
+            try fetchedResultsController1.performFetch()
+            try fetchedResultsController2.performFetch()
+        } catch {
+            print("An error occurred")
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -104,7 +111,6 @@ class ViewController: BaseViewController, DragDropCollectionViewDelegate, DropTa
     
     func configureFetchedResultsController() {
         let fetchRequest1 = NSFetchRequest<Trainingsplan> (entityName: "Trainingsplan")
-
         fetchRequest1.sortDescriptors = [NSSortDescriptor (key: "position", ascending: true)]
         
         self.fetchedResultsController1 = NSFetchedResultsController<Trainingsplan> (
@@ -114,14 +120,30 @@ class ViewController: BaseViewController, DragDropCollectionViewDelegate, DropTa
             cacheName: nil)
         self.fetchedResultsController1.delegate = self
 
-        let fetchRequest2 = NSFetchRequest<Workout> (entityName: "Workout")
-        fetchRequest2.sortDescriptors = [NSSortDescriptor (key: "musclegroupId.id", ascending: true, selector: #selector(NSNumber.compare(_:))), NSSortDescriptor (key: "id", ascending: true, selector: #selector(NSNumber.compare(_:))), NSSortDescriptor (key: "musclegroupId.alias", ascending: true, selector: #selector(NSString.localizedStandardCompare(_:)))]
+//        let fetchRequest2 = NSFetchRequest<Musclegroup> (entityName: "Musclegroup")
+//        //fetchRequest2.predicate = NSPredicate(format: "ANY isLive = %d", true)
+//        fetchRequest2.sortDescriptors = [NSSortDescriptor (key: "id", ascending: true, selector: #selector(NSNumber.compare(_:)))]
         
-        self.fetchedResultsController2 = NSFetchedResultsController<Workout> (
+        // ATTENTION: workout can now have MULTIPLE musclegroups!
+        
+        //fetchRequest2.sortDescriptors = [NSSortDescriptor (key: "musclegroupId.id", ascending: true, selector: #selector(NSNumber.compare(_:))), NSSortDescriptor (key: "id", ascending: true, selector: #selector(NSNumber.compare(_:))), NSSortDescriptor (key: "musclegroupId.alias", ascending: true, selector: #selector(NSString.localizedStandardCompare(_:)))]
+        
+//        self.fetchedResultsController2 = NSFetchedResultsController<Musclegroup> (
+//            fetchRequest: fetchRequest2,
+//            managedObjectContext: CoreDataManager.sharedInstance.managedObjectContext,
+//            sectionNameKeyPath: "alias",
+//            cacheName: nil)
+//        self.fetchedResultsController2.delegate = self
+        
+        let fetchRequest2 = NSFetchRequest<NSFetchRequestResult> (entityName: "GroupWorkoutMembership")
+        fetchRequest2.relationshipKeyPathsForPrefetching = ["workout"]
+        fetchRequest2.sortDescriptors = [NSSortDescriptor (key: "musclegroup.id", ascending: true)]
+        self.fetchedResultsController2 = NSFetchedResultsController<NSFetchRequestResult> (
             fetchRequest: fetchRequest2,
             managedObjectContext: CoreDataManager.sharedInstance.managedObjectContext,
-            sectionNameKeyPath: "musclegroupId.alias",
+            sectionNameKeyPath: "alias",
             cacheName: nil)
+
         self.fetchedResultsController2.delegate = self
     }
     
@@ -132,7 +154,7 @@ class ViewController: BaseViewController, DragDropCollectionViewDelegate, DropTa
     }
     
     func setDragDropCollectionView() {
-        dragDropCollectionView.dragDropDelegate = self
+        //dragDropCollectionView.dragDropDelegate = self
         
         let collectionViewFlowLayout = DecorationCollectionViewFlowLayout()
         collectionViewFlowLayout.minimumLineSpacing = 10
@@ -213,14 +235,12 @@ extension ViewController:UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DragDropCollectionViewCell.cellIdentifier, for: indexPath) as! DragDropCollectionViewCell
         
-        let workout = fetchedResultsController2.object(at: indexPath)
-        
-//        if let url = URL(string: (workout.imgName)!) {
-//            cell.imageView.kf.setImage(with: url)
-//        }
-        cell.imageView.layer.borderColor = UIColor.darkGray.cgColor
-        cell.imageView.layer.borderWidth = 1
-        cell.alpha = (workout.traininsgplanId != nil) ? 0.5 : 1
+//        let workout = fetchedResultsController3.object(at: indexPath)
+//
+//        cell.imageView.image = UIImage(data:workout.icon! as Data, scale:1.0)
+//        cell.imageView.layer.borderColor = UIColor.darkGray.cgColor
+//        cell.imageView.layer.borderWidth = 1
+//        cell.alpha = (workout.traininsgplanId != nil) ? 0.5 : 1
         return cell
     }
     
@@ -228,10 +248,10 @@ extension ViewController:UICollectionViewDelegate, UICollectionViewDataSource {
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "SectionHeader", for: indexPath) as! ApplicationHeaderCollectionReusableView
         
         if let sections = fetchedResultsController2.sections {
-            let workout = fetchedResultsController2.object(at: indexPath)
+            let membership = fetchedResultsController2.object(at: indexPath) as! GroupWorkoutMembership
             let currentSection = sections[indexPath.section]
-            header.titleLabel.text = currentSection.name
-            header.backgroundColor = .red//workout.musclegroupId?.color?.colorFromString() //Color.Torso.colorArray[indexPath.section]
+            header.titleLabel.text = NSLocalizedString(currentSection.name, comment: "")
+            header.backgroundColor = membership.group?.color?.colorFromString()    //musclegroup.color?.colorFromString()
         }
         
         return header
@@ -298,24 +318,16 @@ extension ViewController:UITableViewDelegate, UITableViewDataSource {
         cell.favoriteDelimter.isHidden = true
         cell.stackView.isHidden = false
         cell.videoImageView?.alpha = 1
-
-        cell.videoLabel.text = NSLocalizedString(retrievedWorkout.alias!, comment: "") // String(retrievedWorkout.id) //
+        cell.videoLabel.text = NSLocalizedString(retrievedWorkout.alias!, comment: "")
         cell.videoImageView.image = UIImage(data:retrievedWorkout.icon! as Data, scale:1.0)
         
         var colors = [MusclegroupColor]()
-        
-        
-        //let sortedMusclegroups = retrievedWorkout.musclegroupId?.sorted { (($0 as! Musclegroup).id) < (($1 as! Musclegroup).id) }
-        
-        for item in retrievedWorkout.musclegroupId! {
+
+        for item in retrievedWorkout.membership! {
             let group = item as! Musclegroup
             //colors.append((group.color?.colorFromString())!)
             let musclegroupColor = MusclegroupColor.init(withId: group.id, color: (group.color?.colorFromString())!)
             colors.append(musclegroupColor)
-            
-//            let test = cell.videoLabel.text! + " (\(String(describing: group.id)))"
-//            cell.videoLabel.text = test
-            
         }
 
         

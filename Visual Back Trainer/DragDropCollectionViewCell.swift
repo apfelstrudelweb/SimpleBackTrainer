@@ -24,12 +24,12 @@ class DragDropCollectionViewCell: UICollectionViewCell {
     
     func updateData(_ model:Workout){
         self.model = model
-        if model.musclegroupId != nil {
+        if (model.membership?.count)! > 0 {
             selectedStatus()
             imageView.image = UIImage(named: model.imgName!)
             imageView.layer.borderColor = UIColor.darkGray.cgColor
             imageView.layer.borderWidth = 1
-        }else{
+        } else {
             nomoralStatus()
             
             imageView.image = nil

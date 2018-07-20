@@ -142,11 +142,11 @@ class CoreDataManager: NSObject {
         fetchRequest2.predicate = compound
         
         do {
-            let musclegroups = try self.managedObjectContext.fetch(fetchRequest2)
+            let musclegroups = try self.managedObjectContext.fetch(fetchRequest2) as! [Musclegroup]
             
-            let set = NSSet(array : musclegroups)
-            workout.musclegroupId = set
-            print (musclegroups)
+            for group in musclegroups {
+                workout.addToMembership(group.membership!)
+            }
             
         } catch {
             NSLog("Musclegroup with ids=\(musclegroupIds) not found")
