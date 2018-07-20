@@ -91,7 +91,7 @@ class ViewController: BaseViewController, DragDropCollectionViewDelegate, DropTa
     override func viewWillAppear(_ animated: Bool) {
         
         self.getTrainingsplan()
-        self.dragDropTableView.reloadData()
+        //self.dragDropTableView.reloadData()
     }
     
     public func getTrainingsplan() {
@@ -289,7 +289,7 @@ extension ViewController:UITableViewDelegate, UITableViewDataSource {
         }
         if let sections = fetchedResultsController1.sections {
             let currentSection = sections[section]
-            return currentSection.numberOfObjects //+ 1
+            return currentSection.numberOfObjects
         }
         
         return 0
@@ -320,7 +320,7 @@ extension ViewController:UITableViewDelegate, UITableViewDataSource {
         cell.stackView.isHidden = false
         cell.videoImageView?.alpha = 1
         
-        cell.videoLabel.text = NSLocalizedString(retrievedWorkout.alias!, comment: "")
+        //cell.videoLabel.text = NSLocalizedString(retrievedWorkout.alias!, comment: "")
         cell.videoImageView.image = UIImage(data:retrievedWorkout.icon! as Data, scale:1.0)
         
         var colors = [MusclegroupColor]()
@@ -338,6 +338,15 @@ extension ViewController:UITableViewDelegate, UITableViewDataSource {
         
         let sortedColors = colors.sorted( by: { $0.id < $1.id } )
         
+        cell.videoLabel.text = NSLocalizedString(retrievedWorkout.alias!, comment: "") + " \(sortedColors.count)"
+
+        // for scrolling issues when showing collection view: redraw stripes!
+        for subview in cell.stackView.subviews {
+            subview.removeFromSuperview()
+        }
+        cell.stackView.snp.removeConstraints()
+        
+        
         for musclegroupColor in sortedColors {
             
             let stripe = UIView()
@@ -345,7 +354,7 @@ extension ViewController:UITableViewDelegate, UITableViewDataSource {
             cell.stackView.addArrangedSubview(stripe)
             
             cell.stackView.snp.makeConstraints { (make) -> Void in
-                make.width.equalTo(5*colors.count)
+                make.width.equalTo(5*sortedColors.count)
             }
             
             stripe.snp.makeConstraints { (make) -> Void in

@@ -153,7 +153,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Back muscles
         muscleGroup = NSEntityDescription.insertNewObject(forEntityName: "Musclegroup", into: db.managedObjectContext) as! Musclegroup
         muscleGroup.id = 10
-        muscleGroup.alias = "in_oblique_abdominal 1"
+        muscleGroup.alias = "in_oblique_abdominal"
         muscleGroup.color = "242,181,10"
         muscleGroup.isFront = false
         tapPath = UIBezierPath()
@@ -306,7 +306,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         muscleGroup = NSEntityDescription.insertNewObject(forEntityName: "Musclegroup", into: db.managedObjectContext) as! Musclegroup
         muscleGroup.id = 17
-        muscleGroup.alias = "upper_trapezius 2"
+        muscleGroup.alias = "upper_trapezius"
         muscleGroup.color = "137,21,195"
         muscleGroup.isFront = false
         tapPath = UIBezierPath()
