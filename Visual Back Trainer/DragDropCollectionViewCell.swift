@@ -12,6 +12,8 @@ class DragDropCollectionViewCell: UICollectionViewCell {
     static let cellIdentifier = "musclegroupCell"
     
     @IBOutlet weak var imageView:UIImageView!
+    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var dragDropSymbol: UIImageView!
     
     var model:Workout!
     
@@ -27,7 +29,7 @@ class DragDropCollectionViewCell: UICollectionViewCell {
         if (model.membership?.count)! > 0 {
             selectedStatus()
             imageView.image = UIImage(named: model.imgName!)
-            imageView.layer.borderColor = UIColor.darkGray.cgColor
+            imageView.layer.borderColor = UIColor.lightGray.cgColor
             imageView.layer.borderWidth = 1
         } else {
             nomoralStatus()

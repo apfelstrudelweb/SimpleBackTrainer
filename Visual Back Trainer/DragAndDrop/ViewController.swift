@@ -60,6 +60,7 @@ class ViewController: BaseViewController, DragDropCollectionViewDelegate, DropTa
         
         dragDropTableView.allowsSelection = false
         dragDropTableView.register(UINib(nibName: "VideoCell", bundle: nil), forCellReuseIdentifier: "videoCell")
+        dragDropCollectionView.register(UINib(nibName: "DragDropCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "musclegroupCell")
         
         self.setDragDropTableView()
         self.setDragDropCollectionView()
@@ -132,8 +133,8 @@ class ViewController: BaseViewController, DragDropCollectionViewDelegate, DropTa
         let collectionViewFlowLayout = DecorationCollectionViewFlowLayout()
         collectionViewFlowLayout.minimumLineSpacing = 10
         collectionViewFlowLayout.minimumInteritemSpacing = 10
-        collectionViewFlowLayout.itemSize = CGSize(width: 100, height: 70)
-        collectionViewFlowLayout.sectionInset = .zero //UIEdgeInsets(top: 10, left: spacesWidth, bottom: 5, right: spacesWidth)
+        collectionViewFlowLayout.itemSize = CGSize(width: 100, height: 100)
+        collectionViewFlowLayout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         collectionViewFlowLayout.headerReferenceSize = CGSize(width: 0, height: 50)
         dragDropCollectionView.collectionViewLayout = collectionViewFlowLayout
         dragDropCollectionView.backgroundColor = UIColor.white
@@ -220,10 +221,16 @@ extension ViewController:UICollectionViewDelegate, UICollectionViewDataSource {
         workouts = workouts.sorted { $0.id < $1.id }
         let workout = workouts[indexPath.row]
         
-        cell.imageView.layer.borderColor = UIColor.darkGray.cgColor
+        cell.imageView.layer.borderColor = UIColor.lightGray.cgColor
         cell.imageView.layer.borderWidth = 1
         cell.imageView.image = UIImage(data:workout.icon! as Data, scale:1.0)
         cell.alpha = (workout.traininsgplanId != nil) ? 0.3 : 1
+        cell.dragDropSymbol.tintColor = .lightGray//self.navigationController?.navigationBar.barTintColor
+//        cell.dragDropSymbol.layer.borderColor = UIColor.lightGray.cgColor
+//        cell.dragDropSymbol.layer.borderWidth = 1
+        cell.dragDropSymbol.alpha = (workout.traininsgplanId != nil) ? 0 : 1
+        cell.label.text = NSLocalizedString(workout.alias!, comment: "")
+        
         return cell
     }
     

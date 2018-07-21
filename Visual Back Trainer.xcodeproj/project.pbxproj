@@ -24,6 +24,7 @@
 		1B13D716210341DE00852732 /* GroupWorkoutMembership+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B13D70E210341DE00852732 /* GroupWorkoutMembership+CoreDataProperties.swift */; };
 		1B13D717210341DE00852732 /* Musclegroup+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B13D70F210341DE00852732 /* Musclegroup+CoreDataClass.swift */; };
 		1B13D718210341DE00852732 /* Musclegroup+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B13D710210341DE00852732 /* Musclegroup+CoreDataProperties.swift */; };
+		1B13D71A21037A1700852732 /* DragDropCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B13D71921037A1700852732 /* DragDropCollectionViewCell.xib */; };
 		1B1D742C20E8C759005C1CD0 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1D742B20E8C759005C1CD0 /* NetworkManager.swift */; };
 		1B1D742E20E8CA9A005C1CD0 /* OfflineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1D742D20E8CA9A005C1CD0 /* OfflineViewController.swift */; };
 		1B2F53D220F64A93001A2B6D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2F53D120F64A92001A2B6D /* ViewController.swift */; };
@@ -98,6 +99,7 @@
 		1B13D70E210341DE00852732 /* GroupWorkoutMembership+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GroupWorkoutMembership+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		1B13D70F210341DE00852732 /* Musclegroup+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Musclegroup+CoreDataClass.swift"; sourceTree = "<group>"; };
 		1B13D710210341DE00852732 /* Musclegroup+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Musclegroup+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		1B13D71921037A1700852732 /* DragDropCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DragDropCollectionViewCell.xib; sourceTree = "<group>"; };
 		1B1D742B20E8C759005C1CD0 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		1B1D742D20E8CA9A005C1CD0 /* OfflineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineViewController.swift; sourceTree = "<group>"; };
 		1B1D742F20EE9A46005C1CD0 /* Trainingsplan 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Trainingsplan 3.xcdatamodel"; sourceTree = "<group>"; };
@@ -214,11 +216,12 @@
 		1B2F53D020F649D2001A2B6D /* DragAndDrop */ = {
 			isa = PBXGroup;
 			children = (
+				1B13D71921037A1700852732 /* DragDropCollectionViewCell.xib */,
+				1B2F53DF20F64B36001A2B6D /* DragDropCollectionViewCell.swift */,
 				1B2F53D820F64B2D001A2B6D /* CollectionReusableView.swift */,
 				1B2F53D920F64B2E001A2B6D /* DragDropTableViewCell.swift */,
 				1B2F53D720F64B2D001A2B6D /* ViewController+DragDropTableView.swift */,
 				1B2F53DE20F64B35001A2B6D /* DecorationCollectionViewFlowLayout.swift */,
-				1B2F53DF20F64B36001A2B6D /* DragDropCollectionViewCell.swift */,
 				1B2F53DD20F64B35001A2B6D /* ViewController+DragDropCollectionView.swift */,
 				1B2F53D120F64A92001A2B6D /* ViewController.swift */,
 			);
@@ -475,6 +478,7 @@
 			files = (
 				753A55C81BB073E900254F27 /* Main.storyboard in Resources */,
 				753A55CD1BB073E900254F27 /* LaunchScreen.xib in Resources */,
+				1B13D71A21037A1700852732 /* DragDropCollectionViewCell.xib in Resources */,
 				1BCF6A0420C9905500E310DF /* de.lproj in Resources */,
 				1BBC3AC520D2641E00B43A61 /* VideoCell.xib in Resources */,
 				1BCF6A2420C9B40200E310DF /* TorsoBackView.xib in Resources */,
