@@ -24,10 +24,10 @@ extension ViewController {
         return true
     }
     
-    func tableView(_ tableView: UITableView, dropCompleteWithDragInfo dragInfo:AnyObject, atDragIndexPath dragIndexPath: IndexPath?,withDropInfo dropInfo:AnyObject?,atDropIndexPath dropIndexPath:IndexPath) -> Void {
+    func tableView(_ tableView: UITableView, dropCompleteWithDragInfo dragInfo:AnyObject, atDragIndexPath dragIndexPath: IndexPath?,withDropInfo dropInfo:AnyObject?, atDropIndexPath dropIndexPath:IndexPath) -> Void {
         let item = dragInfo as! DragDropItem
         droppedWorkout = CoreDataManager.sharedInstance.managedObjectContext.object(with: item.objectID) as! Workout
-        //droppedWorkout.position = Int16(dropIndexPath.row)
+        droppedWorkout.droppedPosition = Int16(dropIndexPath.row)
     }
     
     

@@ -11,13 +11,7 @@ import DragDropiOS
 import CoreData
 
 class ViewController: BaseViewController, DragDropCollectionViewDelegate, DropTableViewDelegate {
-    
-    // TODO: remove!
-    func collectionView(_ collectionView: UICollectionView, dragInfoForIndexPath indexPath: IndexPath) -> AnyObject {
-        return indexPath as AnyObject
-    }
-    
-    
+
     var fetchedResultsController1: NSFetchedResultsController<Trainingsplan>!
     var fetchedResultsController2: NSFetchedResultsController<NSFetchRequestResult>!
     
@@ -46,28 +40,15 @@ class ViewController: BaseViewController, DragDropCollectionViewDelegate, DropTa
     
     
     func updateTrainingsplan() {
-        //        guard droppedWorkout != nil else {
-        //            return
-        //        }
-        //
-        //        droppedWorkout.isFavorite = true
-        //        trainingsplan.addToWorkouts(droppedWorkout)
-        //        print("dropWorkOutPosition = ", droppedWorkout.position)
-        //        let start = Int(droppedWorkout.position)
-        //        let end = self.fetchedResultsController1.sections![0].numberOfObjects
-        //        for i in start..<end {
-        //            let indexPath = IndexPath(row: i, section: 0)
-        //            let workout = self.fetchedResultsController1.object(at: indexPath)
-        //            print(workout.position)
-        //            workout.position = Int16(i+1)
-        //        }
-        //        do {
-        //            try context.save()
-        //        } catch {
-        //            // Do something in response to error condition
-        //            print(error.localizedDescription)
-        //        }
-        //        //print(dragDropTableView.numberOfRows(inSection: 0))
+        
+
+        if let position = droppedWorkout?.droppedPosition {
+            
+            CoreDataManager.sharedInstance.insertIntoTrainingsplan(workout: droppedWorkout, position: Int(position))
+        }
+        
+        self.getTrainingsplan()
+        
     }
     
     override func viewDidLoad() {
@@ -86,6 +67,9 @@ class ViewController: BaseViewController, DragDropCollectionViewDelegate, DropTa
         
         configureFetchedResultsController()
         toggleAddMode()
+        
+//        let planFetchRequest = NSFetchRequest<Trainingsplan>(entityName: "Trainingsplan")
+//        trainingsplan = try! CoreDataManager.sharedInstance.managedObjectContext.fetch(planFetchRequest).first
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -364,6 +348,8 @@ extension ViewController:UITableViewDelegate, UITableViewDataSource {
                 make.width.equalTo(5)
             }
         }
+        
+        
         
         return cell
     }

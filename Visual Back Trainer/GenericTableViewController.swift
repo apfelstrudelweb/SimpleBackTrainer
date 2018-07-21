@@ -166,7 +166,7 @@ extension GenericTableViewController: VideoCellDelegate {
             
             
             if workout.traininsgplanId == nil {
-                CoreDataManager.sharedInstance.insertTrainingsPlan(workout: workout)
+                CoreDataManager.sharedInstance.addToTrainingsplan(workout: workout)
             } else {
                 CoreDataManager.sharedInstance.removeFromTrainingsplan(workout: workout)
             }

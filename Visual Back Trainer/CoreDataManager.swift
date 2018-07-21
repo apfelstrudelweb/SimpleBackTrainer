@@ -165,7 +165,7 @@ class CoreDataManager: NSObject {
     }
 
     
-    func insertTrainingsPlan(workout:Workout) {
+    func addToTrainingsplan(workout:Workout) {
         do {
             
             let position = try CoreDataManager.sharedInstance.managedObjectContext.count(for: NSFetchRequest<Trainingsplan> (entityName: "Trainingsplan"))
@@ -180,6 +180,45 @@ class CoreDataManager: NSObject {
         } catch let error {
             print("Failure to save context: \(error.localizedDescription)")
         }
+    }
+    
+    func insertIntoTrainingsplan(workout:Workout, position: Int) {
+        
+        do {
+            //let end = try CoreDataManager.sharedInstance.managedObjectContext.count(for: NSFetchRequest<Trainingsplan> (entityName: "Trainingsplan"))
+        
+//            for i in start..<end {
+//
+//                let fetchRequest2 = NSFetchRequest<NSFetchRequestResult>(entityName: "Trainingsplan")
+//                fetchRequest2.sortDescriptors = [NSSortDescriptor (key: "position", ascending: true)]
+//                print(workout.position)
+//                workout.position = Int16(i+1)
+//            }
+            
+            // first make gap for the new dropped item
+            let fetchRequest2 = NSFetchRequest<NSFetchRequestResult>(entityName: "Trainingsplan")
+            fetchRequest2.sortDescriptors = [NSSortDescriptor (key: "position", ascending: true)]
+            
+            let plans = try CoreDataManager.sharedInstance.managedObjectContext.fetch(fetchRequest2) as! [Trainingsplan]
+            
+            for (index, plan) in plans.enumerated() {
+                if index >= position {
+                    plan.position = Int16(index+1)
+                }
+            }
+            
+            // then insert new item into gap
+            let trainingsplan = NSEntityDescription.insertNewObject(forEntityName: "Trainingsplan", into: self.managedObjectContext) as! Trainingsplan
+            
+            trainingsplan.id = workout.id
+            trainingsplan.position = Int16(position)
+            trainingsplan.addToWorkouts(workout)
+        
+            try self.managedObjectContext.save()
+        } catch let error {
+            print("Failure to save context: \(error.localizedDescription)")
+        }
+        
     }
     
     func removeFromTrainingsplan(workout:Workout) {

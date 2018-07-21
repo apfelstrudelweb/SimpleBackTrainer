@@ -12,6 +12,7 @@ import CoreData
 
  // MARK : DragDropCollectionViewDelegate
 extension ViewController{
+    
     func collectionView(_ collectionView: UICollectionView, touchBeginAtIndexPath indexPath: IndexPath) {
         clearCellsDrogStatusOfCollectionView()
     }
@@ -30,22 +31,30 @@ extension ViewController{
     }
     
     func collectionView(_ collectionView: UICollectionView, canDragAtIndexPath indexPath: IndexPath) -> Bool {
-        
-//        let objectID = collectionIDs[indexPath]
-//        let workout = context.object(with: objectID!) as! Workout
-//
-//        let workout = self.fetchedResultsController2.object(at: indexPath)
+
+//        let workout = self.fetchedResultsController2.object(at: indexPath) as
 //        print(workout.isFavorite)
 //        return !workout.isFavorite
-        return false
+        
+        let group = fetchedResultsController2.fetchedObjects![indexPath.section] as? GroupWorkoutMembership
+        var workouts = group?.workout!.allObjects as! [Workout]
+        workouts = workouts.sorted { $0.id < $1.id }
+        let workout = workouts[indexPath.row]
+        return workout.traininsgplanId == nil
     }
     
-//    func collectionView(_ collectionView: UICollectionView, dragInfoForIndexPath indexPath: IndexPath) -> AnyObject {
-//        //let dragInfo = collectionModels[indexPath.item]
-//        let objectID = self.fetchedResultsController2.object(at: indexPath).objectID
-//        dragDropItem = DragDropItem.init(withObjectID: objectID, sourceIndexPath: indexPath)
-//        return dragDropItem
-//    }
+    func collectionView(_ collectionView: UICollectionView, dragInfoForIndexPath indexPath: IndexPath) -> AnyObject {
+        //let dragInfo = collectionModels[indexPath.item]
+        //let objectID = self.fetchedResultsController2.object(at: indexPath).objectID
+        
+        let group = fetchedResultsController2.fetchedObjects![indexPath.section] as? GroupWorkoutMembership
+        var workouts = group?.workout!.allObjects as! [Workout]
+        workouts = workouts.sorted { $0.id < $1.id }
+        let workout = workouts[indexPath.row]
+        
+        dragDropItem = DragDropItem.init(withObjectID: workout.objectID, sourceIndexPath: indexPath)
+        return dragDropItem
+    }
     
     func collectionView(_ collectionView: UICollectionView, canDropWithDragInfo dataItem: AnyObject, AtIndexPath indexPath: IndexPath) -> Bool {
         _ = dataItem as! DragDropItem
