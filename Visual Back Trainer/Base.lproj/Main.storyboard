@@ -79,7 +79,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ihr Trainingsprogramm" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2QR-hv-OHZ">
-                                            <rect key="frame" x="28" y="10.666666666666664" width="319" height="29"/>
+                                            <rect key="frame" x="28" y="10.666666666666664" width="668" height="29"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -296,7 +296,7 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Premium App freischalten" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EyZ-Ob-cHC">
-                                            <rect key="frame" x="8" y="20" width="359" height="16"/>
+                                            <rect key="frame" x="8" y="20" width="708" height="16"/>
                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -315,7 +315,7 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pEN-VH-Arz">
-                                            <rect key="frame" x="63" y="20" width="249" height="50"/>
+                                            <rect key="frame" x="237.66666666666663" y="20" width="249" height="50"/>
                                             <color key="backgroundColor" red="0.13795599341392517" green="0.54440683126449585" blue="0.99273020029067993" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="50" id="bEP-Ic-nbP"/>
@@ -335,7 +335,7 @@
                                     </constraints>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="premiumCell" rowHeight="105" id="wjX-D1-ruq" customClass="PremiumTableViewCell" customModule="Visual_Back_Trainer" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="premiumCell" rowHeight="105" id="wjX-D1-ruq" customClass="PremiumTableViewCell" customModule="Visual_Back_Trainer" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="72" width="375" height="105"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wjX-D1-ruq" id="q1u-2l-lMj">
@@ -343,14 +343,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EC3-2d-cpO">
-                                                    <rect key="frame" x="25" y="21.666666666666664" width="80" height="80"/>
+                                                    <rect key="frame" x="25" y="21" width="80" height="80"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="80" id="bXV-67-BIe"/>
                                                         <constraint firstAttribute="width" constant="80" id="htv-Kl-Uy0"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mehr Trainingsvideos" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xvl-YX-k0H">
-                                                    <rect key="frame" x="125" y="21.666666666666664" width="235" height="24.333333333333336"/>
+                                                    <rect key="frame" x="125" y="21.000000000000004" width="147" height="38.333333333333343"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="24" id="BtX-4R-yWx"/>
                                                     </constraints>
@@ -359,7 +359,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mehr Trainingsvideos mit Hanteln, Körpergewicht, Widerstandsbändern und Kleingeräten." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3yU-MG-4oZ">
-                                                    <rect key="frame" x="125" y="50.000000000000007" width="235" height="95.666666666666686"/>
+                                                    <rect key="frame" x="125" y="63.333333333333329" width="147" height="133.66666666666669"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -573,7 +573,7 @@ Please turn on your Internet Conncetion - as soon your device is connected to th
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q60-3k-XSH">
-                                                    <rect key="frame" x="64" y="16" width="153" height="21"/>
+                                                    <rect key="frame" x="64.000000000000014" y="16" width="212.33333333333337" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="AXc-yo-Msu"/>
                                                     </constraints>
@@ -582,7 +582,7 @@ Please turn on your Internet Conncetion - as soon your device is connected to th
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KMq-7W-QrW">
-                                                    <rect key="frame" x="64" y="47.666666666666664" width="135" height="1"/>
+                                                    <rect key="frame" x="64.000000000000014" y="47.333333333333336" width="194.33333333333337" height="1"/>
                                                     <color key="backgroundColor" white="0.78943452380952384" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="1" id="Crz-dl-tDU"/>
@@ -715,22 +715,22 @@ Please turn on your Internet Conncetion - as soon your device is connected to th
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="Qvz-Go-JOv">
+                        <view key="tableHeaderView" contentMode="scaleToFill" misplaced="YES" id="Qvz-Go-JOv">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vch-L2-O3e">
-                                    <rect key="frame" x="0.0" y="119" width="375" height="1"/>
+                                    <rect key="frame" x="0.0" y="556" width="375" height="1"/>
                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="0.59999999999999998" id="oem-7d-0iA"/>
                                     </constraints>
                                 </view>
                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="A1s-yS-mg5">
-                                    <rect key="frame" x="20" y="44" width="335" height="32"/>
+                                    <rect key="frame" x="20" y="262.33333333333326" width="335" height="32.333333333333314"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R5w-yQ-n1b">
-                                            <rect key="frame" x="0.0" y="0.0" width="43" height="32"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="42.333333333333336" height="32.333333333333336"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="R5w-yQ-n1b" secondAttribute="height" multiplier="58:44" id="7iy-YE-iuN"/>
                                             </constraints>
@@ -743,7 +743,7 @@ Please turn on your Internet Conncetion - as soon your device is connected to th
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bVr-0P-4qm">
-                                            <rect key="frame" x="73" y="0.0" width="37" height="32"/>
+                                            <rect key="frame" x="72.333333333333329" y="0.0" width="37.333333333333329" height="32.333333333333336"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="bVr-0P-4qm" secondAttribute="height" multiplier="54:47" id="3Dc-nI-gi6"/>
                                             </constraints>
@@ -753,7 +753,7 @@ Please turn on your Internet Conncetion - as soon your device is connected to th
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DmM-Ij-E8p">
-                                            <rect key="frame" x="140" y="0.0" width="55" height="32"/>
+                                            <rect key="frame" x="139.66666666666666" y="0.0" width="55.666666666666657" height="32.333333333333336"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="DmM-Ij-E8p" secondAttribute="height" multiplier="75:44" id="X8k-a3-eMz"/>
                                             </constraints>
@@ -763,7 +763,7 @@ Please turn on your Internet Conncetion - as soon your device is connected to th
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TZ2-Ij-mFH">
-                                            <rect key="frame" x="225" y="0.0" width="34" height="32"/>
+                                            <rect key="frame" x="225.33333333333334" y="0.0" width="34.333333333333343" height="32.333333333333336"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="TZ2-Ij-mFH" secondAttribute="height" multiplier="46:44" id="x0U-Nr-GBH"/>
                                             </constraints>
@@ -773,7 +773,7 @@ Please turn on your Internet Conncetion - as soon your device is connected to th
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dfJ-m9-Hh1">
-                                            <rect key="frame" x="289" y="0.0" width="46" height="32"/>
+                                            <rect key="frame" x="289.66666666666669" y="0.0" width="45.333333333333314" height="32.333333333333336"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="dfJ-m9-Hh1" secondAttribute="height" multiplier="62:44" id="7wZ-iJ-qhO"/>
                                             </constraints>
@@ -1315,7 +1315,7 @@ Please turn on your Internet Conncetion - as soon your device is connected to th
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="A3h-5J-cfI">
+                        <view key="tableHeaderView" contentMode="scaleToFill" misplaced="YES" id="A3h-5J-cfI">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="76"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
@@ -1327,17 +1327,17 @@ Please turn on your Internet Conncetion - as soon your device is connected to th
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pMD-N4-iIq">
-                                    <rect key="frame" x="0.0" y="75" width="375" height="1"/>
+                                    <rect key="frame" x="0.0" y="512" width="375" height="1"/>
                                     <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="0.59999999999999998" id="jdg-l0-NbM"/>
                                     </constraints>
                                 </view>
                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="rM8-5R-709">
-                                    <rect key="frame" x="20" y="14.666666666666668" width="335" height="46.666666666666657"/>
+                                    <rect key="frame" x="20" y="232.99999999999997" width="335" height="47"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SrK-xT-VHx">
-                                            <rect key="frame" x="0.0" y="0.0" width="61.333333333333336" height="46.666666666666664"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="61.333333333333336" height="47"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="SrK-xT-VHx" secondAttribute="height" multiplier="69:53" id="F67-EC-X5f"/>
                                             </constraints>
@@ -1351,7 +1351,7 @@ Please turn on your Internet Conncetion - as soon your device is connected to th
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wxW-uI-bQN">
-                                            <rect key="frame" x="91.333333333333329" y="0.0" width="61.666666666666671" height="46.666666666666664"/>
+                                            <rect key="frame" x="91.333333333333329" y="0.0" width="61.999999999999986" height="47"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="wxW-uI-bQN" secondAttribute="height" multiplier="69:53" id="z1Z-wV-Q4A"/>
                                             </constraints>
@@ -1362,7 +1362,7 @@ Please turn on your Internet Conncetion - as soon your device is connected to th
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UQt-yG-Lxa">
-                                            <rect key="frame" x="183" y="0.0" width="61" height="46.666666666666664"/>
+                                            <rect key="frame" x="183.33333333333334" y="0.0" width="60.666666666666657" height="47"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="UQt-yG-Lxa" secondAttribute="height" multiplier="69:53" id="xIQ-z7-5xU"/>
                                             </constraints>
@@ -1373,7 +1373,7 @@ Please turn on your Internet Conncetion - as soon your device is connected to th
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cy8-d0-AXz">
-                                            <rect key="frame" x="274" y="0.0" width="61" height="46.666666666666664"/>
+                                            <rect key="frame" x="274" y="0.0" width="61" height="47"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="cy8-d0-AXz" secondAttribute="height" multiplier="69:53" id="b94-Xb-6al"/>
                                             </constraints>

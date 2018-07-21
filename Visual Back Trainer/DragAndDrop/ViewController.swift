@@ -67,16 +67,23 @@ class ViewController: BaseViewController, DragDropCollectionViewDelegate, DropTa
         dragDropManager = DragDropManager(canvas: self.view, views: [dragDropCollectionView,dragDropTableView])
         
         configureFetchedResultsController()
-        toggleAddMode()
-        
-//        let planFetchRequest = NSFetchRequest<Trainingsplan>(entityName: "Trainingsplan")
-//        trainingsplan = try! CoreDataManager.sharedInstance.managedObjectContext.fetch(planFetchRequest).first
     }
     
     override func viewWillAppear(_ animated: Bool) {
         
         self.getTrainingsplan()
-        //self.dragDropTableView.reloadData()
+        toggleAddMode()
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        
+        coordinator.animate(alongsideTransition: nil, completion: {
+            _ in
+            
+            self.toggleAddMode()
+        })
+        
     }
     
     public func getTrainingsplan() {
@@ -133,11 +140,15 @@ class ViewController: BaseViewController, DragDropCollectionViewDelegate, DropTa
         let collectionViewFlowLayout = DecorationCollectionViewFlowLayout()
         collectionViewFlowLayout.minimumLineSpacing = 10
         collectionViewFlowLayout.minimumInteritemSpacing = 10
-        collectionViewFlowLayout.itemSize = CGSize(width: 100, height: 100)
+        //collectionViewFlowLayout.itemSize = CGSize(width: 100, height: 100)
         collectionViewFlowLayout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        let availableWidth = self.view.frame.size.width - 2*collectionViewFlowLayout.minimumInteritemSpacing
+        let itemWidth = 0.3*availableWidth
+        collectionViewFlowLayout.itemSize = CGSize(width: itemWidth, height: 1.1*itemWidth)
+        
         collectionViewFlowLayout.headerReferenceSize = CGSize(width: 0, height: 50)
         dragDropCollectionView.collectionViewLayout = collectionViewFlowLayout
-        dragDropCollectionView.backgroundColor = UIColor.white
+        dragDropCollectionView.backgroundColor = .white
         dragDropCollectionView.bounces = false
     }
     
@@ -155,28 +166,27 @@ class ViewController: BaseViewController, DragDropCollectionViewDelegate, DropTa
     }
     
     func toggleAddMode() {
+
+        let isLandscape = self.view.frame.size.width > self.view.frame.size.height
+        addButton.isEnabled = !isLandscape
         
+        if isLandscape {
+            addMode = false
+        }
+
         addButton.image = addMode ? UIImage (named: "okButton") : UIImage (named: "plusButton")
         editButton.isEnabled = !addMode
-        //dragDropTableView.beginUpdates()
-        tableViewHeight.constant = addMode ? 0.4*view.bounds.size.height : 0.85*view.bounds.size.height
-        // dragDropTableView.endUpdates()
-        //        let bottomInset = addMode ?  dragDropTableView.contentInset.bottom + dragDropTableView.rowHeight : 0
-        //        dragDropTableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: bottomInset, right: 0)
-        
+        tableViewHeight.constant = addMode ? 0.4*view.bounds.size.height : 0.9*view.bounds.size.height
+
+
         UIView.animate(withDuration: 0.5, delay: 0.0, options: [], animations: {
-            self.view.layoutIfNeeded()
-            self.dragDropTableView.layoutIfNeeded()
+                self.view.layoutIfNeeded()
+                self.dragDropTableView.layoutIfNeeded()
         }, completion: { (finished: Bool) in
             DispatchQueue.main.async {
-                
-                //                self.dragDropTableView.contentOffset = CGPoint.zero
                 self.dragDropCollectionView.reloadData()
                 self.dragDropTableView.reloadData()
-                //                let numberOfRows = self.dragDropTableView.numberOfRows(inSection: 0)
-                //                if numberOfRows > 0 {
-                //                    self.dragDropTableView.scrollToRow(at: IndexPath(item: 0, section: 0), at: UITableViewScrollPosition.top, animated: false)
-                //                }
+
             }
             
         })
