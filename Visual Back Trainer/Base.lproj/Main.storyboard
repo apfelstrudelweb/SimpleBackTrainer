@@ -253,14 +253,15 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Trainingsplan" id="mGk-Ga-MN6">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="infoButton" style="plain" id="YnW-HN-DuJ"/>
                         <rightBarButtonItems>
-                            <barButtonItem image="editButton" id="UHE-gW-NGf">
+                            <barButtonItem image="editButton" style="plain" id="UHE-gW-NGf">
                                 <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="startEditing:" destination="1gU-rI-Hgh" id="jY2-DG-PUp"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem image="plusButton" id="AZy-ym-18S">
+                            <barButtonItem image="plusButton" style="plain" id="AZy-ym-18S">
                                 <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="addButtonTouched:" destination="1gU-rI-Hgh" id="E7U-3k-x0E"/>
@@ -1586,10 +1587,11 @@ Please turn on your Internet Conncetion - as soon your device is connected to th
     </scenes>
     <resources>
         <image name="clipboard" width="23" height="29"/>
-        <image name="editButton" width="29" height="29"/>
+        <image name="editButton" width="44" height="44"/>
         <image name="home" width="30" height="28"/>
         <image name="ic_arrow_black" width="24" height="24"/>
-        <image name="plusButton" width="29" height="29"/>
+        <image name="infoButton" width="44" height="44"/>
+        <image name="plusButton" width="44" height="44"/>
         <image name="premium" width="44" height="44"/>
         <image name="tabBall" width="46" height="44"/>
         <image name="tabBand" width="54" height="47"/>

@@ -10,6 +10,7 @@ import UIKit
 import DragDropiOS
 import CoreData
 
+
 class ViewController: BaseViewController, DragDropCollectionViewDelegate, DropTableViewDelegate {
 
     var fetchedResultsController1: NSFetchedResultsController<Trainingsplan>!
@@ -56,11 +57,15 @@ class ViewController: BaseViewController, DragDropCollectionViewDelegate, DropTa
         
         self.title = "Plan"
         soloTitle = self.title
-        addSlideMenuButton()
+        //addSlideMenuButton()
         
         dragDropTableView.allowsSelection = false
         dragDropTableView.register(UINib(nibName: "VideoCell", bundle: nil), forCellReuseIdentifier: "videoCell")
         dragDropCollectionView.register(UINib(nibName: "DragDropCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "musclegroupCell")
+        
+        dragDropTableView.tableFooterView = UIView(frame: .zero)
+        dragDropTableView.rowHeight = UITableViewAutomaticDimension
+        dragDropTableView.estimatedRowHeight = 10
         
         self.setDragDropTableView()
         self.setDragDropCollectionView()
@@ -81,7 +86,13 @@ class ViewController: BaseViewController, DragDropCollectionViewDelegate, DropTa
         coordinator.animate(alongsideTransition: nil, completion: {
             _ in
             
+            guard let tableView = self.dragDropTableView else {
+                return
+            }
+            let indexPath = IndexPath(row: 0, section: 0)
+            tableView.scrollToRow(at: indexPath, at: .top, animated: true)
             self.toggleAddMode()
+            
         })
         
     }
@@ -538,9 +549,9 @@ extension ViewController:TrainingModelDelegate {
 extension ViewController:UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if scrollView == dragDropTableView {
-            print("ContentOffset = ",scrollView.contentOffset)
-            print("content Size = ", scrollView.contentSize)
-            print("TAbleViewHeight = ", self.dragDropTableView.frame.height)
+//            print("ContentOffset = ",scrollView.contentOffset)
+//            print("content Size = ", scrollView.contentSize)
+//            print("TAbleViewHeight = ", self.dragDropTableView.frame.height)
         }
     }
 }
