@@ -295,6 +295,7 @@ class CoreDataManager: NSObject {
             let request = NSBatchDeleteRequest(fetchRequest: fetch)
             do {
                 try managedObjectContext.execute(request)
+                //try self.managedObjectContext.save()
             } catch let error {
                 NSLog("Failure to delete context: \(error.localizedDescription)")
             }

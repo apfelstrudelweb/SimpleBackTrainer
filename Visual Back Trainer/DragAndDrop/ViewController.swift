@@ -350,7 +350,7 @@ extension ViewController:UITableViewDelegate, UITableViewDataSource {
         
         let sortedColors = colors.sorted( by: { $0.id < $1.id } )
         
-        cell.videoLabel.text = NSLocalizedString(retrievedWorkout.alias!, comment: "") + " \(sortedColors.count)"
+        cell.videoLabel.text =  NSLocalizedString(retrievedWorkout.alias!, comment: "") //String(retrievedWorkout.id)
 
         // for scrolling issues when showing collection view: redraw stripes!
         for subview in cell.stackView.subviews {

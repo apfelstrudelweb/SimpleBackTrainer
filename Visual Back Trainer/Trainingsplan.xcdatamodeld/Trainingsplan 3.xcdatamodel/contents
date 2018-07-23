@@ -38,8 +38,8 @@
         <attribute name="isPremium" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="isTheraband" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="videoUrl" attributeType="String" syncable="YES"/>
-        <relationship name="membership" toMany="YES" deletionRule="Nullify" destinationEntity="GroupWorkoutMembership" inverseName="workout" inverseEntity="GroupWorkoutMembership" syncable="YES"/>
-        <relationship name="traininsgplanId" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Trainingsplan" inverseName="workouts" inverseEntity="Trainingsplan" syncable="YES"/>
+        <relationship name="membership" toMany="YES" deletionRule="No Action" destinationEntity="GroupWorkoutMembership" inverseName="workout" inverseEntity="GroupWorkoutMembership" syncable="YES"/>
+        <relationship name="traininsgplanId" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="Trainingsplan" inverseName="workouts" inverseEntity="Trainingsplan" syncable="YES"/>
         <fetchIndex name="byIndex">
             <fetchIndexElement property="id" type="Binary" order="ascending"/>
         </fetchIndex>
