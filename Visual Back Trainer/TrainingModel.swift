@@ -11,6 +11,7 @@ import CoreData
 
 protocol TrainingModelDelegate {
     func didRetrieveWorkouts(workouts:[WorkoutData])
+    func didRetrieveTrainingsplan(exercises:[TrainingsplanData])
     func showErrorMessage(message:String)
 }
 
@@ -19,6 +20,7 @@ class TrainingModel: NSObject {
     
     typealias PrecheckCompletionHander = (Bool) -> ()
     
+    // updates only for workouts, not for trainingsplan
     func hasUpdates(completionHandler : PrecheckCompletionHander?)  {
         
         ApiHandler.hasUpdates(apiName: API.Name.workout, params: [:], httpMethod: .GET) { (isSucceeded) in
@@ -76,7 +78,34 @@ class TrainingModel: NSObject {
                 }
             }
         }
-       
+    }
+    
+    func getTrainingsplan(completionHandler : CompletionHander?) {
+        ApiHandler.call(apiName: API.Name.plan, params: [:], httpMethod: .GET) { (isSucceeded, response, data) in
+            DispatchQueue.main.async {
+                print(response)
+                if isSucceeded == true {
+                    guard let data = data else {return}
+                    do {
+                        let decoder = JSONDecoder()
+                        let planResponse = try decoder.decode(TrainingsplanResponse.self, from: data)
+                        
+                        print(planResponse)
+                        
+                        DispatchQueue.main.async {
+                            if let exercises = planResponse.exercises {
+                                self.delegate?.didRetrieveTrainingsplan(exercises: exercises)
+                                completionHandler?()
+                            }
+                        }
+                    } catch let err {
+                        print(err)
+                        self.delegate?.showErrorMessage(message: err.localizedDescription)
+                    }
+                }
+            }
+        }
+        
     }
     
 }

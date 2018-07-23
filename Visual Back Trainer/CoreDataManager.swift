@@ -182,6 +182,52 @@ class CoreDataManager: NSObject {
         }
     }
     
+    func addToTrainingsplan(serverTrainingsplanData: [TrainingsplanData]?, completionHandler: CompletionHander?) {
+        
+        do {
+            let count = try CoreDataManager.sharedInstance.managedObjectContext.count(for: NSFetchRequest<Trainingsplan> (entityName: "Trainingsplan"))
+            if count > 0 {
+                // do nothing - trainingsplan exists
+                return
+            }
+            
+        } catch let error {
+            print("Failure to save context: \(error.localizedDescription)")
+        }
+        
+        if let exercises = serverTrainingsplanData {
+
+            for exercise in exercises {
+                
+                do {
+                    let trainingsplan = NSEntityDescription.insertNewObject(forEntityName: "Trainingsplan", into: self.managedObjectContext) as! Trainingsplan
+                    
+                    trainingsplan.id = Int16(exercise.id!)
+                    trainingsplan.position = Int16(exercise.position!)
+  
+                    let fetchRequest1 = NSFetchRequest<NSFetchRequestResult>(entityName: "Workout")
+                    fetchRequest1.predicate = NSPredicate(format: "id = %d", exercise.id!)
+ 
+                    if let workout = try self.managedObjectContext.fetch(fetchRequest1).first as? Workout {
+                        trainingsplan.addToWorkouts(workout)
+                    }
+
+                    try self.managedObjectContext.save()
+                } catch let error {
+                    print("Failure to save context: \(error.localizedDescription)")
+                }
+            }
+            
+            do {
+                try self.managedObjectContext.save()
+            } catch let error {
+                NSLog("Failure to save context: \(error.localizedDescription)")
+            }
+        }
+        
+        completionHandler?()
+    }
+    
     func insertIntoTrainingsplan(workout:Workout, position: Int) {
         
         do {

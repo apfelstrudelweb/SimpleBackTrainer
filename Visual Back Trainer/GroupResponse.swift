@@ -28,3 +28,13 @@ struct WorkoutData: Codable {
     let videoUrl: String?
     let musclegroups: [Int]?
 }
+
+class TrainingsplanResponse: Codable {
+    let exercises: [TrainingsplanData]?
+}
+
+struct TrainingsplanData: Codable {
+    
+    let id: Int?
+    let position: Int?
+}

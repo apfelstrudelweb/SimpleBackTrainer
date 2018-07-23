@@ -71,6 +71,13 @@ class MainMenuViewController: BaseViewController, UICollectionViewDataSource, UI
                     SwiftSpinner.hide()
                     UserDefaults.standard.set(true, forKey: "jsonLoaded")
                 }
+                
+                SwiftSpinner.setTitleFont(UIFont(name: "System", size: 16.0))
+                SwiftSpinner.show("Trainingsplan wird erstellt ...")
+                
+                self.trainingModel.getTrainingsplan{ () in
+                    SwiftSpinner.hide()
+                }
             }
         }
     }
@@ -184,6 +191,17 @@ class MainMenuViewController: BaseViewController, UICollectionViewDataSource, UI
 
 
 extension MainMenuViewController:TrainingModelDelegate {
+    
+    func didRetrieveTrainingsplan(exercises: [TrainingsplanData]) {
+        CoreDataManager.sharedInstance.managedObjectContext.automaticallyMergesChangesFromParent = true
+        
+        CoreDataManager.sharedInstance.addToTrainingsplan(serverTrainingsplanData: exercises) { () in
+            // View aktualisieren nachdem die Daten geladen wurden
+            SwiftSpinner.hide()
+
+        }
+    }
+    
     func didRetrieveWorkouts(workouts: [WorkoutData]) {
         CoreDataManager.sharedInstance.managedObjectContext.automaticallyMergesChangesFromParent = true
         

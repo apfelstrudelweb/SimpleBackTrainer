@@ -12,6 +12,7 @@ class API {
 
     struct Name {
         static let workout = "workouts2.json"
+        static let plan = "trainingsplan.json"
     }
     
     enum HttpMethod: String {

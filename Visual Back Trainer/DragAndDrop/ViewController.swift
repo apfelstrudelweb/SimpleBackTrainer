@@ -538,6 +538,10 @@ extension ViewController:TrainingModelDelegate {
         self.dragDropTableView.reloadData()
     }
     
+    func didRetrieveTrainingsplan(exercises: [TrainingsplanData]) {
+        // TODO: implement
+    }
+    
     func showErrorMessage(message: String) {
         let alert = UIAlertController(title: "", message: message, preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .default, handler: nil)
