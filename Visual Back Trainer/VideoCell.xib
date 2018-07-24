@@ -13,11 +13,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="videoCell" rowHeight="113" id="KGk-i7-Jjw" customClass="VideoCell" customModule="Visual_Back_Trainer" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="703" height="113"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="videoCell" rowHeight="120" id="KGk-i7-Jjw" customClass="VideoCell" customModule="Visual_Back_Trainer" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="726" height="120"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="703" height="112.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="726" height="119.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qcA-fB-XAO">
@@ -40,13 +40,13 @@
                         </variation>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="upgrade" translatesAutoresizingMaskIntoConstraints="NO" id="gYg-Qj-GgR">
-                        <rect key="frame" x="640" y="31" width="55" height="55.5"/>
+                        <rect key="frame" x="640.5" y="31" width="55" height="55.5"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="gYg-Qj-GgR" secondAttribute="height" multiplier="1:1" id="n9Q-iS-aVR"/>
                         </constraints>
                     </imageView>
                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CtG-TN-H2f">
-                        <rect key="frame" x="626.5" y="17.5" width="81.5" height="81.5"/>
+                        <rect key="frame" x="626.5" y="17" width="82.5" height="82.5"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="CtG-TN-H2f" secondAttribute="height" multiplier="1:1" id="xIG-CA-fsp"/>
                         </constraints>
@@ -56,18 +56,21 @@
                         </connections>
                     </button>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NOx-os-zH7">
-                        <rect key="frame" x="615.5" y="17.5" width="1" height="81.5"/>
+                        <rect key="frame" x="615.5" y="17" width="1" height="82.5"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="0.5" id="H7U-hj-1QS"/>
                         </constraints>
                     </view>
-                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="M91-l3-17N">
-                        <rect key="frame" x="636.5" y="0.0" width="66.5" height="117.5"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="M91-l3-17N">
+                        <rect key="frame" x="615.5" y="0.0" width="110.5" height="117.5"/>
                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <variation key="heightClass=compact-widthClass=compact" spacing="2"/>
+                        <variation key="heightClass=compact-widthClass=regular" spacing="2"/>
                     </stackView>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="M91-l3-17N" firstAttribute="leading" secondItem="ed7-Wb-eg8" secondAttribute="trailing" constant="10" id="28F-41-3lg"/>
                     <constraint firstItem="qcA-fB-XAO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="37T-oE-SM1"/>
                     <constraint firstItem="NOx-os-zH7" firstAttribute="bottom" secondItem="CtG-TN-H2f" secondAttribute="bottom" id="3bY-Uq-qCV"/>
                     <constraint firstItem="CtG-TN-H2f" firstAttribute="centerX" secondItem="gYg-Qj-GgR" secondAttribute="centerX" id="5r0-4e-7fp"/>
@@ -77,7 +80,6 @@
                     <constraint firstAttribute="trailing" secondItem="CtG-TN-H2f" secondAttribute="trailing" constant="10" id="Dal-BJ-GGP"/>
                     <constraint firstItem="gYg-Qj-GgR" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="GAV-Fd-PJ0"/>
                     <constraint firstItem="qcA-fB-XAO" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="GLI-Lv-MwK"/>
-                    <constraint firstItem="M91-l3-17N" firstAttribute="leading" secondItem="NOx-os-zH7" secondAttribute="trailing" constant="20" id="JqT-2v-gSM"/>
                     <constraint firstItem="gYg-Qj-GgR" firstAttribute="centerY" secondItem="CtG-TN-H2f" secondAttribute="centerY" id="PNN-lm-k0X"/>
                     <constraint firstItem="CtG-TN-H2f" firstAttribute="height" secondItem="qcA-fB-XAO" secondAttribute="height" multiplier="0.75" id="RXc-f7-jWI"/>
                     <constraint firstItem="NOx-os-zH7" firstAttribute="top" secondItem="CtG-TN-H2f" secondAttribute="top" id="U7J-UR-NBd"/>
@@ -99,7 +101,7 @@
                 <outlet property="videoImageView" destination="qcA-fB-XAO" id="KGw-M4-Imf"/>
                 <outlet property="videoLabel" destination="ed7-Wb-eg8" id="Ly6-CY-tvE"/>
             </connections>
-            <point key="canvasLocation" x="-747.5" y="-97.5"/>
+            <point key="canvasLocation" x="-813" y="160"/>
         </tableViewCell>
     </objects>
     <resources>

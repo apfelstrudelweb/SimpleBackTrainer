@@ -93,7 +93,7 @@ class ViewController: BaseViewController, DragDropCollectionViewDelegate, DropTa
             tableView.scrollToRow(at: indexPath, at: .top, animated: true)
             self.toggleAddMode()
             
-            self.dragDropTableView.reloadData()
+            //self.dragDropTableView.reloadData()
         })
         
     }
@@ -354,24 +354,14 @@ extension ViewController:UITableViewDelegate, UITableViewDataSource {
         for subview in cell.stackView.subviews {
             subview.removeFromSuperview()
         }
-        cell.stackView.snp.removeConstraints()
         
-        let fact = self.view.frame.size.height > self.view.frame.size.width ? 5 : 20
+        let maxNumMusclegroups = 7
         
-        
-        for musclegroupColor in sortedColors {
-            
+        for i in (0..<maxNumMusclegroups).reversed()  {
             let stripe = UIView()
-            stripe.backgroundColor = musclegroupColor.color
+            let color = i<sortedColors.count ? sortedColors[i].color : .white
+            stripe.backgroundColor = color
             cell.stackView.addArrangedSubview(stripe)
-            
-            cell.stackView.snp.makeConstraints { (make) -> Void in
-                make.width.equalTo(fact*sortedColors.count)
-            }
-            
-            stripe.snp.makeConstraints { (make) -> Void in
-                make.width.equalTo(fact)
-            }
         }
 
         return cell
