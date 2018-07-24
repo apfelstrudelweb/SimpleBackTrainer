@@ -119,58 +119,9 @@ import UIKit
     }
     
     
-    @objc func handlerDisplayLinkToContinuousScroll(){
-        if dragRectCurrent == nil {
-            return
-        }
-        
-        let currentRect : CGRect = CGRect(x: self.contentOffset.x, y: self.contentOffset.y, width: self.bounds.size.width, height: self.bounds.size.height)
-        var rectForNextScroll : CGRect = currentRect
-        
-        if isHorizontal {
-            
-            let leftBoundary = CGRect(x: -30.0, y: 0.0, width: 30.0, height: self.frame.size.height)
-            let rightBoundary = CGRect(x: self.frame.size.width, y: 0.0, width: 30.0, height: self.frame.size.height)
-            
-            if dragRectCurrent.intersects(leftBoundary) == true {
-                rectForNextScroll.origin.x -= self.bounds.size.width * 0.5
-                if rectForNextScroll.origin.x < 0 {
-                    rectForNextScroll.origin.x = 0
-                }
-            }
-            else if dragRectCurrent.intersects(rightBoundary) == true {
-                rectForNextScroll.origin.x += self.bounds.size.width * 0.5
-                if rectForNextScroll.origin.x > self.contentSize.width - self.bounds.size.width {
-                    rectForNextScroll.origin.x = self.contentSize.width - self.bounds.size.width
-                }
-            }
-            
-        } else { // is vertical
-            //            debugPrint("drag view rect: \(dragRectCurrent) ———— super view rect\(currentRect)")
-            let topBoundary = CGRect(x: 0.0, y: -30.0, width: self.frame.size.width, height: 30.0)
-            let bottomBoundary = CGRect(x: 0.0, y: self.frame.size.height, width: self.frame.size.width, height: 30.0)
-            
-            
-            if dragRectCurrent.intersects(topBoundary) == true {
-                rectForNextScroll.origin.y -= 5
-                if rectForNextScroll.origin.y < 0 {
-                    rectForNextScroll.origin.y = 0
-                }
-            }
-            else if dragRectCurrent.intersects(bottomBoundary) == true {
-                //                debugPrint("move in bottomboundary : \(dragRectCurrent)")
-                rectForNextScroll.origin.y += 5
-                if rectForNextScroll.origin.y > self.contentSize.height - self.bounds.size.height {
-                    rectForNextScroll.origin.y = self.contentSize.height - self.bounds.size.height
-                }
-            }
-        }
-        
-        if currentRect.equalTo(rectForNextScroll) == false {
-            
-            scrollRectToVisible(rectForNextScroll, animated: false)
-            
-        }
+    @objc func handlerDisplayLinkToContinuousScroll() {
+        // no scrolling during dragging
+        return
     }
     
 }

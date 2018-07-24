@@ -93,6 +93,7 @@ class ViewController: BaseViewController, DragDropCollectionViewDelegate, DropTa
             tableView.scrollToRow(at: indexPath, at: .top, animated: true)
             self.toggleAddMode()
             
+            self.dragDropTableView.reloadData()
         })
         
     }
@@ -188,18 +189,20 @@ class ViewController: BaseViewController, DragDropCollectionViewDelegate, DropTa
         addButton.image = addMode ? UIImage (named: "okButton") : UIImage (named: "plusButton")
         editButton.isEnabled = !addMode
         tableViewHeight.constant = addMode ? 0.4*view.bounds.size.height : 0.9*view.bounds.size.height
+        
+        dragDropCollectionView.isHidden = !addMode
 
 
         UIView.animate(withDuration: 0.5, delay: 0.0, options: [], animations: {
-                self.view.layoutIfNeeded()
-                self.dragDropTableView.layoutIfNeeded()
+            
+            self.view.layoutIfNeeded()
         }, completion: { (finished: Bool) in
             DispatchQueue.main.async {
-                self.dragDropCollectionView.reloadData()
-                self.dragDropTableView.reloadData()
-
+                if self.addMode {
+                    // necessary that used items are greyed out
+                    self.dragDropCollectionView.reloadData()
+                }
             }
-            
         })
     }
 }
@@ -226,11 +229,6 @@ extension ViewController:UICollectionViewDelegate, UICollectionViewDataSource {
             let items = group?.workout?.allObjects as! [Workout]
             return items.count
         }
-//        if let sections = fetchedResultsController2.sections {
-//            let currentSection = sections[section]
-//            print(currentSection.numberOfObjects)
-//            return currentSection.numberOfObjects
-//        }
         return 0
     }
     
@@ -358,6 +356,8 @@ extension ViewController:UITableViewDelegate, UITableViewDataSource {
         }
         cell.stackView.snp.removeConstraints()
         
+        let fact = self.view.frame.size.height > self.view.frame.size.width ? 5 : 20
+        
         
         for musclegroupColor in sortedColors {
             
@@ -366,19 +366,14 @@ extension ViewController:UITableViewDelegate, UITableViewDataSource {
             cell.stackView.addArrangedSubview(stripe)
             
             cell.stackView.snp.makeConstraints { (make) -> Void in
-                make.width.equalTo(5*sortedColors.count)
+                make.width.equalTo(fact*sortedColors.count)
             }
             
             stripe.snp.makeConstraints { (make) -> Void in
-                //make.height.equalToSuperview()
-                //make.width.equalToSuperview().dividedBy(colors.count) //Double(colors.count)
-                //make.width.equalTo(60/Double(colors.count))
-                make.width.equalTo(5)
+                make.width.equalTo(fact)
             }
         }
-        
-        
-        
+
         return cell
     }
     
