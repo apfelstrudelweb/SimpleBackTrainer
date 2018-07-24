@@ -66,13 +66,13 @@ class SlideMenuViewController: UIViewController, UITableViewDataSource, UITableV
     
     func updateArrayMenuOptions(){
         
-        arrayMenuOptions.append(["title":NSLocalizedString("SIDEMENU_HOME", comment: ""), "icon":"home"])
-        arrayMenuOptions.append(["title":NSLocalizedString("SIDEMENU_ACTIVITIES", comment: ""), "icon":"berufe"])
-        arrayMenuOptions.append(["title":NSLocalizedString("SIDEMENU_SPORTS", comment: ""), "icon":"sportarten"])
-        arrayMenuOptions.append(["title":NSLocalizedString("SIDEMENU_EXERCISES", comment: ""), "icon":"uebungen"])
-        arrayMenuOptions.append(["title":NSLocalizedString("SIDEMENU_PREMIUM", comment: ""), "icon":"premium"])
-        arrayMenuOptions.append(["title":NSLocalizedString("SIDEMENU_SETTINGS", comment: ""), "icon":"settings"])
-        arrayMenuOptions.append(["title":NSLocalizedString("SIDEMENU_CONTACT", comment: ""), "icon":"contact"])
+        arrayMenuOptions.append(["title":NSLocalizedString("SIDEMENU_HOME", comment: ""), "icon":"side_home"])
+        arrayMenuOptions.append(["title":NSLocalizedString("SIDEMENU_ACTIVITIES", comment: ""), "icon":"side_berufe"])
+        arrayMenuOptions.append(["title":NSLocalizedString("SIDEMENU_SPORTS", comment: ""), "icon":"side_sportarten"])
+        arrayMenuOptions.append(["title":NSLocalizedString("SIDEMENU_EXERCISES", comment: ""), "icon":"side_uebungen"])
+        arrayMenuOptions.append(["title":NSLocalizedString("SIDEMENU_PREMIUM", comment: ""), "icon":"side_premium"])
+        arrayMenuOptions.append(["title":NSLocalizedString("SIDEMENU_SETTINGS", comment: ""), "icon":"side_settings"])
+        arrayMenuOptions.append(["title":NSLocalizedString("SIDEMENU_CONTACT", comment: ""), "icon":"side_contact"])
         
         tblMenuOptions.reloadData()
     }

@@ -23,12 +23,12 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="GTM-bT-963">
-                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                                <rect key="frame" x="0.0" y="88" width="375" height="641"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="zZo-Ym-FO0">
                                     <size key="itemSize" width="272" height="307"/>
                                     <size key="headerReferenceSize" width="50" height="50"/>
-                                    <size key="footerReferenceSize" width="50" height="50"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
@@ -45,7 +45,7 @@
                                                         <constraint firstAttribute="width" secondItem="PII-id-Jex" secondAttribute="height" multiplier="1:1" id="8O4-EO-3cM"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="28l-sO-u6R">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="28l-sO-u6R">
                                                     <rect key="frame" x="13" y="262" width="246" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="trf-55-Y5d"/>
@@ -93,10 +93,6 @@
                                     <connections>
                                         <outlet property="titleLabel" destination="2QR-hv-OHZ" id="cOd-AD-vic"/>
                                     </connections>
-                                </collectionReusableView>
-                                <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="oIj-tk-QJa">
-                                    <rect key="frame" x="0.0" y="357" width="375" height="50"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </collectionReusableView>
                                 <connections>
                                     <outlet property="dataSource" destination="vXZ-lx-hvc" id="Cag-oB-dM8"/>
@@ -253,15 +249,15 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Trainingsplan" id="mGk-Ga-MN6">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="infoButton" style="plain" id="YnW-HN-DuJ"/>
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="infoButton" id="YnW-HN-DuJ"/>
                         <rightBarButtonItems>
-                            <barButtonItem image="editButton" style="plain" id="UHE-gW-NGf">
+                            <barButtonItem image="editButton" id="UHE-gW-NGf">
                                 <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="startEditing:" destination="1gU-rI-Hgh" id="jY2-DG-PUp"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem image="plusButton" style="plain" id="AZy-ym-18S">
+                            <barButtonItem image="plusButton" id="AZy-ym-18S">
                                 <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="addButtonTouched:" destination="1gU-rI-Hgh" id="E7U-3k-x0E"/>
@@ -290,7 +286,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mQL-Qs-Hz8">
-                                <rect key="frame" x="0.0" y="44" width="375" height="685"/>
+                                <rect key="frame" x="0.0" y="88" width="375" height="641"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="GhF-At-qLN">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -336,7 +332,7 @@
                                     </constraints>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="premiumCell" rowHeight="105" id="wjX-D1-ruq" customClass="PremiumTableViewCell" customModule="Visual_Back_Trainer" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="premiumCell" rowHeight="105" id="wjX-D1-ruq" customClass="PremiumTableViewCell" customModule="Visual_Back_Trainer" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="72" width="375" height="105"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wjX-D1-ruq" id="q1u-2l-lMj">
@@ -344,14 +340,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EC3-2d-cpO">
-                                                    <rect key="frame" x="25" y="21" width="80" height="80"/>
+                                                    <rect key="frame" x="25" y="21" width="80" height="80.333333333333329"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="80" id="bXV-67-BIe"/>
                                                         <constraint firstAttribute="width" constant="80" id="htv-Kl-Uy0"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mehr Trainingsvideos" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xvl-YX-k0H">
-                                                    <rect key="frame" x="125" y="21.000000000000004" width="147" height="38.333333333333343"/>
+                                                    <rect key="frame" x="125" y="21" width="235" height="24.333333333333329"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="24" id="BtX-4R-yWx"/>
                                                     </constraints>
@@ -360,7 +356,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mehr Trainingsvideos mit Hanteln, Körpergewicht, Widerstandsbändern und Kleingeräten." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3yU-MG-4oZ">
-                                                    <rect key="frame" x="125" y="63.333333333333329" width="147" height="133.66666666666669"/>
+                                                    <rect key="frame" x="125" y="49.333333333333321" width="235" height="95.666666666666686"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -502,27 +498,6 @@ Please turn on your Internet Conncetion - as soon your device is connected to th
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HpV-Aw-fAc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5664.8000000000002" y="-232.01970443349754"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="nrt-yR-DmY">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="DGj-7d-jfR" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="mjw-Ry-qIh">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="barTintColor" red="0.1239974424" green="0.16451942920000001" blue="0.47357922790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </textAttributes>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="XfU-3W-Qcb" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="259.19999999999999" y="305.84707646176912"/>
         </scene>
         <!--Slide Menu View Controller-->
         <scene sceneID="7la-Hc-DUD">
@@ -716,19 +691,19 @@ Please turn on your Internet Conncetion - as soon your device is connected to th
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" misplaced="YES" id="Qvz-Go-JOv">
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="Qvz-Go-JOv">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vch-L2-O3e">
-                                    <rect key="frame" x="0.0" y="556" width="375" height="1"/>
+                                    <rect key="frame" x="0.0" y="119" width="375" height="1"/>
                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="0.59999999999999998" id="oem-7d-0iA"/>
                                     </constraints>
                                 </view>
                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="A1s-yS-mg5">
-                                    <rect key="frame" x="20" y="262.33333333333326" width="335" height="32.333333333333314"/>
+                                    <rect key="frame" x="20" y="44" width="335" height="32.333333333333343"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R5w-yQ-n1b">
                                             <rect key="frame" x="0.0" y="0.0" width="42.333333333333336" height="32.333333333333336"/>
@@ -1316,7 +1291,7 @@ Please turn on your Internet Conncetion - as soon your device is connected to th
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" misplaced="YES" id="A3h-5J-cfI">
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="A3h-5J-cfI">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="76"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
@@ -1328,14 +1303,14 @@ Please turn on your Internet Conncetion - as soon your device is connected to th
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pMD-N4-iIq">
-                                    <rect key="frame" x="0.0" y="512" width="375" height="1"/>
+                                    <rect key="frame" x="0.0" y="75" width="375" height="1"/>
                                     <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="0.59999999999999998" id="jdg-l0-NbM"/>
                                     </constraints>
                                 </view>
                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="rM8-5R-709">
-                                    <rect key="frame" x="20" y="232.99999999999997" width="335" height="47"/>
+                                    <rect key="frame" x="20" y="14.666666666666657" width="335" height="47"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SrK-xT-VHx">
                                             <rect key="frame" x="0.0" y="0.0" width="61.333333333333336" height="47"/>
@@ -1458,7 +1433,7 @@ Please turn on your Internet Conncetion - as soon your device is connected to th
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gDC-xD-Bux" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" image="home" id="vJq-Qi-zZx"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" backIndicatorImage="ic_arrow_black" id="V4Z-RY-5W8">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="V4Z-RY-5W8">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1474,7 +1449,7 @@ Please turn on your Internet Conncetion - as soon your device is connected to th
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YG4-5R-Hoa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2796" y="-350.2463054187192"/>
+            <point key="canvasLocation" x="2743" y="-78"/>
         </scene>
         <!--Plan-->
         <scene sceneID="fUM-t1-dOP">
@@ -1482,7 +1457,7 @@ Please turn on your Internet Conncetion - as soon your device is connected to th
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Fyg-8i-2dS" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Plan" image="clipboard" id="EFA-mI-M8v"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" backIndicatorImage="ic_arrow_black" id="dFf-3P-5K6">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dFf-3P-5K6">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1509,7 +1484,7 @@ Please turn on your Internet Conncetion - as soon your device is connected to th
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0ck-Pc-GRP" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Premium" image="premium" id="SaP-fD-OLQ"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" backIndicatorImage="ic_arrow_black" id="esv-OJ-MlZ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="esv-OJ-MlZ">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1533,7 +1508,7 @@ Please turn on your Internet Conncetion - as soon your device is connected to th
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QFw-gB-4NH" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Settings" image="zahnrad" id="71Q-a3-mPY"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" backIndicatorImage="ic_arrow_black" id="EkJ-A0-EbV">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EkJ-A0-EbV">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1569,27 +1544,11 @@ Please turn on your Internet Conncetion - as soon your device is connected to th
             </objects>
             <point key="canvasLocation" x="5332" y="-1046.305418719212"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="hEc-PH-Rbx">
-            <objects>
-                <viewController id="GNQ-V3-Adw" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Z5z-i3-N7Q">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="C19-21-jrm"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3C8-Fj-hjU" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="649" y="-383"/>
-        </scene>
     </scenes>
     <resources>
         <image name="clipboard" width="23" height="29"/>
         <image name="editButton" width="44" height="44"/>
         <image name="home" width="30" height="28"/>
-        <image name="ic_arrow_black" width="24" height="24"/>
         <image name="infoButton" width="44" height="44"/>
         <image name="plusButton" width="44" height="44"/>
         <image name="premium" width="44" height="44"/>
@@ -1605,9 +1564,9 @@ Please turn on your Internet Conncetion - as soon your device is connected to th
         <image name="zahnrad" width="33" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ZQd-kQ-BxA"/>
+        <segue reference="FHK-eM-ugm"/>
         <segue reference="LVj-mE-GEn"/>
-        <segue reference="fql-e8-eDg"/>
-        <segue reference="QzY-9p-Wcn"/>
+        <segue reference="TDR-0y-YXj"/>
+        <segue reference="cka-FD-Q28"/>
     </inferredMetricsTieBreakers>
 </document>
