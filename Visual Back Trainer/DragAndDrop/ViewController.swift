@@ -349,21 +349,14 @@ extension ViewController:UITableViewDelegate, UITableViewDataSource {
         let sortedColors = colors.sorted( by: { $0.id < $1.id } )
         
         cell.videoLabel.text =  NSLocalizedString(retrievedWorkout.alias!, comment: "") //String(retrievedWorkout.id)
-
-        // for scrolling issues when showing collection view: redraw stripes!
-        for subview in cell.stackView.subviews {
-            subview.removeFromSuperview()
+        
+        let sortedStripeViews = cell.stripeViewCollection.sorted(by: { $0.tag < $1.tag })
+        
+        for (i, stripeView) in sortedStripeViews.enumerated() {
+            let color = i<sortedColors.count ? sortedColors[i].color : .clear
+            stripeView.backgroundColor = color
         }
         
-        let maxNumMusclegroups = 7
-        
-        for i in (0..<maxNumMusclegroups).reversed()  {
-            let stripe = UIView()
-            let color = i<sortedColors.count ? sortedColors[i].color : .white
-            stripe.backgroundColor = color
-            cell.stackView.addArrangedSubview(stripe)
-        }
-
         return cell
     }
     

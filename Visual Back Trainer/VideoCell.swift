@@ -29,6 +29,7 @@ class VideoCell: UITableViewCell {
     @IBOutlet weak var favoriteDelimter: UIView!
     @IBOutlet weak var favoriteButton: UIButton!
     @IBOutlet weak var stackView: UIStackView!
+    @IBOutlet var stripeViewCollection: [UIView]!
     
     var infoText: String = ""
     var indexPath: IndexPath = IndexPath(row: 0, section: 0)
