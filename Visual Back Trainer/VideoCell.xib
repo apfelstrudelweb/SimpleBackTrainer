@@ -20,7 +20,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="726" height="119.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qcA-fB-XAO">
+                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qcA-fB-XAO">
                         <rect key="frame" x="10" y="4" width="121.5" height="68.5"/>
                         <color key="backgroundColor" red="0.1529663205" green="0.40549850459999998" blue="0.73860585690000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -98,14 +98,27 @@
                         <variation key="heightClass=compact-widthClass=compact" spacing="2"/>
                         <variation key="heightClass=compact-widthClass=regular" spacing="2"/>
                     </stackView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t99-Uq-HuB">
+                        <rect key="frame" x="0.0" y="0.0" width="396.5" height="76.5"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <state key="normal">
+                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
+                        <connections>
+                            <action selector="videoTouched:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="eFq-rI-sJK"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="qcA-fB-XAO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="37T-oE-SM1"/>
+                    <constraint firstItem="t99-Uq-HuB" firstAttribute="trailing" secondItem="NOx-os-zH7" secondAttribute="trailing" id="3Z7-oz-0Zj"/>
                     <constraint firstItem="NOx-os-zH7" firstAttribute="bottom" secondItem="CtG-TN-H2f" secondAttribute="bottom" id="3bY-Uq-qCV"/>
                     <constraint firstItem="CtG-TN-H2f" firstAttribute="centerX" secondItem="gYg-Qj-GgR" secondAttribute="centerX" id="5r0-4e-7fp"/>
                     <constraint firstItem="M91-l3-17N" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="9jY-t8-7qW"/>
                     <constraint firstItem="gYg-Qj-GgR" firstAttribute="height" secondItem="qcA-fB-XAO" secondAttribute="height" multiplier="0.5" id="A0b-Sy-raC"/>
                     <constraint firstAttribute="bottom" secondItem="M91-l3-17N" secondAttribute="bottom" id="AMj-W0-Bhe"/>
+                    <constraint firstAttribute="bottom" secondItem="t99-Uq-HuB" secondAttribute="bottom" id="CbQ-4G-4F8"/>
+                    <constraint firstItem="t99-Uq-HuB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="D6l-rA-Kr3"/>
                     <constraint firstAttribute="trailing" secondItem="CtG-TN-H2f" secondAttribute="trailing" constant="10" id="Dal-BJ-GGP"/>
                     <constraint firstItem="gYg-Qj-GgR" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="GAV-Fd-PJ0"/>
                     <constraint firstItem="qcA-fB-XAO" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="GLI-Lv-MwK"/>
@@ -120,6 +133,7 @@
                     <constraint firstItem="ed7-Wb-eg8" firstAttribute="height" secondItem="qcA-fB-XAO" secondAttribute="height" id="jay-le-PTp"/>
                     <constraint firstItem="CtG-TN-H2f" firstAttribute="leading" secondItem="NOx-os-zH7" secondAttribute="trailing" constant="10" id="k8n-SA-4ev"/>
                     <constraint firstItem="NOx-os-zH7" firstAttribute="leading" secondItem="ed7-Wb-eg8" secondAttribute="trailing" constant="10" id="kiO-eF-Wew"/>
+                    <constraint firstItem="t99-Uq-HuB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="mOQ-3k-sjl"/>
                     <constraint firstItem="M91-l3-17N" firstAttribute="leading" secondItem="NOx-os-zH7" secondAttribute="trailing" id="zhK-Xk-vxp"/>
                 </constraints>
             </tableViewCellContentView>

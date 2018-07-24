@@ -42,18 +42,13 @@ class VideoCell: UITableViewCell {
         favoriteDelimter.tintColor = .lightGray
         favoriteButton.setImage(favoriteImage, for: .normal)
         favoriteButton.tintColor = .lightGray
-        
-        let tap = UITapGestureRecognizer(target: self, action: #selector(VideoCell.videoTouched))
-        
-        videoImageView.addGestureRecognizer(tap)
-        videoImageView.isUserInteractionEnabled = true
-        videoLabel.addGestureRecognizer(tap)
-        videoLabel.isUserInteractionEnabled = true
     }
     
-    @objc func videoTouched() {
+    @IBAction func videoTouched(_ sender: Any) {
+        // TODO: implement delegate method also in trainingsplan
         self.delegate?.videoTouched(indexPath: indexPath)
     }
+
     
     @IBAction func favoriteButtonTouched(_ sender: UIButton) {
         

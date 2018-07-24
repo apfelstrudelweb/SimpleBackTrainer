@@ -23,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="GTM-bT-963">
-                                <rect key="frame" x="0.0" y="88" width="375" height="641"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="zZo-Ym-FO0">
                                     <size key="itemSize" width="272" height="307"/>
@@ -112,13 +112,12 @@
                     <navigationItem key="navigationItem" title="Home" id="a1u-Ki-tSz"/>
                     <connections>
                         <outlet property="collectionView" destination="GTM-bT-963" id="mYW-Bs-N1t"/>
-                        <segue destination="khG-SL-0rk" kind="show" identifier="pushToPlay" id="WvG-AQ-ekI"/>
                         <segue destination="y8a-Uo-t1P" kind="show" identifier="NetworkUnavailableSegue" animates="NO" id="qbp-6V-Dxe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3738" y="-318"/>
+            <point key="canvasLocation" x="353" y="1045"/>
         </scene>
         <!--Trainingsplan-->
         <scene sceneID="KaJ-we-qHG">
@@ -275,7 +274,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lgJ-ag-2w9" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3737" y="341"/>
+            <point key="canvasLocation" x="1286" y="1045"/>
         </scene>
         <!--Premium-->
         <scene sceneID="77M-b9-AbX">
@@ -286,7 +285,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mQL-Qs-Hz8">
-                                <rect key="frame" x="0.0" y="88" width="375" height="641"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="685"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="GhF-At-qLN">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -408,7 +407,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jOk-HA-PQV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7038" y="-168"/>
+            <point key="canvasLocation" x="2185" y="1045"/>
         </scene>
         <!--Settings-->
         <scene sceneID="kTR-EQ-icr">
@@ -434,23 +433,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nYl-AY-FWe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3738.4000000000001" y="1851.7241379310346"/>
-        </scene>
-        <!--Play-->
-        <scene sceneID="q6l-iR-WN3">
-            <objects>
-                <viewController restorationIdentifier="PlayVC" storyboardIdentifier="PlayVC" id="khG-SL-0rk" customClass="PlayVC" customModule="Visual_Back_Trainer" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8Tm-V4-HTY">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="QNw-dU-d0i"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Play" id="f24-Ia-thn"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mmn-PL-HS6" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5009" y="-406"/>
+            <point key="canvasLocation" x="3076" y="1045"/>
         </scene>
         <!--Offline View Controller-->
         <scene sceneID="jiv-71-tPU">
@@ -497,7 +480,7 @@ Please turn on your Internet Conncetion - as soon your device is connected to th
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HpV-Aw-fAc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5664.8000000000002" y="-232.01970443349754"/>
+            <point key="canvasLocation" x="353" y="-392"/>
         </scene>
         <!--Slide Menu View Controller-->
         <scene sceneID="7la-Hc-DUD">
@@ -635,7 +618,7 @@ Please turn on your Internet Conncetion - as soon your device is connected to th
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q5J-uJ-gia" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-482" y="305"/>
+            <point key="canvasLocation" x="-1554" y="305"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="z54-3T-DHK">
@@ -657,7 +640,7 @@ Please turn on your Internet Conncetion - as soon your device is connected to th
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uin-wc-Bma" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1109.5999999999999" y="305.17241379310349"/>
+            <point key="canvasLocation" x="-681" y="304"/>
         </scene>
         <!--Sports Controller-->
         <scene sceneID="uOq-zE-O0f">
@@ -808,7 +791,7 @@ Please turn on your Internet Conncetion - as soon your device is connected to th
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sNI-XM-zxk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2560.8000000000002" y="-1047.0443349753696"/>
+            <point key="canvasLocation" x="3110" y="1790"/>
         </scene>
         <!--Contact Controller-->
         <scene sceneID="Gyg-Le-bwq">
@@ -832,7 +815,7 @@ Please turn on your Internet Conncetion - as soon your device is connected to th
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="63L-3m-cZH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3234" y="-1046"/>
+            <point key="canvasLocation" x="2562" y="-1046"/>
         </scene>
         <!--Activities Controller-->
         <scene sceneID="k4W-DE-ZqQ">
@@ -904,7 +887,7 @@ Please turn on your Internet Conncetion - as soon your device is connected to th
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YQb-Dd-5dX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4662" y="-1046"/>
+            <point key="canvasLocation" x="3255" y="-1046"/>
         </scene>
         <!--Anatomy View Controller-->
         <scene sceneID="SN0-6b-1ZN">
@@ -1281,7 +1264,7 @@ Please turn on your Internet Conncetion - as soon your device is connected to th
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SuJ-jF-R5E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6274.3999999999996" y="-1046.305418719212"/>
+            <point key="canvasLocation" x="1286" y="1790"/>
         </scene>
         <!--Video Table View Controller-->
         <scene sceneID="cU6-Vw-MC1">
@@ -1411,7 +1394,7 @@ Please turn on your Internet Conncetion - as soon your device is connected to th
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gub-43-zKD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7072.8000000000002" y="-1047.0443349753696"/>
+            <point key="canvasLocation" x="2185" y="1790"/>
         </scene>
         <!--AV Player View Controller-->
         <scene sceneID="Bjh-Fe-Nvf">
@@ -1425,7 +1408,7 @@ Please turn on your Internet Conncetion - as soon your device is connected to th
                 </avPlayerViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W1p-ZM-nfv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4407" y="-1861"/>
+            <point key="canvasLocation" x="3929" y="1790"/>
         </scene>
         <!--Home-->
         <scene sceneID="9rk-kJ-MAJ">
@@ -1449,7 +1432,7 @@ Please turn on your Internet Conncetion - as soon your device is connected to th
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YG4-5R-Hoa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2743" y="-78"/>
+            <point key="canvasLocation" x="354" y="304"/>
         </scene>
         <!--Plan-->
         <scene sceneID="fUM-t1-dOP">
@@ -1476,7 +1459,7 @@ Please turn on your Internet Conncetion - as soon your device is connected to th
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DKq-Ad-OMD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2796" y="341"/>
+            <point key="canvasLocation" x="1286" y="304"/>
         </scene>
         <!--Premium-->
         <scene sceneID="eMX-VF-Tjz">
@@ -1500,7 +1483,7 @@ Please turn on your Internet Conncetion - as soon your device is connected to th
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1IW-dV-L40" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2796" y="1069.9507389162561"/>
+            <point key="canvasLocation" x="2186" y="304"/>
         </scene>
         <!--Settings-->
         <scene sceneID="R5f-fo-s1l">
@@ -1512,7 +1495,7 @@ Please turn on your Internet Conncetion - as soon your device is connected to th
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="barTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.1239974424" green="0.16451942920000001" blue="0.47357922790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
@@ -1524,7 +1507,7 @@ Please turn on your Internet Conncetion - as soon your device is connected to th
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h5g-t5-DQb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2796" y="1851.7241379310346"/>
+            <point key="canvasLocation" x="3076" y="304"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xEK-cT-r6w">
@@ -1542,7 +1525,7 @@ Please turn on your Internet Conncetion - as soon your device is connected to th
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3mV-bL-87C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5332" y="-1046.305418719212"/>
+            <point key="canvasLocation" x="3929" y="1045"/>
         </scene>
     </scenes>
     <resources>
@@ -1564,9 +1547,9 @@ Please turn on your Internet Conncetion - as soon your device is connected to th
         <image name="zahnrad" width="33" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="FHK-eM-ugm"/>
+        <segue reference="ZQd-kQ-BxA"/>
         <segue reference="LVj-mE-GEn"/>
-        <segue reference="TDR-0y-YXj"/>
-        <segue reference="cka-FD-Q28"/>
+        <segue reference="fql-e8-eDg"/>
+        <segue reference="QzY-9p-Wcn"/>
     </inferredMetricsTieBreakers>
 </document>
