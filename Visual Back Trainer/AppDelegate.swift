@@ -24,6 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UITabBar.appearance().barTintColor = UIColor(red: 0.9176, green: 0.9176, blue: 0.9176, alpha: 1.0)
         UITabBar.appearance().tintColor = UINavigationBar.appearance().barTintColor
         
+        
         //clearDB()
 //        let navigationController = window?.rootViewController as! UINavigationController
 //        let firstVC = navigationController.viewControllers[0] as! BaseViewController

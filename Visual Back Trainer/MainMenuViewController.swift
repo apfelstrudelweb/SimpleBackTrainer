@@ -41,6 +41,16 @@ class MainMenuViewController: BaseViewController, UICollectionViewDataSource, UI
         
         self.tabBarController?.tabBar.isHidden = false
         
+        do {
+            let fetchRequest = NSFetchRequest<Trainingsplan>(entityName: "Trainingsplan")
+            let count = try CoreDataManager.sharedInstance.managedObjectContext.count(for: fetchRequest)
+            self.tabBarController?.tabBar.items![1].badgeColor = .red
+            self.tabBarController?.tabBar.items![1].badgeValue = String(count)
+            
+        } catch let error {
+            print ("fetch task failed", error)
+        }
+        
         let jsonLoaded = UserDefaults.standard.object(forKey: "jsonLoaded") as? Bool
         
         // TODO: handle interruption of network connection
@@ -198,7 +208,17 @@ extension MainMenuViewController:TrainingModelDelegate {
         CoreDataManager.sharedInstance.addToTrainingsplan(serverTrainingsplanData: exercises) { () in
             // View aktualisieren nachdem die Daten geladen wurden
             SwiftSpinner.hide()
-
+            
+            // TODO: get count as return value
+            
+            do {
+                let fetchRequest = NSFetchRequest<Trainingsplan>(entityName: "Trainingsplan")
+                let count = try CoreDataManager.sharedInstance.managedObjectContext.count(for: fetchRequest)
+                self.tabBarController?.tabBar.items![1].badgeValue = String(count)
+                
+            } catch let error {
+                print ("fetch task failed", error)
+            }
         }
     }
     

@@ -30,8 +30,6 @@ class ViewController: BaseViewController, DragDropCollectionViewDelegate, DropTa
     
     var addMode = false
     
-    var soloTitle: String?
-    
     @IBOutlet weak var addButton: UIBarButtonItem!
     @IBOutlet weak var editButton: UIBarButtonItem!
     @IBOutlet weak var dragDropTableView: DragDropTableView!
@@ -56,7 +54,7 @@ class ViewController: BaseViewController, DragDropCollectionViewDelegate, DropTa
         super.viewDidLoad()
         
         self.title = "Plan"
-        soloTitle = self.title
+
         //addSlideMenuButton()
         
         dragDropTableView.allowsSelection = false
@@ -102,7 +100,7 @@ class ViewController: BaseViewController, DragDropCollectionViewDelegate, DropTa
         do {
             try fetchedResultsController1.performFetch()
             let count = try CoreDataManager.sharedInstance.managedObjectContext.count(for: fetchedResultsController1.fetchRequest)
-            self.title = self.soloTitle! + " (\(count))"
+            self.tabBarController?.tabBar.items![1].badgeValue = String(count)
             tableData = fetchedResultsController1.fetchedObjects!
             
             try fetchedResultsController2.performFetch()
@@ -468,6 +466,7 @@ extension ViewController:NSFetchedResultsControllerDelegate {
         //                self.dragDropCollectionView.reloadData()
         //            }
         //        }
+        
     }
     
     
@@ -478,6 +477,8 @@ extension ViewController:NSFetchedResultsControllerDelegate {
     public func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         
         self.dragDropTableView.endUpdates()
+        self.getTrainingsplan()
+        
         //        let dispatchTime = DispatchTime.now() + 0.5
         //        DispatchQueue.main.asyncAfter(deadline: dispatchTime) {
         //            self.dragDropCollectionView.reloadData()
