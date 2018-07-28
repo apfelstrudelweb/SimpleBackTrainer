@@ -197,11 +197,13 @@ class AnatomyViewController: UIViewController {
         let w = self.view.frame.size.width
         let screenHeight = h > w ? h : w
         
+        // TODO: fix crash for iPad and fix glitch with control view
+        
         if isIPadLandscape {
-            animationTopSpace.constant = 0.02 * screenHeight
+            //animationTopSpace.constant = 0.02 * screenHeight
             controlView.isHidden = true
         } else if isIPadPortrait {
-            animationTopSpace.constant = 0.15 * screenHeight
+            //animationTopSpace.constant = 0.15 * screenHeight
             controlView.isHidden = false
         }
         

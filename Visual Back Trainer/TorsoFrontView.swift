@@ -167,7 +167,7 @@ class TorsoFrontView: TorsoBasicView, UIScrollViewDelegate {
     func scrollViewDidZoom(_ scrollView: UIScrollView) {
         
         labelCollection.forEach {
-            $0.alpha = scrollView.zoomScale > 2 ? 1 : 0
+            $0.alpha = scrollView.zoomScale > 1.5 ? 1 : 0
         }
     }
     

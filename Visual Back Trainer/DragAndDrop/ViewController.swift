@@ -164,9 +164,12 @@ class ViewController: BaseViewController, DragDropCollectionViewDelegate, DropTa
     
     // MARK: editing mode
     @IBAction func startEditing(_ sender: UIBarButtonItem) {
-        self.dragDropTableView.isEditing = !self.dragDropTableView.isEditing
+        
+        self.dragDropTableView.setEditing(!self.dragDropTableView.isEditing, animated: true)
+        
         editButton.image = self.dragDropTableView.isEditing ? UIImage (named: "okButton") : UIImage (named: "editButton")
         addButton.isEnabled = !self.dragDropTableView.isEditing
+        // TODO: do we need this?
         dragDropTableView.dropTableViewDelegate = self.dragDropTableView.isEditing ? nil : self
     }
     
@@ -476,27 +479,8 @@ extension ViewController:NSFetchedResultsControllerDelegate {
     
     public func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         
-        self.dragDropTableView.endUpdates()
         self.getTrainingsplan()
-        
-        //        let dispatchTime = DispatchTime.now() + 0.5
-        //        DispatchQueue.main.asyncAfter(deadline: dispatchTime) {
-        //            self.dragDropCollectionView.reloadData()
-        //            self.dragDropTableView.reloadData()
-        //            //self.dragDropTableView.layoutIfNeeded()
-        //            print("ContentOffset = ",self.dragDropTableView.contentOffset)
-        //            print("content Size = ", self.dragDropTableView.contentSize)
-        //            print("Table Height = ", self.dragDropTableView.frame.height)
-        //            print("ContentInset = ",self.dragDropTableView.contentInset)
-        //            print("================================")
-        //            //self.dragDropTableView.setContentOffset(CGPoint(x: self.dragDropTableView.contentOffset.x, y:  self.dragDropTableView.contentOffset.y - 60.0), animated: false)
-        //            //            self.dragDropTableView.setContentOffset(CGPoint(x: 0, y: 100), animated: true)
-        //            //            self.dragDropTableView.scrollRectToVisible(CGRect(x: 0, y: 60, width: self.dragDropTableView.frame.width, height: 60), animated: true)
-        //            //            self.dragDropTableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
-        //        }
-        //
-        //        //        let point = CGPoint(x: 0, y: 100)
-        //        //        self.dragDropTableView.setContentOffset(point, animated: true)
+        self.dragDropTableView.endUpdates()
     }
 }
 

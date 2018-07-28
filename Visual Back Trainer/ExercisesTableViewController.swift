@@ -72,6 +72,10 @@ class ExercisesTableViewController: GenericTableViewController {
         super.viewWillLayoutSubviews()
 
         headerView.frame.size.height = self.view.frame.size.height > self.view.frame.size.width ? 50 : 65
+        
+        if UI_USER_INTERFACE_IDIOM() == .pad {
+            headerView.frame.size.height = 80
+        }
     }
     
     func clearButtons() {

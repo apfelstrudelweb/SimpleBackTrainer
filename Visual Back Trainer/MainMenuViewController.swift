@@ -85,7 +85,7 @@ class MainMenuViewController: BaseViewController, UICollectionViewDataSource, UI
                 SwiftSpinner.setTitleFont(UIFont(name: "System", size: 16.0))
                 SwiftSpinner.show("Trainingsplan wird erstellt ...")
                 
-                self.trainingModel.getTrainingsplan{ () in
+                self.trainingModel.getTrainingsplan { () in
                     SwiftSpinner.hide()
                 }
             }
@@ -208,17 +208,8 @@ extension MainMenuViewController:TrainingModelDelegate {
         CoreDataManager.sharedInstance.addToTrainingsplan(serverTrainingsplanData: exercises) { () in
             // View aktualisieren nachdem die Daten geladen wurden
             SwiftSpinner.hide()
-            
-            // TODO: get count as return value
-            
-            do {
-                let fetchRequest = NSFetchRequest<Trainingsplan>(entityName: "Trainingsplan")
-                let count = try CoreDataManager.sharedInstance.managedObjectContext.count(for: fetchRequest)
-                self.tabBarController?.tabBar.items![1].badgeValue = String(count)
-                
-            } catch let error {
-                print ("fetch task failed", error)
-            }
+
+            self.tabBarController?.tabBar.items![1].badgeValue = String(exercises.count)  
         }
     }
     

@@ -108,7 +108,21 @@
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="8"/>
                                     </variation>
                                 </label>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Halsmuskulatur" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mcw-eU-Uqb" customClass="PaddingLabel" customModule="Visual_Back_Trainer" customModuleProvider="target">
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="oberer Trapezmuskel" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tui-YG-xlg" customClass="PaddingLabel" customModule="Visual_Back_Trainer" customModuleProvider="target">
+                                    <rect key="frame" x="162" y="377" width="83.333333333333314" height="12"/>
+                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="18" id="0Ub-Na-ztA">
+                                            <variation key="heightClass=regular-widthClass=compact" constant="12"/>
+                                        </constraint>
+                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="20" id="4VT-UC-dDi"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="8"/>
+                                    <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                    <size key="shadowOffset" width="1" height="1"/>
+                                </label>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Halsmuskulatur" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mcw-eU-Uqb" customClass="PaddingLabel" customModule="Visual_Back_Trainer" customModuleProvider="target">
                                     <rect key="frame" x="313.66666666666669" y="339.66666666666669" width="61" height="12"/>
                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
@@ -116,20 +130,6 @@
                                         <constraint firstAttribute="height" constant="18" id="hW9-NI-gVV">
                                             <variation key="heightClass=regular-widthClass=compact" constant="12"/>
                                         </constraint>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="8"/>
-                                    <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <nil key="highlightedColor"/>
-                                    <size key="shadowOffset" width="1" height="1"/>
-                                </label>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="oberer Trapezmuskel" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tui-YG-xlg" customClass="PaddingLabel" customModule="Visual_Back_Trainer" customModuleProvider="target">
-                                    <rect key="frame" x="162.33333333333334" y="377" width="83.333333333333343" height="12"/>
-                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="18" id="0Ub-Na-ztA">
-                                            <variation key="heightClass=regular-widthClass=compact" constant="12"/>
-                                        </constraint>
-                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="20" id="4VT-UC-dDi"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="8"/>
                                     <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -169,7 +169,7 @@
                                 <constraint firstItem="Tmt-xh-QNj" firstAttribute="top" secondItem="nTZ-Dd-5el" secondAttribute="top" id="v0S-Pt-lsI"/>
                                 <constraint firstItem="GKW-c8-g1t" firstAttribute="centerX" secondItem="fGj-C7-Zok" secondAttribute="centerX" id="wdm-w1-IEr"/>
                                 <constraint firstItem="Tmt-xh-QNj" firstAttribute="top" secondItem="z2a-9T-JCf" secondAttribute="top" id="wtg-D6-s7w"/>
-                                <constraint firstItem="hLX-xE-3le" firstAttribute="centerY" secondItem="fGj-C7-Zok" secondAttribute="centerY" multiplier="1.5" id="xhT-EX-1fO"/>
+                                <constraint firstItem="hLX-xE-3le" firstAttribute="centerY" secondItem="fGj-C7-Zok" secondAttribute="centerY" multiplier="1.6" id="xhT-EX-1fO"/>
                                 <constraint firstItem="Tmt-xh-QNj" firstAttribute="leading" secondItem="dai-I5-Poa" secondAttribute="leading" id="xoK-7D-v2R"/>
                                 <constraint firstItem="Tmt-xh-QNj" firstAttribute="bottom" secondItem="dai-I5-Poa" secondAttribute="bottom" id="z1u-2A-VVP"/>
                                 <constraint firstItem="tui-YG-xlg" firstAttribute="centerX" secondItem="fGj-C7-Zok" secondAttribute="centerX" multiplier="0.6" id="zQY-5u-MqO"/>
