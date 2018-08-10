@@ -20,7 +20,7 @@ class PremiumViewController: BaseViewController, UITableViewDelegate, UITableVie
 
     let items = [
         ["premiumNoAds", NSLocalizedString("PREMIUM_NOADS_TITLE", comment: ""), NSLocalizedString("PREMIUM_NOADS_DESCR", comment: "")],
-        ["premiumPlan", NSLocalizedString("PREMIUM_PLAN_TITLE", comment: ""), NSLocalizedString("PREMIUM_PLAN_DESCR", comment: "")],
+        ["premiumChart", NSLocalizedString("PREMIUM_CHART_TITLE", comment: ""), NSLocalizedString("PREMIUM_CHART_DESCR", comment: "")],
         ["premiumVideo", NSLocalizedString("PREMIUM_VIDEO_TITLE", comment: ""), NSLocalizedString("PREMIUM_VIDEO_DESCR", comment: "")],
         ["premiumMobilisation", NSLocalizedString("PREMIUM_MOBIL_TITLE", comment: ""), NSLocalizedString("PREMIUM_MOBIL_DESCR", comment: "")]];
     let buttonTitle = NSLocalizedString("PREMIUM_BUTTON_TEXT", comment: "") + " $ 4,99" // TODO: get price from Store

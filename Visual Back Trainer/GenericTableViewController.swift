@@ -95,13 +95,7 @@ class GenericTableViewController: UITableViewController, NSFetchedResultsControl
         let favoriteImage = workout.traininsgplanId != nil ? UIImage(named: "favoriteAdded") : UIImage(named: "favorite")
         
         cell.favoriteButton.setImage(favoriteImage, for: .normal)
-        
-        // Test
-        if workout.traininsgplanId != nil {
-            cell.favoriteButton.tintColor = UIColor(red: 0.302, green: 0.698, blue: 0, alpha: 1.0)
-        } else {
-            cell.favoriteButton.tintColor = .lightGray
-        }
+        cell.favoriteButton.tintColor = workout.traininsgplanId != nil ? UIColor(red: 0.302, green: 0.698, blue: 0, alpha: 1.0) : .lightGray
 
         cell.buttonColor = (navigationController?.navigationBar.barTintColor)!
         cell.videoLabel.text = NSLocalizedString(workout.alias!, comment: "")
@@ -170,7 +164,16 @@ extension GenericTableViewController: VideoCellDelegate {
             } else {
                 CoreDataManager.sharedInstance.removeFromTrainingsplan(workout: workout)
             }
-  
+            
+            // update badge icon in tabbar
+            do {
+                let fetchRequest = NSFetchRequest<Trainingsplan> (entityName: "Trainingsplan")
+                let count = try CoreDataManager.sharedInstance.managedObjectContext.count(for: fetchRequest)
+                self.tabBarController?.tabBar.items![1].badgeValue = String(count)
+            } catch {
+                print("An error occurred")
+            }
+            
             self.tableView.reloadData()
         }
     }

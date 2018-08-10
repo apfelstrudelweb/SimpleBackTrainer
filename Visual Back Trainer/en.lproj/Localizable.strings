@@ -24,8 +24,8 @@
 
 "PREMIUM_NOADS_TITLE" = "Komplett ohne Werbung";
 "PREMIUM_NOADS_DESCR" = "Keine Webebanner mehr in der Premium-Version.";
-"PREMIUM_PLAN_TITLE" = "Individuelle Trainingspläne";
-"PREMIUM_PLAN_DESCR" = "Stelle deine eigenen Trainingspläne zusammen und verfolge deinen Fortschritt im Training.";
+"PREMIUM_CHART_TITLE" = "Trainingsauswertung";
+"PREMIUM_CHART_DESCR" = "Protokolliere dein Training und veranschauliche deine Fortschritte mittels Chart-Diagramme.";
 "PREMIUM_VIDEO_TITLE" = "Mehr Trainingsvideos";
 "PREMIUM_VIDEO_DESCR" = "Mehr Trainingsvideos mit Hanteln, Körpergewicht, Widerstandsbändern und Kleingeräten.";
 "PREMIUM_MOBIL_TITLE" = "Mobilisierungsübungen";

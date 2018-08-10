@@ -11,7 +11,7 @@ import DragDropiOS
 import CoreData
 
  // MARK : DragDropCollectionViewDelegate
-extension ViewController{
+extension TrainingsplanViewController {
     
     func collectionView(_ collectionView: UICollectionView, touchBeginAtIndexPath indexPath: IndexPath) {
         clearCellsDrogStatusOfCollectionView()

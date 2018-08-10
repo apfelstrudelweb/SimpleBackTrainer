@@ -11,7 +11,7 @@ import DragDropiOS
 import CoreData
 
 // MARK : DropTableViewDelegate
-extension ViewController {
+extension TrainingsplanViewController {
     
 
     func tableView(_ tableView: UITableView, dragInfoForIndexPath indexPath: IndexPath) -> AnyObject {
