@@ -34,7 +34,8 @@ class VideoTableViewController: GenericTableViewController {
             muscleGroupId = 4
         }
 
-        soloTitle = self.title?.components(separatedBy: "(").first
+        //setMultilineTitle()
+
         stripeView.backgroundColor = muscleGroupColor
         headerView.backgroundColor = UITabBar.appearance().barTintColor
 
@@ -63,6 +64,7 @@ class VideoTableViewController: GenericTableViewController {
         super.viewDidLoad()
     }
     
+    
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         
@@ -88,15 +90,7 @@ class VideoTableViewController: GenericTableViewController {
         let compound:NSCompoundPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [predicate1, predicate2])
         fetchRequest.predicate = compound
         
-        do {
-            try fetchedResultsController.performFetch()
-            let count = try CoreDataManager.sharedInstance.managedObjectContext.count(for: self.fetchRequest)
-            self.title = self.soloTitle! + " (\(count))"
-            
-        } catch {
-            fatalError("Failed to initialize FetchedResultsController: \(error)")
-        }
-        
+        setMultilineTitle()
         self.tableView.reloadData()
     }
     
@@ -108,15 +102,7 @@ class VideoTableViewController: GenericTableViewController {
         let compound:NSCompoundPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [predicate1, predicate2, predicate3])
         fetchRequest.predicate = compound
 
-        do {
-            try fetchedResultsController.performFetch()
-            let count = try CoreDataManager.sharedInstance.managedObjectContext.count(for: self.fetchRequest)
-            self.title = self.soloTitle! + " (\(count))"
-
-        } catch {
-            fatalError("Failed to initialize FetchedResultsController: \(error)")
-        }
-        
+        setMultilineTitle()
         self.tableView.reloadData()
     }
     
@@ -143,6 +129,40 @@ class VideoTableViewController: GenericTableViewController {
         clearButtons()
         buttonLevel4.tintColor = self.navigationController?.navigationBar.barTintColor
         resetFilter()
+    }
+    
+    fileprivate func setMultilineTitle() {
+        
+        var upperText = self.title?.components(separatedBy: "(").first
+        
+        do {
+            try fetchedResultsController.performFetch()
+            let count = try CoreDataManager.sharedInstance.managedObjectContext.count(for: self.fetchRequest)
+            upperText?.append(" (\(count))")
+            
+        } catch {
+            fatalError("Failed to initialize FetchedResultsController: \(error)")
+        }
+        
+        
+        let upperTitle = NSMutableAttributedString(string: upperText!, attributes: [NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 18),
+                                                                                    NSAttributedStringKey.foregroundColor: UIColor.white])
+        
+        var lowerTitle = NSMutableAttributedString(string: "")
+        
+        if (self.title?.components(separatedBy: "(").count)! > 1 {
+            let lowerText = self.title?.components(separatedBy: "(")[1].components(separatedBy: ")").first
+            lowerTitle = NSMutableAttributedString(string: "\n\((lowerText)!)", attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 14.0),
+                                                                                             NSAttributedStringKey.foregroundColor: UIColor.white])
+        }
+        
+        upperTitle.append(lowerTitle)
+        
+        let twoLinesLabel = UILabel(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height:44))
+        twoLinesLabel.numberOfLines = 0
+        twoLinesLabel.textAlignment = .center
+        twoLinesLabel.attributedText = upperTitle
+        self.navigationItem.titleView = twoLinesLabel
     }
 }
 

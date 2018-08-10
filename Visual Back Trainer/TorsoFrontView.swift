@@ -65,7 +65,7 @@ class TorsoFrontView: TorsoBasicView, UIScrollViewDelegate {
             
             labels[index].alpha = 0
             labels[index].backgroundColor = frontView.dict[index].color
-            labels[index].text = frontView.dict[index].muscleName
+            labels[index].text = frontView.dict[index].muscleName.components(separatedBy: "(").first
             labels[index].layer.cornerRadius = 5
         }
     }
