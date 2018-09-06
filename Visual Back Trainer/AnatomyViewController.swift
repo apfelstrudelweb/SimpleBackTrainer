@@ -46,6 +46,7 @@ class AnatomyViewController: UIViewController {
     @IBOutlet weak var buttonHeight: NSLayoutConstraint!
     @IBOutlet weak var largeButtonHeight: NSLayoutConstraint!
     
+    @IBOutlet weak var ThreeDButton: UIButton!
     let popTip = PopTip()
     
     var displayMode: DisplayMode = .regularBack
@@ -83,6 +84,17 @@ class AnatomyViewController: UIViewController {
         switchShowBothSides.backgroundColor = fadedColor
         switchBodySideControl.backgroundColor = .clear
         speedStepper.tintColor = fadedColor
+        ThreeDButton.tintColor = fadedColor
+        
+        let premium = false
+        
+        // TODO: handle premium mode
+        if premium {
+            ThreeDButton.setImage(UIImage(named: "3DView"), for: .normal)
+        } else {
+            ThreeDButton.setImage(UIImage(named: "3DViewPremium"), for: .normal)
+        }
+        
         
         
         popTip.font = UIFont(name: "Avenir-Medium", size: UI_USER_INTERFACE_IDIOM() == .pad ? 20 : 14)!

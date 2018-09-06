@@ -39,9 +39,14 @@
 "head_turners" = "Kopfwender";
 "back_extensors" = "Rückenstrecker";
 "wide_back" = "Breiter Rückenmuskel";
-"middle_lower_trapezius" = "Trapezmuskel (mittlere und untere Teil)";
+"middle_trapezius" = "mittlerer Trapezmuskel";
+"upper_trapezius" = "oberer Trapezmuskel";
+"middle_lower_trapezius" = "Trapezmuskel (mittlerer und unterer Teil)";
 "rhomb" = "Rautenmuskel";
 "scapula" = "Schulterblattmuskulatur (Untergrätenmuskel, kleine und große Rundmuskel)";
+"scapula_infraspinatus" = "Untergrätenmuskel";
+"scapula_teres_minor" = "kleiner Rundmuskel";
+"scapula_teres_major" = "großer Rundmuskel";
 "deltoid" = "Deltamuskel (hintere Teil)";
 "upper_trapezius" = "Trapezmuskel (oberer Teil)";
 "neck" = "Halsmuskel (schräger Kopfmuskel, gerader hinterer Kopfmuskel)";

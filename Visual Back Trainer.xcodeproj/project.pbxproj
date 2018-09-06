@@ -39,6 +39,8 @@
 		1B3E460220D671CB003C4B96 /* InfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B3E460120D671CB003C4B96 /* InfoView.xib */; };
 		1B3E460620D675C5003C4B96 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3E460520D675C5003C4B96 /* InfoView.swift */; };
 		1B3E460820DBF0C9003C4B96 /* ExercisesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3E460720DBF0C9003C4B96 /* ExercisesTableViewController.swift */; };
+		1B501D72213D5C7800E948BE /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B501D71213D5C7800E948BE /* art.scnassets */; };
+		1B501D74213D5D2300E948BE /* AnimationTorsoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B501D73213D5D2300E948BE /* AnimationTorsoViewController.swift */; };
 		1BBC3A9520D1220D00B43A61 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBC3A9420D1220D00B43A61 /* CoreDataManager.swift */; };
 		1BBC3AA820D1227800B43A61 /* GroupResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBC3AA520D1227700B43A61 /* GroupResponse.swift */; };
 		1BBC3AAA20D1227800B43A61 /* TrainingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBC3AA720D1227800B43A61 /* TrainingModel.swift */; };
@@ -115,6 +117,8 @@
 		1B3E460120D671CB003C4B96 /* InfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoView.xib; sourceTree = "<group>"; };
 		1B3E460520D675C5003C4B96 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		1B3E460720DBF0C9003C4B96 /* ExercisesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesTableViewController.swift; sourceTree = "<group>"; };
+		1B501D71213D5C7800E948BE /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
+		1B501D73213D5D2300E948BE /* AnimationTorsoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationTorsoViewController.swift; sourceTree = "<group>"; };
 		1BBC3A9420D1220D00B43A61 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		1BBC3AA520D1227700B43A61 /* GroupResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupResponse.swift; sourceTree = "<group>"; };
 		1BBC3AA720D1227800B43A61 /* TrainingModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainingModel.swift; sourceTree = "<group>"; };
@@ -228,6 +232,14 @@
 			name = DragAndDrop;
 			sourceTree = "<group>";
 		};
+		1B501D70213D5C2C00E948BE /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				1B501D71213D5C7800E948BE /* art.scnassets */,
+			);
+			name = Animation;
+			sourceTree = "<group>";
+		};
 		1BBC3A9120D11FDC00B43A61 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -292,6 +304,7 @@
 				1BBC3AC320D2641E00B43A61 /* VideoCell.xib */,
 				1BBC3AC620D2673C00B43A61 /* MuscleGroupImageView.swift */,
 				1BBC3AC820D26B3700B43A61 /* MuscleGroupButton.swift */,
+				1B501D73213D5D2300E948BE /* AnimationTorsoViewController.swift */,
 			);
 			name = Anatomy;
 			sourceTree = "<group>";
@@ -320,6 +333,7 @@
 		1BCFB6B020D11F30003FBF7F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				1B501D70213D5C2C00E948BE /* Animation */,
 				1BDDDE7D20D11F8F009EE392 /* Language */,
 				1BDDDE7C20D11F74009EE392 /* Gui */,
 			);
@@ -477,6 +491,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				753A55C81BB073E900254F27 /* Main.storyboard in Resources */,
+				1B501D72213D5C7800E948BE /* art.scnassets in Resources */,
 				753A55CD1BB073E900254F27 /* LaunchScreen.xib in Resources */,
 				1B13D71A21037A1700852732 /* DragDropCollectionViewCell.xib in Resources */,
 				1BCF6A0420C9905500E310DF /* de.lproj in Resources */,
@@ -607,6 +622,7 @@
 				1B13D713210341DE00852732 /* Trainingsplan+CoreDataClass.swift in Sources */,
 				1B369C8D211DEA43006FB5F6 /* TrainingsplanViewController+DragDropCollectionView.swift in Sources */,
 				1BBC3AB020D125DB00B43A61 /* API.swift in Sources */,
+				1B501D74213D5D2300E948BE /* AnimationTorsoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

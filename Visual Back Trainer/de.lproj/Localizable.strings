@@ -44,6 +44,7 @@
 "rhomb" = "Rautenmuskel";
 "scapula" = "Schulterblattmuskulatur (Untergrätenmuskel, kleine und große Rundmuskel)";
 "deltoid" = "Deltamuskel (hintere Teil)";
+"middle_trapezius" = "Trapezmuskel (unterer Teil)";
 "upper_trapezius" = "Trapezmuskel (oberer Teil)";
 "neck" = "Halsmuskel (schräger Kopfmuskel, gerader hinterer Kopfmuskel)";
 
