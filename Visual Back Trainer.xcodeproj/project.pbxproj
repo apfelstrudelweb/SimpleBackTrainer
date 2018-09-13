@@ -41,6 +41,7 @@
 		1B3E460820DBF0C9003C4B96 /* ExercisesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3E460720DBF0C9003C4B96 /* ExercisesTableViewController.swift */; };
 		1B501D72213D5C7800E948BE /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B501D71213D5C7800E948BE /* art.scnassets */; };
 		1B501D74213D5D2300E948BE /* AnimationTorsoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B501D73213D5D2300E948BE /* AnimationTorsoViewController.swift */; };
+		1B5ABFAB214A99E4004890CD /* ReviewHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5ABFAA214A99E1004890CD /* ReviewHandler.swift */; };
 		1BBC3A9520D1220D00B43A61 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBC3A9420D1220D00B43A61 /* CoreDataManager.swift */; };
 		1BBC3AA820D1227800B43A61 /* GroupResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBC3AA520D1227700B43A61 /* GroupResponse.swift */; };
 		1BBC3AAA20D1227800B43A61 /* TrainingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBC3AA720D1227800B43A61 /* TrainingModel.swift */; };
@@ -119,6 +120,7 @@
 		1B3E460720DBF0C9003C4B96 /* ExercisesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesTableViewController.swift; sourceTree = "<group>"; };
 		1B501D71213D5C7800E948BE /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		1B501D73213D5D2300E948BE /* AnimationTorsoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationTorsoViewController.swift; sourceTree = "<group>"; };
+		1B5ABFAA214A99E1004890CD /* ReviewHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewHandler.swift; sourceTree = "<group>"; };
 		1BBC3A9420D1220D00B43A61 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		1BBC3AA520D1227700B43A61 /* GroupResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupResponse.swift; sourceTree = "<group>"; };
 		1BBC3AA720D1227800B43A61 /* TrainingModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainingModel.swift; sourceTree = "<group>"; };
@@ -238,6 +240,14 @@
 				1B501D71213D5C7800E948BE /* art.scnassets */,
 			);
 			name = Animation;
+			sourceTree = "<group>";
+		};
+		1B5ABFA9214A99B8004890CD /* Rating */ = {
+			isa = PBXGroup;
+			children = (
+				1B5ABFAA214A99E1004890CD /* ReviewHandler.swift */,
+			);
+			name = Rating;
 			sourceTree = "<group>";
 		};
 		1BBC3A9120D11FDC00B43A61 /* Utils */ = {
@@ -381,6 +391,7 @@
 		753A55BF1BB073E900254F27 /* Visual Back Trainer */ = {
 			isa = PBXGroup;
 			children = (
+				1B5ABFA9214A99B8004890CD /* Rating */,
 				1B2F53D020F649D2001A2B6D /* DragAndDrop */,
 				1BBC3ACA20D2F6FA00B43A61 /* VideoPlayer */,
 				1BBC3ABB20D1A4C100B43A61 /* Extension */,
@@ -568,6 +579,7 @@
 				14A7486720C3C305002CB7EA /* SettingsController.swift in Sources */,
 				1BBC3ABF20D1A4D000B43A61 /* UIColor+Custom.swift in Sources */,
 				1BCF6A0820C997C100E310DF /* CollectionHeaderView.swift in Sources */,
+				1B5ABFAB214A99E4004890CD /* ReviewHandler.swift in Sources */,
 				1BCF6A2720C9B40200E310DF /* TorsoFrontView.swift in Sources */,
 				1B13D711210341DE00852732 /* Workout+CoreDataClass.swift in Sources */,
 				1BBC3AA820D1227800B43A61 /* GroupResponse.swift in Sources */,

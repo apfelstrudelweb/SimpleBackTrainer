@@ -51,6 +51,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         //Thread.sleep(forTimeInterval: 2.0)
+        
+        ReviewHandler.incrementAppOpenedCount()
 
         return true
     }

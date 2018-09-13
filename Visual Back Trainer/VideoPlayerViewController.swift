@@ -62,6 +62,17 @@ class VideoPlayerViewController: AVPlayerViewController {
         }
     }
     
+    @objc func finishVideo() {
+        print("Video Finished")
+        self.dismiss(animated: true) {
+            ReviewHandler.checkAndAskForReview()
+        }
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     private func playVideo(localPath:NSURL) {
         
         let asset = AVAsset(url: localPath as URL)
@@ -71,6 +82,8 @@ class VideoPlayerViewController: AVPlayerViewController {
 
         player = AVPlayer(playerItem: playerItem)
         player?.seek(to: CMTimeMakeWithSeconds(Float64(0), 1))
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(VideoPlayerViewController.finishVideo), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: nil)
         
         //self.showsPlaybackControls = false
 

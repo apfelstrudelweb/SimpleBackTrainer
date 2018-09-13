@@ -35,6 +35,9 @@ class VideoTableViewController: GenericTableViewController {
         }
 
         //setMultilineTitle()
+        
+        // TODO: find a better place for the rating dialogue
+        //ReviewHandler.checkAndAskForReview()
 
         stripeView.backgroundColor = muscleGroupColor
         headerView.backgroundColor = UITabBar.appearance().barTintColor
