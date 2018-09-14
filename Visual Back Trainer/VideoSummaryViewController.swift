@@ -30,9 +30,10 @@ class VideoSummaryViewController: UIViewController {
         
         let navigationBarAppearace = UINavigationBar.appearance()
         
-        videoTitleLabel.textColor = navigationBarAppearace.barTintColor
         cancelButton.tintColor = navigationBarAppearace.barTintColor
   
+        videoTitleLabel.text = workout?.alias  // TODO: change later
+        
         let guidelineList = [
             "Unteren Rücken flach auf der Matte halten.",
             "Ausgangsposition: Beine auf 90° anwinkeln und Füße hüftbreit positionieren.",
@@ -108,6 +109,7 @@ class VideoSummaryViewController: UIViewController {
 
     @IBAction func cancelButtonTouched(_ sender: UIButton) {
         self.dismiss(animated: true) {
+            // TODO: make sure it's only called once!
             ReviewHandler.checkAndAskForReview()
         }
     }

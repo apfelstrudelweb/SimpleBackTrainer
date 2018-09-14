@@ -142,6 +142,9 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </tableViewCellContentView>
                                                 <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <connections>
+                                                    <segue destination="nD4-D7-2VX" kind="presentation" identifier="showVideoSegue" id="zTg-Cn-Nx9"/>
+                                                </connections>
                                             </tableViewCell>
                                         </prototypes>
                                         <sections/>
@@ -769,7 +772,7 @@ Please turn on your Internet Conncetion - as soon your device is connected to th
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="jMC-5W-syg" kind="show" identifier="showUpgradeSegue" id="fql-e8-eDg"/>
+                                    <segue destination="nD4-D7-2VX" kind="presentation" identifier="showVideoSegue" id="P9J-wz-2JW"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -786,7 +789,6 @@ Please turn on your Internet Conncetion - as soon your device is connected to th
                         <outlet property="buttonMat" destination="DmM-Ij-E8p" id="OFO-5z-NxC"/>
                         <outlet property="headerView" destination="Qvz-Go-JOv" id="Dh4-uB-UNJ"/>
                         <outletCollection property="buttons" destination="dfJ-m9-Hh1" collectionClass="NSMutableArray" id="ZqF-nV-CsN"/>
-                        <segue destination="Ylz-5k-IgQ" kind="presentation" identifier="showVideoSegue" id="ZQd-kQ-BxA"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sNI-XM-zxk" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1531,7 +1533,7 @@ Please turn on your Internet Conncetion - as soon your device is connected to th
         <!--Video Summary View Controller-->
         <scene sceneID="8ih-yp-Oz6">
             <objects>
-                <viewController id="nD4-D7-2VX" customClass="VideoSummaryViewController" customModule="Visual_Back_Trainer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VideoSummaryViewController" id="nD4-D7-2VX" customClass="VideoSummaryViewController" customModule="Visual_Back_Trainer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MFX-eH-Yt1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1616,7 +1618,7 @@ Please turn on your Internet Conncetion - as soon your device is connected to th
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HTX-x9-D6T">
-                                                <rect key="frame" x="325" y="15.666666666666657" width="40" height="40"/>
+                                                <rect key="frame" x="321" y="15.666666666666657" width="40" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="40" id="2b8-AW-NUK"/>
                                                     <constraint firstAttribute="height" constant="40" id="NeC-bQ-k84"/>
@@ -1639,7 +1641,7 @@ Please turn on your Internet Conncetion - as soon your device is connected to th
                                             <constraint firstItem="rGQ-IH-L8A" firstAttribute="top" secondItem="wXr-eL-XuU" secondAttribute="bottom" constant="10" id="6kT-bT-eGO"/>
                                             <constraint firstItem="ym9-X6-dvW" firstAttribute="top" secondItem="1W9-rb-Ybl" secondAttribute="bottom" constant="8" id="ClA-zL-Ryh"/>
                                             <constraint firstAttribute="bottom" secondItem="dtz-mw-9LR" secondAttribute="bottom" constant="20" id="EvV-w5-n8A"/>
-                                            <constraint firstAttribute="trailing" secondItem="HTX-x9-D6T" secondAttribute="trailing" constant="10" id="FBy-Qe-H9H"/>
+                                            <constraint firstAttribute="trailing" secondItem="HTX-x9-D6T" secondAttribute="trailing" constant="14" id="FBy-Qe-H9H"/>
                                             <constraint firstAttribute="trailing" secondItem="XHx-qw-14n" secondAttribute="trailing" constant="14" id="HVu-xx-A3g"/>
                                             <constraint firstItem="wXr-eL-XuU" firstAttribute="trailing" secondItem="XHx-qw-14n" secondAttribute="trailing" constant="-6" id="HYw-UV-4SW"/>
                                             <constraint firstItem="rGQ-IH-L8A" firstAttribute="leading" secondItem="XHx-qw-14n" secondAttribute="leading" id="KRT-3C-Hb5"/>
@@ -1702,7 +1704,7 @@ Please turn on your Internet Conncetion - as soon your device is connected to th
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NOw-Fu-yGl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4037.5999999999999" y="1789.6551724137933"/>
+            <point key="canvasLocation" x="4033" y="1790"/>
         </scene>
         <!--AV Player View Controller-->
         <scene sceneID="Bjh-Fe-Nvf">
@@ -1858,7 +1860,7 @@ Please turn on your Internet Conncetion - as soon your device is connected to th
         <image name="zahnrad" width="33" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="t7I-NY-FMn"/>
+        <segue reference="zTg-Cn-Nx9"/>
         <segue reference="LVj-mE-GEn"/>
         <segue reference="jHs-hw-0jp"/>
         <segue reference="cka-FD-Q28"/>

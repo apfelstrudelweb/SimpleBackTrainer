@@ -96,6 +96,19 @@ class TrainingsplanViewController: BaseViewController, DragDropCollectionViewDel
         
     }
     
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+        if segue.identifier == "showVideoSegue" {
+            if let viewController = segue.destination as? VideoSummaryViewController {
+                
+                viewController.workout = sender as? Workout
+
+
+            }
+        }
+    }
+    
     public func getTrainingsplan() {
         do {
             try fetchedResultsController1.performFetch()
@@ -209,6 +222,7 @@ class TrainingsplanViewController: BaseViewController, DragDropCollectionViewDel
 
 //MARK: UICollectionViewDelegate
 extension TrainingsplanViewController:UICollectionViewDelegate, UICollectionViewDataSource {
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         guard fetchedResultsController2 != nil else {
             return 0
@@ -280,7 +294,13 @@ extension TrainingsplanViewController:UICollectionViewDelegate, UICollectionView
 }
 
 // MARK: UITableViewDelegate And UITableViewDataSource methods
-extension TrainingsplanViewController:UITableViewDelegate, UITableViewDataSource {
+extension TrainingsplanViewController:UITableViewDelegate, UITableViewDataSource, VideoCellDelegate {
+    
+    func videoTouched(workout: Workout) {
+        performSegue(withIdentifier: "showVideoSegue", sender: workout)
+    }
+    
+    
     //MARK: UITableViewDelegate
     func numberOfSections(in tableView: UITableView) -> Int {
         guard fetchedResultsController1 != nil else {
@@ -308,6 +328,7 @@ extension TrainingsplanViewController:UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier:"videoCell", for: indexPath) as! VideoCell
+        cell.delegate = self
         
         let workout = fetchedResultsController1.object(at: indexPath)
         
@@ -329,6 +350,7 @@ extension TrainingsplanViewController:UITableViewDelegate, UITableViewDataSource
         cell.favoriteDelimter.isHidden = true
         cell.stackView.isHidden = false
         cell.videoImageView?.alpha = 1
+        cell.workout = retrievedWorkout
         
         //cell.videoLabel.text = NSLocalizedString(retrievedWorkout.alias!, comment: "")
         cell.videoImageView.image = UIImage(data:retrievedWorkout.icon! as Data, scale:1.0)
@@ -423,6 +445,32 @@ extension TrainingsplanViewController:UITableViewDelegate, UITableViewDataSource
             print("Failure to save context: \(error.localizedDescription)")
         }
     }
+    
+
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//
+//        let workout = fetchedResultsController1.object(at: indexPath)
+//
+//        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Workout")
+//        let predicate = NSPredicate(format: "id = %d", workout.id)
+//        fetchRequest.predicate = predicate
+//
+//        do {
+//            let retrievedWorkout = try CoreDataManager.sharedInstance.managedObjectContext.fetch(fetchRequest).first as! Workout
+//            //self.performSegue(withIdentifier: "showVideoSegue", sender: self)
+//
+//            let viewController:
+//                VideoSummaryViewController = UIStoryboard(
+//                    name: "Main", bundle: nil
+//                    ).instantiateViewController(withIdentifier: "VideoSummaryViewController") as! VideoSummaryViewController
+//
+//            self.present(viewController, animated: false, completion: nil)
+//
+//        } catch {
+//            fatalError("Failed to delete object: \(error)")
+//        }
+//        //viewController.workout = retrievedWorkout
+//    }
 }
 
 // MARK: NSFetchedResultsControllerDelegate methods

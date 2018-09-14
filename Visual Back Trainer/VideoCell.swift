@@ -8,9 +8,10 @@
 
 import UIKit
 
-protocol VideoCellDelegate: class {
-    func favoriteButtonTouched(_ sender: UIButton, indexPath: IndexPath, x: Int)
-    func videoTouched(indexPath: IndexPath)
+@objc protocol VideoCellDelegate: class {
+    @objc optional func favoriteButtonTouched(_ sender: UIButton, indexPath: IndexPath, x: Int)
+    @objc optional func videoTouched(indexPath: IndexPath)
+    @objc optional func videoTouched(workout: Workout)
 }
 
 class VideoCell: UITableViewCell {
@@ -32,6 +33,7 @@ class VideoCell: UITableViewCell {
     @IBOutlet var stripeViewCollection: [UIView]!
     
     var infoText: String = ""
+    var workout: Workout = Workout()
     var indexPath: IndexPath = IndexPath(row: 0, section: 0)
     var imageViewTrailing: Int = 0
     
@@ -45,15 +47,19 @@ class VideoCell: UITableViewCell {
     }
     
     @IBAction func videoTouched(_ sender: Any) {
-        // TODO: implement delegate method also in trainingsplan
-        self.delegate?.videoTouched(indexPath: indexPath)
+        
+        if let delegate = self.delegate as? TrainingsplanViewController {
+            delegate.videoTouched(workout: workout)
+        } else if let delegate = self.delegate as? GenericTableViewController {
+            delegate.videoTouched(indexPath: indexPath)
+        }
     }
 
     
     @IBAction func favoriteButtonTouched(_ sender: UIButton) {
         
         imageViewTrailing = Int(videoImageView.frame.size.width - videoImageView.frame.origin.x)
-        self.delegate?.favoriteButtonTouched(sender, indexPath: indexPath, x: imageViewTrailing)
+        self.delegate?.favoriteButtonTouched!(sender, indexPath: indexPath, x: imageViewTrailing)
 
     }
     
