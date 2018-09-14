@@ -126,10 +126,8 @@ class GenericTableViewController: UITableViewController, NSFetchedResultsControl
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showVideoSegue" {
             
-            if let viewController = segue.destination as? VideoPlayerViewController {
-                
-                let workout = fetchedResultsController.object(at: sender as! IndexPath)
-                viewController.videoUrl = workout.videoUrl
+            if let viewController = segue.destination as? VideoSummaryViewController {
+                viewController.workout = fetchedResultsController.object(at: sender as! IndexPath)
             }
         } else if segue.identifier == "showUpgradeSegue" {
             if let viewController = segue.destination as? PremiumViewController {

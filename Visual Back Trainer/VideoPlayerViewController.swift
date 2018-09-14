@@ -87,10 +87,10 @@ class VideoPlayerViewController: AVPlayerViewController {
         
         //self.showsPlaybackControls = false
 
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-            self.player?.play()
-            self.updateSubtitle()
-        }
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+//            self.player?.play()
+//            self.updateSubtitle()
+//        }
    }
     
 
@@ -101,7 +101,7 @@ class VideoPlayerViewController: AVPlayerViewController {
         guard let subtitleURL = URL(string: "http://www.freiwasser.blog/spielwiese/peter/test1.srt") else {
             return
         }
-        self.addSubtitles(subtitlePosition: .bottom).open(file: subtitleURL, encoding: .utf8)
+        //self.addSubtitles(subtitlePosition: .bottom).open(file: subtitleURL, encoding: .utf8)
     }
 }
 
