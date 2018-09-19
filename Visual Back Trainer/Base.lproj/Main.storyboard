@@ -310,7 +310,7 @@
                                     </constraints>
                                 </view>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="ONF-1a-lrL">
-                                    <rect key="frame" x="0.0" y="177" width="375" height="90"/>
+                                    <rect key="frame" x="0.0" y="551" width="375" height="90"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pEN-VH-Arz">
@@ -960,33 +960,12 @@ Please turn on your Internet Conncetion - as soon your device is connected to th
                                     <constraint firstAttribute="height" constant="1" id="NIA-b1-qDN"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mla-Nb-eKw">
-                                <rect key="frame" x="315" y="88" width="60" height="640"/>
-                                <subviews>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="NK0-tZ-OIW">
-                                        <rect key="frame" x="-72" y="305" width="204" height="31"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="200" id="p23-nP-QpO"/>
-                                            <constraint firstAttribute="height" constant="30" id="pzD-pa-Ebs"/>
-                                        </constraints>
-                                    </slider>
-                                </subviews>
-                                <color key="backgroundColor" red="0.92918621778488153" green="0.92918621778488153" blue="0.92918621778488153" alpha="0.35636010906040266" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="krS-Cp-m7m"/>
-                                    <constraint firstAttribute="trailing" secondItem="NK0-tZ-OIW" secondAttribute="trailing" constant="-70" id="pla-wF-xUI"/>
-                                    <constraint firstItem="NK0-tZ-OIW" firstAttribute="centerY" secondItem="Mla-Nb-eKw" secondAttribute="centerY" id="y69-1P-E7l"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="uXc-LN-hju" firstAttribute="leading" secondItem="mjQ-zy-Bk6" secondAttribute="leading" id="3HM-Sp-ip8"/>
                             <constraint firstItem="V19-Cu-ImT" firstAttribute="top" secondItem="pDY-Yi-QmG" secondAttribute="bottom" id="9Hh-VI-3cG"/>
                             <constraint firstItem="pDY-Yi-QmG" firstAttribute="leading" secondItem="mjQ-zy-Bk6" secondAttribute="leading" id="AMb-Fa-Zra"/>
-                            <constraint firstItem="V19-Cu-ImT" firstAttribute="top" secondItem="Mla-Nb-eKw" secondAttribute="bottom" id="Efc-kb-NiJ"/>
-                            <constraint firstItem="Mla-Nb-eKw" firstAttribute="top" secondItem="mjQ-zy-Bk6" secondAttribute="top" id="GoU-rc-TTX"/>
-                            <constraint firstItem="Mla-Nb-eKw" firstAttribute="trailing" secondItem="mjQ-zy-Bk6" secondAttribute="trailing" id="L50-ib-ai5"/>
                             <constraint firstItem="uXc-LN-hju" firstAttribute="top" secondItem="mjQ-zy-Bk6" secondAttribute="top" id="NNv-w8-Umt"/>
                             <constraint firstItem="pDY-Yi-QmG" firstAttribute="trailing" secondItem="mjQ-zy-Bk6" secondAttribute="trailing" id="as7-3s-hWh"/>
                             <constraint firstItem="uXc-LN-hju" firstAttribute="trailing" secondItem="mjQ-zy-Bk6" secondAttribute="trailing" id="gla-Mn-Kq6"/>
@@ -1001,7 +980,6 @@ Please turn on your Internet Conncetion - as soon your device is connected to th
                         <outlet property="animationButton" destination="K4x-p5-Ig6" id="WgQ-Fc-mZW"/>
                         <outlet property="infoButton" destination="6hG-5c-bcZ" id="WEq-Jr-JxV"/>
                         <outlet property="sceneView" destination="uXc-LN-hju" id="xsT-Oq-TCC"/>
-                        <outlet property="slider" destination="NK0-tZ-OIW" id="tLR-td-9XE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qJa-TS-PA7" userLabel="First Responder" sceneMemberID="firstResponder"/>
