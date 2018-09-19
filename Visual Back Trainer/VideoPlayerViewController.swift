@@ -63,10 +63,10 @@ class VideoPlayerViewController: AVPlayerViewController {
     }
     
     @objc func finishVideo() {
-        print("Video Finished")
-        self.dismiss(animated: true) {
-            ReviewHandler.checkAndAskForReview()
-        }
+//        print("Video Finished")
+//        self.dismiss(animated: true) {
+//            ReviewHandler.checkAndAskForReview()
+//        }
     }
     
     deinit {

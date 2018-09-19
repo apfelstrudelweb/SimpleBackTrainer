@@ -10,6 +10,7 @@ target 'Visual Back Trainer' do
   pod 'RNCryptor', '~> 5.0'
   pod 'SwiftSpinner'
   pod 'ReachabilitySwift'
-  pod 'Alamofire'
+  pod 'Alamofire', '~> 4.7'
+  pod 'AlamofireCoreData'
 end
 
