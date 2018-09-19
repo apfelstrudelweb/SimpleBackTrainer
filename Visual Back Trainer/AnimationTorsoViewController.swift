@@ -120,6 +120,11 @@ class AnimationTorsoViewController: UIViewController, CAAnimationDelegate, UIGes
             self.loadAnimation(withKey: "situps", sceneName: "art.scnassets/Situps", animationIdentifier: "situps", repeatCount: 3, autoreverses: true)
             self.playAnimation(key: "situps")
         }
+        
+        let action3 = UIAlertAction(title: "Burpee", style: .default) { (action:UIAlertAction) in
+            self.loadAnimation(withKey: "burpee", sceneName: "art.scnassets/Burpee", animationIdentifier: "burpee", repeatCount: 3, autoreverses: true)
+            self.playAnimation(key: "burpee")
+        }
  
         let cancelAction = UIAlertAction(title: "Abbrechen", style: .destructive) { (action:UIAlertAction) in
             alertController.dismiss(animated: true, completion: nil)
@@ -128,6 +133,7 @@ class AnimationTorsoViewController: UIViewController, CAAnimationDelegate, UIGes
         
         alertController.addAction(action1)
         alertController.addAction(action2)
+        alertController.addAction(action3)
 
         alertController.addAction(cancelAction)
         
