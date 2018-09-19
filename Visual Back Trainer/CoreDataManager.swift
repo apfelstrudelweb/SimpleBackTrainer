@@ -41,10 +41,11 @@ class CoreDataManager: NSObject {
         
         print("SQLite in \(String(describing: storeURL))")
         
-        
         var failureReason = "There was an error creating or loading the application's saved data."
         do {
-            try coordinator.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: storeURL, options: nil)
+            let options = [NSInferMappingModelAutomaticallyOption:true,
+                            NSMigratePersistentStoresAutomaticallyOption:true]
+            try coordinator.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: storeURL, options: options)
         } catch {
             // Report any error we got.
             var dict = [String: AnyObject]()
@@ -56,7 +57,14 @@ class CoreDataManager: NSObject {
             // Replace this with code to handle the error appropriately.
             // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
             NSLog("Unresolved error \(wrappedError), \(wrappedError.userInfo)")
-            abort()
+            
+            let alert = UIAlertController(title: "Ooops ... this should not happen!", message: "Something went wrong with the update. Please uninstall the app and install again from the AppStore!", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+            let alertWindow = UIWindow(frame: UIScreen.main.bounds)
+            alertWindow.rootViewController = UIViewController()
+            alertWindow.windowLevel = UIWindowLevelAlert + 1;
+            alertWindow.makeKeyAndVisible()
+            alertWindow.rootViewController?.present(alert, animated: true, completion: nil)
         }
         
         return coordinator
