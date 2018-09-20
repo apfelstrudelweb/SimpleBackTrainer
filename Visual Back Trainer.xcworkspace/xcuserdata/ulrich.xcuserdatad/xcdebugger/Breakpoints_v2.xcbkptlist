@@ -418,11 +418,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Visual Back Trainer/AnimationTorsoViewController.swift"
-            timestampString = "559042607.794891"
+            timestampString = "559162323.519518"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
             landmarkName = "handleTap(_:)"
             landmarkType = "7">
          </BreakpointContent>

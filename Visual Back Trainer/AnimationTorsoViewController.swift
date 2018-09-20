@@ -29,15 +29,9 @@ class AnimationTorsoViewController: UIViewController, CAAnimationDelegate, UIGes
 //            slider.addTarget(self, action: #selector(onSliderValChanged(slider:event:)), for: .valueChanged)
 //        }
 //    }
-    
-    var cameraNode: SCNNode? = nil
-    var posY: Float = 0
-    
+ 
     var animations = [String: CAAnimation]()
-    
-    let SCALE = 0.5
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -53,10 +47,6 @@ class AnimationTorsoViewController: UIViewController, CAAnimationDelegate, UIGes
         sceneView.allowsCameraControl = true
         sceneView.antialiasingMode = .multisampling4X
         sceneView.isPlaying = true
-        
-        cameraNode = scene.rootNode.childNode(withName: "camera", recursively: true)
-        cameraNode?.camera?.orthographicScale = SCALE
-        posY = (sceneView.pointOfView?.position.y)!
 
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
         sceneView.addGestureRecognizer(tapGesture)
@@ -125,15 +115,33 @@ class AnimationTorsoViewController: UIViewController, CAAnimationDelegate, UIGes
             self.loadAnimation(withKey: "burpee", sceneName: "art.scnassets/Burpee", animationIdentifier: "burpee", repeatCount: 3, autoreverses: true)
             self.playAnimation(key: "burpee")
         }
+        
+        let action4 = UIAlertAction(title: "Bicycle Crunch", style: .default) { (action:UIAlertAction) in
+            self.loadAnimation(withKey: "bicycle", sceneName: "art.scnassets/Bicycle", animationIdentifier: "bicycle", repeatCount: 5, autoreverses: true)
+            self.playAnimation(key: "bicycle")
+        }
+        
+        let action5 = UIAlertAction(title: "Running", style: .default) { (action:UIAlertAction) in
+            self.loadAnimation(withKey: "running", sceneName: "art.scnassets/Running", animationIdentifier: "running", repeatCount: 14, autoreverses: false)
+            self.playAnimation(key: "running")
+        }
+        
+        let action6 = UIAlertAction(title: "Samba Dancing", style: .default) { (action:UIAlertAction) in
+            self.loadAnimation(withKey: "samba", sceneName: "art.scnassets/Samba", animationIdentifier: "samba", repeatCount: 2, autoreverses: false)
+            self.playAnimation(key: "samba")
+        }
+
  
         let cancelAction = UIAlertAction(title: "Abbrechen", style: .destructive) { (action:UIAlertAction) in
             alertController.dismiss(animated: true, completion: nil)
         }
-        
-        
+
         alertController.addAction(action1)
         alertController.addAction(action2)
         alertController.addAction(action3)
+        alertController.addAction(action4)
+        alertController.addAction(action5)
+        alertController.addAction(action6)
 
         alertController.addAction(cancelAction)
         

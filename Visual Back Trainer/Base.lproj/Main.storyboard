@@ -900,17 +900,17 @@ Please turn on your Internet Conncetion - as soon your device is connected to th
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uXc-LN-hju">
-                                <rect key="frame" x="0.0" y="88" width="375" height="690"/>
+                                <rect key="frame" x="0.0" y="88" width="375" height="638"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="delegate" destination="PyW-Ma-bM4" id="Z5C-Jx-aG8"/>
                                 </connections>
                             </sceneKitView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V19-Cu-ImT">
-                                <rect key="frame" x="0.0" y="728" width="375" height="50"/>
+                                <rect key="frame" x="0.0" y="726" width="375" height="52"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K4x-p5-Ig6">
-                                        <rect key="frame" x="175" y="3.3333333333333712" width="44" height="44"/>
+                                        <rect key="frame" x="175" y="4" width="44" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="9b8-FQ-g3Y"/>
                                             <constraint firstAttribute="width" constant="44" id="egq-0F-OZd"/>
@@ -921,7 +921,7 @@ Please turn on your Internet Conncetion - as soon your device is connected to th
                                         </connections>
                                     </button>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6hG-5c-bcZ">
-                                        <rect key="frame" x="20" y="7.6666666666666288" width="35" height="35"/>
+                                        <rect key="frame" x="20" y="8.6666666666666288" width="35" height="35"/>
                                         <color key="backgroundColor" red="0.14314690229999999" green="0.54835045339999999" blue="0.99667400120000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="Q74-Nb-RvJ">
@@ -950,11 +950,11 @@ Please turn on your Internet Conncetion - as soon your device is connected to th
                                     <constraint firstItem="6hG-5c-bcZ" firstAttribute="leading" secondItem="V19-Cu-ImT" secondAttribute="leading" constant="20" id="B2O-R0-Otj"/>
                                     <constraint firstItem="K4x-p5-Ig6" firstAttribute="centerY" secondItem="V19-Cu-ImT" secondAttribute="centerY" id="FwH-Xt-iha"/>
                                     <constraint firstItem="6hG-5c-bcZ" firstAttribute="centerY" secondItem="V19-Cu-ImT" secondAttribute="centerY" id="dYU-Gg-FOL"/>
-                                    <constraint firstAttribute="height" constant="50" id="uva-ur-WKp"/>
+                                    <constraint firstAttribute="height" constant="52" id="uva-ur-WKp"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pDY-Yi-QmG">
-                                <rect key="frame" x="0.0" y="727" width="375" height="1"/>
+                                <rect key="frame" x="0.0" y="725" width="375" height="1"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="0.29370281040268459" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="NIA-b1-qDN"/>
@@ -971,7 +971,7 @@ Please turn on your Internet Conncetion - as soon your device is connected to th
                             <constraint firstItem="uXc-LN-hju" firstAttribute="trailing" secondItem="mjQ-zy-Bk6" secondAttribute="trailing" id="gla-Mn-Kq6"/>
                             <constraint firstItem="V19-Cu-ImT" firstAttribute="leading" secondItem="mjQ-zy-Bk6" secondAttribute="leading" id="m3D-pd-9yl"/>
                             <constraint firstItem="V19-Cu-ImT" firstAttribute="bottom" secondItem="mjQ-zy-Bk6" secondAttribute="bottom" id="mvq-hs-JUh"/>
-                            <constraint firstItem="mjQ-zy-Bk6" firstAttribute="bottom" secondItem="uXc-LN-hju" secondAttribute="bottom" id="w6h-V8-cEY"/>
+                            <constraint firstItem="V19-Cu-ImT" firstAttribute="top" secondItem="uXc-LN-hju" secondAttribute="bottom" id="qF7-Mp-Dff"/>
                             <constraint firstItem="V19-Cu-ImT" firstAttribute="trailing" secondItem="mjQ-zy-Bk6" secondAttribute="trailing" id="zPg-jN-QmH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mjQ-zy-Bk6"/>
@@ -1729,7 +1729,6 @@ Please turn on your Internet Conncetion - as soon your device is connected to th
                     <tabBarItem key="tabBarItem" title="Plan" image="clipboard" id="EFA-mI-M8v"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dFf-3P-5K6">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" red="0.1239974424" green="0.16451942920000001" blue="0.47357922790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
