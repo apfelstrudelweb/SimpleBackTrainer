@@ -319,9 +319,10 @@ extension AnatomyViewController: TorsoFrontViewDelegate {
         let sorted = FrontView().dict.sorted(by: { $0.index < $1.index })
         
         let frontViewItem = sorted[index]
+        let buttonTitle = frontViewItem.muscleName.components(separatedBy: "(").first
         
         frontViewButton.backgroundColor = frontViewItem.color
-        frontViewButton.setTitle(frontViewItem.muscleName, for: .normal)
+        frontViewButton.setTitle(buttonTitle, for: .normal)
         frontViewButton.muscleGroupId = frontViewItem.index
         
         frontViewButtonLarge.backgroundColor = frontViewButton.backgroundColor
@@ -345,9 +346,10 @@ extension AnatomyViewController: TorsoBackViewDelegate {
         let sorted = BackView().dict.sorted(by: { $0.index < $1.index })
         
         let backViewItem = sorted[index]
+        let buttonTitle = backViewItem.muscleName.components(separatedBy: "(").first
         
         backViewButton.backgroundColor = backViewItem.color
-        backViewButton.setTitle(backViewItem.muscleName, for: .normal)
+        backViewButton.setTitle(buttonTitle, for: .normal)
         backViewButton.muscleGroupId = backViewItem.index
         
         backViewButtonLarge.backgroundColor = backViewButton.backgroundColor
