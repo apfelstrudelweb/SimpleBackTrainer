@@ -9,6 +9,7 @@
 import UIKit
 import SceneKit
 import AMPopTip
+import CoreData
 
 // Blender: export "obj" file and upload to Mixamo
 // xmllint --format idle.dae > idleFixed.dae
@@ -57,7 +58,6 @@ class AnimationTorsoViewController: UIViewController, CAAnimationDelegate, UIGes
 
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
         sceneView.addGestureRecognizer(tapGesture)
-     
 
         // Popup
         popTip.font = UIFont(name: "Avenir-Medium", size: UI_USER_INTERFACE_IDIOM() == .pad ? 22 : 18)!
@@ -81,6 +81,28 @@ class AnimationTorsoViewController: UIViewController, CAAnimationDelegate, UIGes
         cameraOrbit = SCNNode()
         cameraOrbit?.addChildNode(cameraNode!)
         sceneView.scene?.rootNode.addChildNode(cameraOrbit!)
+        self.setColorsToMusclegroups()
+    }
+    
+    func setColorsToMusclegroups() {
+        
+        var frontResult: [Musclegroup]!
+        
+        do {
+            let fetchRequest = NSFetchRequest<Musclegroup>(entityName: "Musclegroup")
+            fetchRequest.sortDescriptors = [NSSortDescriptor(key: "id", ascending: true)]
+            frontResult = try CoreDataManager.sharedInstance.managedObjectContext.fetch(fetchRequest)
+            
+        } catch let error {
+            print ("fetch task failed", error)
+        }
+        
+        for group in frontResult {
+            let alias = group.alias
+            let color = group.color?.colorFromString()
+            let muscleNode = sceneView.scene?.rootNode.childNode(withName: alias!, recursively: true)
+            muscleNode?.geometry?.firstMaterial?.diffuse.contents  = color
+        }
     }
     
 
