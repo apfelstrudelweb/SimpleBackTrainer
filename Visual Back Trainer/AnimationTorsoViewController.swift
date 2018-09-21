@@ -17,6 +17,7 @@ import AMPopTip
 class AnimationTorsoViewController: UIViewController, CAAnimationDelegate, UIGestureRecognizerDelegate {
     
     @IBOutlet weak var sceneView: SCNView!
+    var originalSceneView: SCNView!
     
     let popTip = PopTip()
     @IBOutlet weak var infoButton: UIButton!
@@ -29,8 +30,15 @@ class AnimationTorsoViewController: UIViewController, CAAnimationDelegate, UIGes
 //            slider.addTarget(self, action: #selector(onSliderValChanged(slider:event:)), for: .valueChanged)
 //        }
 //    }
- 
+    
+    var cameraNode: SCNNode? = nil
+    var cameraOrbit: SCNNode? = nil
+    
+    var yPos: CGFloat = 0.9
+    var zPos: CGFloat = -5.2
+    
     var animations = [String: CAAnimation]()
+    var animationsMoveDict = [String: [CGFloat]]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,12 +49,11 @@ class AnimationTorsoViewController: UIViewController, CAAnimationDelegate, UIGes
         infoButton.backgroundColor = (navigationController?.navigationBar.barTintColor)!
         animationButton.tintColor = infoButton.backgroundColor
         
-        let scene = SCNScene(named: "art.scnassets/Idle.dae")!
-
-        sceneView.scene = scene
-        sceneView.allowsCameraControl = true
-        sceneView.antialiasingMode = .multisampling4X
-        sceneView.isPlaying = true
+        self.setupSceneView()
+ 
+        let move = SCNAction.moveBy(x: 0, y: yPos, z: zPos, duration: 1.4)
+        let moveOnce = SCNAction.repeat(move, count: 1)
+        cameraNode?.runAction(moveOnce)
 
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
         sceneView.addGestureRecognizer(tapGesture)
@@ -62,6 +69,18 @@ class AnimationTorsoViewController: UIViewController, CAAnimationDelegate, UIGes
         popTip.offset = 2
         popTip.bubbleOffset = 0
         popTip.edgeInsets = UIEdgeInsetsMake(0, 10, 0, 10)
+    }
+    
+    func setupSceneView() {
+        let scene = SCNScene(named: "art.scnassets/Idle.dae")!
+        sceneView.scene = scene
+        sceneView.allowsCameraControl = true
+        sceneView.antialiasingMode = .multisampling4X
+        sceneView.isPlaying = true
+        cameraNode = scene.rootNode.childNode(withName: "camera", recursively: true)
+        cameraOrbit = SCNNode()
+        cameraOrbit?.addChildNode(cameraNode!)
+        sceneView.scene?.rootNode.addChildNode(cameraOrbit!)
     }
     
 
@@ -102,33 +121,45 @@ class AnimationTorsoViewController: UIViewController, CAAnimationDelegate, UIGes
         let alertController = UIAlertController(title: "Action", message: "What should the model do?", preferredStyle: .alert)
         
         let action1 = UIAlertAction(title: "Pushups", style: .default) { (action:UIAlertAction) in
-            self.loadAnimation(withKey: "pushups", sceneName: "art.scnassets/Pushups", animationIdentifier: "pushups", repeatCount: 4, autoreverses: true)
-            self.playAnimation(key: "pushups")
+            let key = "pushups"
+            self.loadAnimation(withKey: key, sceneName: "art.scnassets/\(key)", animationIdentifier: key, repeatCount: 6, autoreverses: false)
+            self.animationsMoveDict[key] = [0.0, -0.7, 1.0]
+            self.playAnimation(key: key)
         }
         
         let action2 = UIAlertAction(title: "Situps", style: .default) { (action:UIAlertAction) in
-            self.loadAnimation(withKey: "situps", sceneName: "art.scnassets/Situps", animationIdentifier: "situps", repeatCount: 3, autoreverses: true)
-            self.playAnimation(key: "situps")
+            let key = "situps"
+            self.loadAnimation(withKey: key, sceneName: "art.scnassets/\(key)", animationIdentifier: key, repeatCount: 4, autoreverses: false)
+            self.animationsMoveDict[key] = [0.0, -0.7, 1.0]
+            self.playAnimation(key: key)
         }
         
         let action3 = UIAlertAction(title: "Burpee", style: .default) { (action:UIAlertAction) in
-            self.loadAnimation(withKey: "burpee", sceneName: "art.scnassets/Burpee", animationIdentifier: "burpee", repeatCount: 3, autoreverses: true)
-            self.playAnimation(key: "burpee")
+            let key = "burpee"
+            self.loadAnimation(withKey: key, sceneName: "art.scnassets/\(key)", animationIdentifier: key, repeatCount: 3, autoreverses: false)
+            self.animationsMoveDict[key] = [0.0, -0.3, 1.0]
+            self.playAnimation(key: key)
         }
         
         let action4 = UIAlertAction(title: "Bicycle Crunch", style: .default) { (action:UIAlertAction) in
-            self.loadAnimation(withKey: "bicycle", sceneName: "art.scnassets/Bicycle", animationIdentifier: "bicycle", repeatCount: 5, autoreverses: true)
-            self.playAnimation(key: "bicycle")
+            let key = "bicycle"
+            self.loadAnimation(withKey: key, sceneName: "art.scnassets/\(key)", animationIdentifier: key, repeatCount: 10, autoreverses: false)
+            self.animationsMoveDict[key] = [0.0, -0.7, 1.0]
+            self.playAnimation(key: key)
         }
         
         let action5 = UIAlertAction(title: "Running", style: .default) { (action:UIAlertAction) in
-            self.loadAnimation(withKey: "running", sceneName: "art.scnassets/Running", animationIdentifier: "running", repeatCount: 14, autoreverses: false)
-            self.playAnimation(key: "running")
+            let key = "running"
+            self.loadAnimation(withKey: key, sceneName: "art.scnassets/\(key)", animationIdentifier: key, repeatCount: 14, autoreverses: false)
+            self.animationsMoveDict[key] = [0.0, -0.3, 1.0]
+            self.playAnimation(key: key)
         }
         
         let action6 = UIAlertAction(title: "Samba Dancing", style: .default) { (action:UIAlertAction) in
-            self.loadAnimation(withKey: "samba", sceneName: "art.scnassets/Samba", animationIdentifier: "samba", repeatCount: 2, autoreverses: false)
-            self.playAnimation(key: "samba")
+            let key = "samba"
+            self.loadAnimation(withKey: key, sceneName: "art.scnassets/\(key)", animationIdentifier: key, repeatCount: 1, autoreverses: false)
+            self.animationsMoveDict[key] = [0.0, -0.3, 1.0]
+            self.playAnimation(key: key)
         }
 
  
@@ -173,7 +204,15 @@ class AnimationTorsoViewController: UIViewController, CAAnimationDelegate, UIGes
     func playAnimation(key: String) {
         sceneView.scene?.rootNode.removeAllAnimations()
         let animation = self.animations[key]!
+        animation.setValue(key, forKey: "name")
         animation.delegate = self
+        
+        self.setupSceneView()
+        
+        let move = SCNAction.moveBy(x: 0, y: yPos, z: zPos, duration: 0.5)
+        let moveOnce = SCNAction.repeat(move, count: 1)
+        cameraNode?.runAction(moveOnce)
+
         sceneView.scene?.rootNode.addAnimation(animation, forKey: key)
     }
     
@@ -182,16 +221,34 @@ class AnimationTorsoViewController: UIViewController, CAAnimationDelegate, UIGes
     }
     
     func animationDidStart(_ anim: CAAnimation) {
-//        sceneView.allowsCameraControl = false
-//        cameraNode?.camera?.orthographicScale = 1.0
-//        sceneView.pointOfView?.position.y = posY - 0.5
+ 
+        sceneView.allowsCameraControl = false
+        
+        let key = anim.value(forKey: "name") as! String
+        let x = animationsMoveDict[key]![0]
+        let y = animationsMoveDict[key]![1]
+        let z = animationsMoveDict[key]![2]
+        
+        let moveY = SCNAction.moveBy(x: x, y: y, z: z, duration: 1.4)
+        let rotate = SCNAction.rotateBy(x: 0, y: CGFloat(2.0*Double.pi), z: 0, duration: TimeInterval(Float(anim.duration)*anim.repeatCount))
+        let moveOnce = SCNAction.repeat(moveY, count: 1)
+        let rotateOnce = SCNAction.repeat(rotate, count: 1)
+        cameraNode?.runAction(moveOnce)
+        cameraOrbit?.runAction(rotateOnce)
         animationButton.isEnabled = false
     }
     
     func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
-//        sceneView.allowsCameraControl = true
-//        cameraNode?.camera?.orthographicScale = SCALE
-//        sceneView.pointOfView?.position.y = posY
+        sceneView.allowsCameraControl = true
+        
+        let key = anim.value(forKey: "name") as! String
+        let x = animationsMoveDict[key]![0]
+        let y = animationsMoveDict[key]![1]
+        let z = animationsMoveDict[key]![2]
+        
+        let moveY = SCNAction.moveBy(x: -x, y: -y, z: -z, duration: 1.4)
+        let moveOnce = SCNAction.repeat(moveY, count: 1)
+        cameraNode?.runAction(moveOnce)
         animationButton.isEnabled = true
     }
 }
