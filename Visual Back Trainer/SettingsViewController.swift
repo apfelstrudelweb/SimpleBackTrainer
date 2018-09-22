@@ -21,25 +21,28 @@ class SettingsViewController: BaseViewController {
         ]
     }()
     
-    // TODO: get languages from localization
-    var countries: [String: String] = ["English": "gb", "Français": "fr", "Deutsch": "de", "Español": "es", "Português": "pt", "Italiano": "it"]
+
     
+    var locale = NSLocale(localeIdentifier: Locale.current.languageCode!)
+    var countries = [String: String]()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         addSlideMenuButton()
         
-        let sorted = countries.sorted { $0.key < $1.key }
-        let keysArraySorted = Array(sorted.map({ $0.key }))
+        if let savedAppLanguage = UserDefaults.standard.object(forKey: "AppLanguage") as? String {
+            locale = NSLocale(localeIdentifier: savedAppLanguage)
+        }
+        
+        self.updateCountries()
+        
+        let language = locale.localizedString(forLanguageCode: locale.languageCode)?.capitalized
 
         dropDown.anchorView = languageButton
-        dropDown.dataSource = keysArraySorted
         dropDown.dismissMode = .onTap
         
-//        languageButton.setTitle(keysArraySorted.first, for: .normal)
-//        flagButton.setImage(UIImage(named: self.countries[keysArraySorted.first!]!), for: .normal)
-        
-        languageButton.setTitle("English", for: .normal)
-        flagButton.setImage(UIImage(named: self.countries["English"]!), for: .normal)
+        languageButton.setTitle(language, for: .normal)
+        flagButton.setImage(UIImage(named: locale.languageCode), for: .normal)
         
         dropDown.cellNib = UINib(nibName: "LanguageCell", bundle: nil)
 
@@ -47,14 +50,30 @@ class SettingsViewController: BaseViewController {
             guard let cell = cell as? LanguageCell else { return }
             
             // Setup your custom UI components
-            cell.languageLabel.text = item
-            cell.flagImageView?.image = UIImage(named: self.countries[item]!)
+            cell.languageLabel.text = self.countries[item]!
+            cell.flagImageView?.image = UIImage(named: item)
         }
         
         dropDown.selectionAction = { [weak self] (index, item) in
-            self?.languageButton.setTitle(item, for: .normal)
-            self?.flagButton.setImage(UIImage(named: (self?.countries[item]!)!), for: .normal)
+            
+            // TODO: store in user defaults
+            self?.locale = NSLocale(localeIdentifier: item)
+            
+            self?.languageButton.setTitle(self?.locale.localizedString(forLanguageCode: item)?.capitalized, for: .normal)
+            self?.flagButton.setImage(UIImage(named: item), for: .normal)
+            self?.updateCountries()
+            
+            UserDefaults.standard.set(item, forKey: "AppLanguage")
         }
+    }
+    
+    func updateCountries() {
+        for code in Bundle.main.localizations {
+            if let language = locale.localizedString(forLanguageCode: code) {
+                countries[code] = language.capitalized
+            }
+        }
+        dropDown.dataSource = Array(countries.map({ $0.key }))
     }
     
     
