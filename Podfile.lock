@@ -1,13 +1,8 @@
 PODS:
   - Alamofire (4.7.2)
-  - AlamofireCoreData (1.1.0):
-    - Alamofire (~> 4.5)
-    - Groot (~> 2.0)
   - AMPopTip (3.2.1)
   - DragDropiOS (0.2.3)
-  - Groot (2.0):
-    - Groot/Swift (= 2.0)
-  - Groot/Swift (2.0)
+  - DropDown (2.3.2)
   - ReachabilitySwift (4.1.0)
   - RNCryptor (5.0.3)
   - SnapKit (4.0.0)
@@ -15,9 +10,9 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 4.7)
-  - AlamofireCoreData
   - AMPopTip
   - DragDropiOS
+  - DropDown
   - ReachabilitySwift
   - RNCryptor (~> 5.0)
   - SnapKit (~> 4.0)
@@ -26,10 +21,9 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Alamofire
-    - AlamofireCoreData
     - AMPopTip
     - DragDropiOS
-    - Groot
+    - DropDown
     - ReachabilitySwift
     - RNCryptor
     - SnapKit
@@ -37,15 +31,14 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
-  AlamofireCoreData: e7366aef23927626e8cf2f1039eaf47209c1f183
   AMPopTip: 31251008f2c00cbc0a3d2b18520f277c5b5ab4da
   DragDropiOS: ea8f1ff41a8c6dab4a9ce1969dc11f12c1c02997
-  Groot: 7543f84980bfb1613750818029d9b927d4378211
+  DropDown: 7f87abecc28f9b4edad810fe1211c5c018c257e5
   ReachabilitySwift: 6849231cd4e06559f3b9ef4a97a0a0f96d41e09f
   RNCryptor: c93d19029dcf7ff160aca0f24d6c9e7b0d82f664
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   SwiftSpinner: 4c058c7a1d6b444dd2e1d70988ead40783097133
 
-PODFILE CHECKSUM: 66900df2e0aecfc3c1e5cdc8868cd4bb1e89d209
+PODFILE CHECKSUM: d8ad140470320e5262fa52d83542f90ab501e445
 
 COCOAPODS: 1.5.0

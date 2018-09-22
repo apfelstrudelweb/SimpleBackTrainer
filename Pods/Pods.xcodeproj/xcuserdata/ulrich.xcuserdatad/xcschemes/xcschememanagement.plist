@@ -14,17 +14,12 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>AlamofireCoreData.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>DragDropiOS.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Groot.xcscheme</key>
+		<key>DropDown.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>

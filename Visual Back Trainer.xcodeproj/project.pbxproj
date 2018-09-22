@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		14A7486320C3C2D1002CB7EA /* PlanController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A7486220C3C2D1002CB7EA /* PlanController.swift */; };
 		14A7486520C3C2EC002CB7EA /* PremiumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A7486420C3C2EC002CB7EA /* PremiumViewController.swift */; };
-		14A7486720C3C305002CB7EA /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A7486620C3C305002CB7EA /* SettingsController.swift */; };
 		14A7486920C3C344002CB7EA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A7486820C3C344002CB7EA /* Constants.swift */; };
 		14A7486C20C3DF93002CB7EA /* ActivitiesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A7486B20C3DF93002CB7EA /* ActivitiesController.swift */; };
 		14A7486E20C3DFAA002CB7EA /* SportsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A7486D20C3DFAA002CB7EA /* SportsController.swift */; };
@@ -35,6 +34,9 @@
 		1B501D74213D5D2300E948BE /* AnimationTorsoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B501D73213D5D2300E948BE /* AnimationTorsoViewController.swift */; };
 		1B5ABFAB214A99E4004890CD /* ReviewHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5ABFAA214A99E1004890CD /* ReviewHandler.swift */; };
 		1B5ABFAD214B9722004890CD /* VideoSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5ABFAC214B9722004890CD /* VideoSummaryViewController.swift */; };
+		1B8287442156148500A24319 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8287432156148500A24319 /* SettingsViewController.swift */; };
+		1B8287462156217600A24319 /* LanguageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B8287452156217600A24319 /* LanguageCell.xib */; };
+		1B8287482156225A00A24319 /* LanguageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8287472156225A00A24319 /* LanguageCell.swift */; };
 		1BB9E19A2150203B00EFFD32 /* GroupWorkoutMembership+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB9E18A2150203B00EFFD32 /* GroupWorkoutMembership+CoreDataClass.swift */; };
 		1BB9E19B2150203B00EFFD32 /* GroupWorkoutMembership+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB9E18B2150203B00EFFD32 /* GroupWorkoutMembership+CoreDataProperties.swift */; };
 		1BB9E19C2150203B00EFFD32 /* Remark+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB9E18C2150203B00EFFD32 /* Remark+CoreDataClass.swift */; };
@@ -96,7 +98,6 @@
 		0B16F3D0DCE36AA650ACFAD7 /* Pods_Visual_Back_Trainer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Visual_Back_Trainer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		14A7486220C3C2D1002CB7EA /* PlanController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanController.swift; sourceTree = "<group>"; };
 		14A7486420C3C2EC002CB7EA /* PremiumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumViewController.swift; sourceTree = "<group>"; };
-		14A7486620C3C305002CB7EA /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		14A7486820C3C344002CB7EA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		14A7486B20C3DF93002CB7EA /* ActivitiesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesController.swift; sourceTree = "<group>"; };
 		14A7486D20C3DFAA002CB7EA /* SportsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsController.swift; sourceTree = "<group>"; };
@@ -123,6 +124,9 @@
 		1B501D73213D5D2300E948BE /* AnimationTorsoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationTorsoViewController.swift; sourceTree = "<group>"; };
 		1B5ABFAA214A99E1004890CD /* ReviewHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewHandler.swift; sourceTree = "<group>"; };
 		1B5ABFAC214B9722004890CD /* VideoSummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoSummaryViewController.swift; sourceTree = "<group>"; };
+		1B8287432156148500A24319 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		1B8287452156217600A24319 /* LanguageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LanguageCell.xib; sourceTree = "<group>"; };
+		1B8287472156225A00A24319 /* LanguageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageCell.swift; sourceTree = "<group>"; };
 		1BB9E18A2150203B00EFFD32 /* GroupWorkoutMembership+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GroupWorkoutMembership+CoreDataClass.swift"; sourceTree = "<group>"; };
 		1BB9E18B2150203B00EFFD32 /* GroupWorkoutMembership+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GroupWorkoutMembership+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		1BB9E18C2150203B00EFFD32 /* Remark+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Remark+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -219,7 +223,6 @@
 			children = (
 				1BC4368220BC8A0C00968F44 /* TabBarController.swift */,
 				14A7486220C3C2D1002CB7EA /* PlanController.swift */,
-				14A7486620C3C305002CB7EA /* SettingsController.swift */,
 			);
 			name = TabBarControllers;
 			sourceTree = "<group>";
@@ -266,6 +269,16 @@
 				1B5ABFAA214A99E1004890CD /* ReviewHandler.swift */,
 			);
 			name = Rating;
+			sourceTree = "<group>";
+		};
+		1B8287422156145700A24319 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				1B8287432156148500A24319 /* SettingsViewController.swift */,
+				1B8287452156217600A24319 /* LanguageCell.xib */,
+				1B8287472156225A00A24319 /* LanguageCell.swift */,
+			);
+			name = Settings;
 			sourceTree = "<group>";
 		};
 		1BBC3A9120D11FDC00B43A61 /* Utils */ = {
@@ -418,6 +431,7 @@
 		753A55BF1BB073E900254F27 /* Visual Back Trainer */ = {
 			isa = PBXGroup;
 			children = (
+				1B8287422156145700A24319 /* Settings */,
 				1B5ABFA9214A99B8004890CD /* Rating */,
 				1B2F53D020F649D2001A2B6D /* DragAndDrop */,
 				1BBC3ACA20D2F6FA00B43A61 /* VideoPlayer */,
@@ -500,7 +514,6 @@
 				TargetAttributes = {
 					753A55BC1BB073E900254F27 = {
 						CreatedOnToolsVersion = 6.4;
-						DevelopmentTeam = P2EQM7YAFH;
 						LastSwiftMigration = 0900;
 					};
 				};
@@ -533,6 +546,7 @@
 				753A55CD1BB073E900254F27 /* LaunchScreen.xib in Resources */,
 				1B13D71A21037A1700852732 /* DragDropCollectionViewCell.xib in Resources */,
 				1BCF6A0420C9905500E310DF /* de.lproj in Resources */,
+				1B8287462156217600A24319 /* LanguageCell.xib in Resources */,
 				1BBC3AC520D2641E00B43A61 /* VideoCell.xib in Resources */,
 				1BCF6A2420C9B40200E310DF /* TorsoBackView.xib in Resources */,
 				1BCF6A0520C9905500E310DF /* es.lproj in Resources */,
@@ -555,9 +569,8 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Visual Back Trainer/Pods-Visual Back Trainer-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AMPopTip/AMPopTip.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/AlamofireCoreData/AlamofireCoreData.framework",
 				"${BUILT_PRODUCTS_DIR}/DragDropiOS/DragDropiOS.framework",
-				"${BUILT_PRODUCTS_DIR}/Groot/Groot.framework",
+				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
 				"${BUILT_PRODUCTS_DIR}/RNCryptor/RNCryptor.framework",
 				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
@@ -567,9 +580,8 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AMPopTip.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireCoreData.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DragDropiOS.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Groot.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RNCryptor.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
@@ -607,7 +619,6 @@
 			files = (
 				1B2F53E220F64B37001A2B6D /* DragDropCollectionViewCell.swift in Sources */,
 				1BB9E19B2150203B00EFFD32 /* GroupWorkoutMembership+CoreDataProperties.swift in Sources */,
-				14A7486720C3C305002CB7EA /* SettingsController.swift in Sources */,
 				1BB9E1A42150203B00EFFD32 /* Language+CoreDataClass.swift in Sources */,
 				1BBC3ABF20D1A4D000B43A61 /* UIColor+Custom.swift in Sources */,
 				1B5ABFAD214B9722004890CD /* VideoSummaryViewController.swift in Sources */,
@@ -624,6 +635,7 @@
 				1B2F53E120F64B37001A2B6D /* DecorationCollectionViewFlowLayout.swift in Sources */,
 				1BBC3AC420D2641E00B43A61 /* VideoCell.swift in Sources */,
 				1BBC3AC720D2673C00B43A61 /* MuscleGroupImageView.swift in Sources */,
+				1B8287442156148500A24319 /* SettingsViewController.swift in Sources */,
 				1B3E460020D6585E003C4B96 /* Subtitles.swift in Sources */,
 				1BBC3ABE20D1A4D000B43A61 /* String+Custom.swift in Sources */,
 				1B3E460620D675C5003C4B96 /* InfoView.swift in Sources */,
@@ -643,6 +655,7 @@
 				1BD535E420E504D6000F1A37 /* GenericTableViewController.swift in Sources */,
 				1BBC3AB620D1260D00B43A61 /* Utils.swift in Sources */,
 				1BBC3AAD20D1252400B43A61 /* Trainingsplan.xcdatamodeld in Sources */,
+				1B8287482156225A00A24319 /* LanguageCell.swift in Sources */,
 				1B369C8C211DEA43006FB5F6 /* TrainingsplanViewController+DragDropTableView.swift in Sources */,
 				1BB9E1A32150203B00EFFD32 /* Workout+CoreDataProperties.swift in Sources */,
 				1BC4368320BC8A0D00968F44 /* TabBarController.swift in Sources */,
@@ -816,12 +829,18 @@
 			baseConfigurationReference = 4B0EE30EF5413A93082058A8 /* Pods-Visual Back Trainer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P2EQM7YAFH;
 				INFOPLIST_FILE = "Visual Back Trainer/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = ch.vormbrock.visualbacktrainer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -833,12 +852,18 @@
 			baseConfigurationReference = 2A7A661B6EEDE2805E909539 /* Pods-Visual Back Trainer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P2EQM7YAFH;
 				INFOPLIST_FILE = "Visual Back Trainer/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = ch.vormbrock.visualbacktrainer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;

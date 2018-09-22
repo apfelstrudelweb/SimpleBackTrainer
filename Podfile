@@ -11,6 +11,6 @@ target 'Visual Back Trainer' do
   pod 'SwiftSpinner'
   pod 'ReachabilitySwift'
   pod 'Alamofire', '~> 4.7'
-  pod 'AlamofireCoreData'
+  pod 'DropDown'
 end
 
