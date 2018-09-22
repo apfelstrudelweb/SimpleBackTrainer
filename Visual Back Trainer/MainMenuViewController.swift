@@ -36,8 +36,13 @@ class MainMenuViewController: BaseViewController, UICollectionViewDataSource, UI
     
     
     override func viewWillAppear(_ animated: Bool) {
-        self.title = "Home"
-        self.navigationController?.tabBarItem.title = "Home"
+        
+        self.title = "TABBAR_HOME".localized()
+        
+        self.tabBarController?.tabBar.items![0].title = "TABBAR_HOME".localized()
+        self.tabBarController?.tabBar.items![1].title = "TABBAR_PLAN".localized()
+        self.tabBarController?.tabBar.items![2].title = "TABBAR_PREMIUM".localized()
+        self.tabBarController?.tabBar.items![3].title = "TABBAR_SETTINGS".localized()
         
         self.tabBarController?.tabBar.isHidden = false
         
@@ -66,6 +71,8 @@ class MainMenuViewController: BaseViewController, UICollectionViewDataSource, UI
         NetworkManager.isReachable { networkManagerInstance in
             self.populateModel()
         }
+        
+        self.collectionView.reloadData()
     
     }
     
@@ -193,7 +200,7 @@ class MainMenuViewController: BaseViewController, UICollectionViewDataSource, UI
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "header", for: indexPath) as! CollectionHeaderView
-        header.titleLabel.text = NSLocalizedString("MAINMENU_TITLE", comment: "")
+        header.titleLabel.text = "MAINMENU_TITLE".localized()
         
         return header
     }

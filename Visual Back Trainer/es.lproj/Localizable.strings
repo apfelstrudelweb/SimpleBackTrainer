@@ -1,5 +1,11 @@
+// Tabbar
+"TABBAR_HOME" = "Inicio";
+"TABBAR_PLAN" = "Plan";
+"TABBAR_PREMIUM" = "Premio";
+"TABBAR_SETTINGS" = "Ajustes";
+
 // Main Menu
-"MAINMENU_TITLE" = "Ihr Trainingsprogramm";
+"MAINMENU_TITLE" = "Tu Programa de Ejercicios";
 "MAINMENU_BACK_FOR_ACTIVITIES" = "Starker Rücken für Berufe";
 "MAINMENU_BACK_FOR_SPORTS" = "Rückenmuskeln für Sportler";
 "MAINMENU_BACK_MUSCLE_ANATOMY" = "Muskel-Anatomie";

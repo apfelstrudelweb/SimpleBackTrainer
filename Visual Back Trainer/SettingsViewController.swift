@@ -34,6 +34,8 @@ class SettingsViewController: BaseViewController {
         super.viewDidLoad()
         addSlideMenuButton()
         
+        self.title = "TABBAR_SETTINGS".localized()
+        
         if let savedAppLanguage = UserDefaults.standard.object(forKey: "AppLanguage") as? String {
             locale = NSLocale(localeIdentifier: savedAppLanguage)
         }
@@ -46,7 +48,7 @@ class SettingsViewController: BaseViewController {
         dropDown.anchorView = languageButton
         dropDown.dismissMode = .onTap
         
-        languageLabel.text = "SETTINGS_LANGUAGE_LABEL".localized(forLanguage: locale.languageCode)
+        languageLabel.text = "SETTINGS_LANGUAGE_LABEL".localized()
         
         languageButton.setTitle(language, for: .normal)
         flagButton.setImage(UIImage(named: locale.languageCode), for: .normal)
@@ -72,6 +74,12 @@ class SettingsViewController: BaseViewController {
             
             self?.languageLabel.text = "SETTINGS_LANGUAGE_LABEL".localized(forLanguage: item)
             UserDefaults.standard.set(item, forKey: "AppLanguage")
+            
+            self?.title = "TABBAR_SETTINGS".localized()
+            self?.tabBarController?.tabBar.items![0].title = "TABBAR_HOME".localized()
+            self?.tabBarController?.tabBar.items![1].title = "TABBAR_PLAN".localized()
+            self?.tabBarController?.tabBar.items![2].title = "TABBAR_PREMIUM".localized()
+            self?.tabBarController?.tabBar.items![3].title = "TABBAR_SETTINGS".localized()
         }
     }
     
@@ -82,7 +90,6 @@ class SettingsViewController: BaseViewController {
             }
         }
         dropDown.dataSource = Array(countries.map({ $0.key }))
-        //NSLocalizedString("SETTINGS_LANGUAGE_LABEL", comment: "")
     }
     
     

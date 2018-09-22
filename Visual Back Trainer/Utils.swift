@@ -26,7 +26,17 @@ public extension Bundle {
 // for localization
 public extension String {
     
-    // TODO: make it generic with the aid of user defaults
+    // returns the localisation for language selected in the settings menue
+    func localized() -> String {
+        var appLocale = NSLocale(localeIdentifier: Locale.current.languageCode!)
+        
+        if let savedAppLanguage = UserDefaults.standard.object(forKey: "AppLanguage") as? String {
+            appLocale = NSLocale(localeIdentifier: savedAppLanguage)
+        }
+        let appLanguage = appLocale.languageCode
+        
+        return self.localized(forLanguage: appLanguage)
+    }
     
     func localized(forLanguage language: String = Locale.preferredLanguages.first!.components(separatedBy: "-").first!) -> String {
         

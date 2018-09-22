@@ -55,6 +55,10 @@ class PremiumViewController: BaseViewController, UITableViewDelegate, UITableVie
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.title = "TABBAR_PREMIUM".localized()
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         if self.menuVC != nil {
             self.hamburgerButton?.tag = 0

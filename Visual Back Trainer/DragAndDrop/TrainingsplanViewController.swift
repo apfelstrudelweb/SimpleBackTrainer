@@ -53,7 +53,7 @@ class TrainingsplanViewController: BaseViewController, DragDropCollectionViewDel
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "Plan"
+        self.title = "TABBAR_PLAN".localized()
 
         //addSlideMenuButton()
         
@@ -73,6 +73,8 @@ class TrainingsplanViewController: BaseViewController, DragDropCollectionViewDel
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        
+        self.title = "TABBAR_PLAN".localized()
         
         self.getTrainingsplan()
         toggleAddMode()

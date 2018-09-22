@@ -35,15 +35,15 @@ enum StoryboardId: String {
     func title() -> String {
         switch self {
         case .plan:
-            return "Plan"
+            return "TABBAR_PLAN".localized()
         case .home:
-            return "Home"
+            return "TABBAR_HOME".localized()
         case .premium:
-            return "Premium"
+            return "TABBAR_PREMIUM".localized()
         case .settings:
-            return "Settings"
+            return "TABBAR_SETTINGS".localized()
         default:
-            return "Home"
+            return "TABBAR_HOME".localized()
         }
     }
 }

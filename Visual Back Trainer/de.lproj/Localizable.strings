@@ -1,3 +1,9 @@
+// Tabbar
+"TABBAR_HOME" = "Start";
+"TABBAR_PLAN" = "Plan";
+"TABBAR_PREMIUM" = "Premium";
+"TABBAR_SETTINGS" = "Einstellungen";
+
 // Main Menu
 "MAINMENU_TITLE" = "Ihr Trainingsprogramm";
 "MAINMENU_BACK_FOR_ACTIVITIES" = "Starker Rücken für Berufe";
