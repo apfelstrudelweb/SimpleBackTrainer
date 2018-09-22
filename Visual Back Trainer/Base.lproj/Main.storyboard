@@ -426,14 +426,17 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hh1-YU-SrA">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="160.33333333333334"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PdT-V7-NsL">
-                                                <rect key="frame" x="180" y="65" width="187" height="30"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PdT-V7-NsL">
+                                                <rect key="frame" x="267" y="63.333333333333343" width="100" height="33"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="187" id="yTX-j0-C14"/>
+                                                    <constraint firstAttribute="width" constant="100" id="yTX-j0-C14"/>
                                                 </constraints>
-                                                <state key="normal" title="Language"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                <state key="normal" title="Language">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
-                                                    <action selector="lnaguageButtonTouched:" destination="06L-Dc-odm" eventType="touchUpInside" id="CCz-3q-BNV"/>
+                                                    <action selector="languageButtonTouched:" destination="06L-Dc-odm" eventType="touchUpInside" id="DLb-HO-QSq"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Language" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vaO-e2-qfO">
@@ -442,13 +445,26 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zrj-km-Fk1">
+                                                <rect key="frame" x="213" y="65" width="46" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="46" id="5gx-NO-oX9"/>
+                                                    <constraint firstAttribute="height" constant="30" id="TNb-Iv-GfQ"/>
+                                                </constraints>
+                                                <state key="normal" image="de"/>
+                                                <connections>
+                                                    <action selector="flagButtonTouched:" destination="06L-Dc-odm" eventType="touchUpInside" id="bzs-Dd-pdZ"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="vaO-e2-qfO" firstAttribute="centerY" secondItem="PdT-V7-NsL" secondAttribute="centerY" id="XrG-lm-8lr"/>
                                             <constraint firstItem="PdT-V7-NsL" firstAttribute="centerY" secondItem="Hh1-YU-SrA" secondAttribute="centerY" id="cMy-Kx-KPZ"/>
                                             <constraint firstItem="vaO-e2-qfO" firstAttribute="leading" secondItem="Hh1-YU-SrA" secondAttribute="leading" constant="20" id="dHN-jK-LtU"/>
+                                            <constraint firstItem="zrj-km-Fk1" firstAttribute="centerY" secondItem="PdT-V7-NsL" secondAttribute="centerY" id="eao-E8-nSy"/>
                                             <constraint firstAttribute="trailing" secondItem="PdT-V7-NsL" secondAttribute="trailing" constant="8" id="lfG-rT-fYw"/>
+                                            <constraint firstItem="PdT-V7-NsL" firstAttribute="leading" secondItem="zrj-km-Fk1" secondAttribute="trailing" constant="8" id="spj-gd-sZN"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5As-sI-UNo">
@@ -478,6 +494,7 @@
                     <navigationItem key="navigationItem" title="Settings" id="Rhz-oX-KHr"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="flagButton" destination="zrj-km-Fk1" id="hmC-Xr-ktG"/>
                         <outlet property="languageButton" destination="PdT-V7-NsL" id="dPF-80-wTU"/>
                     </connections>
                 </viewController>
@@ -1864,6 +1881,7 @@ Please turn on your Internet Conncetion - as soon your device is connected to th
         <image name="animation" width="60" height="60"/>
         <image name="cancelButton" width="44" height="44"/>
         <image name="clipboard" width="23" height="29"/>
+        <image name="de" width="550" height="330"/>
         <image name="editButton" width="44" height="44"/>
         <image name="home" width="30" height="28"/>
         <image name="infoButton" width="44" height="44"/>

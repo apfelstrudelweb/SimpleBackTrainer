@@ -44,7 +44,7 @@ class AnimationTorsoViewController: UIViewController, CAAnimationDelegate, UIGes
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "Muskegruppen entdecken"
+        self.title = "Discover muscle groups" //Muskelgruppen entdecken"
         
         infoButton.layer.cornerRadius = 0.5*infoButton.frame.size.width
         infoButton.backgroundColor = (navigationController?.navigationBar.barTintColor)!

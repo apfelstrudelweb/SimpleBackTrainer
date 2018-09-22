@@ -11,6 +11,7 @@ import DropDown
 
 class SettingsViewController: BaseViewController {
 
+    @IBOutlet weak var flagButton: UIButton!
     @IBOutlet weak var languageButton: UIButton!
     let dropDown = DropDown()
     
@@ -20,6 +21,7 @@ class SettingsViewController: BaseViewController {
         ]
     }()
     
+    // TODO: get languages from localization
     var countries: [String: String] = ["English": "gb", "Français": "fr", "Deutsch": "de", "Español": "es", "Português": "pt", "Italiano": "it"]
     
     override func viewDidLoad() {
@@ -33,7 +35,11 @@ class SettingsViewController: BaseViewController {
         dropDown.dataSource = keysArraySorted
         dropDown.dismissMode = .onTap
         
-        self.languageButton.setTitle(dropDown.dataSource.first, for: .normal)
+//        languageButton.setTitle(keysArraySorted.first, for: .normal)
+//        flagButton.setImage(UIImage(named: self.countries[keysArraySorted.first!]!), for: .normal)
+        
+        languageButton.setTitle("English", for: .normal)
+        flagButton.setImage(UIImage(named: self.countries["English"]!), for: .normal)
         
         dropDown.cellNib = UINib(nibName: "LanguageCell", bundle: nil)
 
@@ -47,14 +53,19 @@ class SettingsViewController: BaseViewController {
         
         dropDown.selectionAction = { [weak self] (index, item) in
             self?.languageButton.setTitle(item, for: .normal)
+            self?.flagButton.setImage(UIImage(named: (self?.countries[item]!)!), for: .normal)
         }
     }
     
     
-
-    @IBAction func lnaguageButtonTouched(_ sender: Any) {
+    @IBAction func flagButtonTouched(_ sender: Any) {
         dropDown.show()
     }
+    
+    @IBAction func languageButtonTouched(_ sender: Any) {
+        dropDown.show()
+    }
+
     
     override func viewWillDisappear(_ animated: Bool) {
         if self.menuVC != nil {
