@@ -30,3 +30,6 @@
 "PREMIUM_VIDEO_DESCR" = "Mehr Trainingsvideos mit Hanteln, Körpergewicht, Widerstandsbändern und Kleingeräten.";
 "PREMIUM_MOBIL_TITLE" = "Mobilisierungsübungen";
 "PREMIUM_MOBIL_DESCR" = "Finde heraus, wie du zusätzlich zur Stärkung des Rückens deine Flexibilität erhöhst und beweglich bleibst.";
+
+// Settings
+"SETTINGS_LANGUAGE_LABEL" = "Idioma";

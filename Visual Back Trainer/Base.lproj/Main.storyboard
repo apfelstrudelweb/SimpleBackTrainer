@@ -496,6 +496,7 @@
                     <connections>
                         <outlet property="flagButton" destination="zrj-km-Fk1" id="hmC-Xr-ktG"/>
                         <outlet property="languageButton" destination="PdT-V7-NsL" id="dPF-80-wTU"/>
+                        <outlet property="languageLabel" destination="vaO-e2-qfO" id="0o8-cW-YPR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nYl-AY-FWe" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -13,6 +13,10 @@ class SettingsViewController: BaseViewController {
 
     @IBOutlet weak var flagButton: UIButton!
     @IBOutlet weak var languageButton: UIButton!
+    
+    @IBOutlet weak var languageLabel: UILabel!
+    
+    
     let dropDown = DropDown()
     
     lazy var dropDowns: [DropDown] = {
@@ -37,9 +41,12 @@ class SettingsViewController: BaseViewController {
         self.updateCountries()
         
         let language = locale.localizedString(forLanguageCode: locale.languageCode)?.capitalized
+  
 
         dropDown.anchorView = languageButton
         dropDown.dismissMode = .onTap
+        
+        languageLabel.text = "SETTINGS_LANGUAGE_LABEL".localized(forLanguage: locale.languageCode)
         
         languageButton.setTitle(language, for: .normal)
         flagButton.setImage(UIImage(named: locale.languageCode), for: .normal)
@@ -63,6 +70,7 @@ class SettingsViewController: BaseViewController {
             self?.flagButton.setImage(UIImage(named: item), for: .normal)
             self?.updateCountries()
             
+            self?.languageLabel.text = "SETTINGS_LANGUAGE_LABEL".localized(forLanguage: item)
             UserDefaults.standard.set(item, forKey: "AppLanguage")
         }
     }
@@ -74,6 +82,7 @@ class SettingsViewController: BaseViewController {
             }
         }
         dropDown.dataSource = Array(countries.map({ $0.key }))
+        //NSLocalizedString("SETTINGS_LANGUAGE_LABEL", comment: "")
     }
     
     
@@ -95,3 +104,4 @@ class SettingsViewController: BaseViewController {
     }
 
 }
+
