@@ -86,7 +86,7 @@ class SettingsViewController: BaseViewController {
     func updateCountries() {
         for code in Bundle.main.localizations {
             if let language = locale.localizedString(forLanguageCode: code) {
-                countries[code] = language.capitalized
+                countries[code.components(separatedBy: "-").first!] = language.capitalized
             }
         }
         dropDown.dataSource = Array(countries.map({ $0.key }))
