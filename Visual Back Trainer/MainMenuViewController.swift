@@ -44,6 +44,17 @@ class MainMenuViewController: BaseViewController, UICollectionViewDataSource, UI
         self.tabBarController?.tabBar.items![2].title = "TABBAR_PREMIUM".localized()
         self.tabBarController?.tabBar.items![3].title = "TABBAR_SETTINGS".localized()
         
+        items = [
+            ["title":"MAINMENU_BACK_FOR_ACTIVITIES".localized(), "icon":"gardener", "id":StoryboardId.activity.rawValue],
+            ["title":"MAINMENU_BACK_FOR_SPORTS".localized(), "icon":"biker", "id":StoryboardId.sports.rawValue],
+            ["title":"MAINMENU_BACK_MUSCLE_ANATOMY".localized(), "icon":"anatomy", "id":StoryboardId.anatomy.rawValue],
+            ["title":"MAINMENU_BACK_TRAININGSPLAN".localized(), "icon":"trainingsplan", "id":StoryboardId.plan.rawValue],
+            ["title":"MAINMENU_BACK_FOR_EXERCISES".localized(), "icon":"romanChair", "id":StoryboardId.exercise.rawValue],
+            ["title":"MAINMENU_BACK_FOR_MOBILISATION".localized(), "icon":"cobra", "id":StoryboardId.mobilisation.rawValue],
+            ["title":"MAINMENU_BACK_FOR_THERAPY".localized(), "icon":"sitting", "id":StoryboardId.backTherapy.rawValue],
+            ["title":"MAINMENU_PREMIUM_VERSION".localized(), "icon":"pokal", "id":StoryboardId.premium.rawValue]
+        ]
+        
         self.tabBarController?.tabBar.isHidden = false
         
         do {
@@ -108,17 +119,8 @@ class MainMenuViewController: BaseViewController, UICollectionViewDataSource, UI
     }
     
     let reuseIdentifier = "cell" // also enter this string as the cell identifier in the storyboard
-    var items = [
-        ["title":NSLocalizedString("MAINMENU_BACK_FOR_ACTIVITIES", comment: ""), "icon":"gardener", "id":StoryboardId.activity.rawValue],
-        ["title":NSLocalizedString("MAINMENU_BACK_FOR_SPORTS", comment: ""), "icon":"biker", "id":StoryboardId.sports.rawValue],
-        ["title":NSLocalizedString("MAINMENU_BACK_MUSCLE_ANATOMY", comment: ""), "icon":"anatomy", "id":StoryboardId.anatomy.rawValue],
-        ["title":NSLocalizedString("MAINMENU_BACK_TRAININGSPLAN", comment: ""), "icon":"trainingsplan", "id":StoryboardId.plan.rawValue],
-        ["title":NSLocalizedString("MAINMENU_BACK_FOR_EXERCISES", comment: ""), "icon":"romanChair", "id":StoryboardId.exercise.rawValue],
-        ["title":NSLocalizedString("MAINMENU_BACK_FOR_MOBILISATION", comment: ""), "icon":"cobra", "id":StoryboardId.mobilisation.rawValue],
-        ["title":NSLocalizedString("MAINMENU_BACK_FOR_THERAPY", comment: ""), "icon":"sitting", "id":StoryboardId.backTherapy.rawValue],
-        ["title":NSLocalizedString("MAINMENU_PREMIUM_VERSION", comment: ""), "icon":"pokal", "id":StoryboardId.premium.rawValue]
-    ]
-    
+    var items: [[String : String]] = []
+
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {

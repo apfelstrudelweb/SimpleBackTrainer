@@ -19,11 +19,11 @@
             <objects>
                 <viewController restorationIdentifier="Home" storyboardIdentifier="Home" title="Hauptmenu" id="vXZ-lx-hvc" customClass="MainMenuViewController" customModule="Visual_Back_Trainer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="GTM-bT-963">
-                                <rect key="frame" x="0.0" y="88" width="375" height="641"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="641"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="zZo-Ym-FO0">
                                     <size key="itemSize" width="272" height="307"/>
@@ -124,11 +124,11 @@
             <objects>
                 <viewController storyboardIdentifier="Plan" id="1gU-rI-Hgh" customClass="TrainingsplanViewController" customModule="Visual_Back_Trainer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DAd-UW-Q8F">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kry-of-ruz">
-                                <rect key="frame" x="0.0" y="88" width="370" height="500"/>
+                                <rect key="frame" x="0.0" y="0.0" width="370" height="500"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="P6F-nA-3e4" customClass="DragDropTableView" customModule="DragDropiOS">
                                         <rect key="frame" x="0.0" y="0.0" width="370" height="500"/>
@@ -163,7 +163,7 @@
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fkA-cY-pI2" customClass="DragDropCollectionView" customModule="DragDropiOS">
-                                <rect key="frame" x="0.0" y="608" width="370" height="101"/>
+                                <rect key="frame" x="0.0" y="520" width="370" height="101"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="n7n-87-9td" customClass="DecorationCollectionViewFlowLayout" customModule="Visual_Back_Trainer" customModuleProvider="target">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="50" height="50"/>
@@ -284,11 +284,11 @@
             <objects>
                 <viewController restorationIdentifier="PremiumController" storyboardIdentifier="PremiumController" title="Premium" id="jMC-5W-syg" customClass="PremiumViewController" customModule="Visual_Back_Trainer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ThF-k1-Lsx">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mQL-Qs-Hz8">
-                                <rect key="frame" x="0.0" y="88" width="375" height="641"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="641"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="GhF-At-qLN">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -310,7 +310,7 @@
                                     </constraints>
                                 </view>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="ONF-1a-lrL">
-                                    <rect key="frame" x="0.0" y="551" width="375" height="90"/>
+                                    <rect key="frame" x="0.0" y="177" width="375" height="90"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pEN-VH-Arz">
@@ -417,11 +417,11 @@
             <objects>
                 <viewController restorationIdentifier="SettingsController" storyboardIdentifier="SettingsController" title="Settings" id="06L-Dc-odm" customClass="SettingsViewController" customModule="Visual_Back_Trainer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HVy-EK-DBE">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="a5N-US-l1N">
-                                <rect key="frame" x="0.0" y="88" width="375" height="641"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="641"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hh1-YU-SrA">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="160.33333333333334"/>
@@ -569,22 +569,22 @@ Please turn on your Internet Conncetion - as soon your device is connected to th
                                 </connections>
                             </button>
                             <tableView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="54" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="MBe-3e-d5w">
-                                <rect key="frame" x="0.0" y="44" width="225" height="768"/>
+                                <rect key="frame" x="0.0" y="44" width="262.66666666666669" height="768"/>
                                 <color key="backgroundColor" red="0.05029296875" green="0.47250461578369141" blue="0.94967108964920044" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="cUm-P1-7Vn" userLabel="HeaderView">
-                                    <rect key="frame" x="0.0" y="0.0" width="225" height="22"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="262.66666666666669" height="22"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellMenu" id="kmA-Ah-Pww">
-                                        <rect key="frame" x="0.0" y="44" width="225" height="54"/>
+                                        <rect key="frame" x="0.0" y="44" width="262.66666666666669" height="54"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kmA-Ah-Pww" id="PkJ-pF-O9W">
-                                            <rect key="frame" x="0.0" y="0.0" width="225" height="54"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="262.66666666666669" height="54"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qcm-8o-Buf">
@@ -637,7 +637,7 @@ Please turn on your Internet Conncetion - as soon your device is connected to th
                         </subviews>
                         <constraints>
                             <constraint firstItem="MBe-3e-d5w" firstAttribute="top" secondItem="FTm-Yl-Jti" secondAttribute="top" id="2fl-G6-QXx"/>
-                            <constraint firstItem="MBe-3e-d5w" firstAttribute="width" secondItem="WQd-kp-cSW" secondAttribute="width" multiplier="0.6" id="42B-fY-jvb">
+                            <constraint firstItem="MBe-3e-d5w" firstAttribute="width" secondItem="WQd-kp-cSW" secondAttribute="width" multiplier="0.7" id="42B-fY-jvb">
                                 <variation key="heightClass=compact-widthClass=regular" constant="0.0"/>
                             </constraint>
                             <constraint firstItem="fkx-xb-tAP" firstAttribute="top" secondItem="FTm-Yl-Jti" secondAttribute="top" id="6TT-QQ-aNg"/>
@@ -961,18 +961,18 @@ Please turn on your Internet Conncetion - as soon your device is connected to th
             <objects>
                 <viewController id="PyW-Ma-bM4" customClass="AnimationTorsoViewController" customModule="Visual_Back_Trainer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="spx-kC-G0D">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uXc-LN-hju">
-                                <rect key="frame" x="0.0" y="88" width="375" height="638"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="638"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="delegate" destination="PyW-Ma-bM4" id="Z5C-Jx-aG8"/>
                                 </connections>
                             </sceneKitView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V19-Cu-ImT">
-                                <rect key="frame" x="0.0" y="726" width="375" height="52"/>
+                                <rect key="frame" x="0.0" y="638" width="375" height="52"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K4x-p5-Ig6">
                                         <rect key="frame" x="175" y="4" width="44" height="44"/>
@@ -1019,7 +1019,7 @@ Please turn on your Internet Conncetion - as soon your device is connected to th
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pDY-Yi-QmG">
-                                <rect key="frame" x="0.0" y="725" width="375" height="1"/>
+                                <rect key="frame" x="0.0" y="637" width="375" height="1"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="0.29370281040268459" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="NIA-b1-qDN"/>
@@ -1448,7 +1448,7 @@ Please turn on your Internet Conncetion - as soon your device is connected to th
             <objects>
                 <tableViewController id="ynM-0b-4WO" customClass="VideoTableViewController" customModule="Visual_Back_Trainer" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="LAu-D9-rFc">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="A3h-5J-cfI">
@@ -1769,7 +1769,8 @@ Please turn on your Internet Conncetion - as soon your device is connected to th
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gDC-xD-Bux" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" image="home" id="vJq-Qi-zZx"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="V4Z-RY-5W8">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="V4Z-RY-5W8">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" red="0.1239974424" green="0.16451942920000001" blue="0.47357922790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1792,7 +1793,8 @@ Please turn on your Internet Conncetion - as soon your device is connected to th
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Fyg-8i-2dS" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Plan" image="clipboard" id="EFA-mI-M8v"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dFf-3P-5K6">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="dFf-3P-5K6">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" red="0.1239974424" green="0.16451942920000001" blue="0.47357922790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1818,7 +1820,7 @@ Please turn on your Internet Conncetion - as soon your device is connected to th
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0ck-Pc-GRP" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Premium" image="premium" id="SaP-fD-OLQ"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="esv-OJ-MlZ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="esv-OJ-MlZ">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1842,7 +1844,8 @@ Please turn on your Internet Conncetion - as soon your device is connected to th
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QFw-gB-4NH" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Settings" image="zahnrad" id="71Q-a3-mPY"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EkJ-A0-EbV">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="EkJ-A0-EbV">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" red="0.1239974424" green="0.16451942920000001" blue="0.47357922790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1864,7 +1867,8 @@ Please turn on your Internet Conncetion - as soon your device is connected to th
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NBd-LW-FNW" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gyR-SF-AzC">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="gyR-SF-AzC">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

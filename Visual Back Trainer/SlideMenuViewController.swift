@@ -17,6 +17,8 @@ protocol SlideMenuDelegate {
 
 class SlideMenuViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    var backgroundColor: UIColor = .blue
+    
     
     /**
     *  Array to display menu options
@@ -48,17 +50,11 @@ class SlideMenuViewController: UIViewController, UITableViewDataSource, UITableV
         tblMenuOptions.tableFooterView = UIView()
         self.view.backgroundColor = .clear
         UITableView.appearance().separatorColor = .white
-        tblMenuOptions.backgroundColor = UIColor(red: 0.2706, green: 0.4314, blue: 0.7569, alpha: 1.0)
+        tblMenuOptions.backgroundColor = backgroundColor //UIColor(red: 0.2706, green: 0.4314, blue: 0.7569, alpha: 1.0)
         updateArrayMenuOptions()
     }
     
 
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         //updateArrayMenuOptions()
@@ -66,13 +62,13 @@ class SlideMenuViewController: UIViewController, UITableViewDataSource, UITableV
     
     func updateArrayMenuOptions(){
         
-        arrayMenuOptions.append(["title":NSLocalizedString("SIDEMENU_HOME", comment: ""), "icon":"side_home"])
-        arrayMenuOptions.append(["title":NSLocalizedString("SIDEMENU_ACTIVITIES", comment: ""), "icon":"side_berufe"])
-        arrayMenuOptions.append(["title":NSLocalizedString("SIDEMENU_SPORTS", comment: ""), "icon":"side_sportarten"])
-        arrayMenuOptions.append(["title":NSLocalizedString("SIDEMENU_EXERCISES", comment: ""), "icon":"side_uebungen"])
-        arrayMenuOptions.append(["title":NSLocalizedString("SIDEMENU_PREMIUM", comment: ""), "icon":"side_premium"])
-        arrayMenuOptions.append(["title":NSLocalizedString("SIDEMENU_SETTINGS", comment: ""), "icon":"side_settings"])
-        arrayMenuOptions.append(["title":NSLocalizedString("SIDEMENU_CONTACT", comment: ""), "icon":"side_contact"])
+        arrayMenuOptions.append(["title":"SIDEMENU_HOME".localized(), "icon":"side_home"])
+        arrayMenuOptions.append(["title":"SIDEMENU_ACTIVITIES".localized(), "icon":"side_berufe"])
+        arrayMenuOptions.append(["title":"SIDEMENU_SPORTS".localized(), "icon":"side_sportarten"])
+        arrayMenuOptions.append(["title":"SIDEMENU_EXERCISES".localized(), "icon":"side_uebungen"])
+        arrayMenuOptions.append(["title":"SIDEMENU_PREMIUM".localized(), "icon":"side_premium"])
+        arrayMenuOptions.append(["title":"SIDEMENU_SETTINGS".localized(), "icon":"side_settings"])
+        arrayMenuOptions.append(["title":"SIDEMENU_CONTACT".localized(), "icon":"side_contact"])
         
         tblMenuOptions.reloadData()
     }

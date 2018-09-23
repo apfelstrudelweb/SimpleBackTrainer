@@ -6,23 +6,23 @@
 
 // Main Menu
 "MAINMENU_TITLE" = "Your Exercise Program";
-"MAINMENU_BACK_FOR_ACTIVITIES" = "Starker Rücken für Berufe";
-"MAINMENU_BACK_FOR_SPORTS" = "Rückenmuskeln für Sportler";
-"MAINMENU_BACK_MUSCLE_ANATOMY" = "Muskel-Anatomie";
-"MAINMENU_BACK_TRAININGSPLAN" = "Trainingsplan";
-"MAINMENU_BACK_FOR_EXERCISES" = "Trainings-Übungen";
-"MAINMENU_BACK_FOR_MOBILISATION" = "Rücken-Mobilisierung";
-"MAINMENU_BACK_FOR_THERAPY" = "Rückenschule";
-"MAINMENU_PREMIUM_VERSION" = "Premium-Version";
+"MAINMENU_BACK_FOR_ACTIVITIES" = "Strong back for professions";
+"MAINMENU_BACK_FOR_SPORTS" = "Back muscles for athletes";
+"MAINMENU_BACK_MUSCLE_ANATOMY" = "Muscle anatomy";
+"MAINMENU_BACK_TRAININGSPLAN" = "Training plan";
+"MAINMENU_BACK_FOR_EXERCISES" = "Training exercises";
+"MAINMENU_BACK_FOR_MOBILISATION" = "Back mobilization";
+"MAINMENU_BACK_FOR_THERAPY" = "Back training";
+"MAINMENU_PREMIUM_VERSION" = "Premium version";
 
 // Side Menu
 "SIDEMENU_HOME" = "Start";
-"SIDEMENU_ACTIVITIES" = "Berufe";
-"SIDEMENU_SPORTS" = "Sportarten";
-"SIDEMENU_EXERCISES" = "Übungen";
+"SIDEMENU_ACTIVITIES" = "Professions";
+"SIDEMENU_SPORTS" = "Sports disciplines";
+"SIDEMENU_EXERCISES" = "Exercises";
 "SIDEMENU_PREMIUM" = "Premium Version";
-"SIDEMENU_SETTINGS" = "Einstellungen";
-"SIDEMENU_CONTACT" = "Kontakt";
+"SIDEMENU_SETTINGS" = "Settings";
+"SIDEMENU_CONTACT" = "Contact";
 
 // PremiumController
 "PREMIUM_TITLE" = "Premium App freischalten";

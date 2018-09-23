@@ -11,13 +11,11 @@ import SnapKit
 
 class BaseViewController: UIViewController {
     
-    var menuWidth : CGFloat!
     var menuVC : SlideMenuViewController?
     var hamburgerButton:UIButton?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
 
         let separatorView = UIView()
         separatorView.backgroundColor = UIColor(red:0.82, green:0.82, blue:0.82, alpha:1.0)
@@ -114,9 +112,9 @@ class BaseViewController: UIViewController {
         self.menuVC = self.storyboard!.instantiateViewController(withIdentifier: "MenuViewController") as? SlideMenuViewController
         menuVC?.btnMenu = sender
         menuVC?.delegate = self
-        
-        print(self)
-        
+        let color = (navigationController?.navigationBar.barTintColor)!
+        menuVC?.backgroundColor = color
+   
         self.view.addSubview((menuVC?.view)!)
         self.addChildViewController((menuVC)!)
         menuVC?.view.layoutIfNeeded()
