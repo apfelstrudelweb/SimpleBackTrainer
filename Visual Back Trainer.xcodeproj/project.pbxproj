@@ -37,6 +37,7 @@
 		1B8287442156148500A24319 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8287432156148500A24319 /* SettingsViewController.swift */; };
 		1B8287462156217600A24319 /* LanguageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B8287452156217600A24319 /* LanguageCell.xib */; };
 		1B8287482156225A00A24319 /* LanguageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8287472156225A00A24319 /* LanguageCell.swift */; };
+		1B82874F2157B01900A24319 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B82874E2157B01900A24319 /* StoreKit.framework */; };
 		1BB9E19A2150203B00EFFD32 /* GroupWorkoutMembership+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB9E18A2150203B00EFFD32 /* GroupWorkoutMembership+CoreDataClass.swift */; };
 		1BB9E19B2150203B00EFFD32 /* GroupWorkoutMembership+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB9E18B2150203B00EFFD32 /* GroupWorkoutMembership+CoreDataProperties.swift */; };
 		1BB9E19C2150203B00EFFD32 /* Remark+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB9E18C2150203B00EFFD32 /* Remark+CoreDataClass.swift */; };
@@ -127,6 +128,8 @@
 		1B8287432156148500A24319 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		1B8287452156217600A24319 /* LanguageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LanguageCell.xib; sourceTree = "<group>"; };
 		1B8287472156225A00A24319 /* LanguageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageCell.swift; sourceTree = "<group>"; };
+		1B82874E2157B01900A24319 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		1B8287502157B02D00A24319 /* Visual Back Trainer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Visual Back Trainer.entitlements"; sourceTree = "<group>"; };
 		1BB9E18A2150203B00EFFD32 /* GroupWorkoutMembership+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GroupWorkoutMembership+CoreDataClass.swift"; sourceTree = "<group>"; };
 		1BB9E18B2150203B00EFFD32 /* GroupWorkoutMembership+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GroupWorkoutMembership+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		1BB9E18C2150203B00EFFD32 /* Remark+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Remark+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -200,6 +203,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3E88C606F624B7229EB4512 /* Pods_Visual_Back_Trainer.framework in Frameworks */,
+				1B82874F2157B01900A24319 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,6 +435,7 @@
 		753A55BF1BB073E900254F27 /* Visual Back Trainer */ = {
 			isa = PBXGroup;
 			children = (
+				1B8287502157B02D00A24319 /* Visual Back Trainer.entitlements */,
 				1B8287422156145700A24319 /* Settings */,
 				1B5ABFA9214A99B8004890CD /* Rating */,
 				1B2F53D020F649D2001A2B6D /* DragAndDrop */,
@@ -474,6 +479,7 @@
 		B9F5C41866EBEDE6401E167B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1B82874E2157B01900A24319 /* StoreKit.framework */,
 				0B16F3D0DCE36AA650ACFAD7 /* Pods_Visual_Back_Trainer.framework */,
 			);
 			name = Frameworks;
@@ -515,6 +521,14 @@
 					753A55BC1BB073E900254F27 = {
 						CreatedOnToolsVersion = 6.4;
 						LastSwiftMigration = 0900;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -829,6 +843,7 @@
 			baseConfigurationReference = 4B0EE30EF5413A93082058A8 /* Pods-Visual Back Trainer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Visual Back Trainer/Visual Back Trainer.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P2EQM7YAFH;
@@ -852,6 +867,7 @@
 			baseConfigurationReference = 2A7A661B6EEDE2805E909539 /* Pods-Visual Back Trainer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Visual Back Trainer/Visual Back Trainer.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P2EQM7YAFH;

@@ -6,12 +6,12 @@
 
 // Main Menu
 "MAINMENU_TITLE" = "Tu Programa de Ejercicios";
-"MAINMENU_BACK_FOR_ACTIVITIES" = "Fuerte respaldo para las profesiones";
-"MAINMENU_BACK_FOR_SPORTS" = "Músculos de la espalda para los atletas";
+"MAINMENU_BACK_FOR_ACTIVITIES" = "Ejercicios según profesión";
+"MAINMENU_BACK_FOR_SPORTS" = "Ejercicios según deporte";
 "MAINMENU_BACK_MUSCLE_ANATOMY" = "Anatomía muscular";
 "MAINMENU_BACK_TRAININGSPLAN" = "Plan de entrenamiento";
 "MAINMENU_BACK_FOR_EXERCISES" = "Ejercicios de entrenamiento";
-"MAINMENU_BACK_FOR_MOBILISATION" = "Movilización de la espalda";
+"MAINMENU_BACK_FOR_MOBILISATION" = "Fortalecimiento para la espalda";
 "MAINMENU_BACK_FOR_THERAPY" = "Escuela de espalda";
 "MAINMENU_PREMIUM_VERSION" = "Versión premium";
 
