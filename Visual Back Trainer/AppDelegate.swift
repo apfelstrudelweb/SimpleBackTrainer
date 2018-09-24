@@ -10,6 +10,7 @@ import UIKit
 import CoreData
 import DropDown
 import UserNotifications
+import OneSignal
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -28,20 +29,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         DropDown.startListeningToKeyboard()
         
-        // TODO: inform user about changes via badge
-        let badgeCount: Int = 0
-        let application = UIApplication.shared
-        let center = UNUserNotificationCenter.current()
-        center.requestAuthorization(options:[.badge, .alert, .sound]) { (granted, error) in
-            // Enable or disable features based on authorization.
-        }
-        application.registerForRemoteNotifications()
-        application.applicationIconBadgeNumber = badgeCount
+        let onesignalInitSettings = [kOSSettingsKeyAutoPrompt: false]
+        OneSignal.initWithLaunchOptions(launchOptions,
+                                        appId: "d94cefbb-ce86-4f0b-ba65-4e2100359e6e",
+                                        handleNotificationAction: nil,
+                                        settings: onesignalInitSettings)
         
-        if #available(iOS 10, *) {
-            UNUserNotificationCenter.current().requestAuthorization(options:[.badge, .alert, .sound]){ (granted, error) in }
-            application.registerForRemoteNotifications()
-        }
+        OneSignal.inFocusDisplayType = OSNotificationDisplayType.notification;
+        
+        // Recommend moving the below line to prompt for push after informing the user about
+        //   how your app will use them.
+        OneSignal.promptForPushNotifications(userResponse: { accepted in
+            print("User accepted notifications: \(accepted)")
+        })
+        
+//        // TODO: inform user about changes via badge
+//        let badgeCount: Int = 0
+//        let application = UIApplication.shared
+//        let center = UNUserNotificationCenter.current()
+//        center.requestAuthorization(options:[.badge, .alert, .sound]) { (granted, error) in
+//            // Enable or disable features based on authorization.
+//        }
+//        application.registerForRemoteNotifications()
+//        application.applicationIconBadgeNumber = badgeCount
+//
+//        if #available(iOS 10, *) {
+//            UNUserNotificationCenter.current().requestAuthorization(options:[.badge, .alert, .sound]){ (granted, error) in }
+//            application.registerForRemoteNotifications()
+//        }
         
         
         //clearDB()

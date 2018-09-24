@@ -12,5 +12,10 @@ target 'Visual Back Trainer' do
   pod 'ReachabilitySwift'
   pod 'Alamofire', '~> 4.7'
   pod 'DropDown'
+  pod 'OneSignal', '>= 2.6.2', '< 3.0'
 end
 
+target 'OneSignalNotificationServiceExtension' do
+    use_frameworks!
+   pod 'OneSignal', '>= 2.6.2', '< 3.0'
+end
