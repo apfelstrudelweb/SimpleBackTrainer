@@ -21,6 +21,7 @@ class AnatomyViewController: UIViewController {
     
     
     @IBOutlet weak var infoButton: UIButton!
+    @IBOutlet weak var infoButtonWidth: NSLayoutConstraint!
     @IBOutlet weak var torsoBackView: TorsoBackView!
     @IBOutlet weak var torsoFrontView: TorsoFrontView!
     @IBOutlet weak var backViewButton: MuscleGroupButton!
@@ -42,7 +43,7 @@ class AnatomyViewController: UIViewController {
     
     @IBOutlet weak var controlView: UIView!
     
-    @IBOutlet weak var animationTopSpace: NSLayoutConstraint!
+    @IBOutlet weak var animationTopVerticalSpace: NSLayoutConstraint!
     @IBOutlet weak var buttonHeight: NSLayoutConstraint!
     @IBOutlet weak var largeButtonHeight: NSLayoutConstraint!
     
@@ -74,14 +75,14 @@ class AnatomyViewController: UIViewController {
         torsoFrontViewLarge.delegate = self
         torsoBackViewLarge.delegate = self
         
-        infoButton.layer.cornerRadius = 0.5*infoButton.frame.size.width
+        let fact:CGFloat = UI_USER_INTERFACE_IDIOM() == .pad ? 1.2 : 1.0
+        infoButton.layer.cornerRadius = 0.5*infoButtonWidth.constant * fact
         
-
-        let fadedColor = UIColor.withAlphaComponent((navigationController?.navigationBar.barTintColor)!)(0.9)
+        let fadedColor = (navigationController?.navigationBar.barTintColor)!
         
         infoButton.backgroundColor = fadedColor
         switchAnimation.onTintColor = fadedColor
-        switchShowBothSides.backgroundColor = fadedColor
+        switchShowBothSides.onTintColor = fadedColor
         switchBodySideControl.backgroundColor = .clear
         speedStepper.tintColor = fadedColor
         ThreeDButton.tintColor = fadedColor
@@ -212,10 +213,10 @@ class AnatomyViewController: UIViewController {
         // TODO: fix crash for iPad and fix glitch with control view
         
         if isIPadLandscape {
-            //animationTopSpace.constant = 0.02 * screenHeight
+            animationTopVerticalSpace.constant = 0.02 * screenHeight
             controlView.isHidden = true
         } else if isIPadPortrait {
-            //animationTopSpace.constant = 0.15 * screenHeight
+            animationTopVerticalSpace.constant = 0.15 * screenHeight
             controlView.isHidden = false
         }
         

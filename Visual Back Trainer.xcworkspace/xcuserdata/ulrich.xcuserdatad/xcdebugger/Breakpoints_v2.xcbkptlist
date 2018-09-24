@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Visual Back Trainer/AnatomyViewController.swift"
-            timestampString = "559294749.540637"
+            timestampString = "559496109.1837651"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "339"
-            endingLineNumber = "339"
+            startingLineNumber = "340"
+            endingLineNumber = "340"
             landmarkName = "redirectFront(sender:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Visual Back Trainer/AnatomyViewController.swift"
-            timestampString = "559294749.540688"
+            timestampString = "559496109.184297"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "297"
-            endingLineNumber = "297"
+            startingLineNumber = "298"
+            endingLineNumber = "298"
             landmarkName = "prepare(for:sender:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -106,11 +106,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Visual Back Trainer/AnatomyViewController.swift"
-            timestampString = "559294749.540725"
+            timestampString = "559496109.1847171"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "305"
-            endingLineNumber = "305"
+            startingLineNumber = "306"
+            endingLineNumber = "306"
             landmarkName = "prepare(for:sender:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -358,9 +358,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "148"
-            endingLineNumber = "148"
-            landmarkName = "getTrainingsplan(completionHandler:)"
-            landmarkType = "7">
+            endingLineNumber = "148">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -374,9 +372,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "152"
-            endingLineNumber = "152"
-            landmarkName = "getTrainingsplan(completionHandler:)"
-            landmarkType = "7">
+            endingLineNumber = "152">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -498,7 +494,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Visual Back Trainer/DragAndDrop/TrainingsplanViewController.swift"
-            timestampString = "559406815.0688241"
+            timestampString = "559492673.198091"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "104"
@@ -535,7 +531,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "83"
             endingLineNumber = "83"
-            landmarkName = "getWorkouts(completionHandler:)"
+            landmarkName = "getTrainingsplan(completionHandler:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -706,7 +702,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Visual Back Trainer/SlideMenuViewController.swift"
-            timestampString = "559425044.115744"
+            timestampString = "559492673.200076"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "20"
@@ -800,7 +796,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Visual Back Trainer/AppDelegate.swift"
-            timestampString = "559425044.116073"
+            timestampString = "559496109.185408"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "84"
@@ -812,27 +808,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "OneSignalNotificationServiceExtension/NotificationService.swift"
-            timestampString = "559425044.116371"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
-            landmarkName = "didReceive(_:withContentHandler:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Visual Back Trainer/AppDelegate.swift"
-            timestampString = "559425044.116627"
+            timestampString = "559496109.185485"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "43"
