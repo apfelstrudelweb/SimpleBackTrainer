@@ -17,6 +17,7 @@ enum DisplayMode {
     case regularTwo
 }
 
+@IBDesignable
 class AnatomyViewController: UIViewController {
     
     
@@ -42,6 +43,9 @@ class AnatomyViewController: UIViewController {
     @IBOutlet weak var speedStepper: UIStepper!
     
     @IBOutlet weak var controlView: UIView!
+    @IBOutlet weak var animationLabel: UILabel!
+    @IBOutlet weak var bothsidesLabel: UILabel!
+    
     
     @IBOutlet weak var animationTopVerticalSpace: NSLayoutConstraint!
     @IBOutlet weak var buttonHeight: NSLayoutConstraint!
@@ -51,7 +55,7 @@ class AnatomyViewController: UIViewController {
     let popTip = PopTip()
     
     var displayMode: DisplayMode = .regularBack
-    
+    var infoText: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,8 +90,8 @@ class AnatomyViewController: UIViewController {
         switchBodySideControl.backgroundColor = .clear
         speedStepper.tintColor = fadedColor
         ThreeDButton.tintColor = fadedColor
-        
-        let premium = false
+
+        let premium = true
         
         // TODO: handle premium mode
         if premium {
@@ -109,9 +113,18 @@ class AnatomyViewController: UIViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        // localization
+        switchBodySideControl.setTitle("ANATOMY_SEGMENTED_0".localized(), forSegmentAt: 0)
+        switchBodySideControl.setTitle("ANATOMY_SEGMENTED_1".localized(), forSegmentAt: 1)
+        animationLabel.text = "ANATOMY_ANIMATION".localized()
+        bothsidesLabel.text = "ANATOMY_BOTHSIDES".localized()
+        infoText = "ANATOMY_INFO_TEXT".localized()
+    }
+    
     @IBAction func infoButtonTouched(_ sender: UIButton) {
         popTip.bubbleColor = infoButton.backgroundColor!
-        popTip.show(text: "Tipp:\nSie können in das Bild hineinzoomen, indem Sie es mit zwei Fingern 'auseinanderziehen'. Wenn Sie weit genug hineinzoomen, erscheinen außerdem die Bezeichnungen zu den einzelnen Muskelgruppen.", direction: .left, maxWidth: 0.7*torsoFrontView.frame.size.width, in: self.view, from: sender.frame, duration: 6)
+        popTip.show(text: infoText!, direction: .left, maxWidth: 0.7*torsoFrontView.frame.size.width, in: self.view, from: sender.frame, duration: 6)
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {

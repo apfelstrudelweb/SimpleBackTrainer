@@ -118,6 +118,11 @@ class MainMenuViewController: BaseViewController, UICollectionViewDataSource, UI
         }
     }
     
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        collectionView.reloadData()
+    }
+    
     let reuseIdentifier = "cell" // also enter this string as the cell identifier in the storyboard
     var items: [[String : String]] = []
 

@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Visual Back Trainer/TorsoFrontView.swift"
-            timestampString = "555840577.751886"
+            timestampString = "559504747.752822"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "158"
@@ -74,13 +74,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Visual Back Trainer/AnatomyViewController.swift"
-            timestampString = "559496109.1837651"
+            timestampString = "559504747.752915"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "340"
-            endingLineNumber = "340"
-            landmarkName = "redirectFront(sender:)"
-            landmarkType = "7">
+            startingLineNumber = "353"
+            endingLineNumber = "353"
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -90,13 +90,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Visual Back Trainer/AnatomyViewController.swift"
-            timestampString = "559496109.184297"
+            timestampString = "559504747.753323"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "298"
-            endingLineNumber = "298"
-            landmarkName = "prepare(for:sender:)"
-            landmarkType = "7">
+            startingLineNumber = "311"
+            endingLineNumber = "311"
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -106,13 +106,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Visual Back Trainer/AnatomyViewController.swift"
-            timestampString = "559496109.1847171"
+            timestampString = "559504747.753567"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "306"
-            endingLineNumber = "306"
-            landmarkName = "prepare(for:sender:)"
-            landmarkType = "7">
+            startingLineNumber = "319"
+            endingLineNumber = "319"
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -122,11 +122,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Visual Back Trainer/MainMenuViewController.swift"
-            timestampString = "559406815.0680389"
+            timestampString = "559500837.436588"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "228"
-            endingLineNumber = "228"
+            startingLineNumber = "233"
+            endingLineNumber = "233"
             landmarkName = "didRetrieveWorkouts(workouts:)"
             landmarkType = "7">
             <Locations>
@@ -170,13 +170,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Visual Back Trainer/TorsoBackView.swift"
-            timestampString = "559220010.027797"
+            timestampString = "559504747.753847"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "154"
             endingLineNumber = "154"
-            landmarkName = "imageTapped(tapGestureRecognizer:)"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -186,13 +186,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Visual Back Trainer/TorsoBackView.swift"
-            timestampString = "559220010.0280499"
+            timestampString = "559504747.754125"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "58"
             endingLineNumber = "58"
-            landmarkName = "xibSetup()"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -338,11 +338,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Visual Back Trainer/MainMenuViewController.swift"
-            timestampString = "559406815.068481"
+            timestampString = "559500837.4367321"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "219"
-            endingLineNumber = "219"
+            startingLineNumber = "224"
+            endingLineNumber = "224"
             landmarkName = "didRetrieveTrainingsplan(exercises:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -590,13 +590,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Visual Back Trainer/TorsoBackView.swift"
-            timestampString = "559220039.787129"
+            timestampString = "559504747.754757"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "147"
             endingLineNumber = "147"
-            landmarkName = "imageTapped(tapGestureRecognizer:)"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
             <Locations>
                <Location
                   shouldBeEnabled = "No"
@@ -796,7 +796,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Visual Back Trainer/AppDelegate.swift"
-            timestampString = "559496109.185408"
+            timestampString = "559500837.437008"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "84"
@@ -812,7 +812,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Visual Back Trainer/AppDelegate.swift"
-            timestampString = "559496109.185485"
+            timestampString = "559500837.437097"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "43"

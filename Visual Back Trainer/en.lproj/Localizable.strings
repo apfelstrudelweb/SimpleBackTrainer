@@ -24,6 +24,13 @@
 "SIDEMENU_SETTINGS" = "Settings";
 "SIDEMENU_CONTACT" = "Contact";
 
+// AnatomyViewController
+"ANATOMY_SEGMENTED_0" = "Back Side";
+"ANATOMY_SEGMENTED_1" = "Front Side";
+"ANATOMY_ANIMATION" = "Animation";
+"ANATOMY_BOTHSIDES" = "ambilateral";
+"ANATOMY_INFO_TEXT" = "Tip:\nYou can zoom into the sketch by 'pinching' with two fingers. If you zoom in far enough, the individual muscle names will be displayed.";
+
 // PremiumController
 "PREMIUM_TITLE" = "Premium App freischalten";
 "PREMIUM_BUTTON_TEXT" = "Premium App kaufen";

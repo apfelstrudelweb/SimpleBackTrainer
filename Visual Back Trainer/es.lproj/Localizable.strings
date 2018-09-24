@@ -24,6 +24,13 @@
 "SIDEMENU_SETTINGS" = "Ajustes";
 "SIDEMENU_CONTACT" = "Contáctanos";
 
+// AnatomyViewController
+"ANATOMY_SEGMENTED_0" = "Posterior";
+"ANATOMY_SEGMENTED_1" = "Anterior";
+"ANATOMY_ANIMATION" = "Animación";
+"ANATOMY_BOTHSIDES" = "ambos lados";
+"ANATOMY_INFO_TEXT" = "Consejo:\nPuedes hacer zoom (es decir ampliar) sobre la figura humana para ver en detalle cada músculo y su nombre.";
+
 // PremiumController
 "PREMIUM_TITLE" = "Premium App freischalten";
 "PREMIUM_BUTTON_TEXT" = "Premium App kaufen";

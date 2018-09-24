@@ -24,6 +24,13 @@
 "SIDEMENU_SETTINGS" = "Einstellungen";
 "SIDEMENU_CONTACT" = "Kontakt";
 
+// AnatomyViewController
+"ANATOMY_SEGMENTED_0" = "Rückseite";
+"ANATOMY_SEGMENTED_1" = "Vorderseite";
+"ANATOMY_ANIMATION" = "Animation";
+"ANATOMY_BOTHSIDES" = "beidseitig";
+"ANATOMY_INFO_TEXT" = "Tipp:\nSie können in die Skizze hineinzoomen, indem Sie es mit zwei Fingern 'auseinanderziehen'. Wenn Sie weit genug hineinzoomen, werden die einzelnen Muskelbezeichnungen eingeblendet.";
+
 // PremiumController
 "PREMIUM_TITLE" = "Premium App freischalten";
 "PREMIUM_BUTTON_TEXT" = "Premium App kaufen";

@@ -29,7 +29,7 @@
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" restorationIdentifier="TorsoFrontView" id="iN0-l3-epB" customClass="TorsoFrontView" customModule="Visual_Back_Trainer">
+        <view contentMode="scaleToFill" restorationIdentifier="TorsoFrontView" id="iN0-l3-epB" customClass="TorsoFrontView" customModule="Visual_Back_Trainer" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="680" height="1064"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -75,7 +75,7 @@
                                     </variation>
                                 </label>
                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="innerer schräge Bauchmuskeln" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hLX-xE-3le" customClass="PaddingLabel" customModule="Visual_Back_Trainer" customModuleProvider="target">
-                                    <rect key="frame" x="412" y="792" width="127" height="12"/>
+                                    <rect key="frame" x="412" y="845.33333333333337" width="127" height="12"/>
                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="18" id="Ksv-CZ-Ass">
