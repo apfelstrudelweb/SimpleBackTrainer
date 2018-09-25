@@ -114,6 +114,7 @@ class AnatomyViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         // localization
         switchBodySideControl.setTitle("ANATOMY_SEGMENTED_0".localized(), forSegmentAt: 0)
         switchBodySideControl.setTitle("ANATOMY_SEGMENTED_1".localized(), forSegmentAt: 1)
@@ -121,6 +122,7 @@ class AnatomyViewController: UIViewController {
         bothsidesLabel.text = "ANATOMY_BOTHSIDES".localized()
         infoText = "ANATOMY_INFO_TEXT".localized()
     }
+    
     
     @IBAction func infoButtonTouched(_ sender: UIButton) {
         popTip.bubbleColor = infoButton.backgroundColor!

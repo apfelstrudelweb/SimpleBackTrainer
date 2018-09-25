@@ -1,3 +1,6 @@
+// System buttons
+"SYSTEM_BACK" = "Back";
+
 // Tabbar
 "TABBAR_HOME" = "Home";
 "TABBAR_PLAN" = "Plan";
@@ -30,6 +33,8 @@
 "ANATOMY_ANIMATION" = "Animation";
 "ANATOMY_BOTHSIDES" = "ambilateral";
 "ANATOMY_INFO_TEXT" = "Tip:\nYou can zoom into the sketch by 'pinching' with two fingers. If you zoom in far enough, the individual muscle names will be displayed.";
+"ANIMATION_TITLE" = "Explore muscle groups";
+"ANIMATION_INFO_TEXT" = "Tips:\n1) Tap on a colored muscle group in order to get the muscle name.\n2) Swipe left or right to rotate the figure.\n3) Swipe with two fingers to move the figure horizontally or vertically.\n4) Pinch with two fingers to zoom in or out.";
 
 // PremiumController
 "PREMIUM_TITLE" = "Premium App freischalten";

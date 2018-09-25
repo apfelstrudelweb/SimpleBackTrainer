@@ -56,6 +56,7 @@ class PremiumViewController: BaseViewController, UITableViewDelegate, UITableVie
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         self.title = "TABBAR_PREMIUM".localized()
     }
     

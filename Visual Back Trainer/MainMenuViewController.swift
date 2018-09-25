@@ -36,7 +36,7 @@ class MainMenuViewController: BaseViewController, UICollectionViewDataSource, UI
     
     
     override func viewWillAppear(_ animated: Bool) {
-        
+        super.viewWillAppear(animated)
         self.title = "TABBAR_HOME".localized()
         
         self.tabBarController?.tabBar.items![0].title = "TABBAR_HOME".localized()

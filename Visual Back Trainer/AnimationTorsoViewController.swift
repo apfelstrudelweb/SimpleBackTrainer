@@ -40,12 +40,12 @@ class AnimationTorsoViewController: UIViewController, CAAnimationDelegate, UIGes
     
     var animations = [String: CAAnimation]()
     var animationsMoveDict = [String: [CGFloat]]()
+    
+    var infoText: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.title = "Discover muscle groups" //Muskelgruppen entdecken"
-        
+
         infoButton.layer.cornerRadius = 0.5*infoButton.frame.size.width
         infoButton.backgroundColor = (navigationController?.navigationBar.barTintColor)!
         animationButton.tintColor = infoButton.backgroundColor
@@ -70,6 +70,18 @@ class AnimationTorsoViewController: UIViewController, CAAnimationDelegate, UIGes
         popTip.bubbleOffset = 0
         popTip.edgeInsets = UIEdgeInsetsMake(0, 10, 0, 10)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.title = "ANIMATION_TITLE".localized()
+        infoText = "ANIMATION_INFO_TEXT".localized()
+        
+        let backButton = UIBarButtonItem()
+        backButton.title = "SYSTEM_BACK".localized()
+        self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
+    }
+    
     
     func setupSceneView() {
         let scene = SCNScene(named: "art.scnassets/Idle.dae")!
@@ -135,7 +147,7 @@ class AnimationTorsoViewController: UIViewController, CAAnimationDelegate, UIGes
         popTip.bubbleColor = (navigationController?.navigationBar.barTintColor)!
         popTip.textAlignment = .left
         popTip.font = UIFont(name: "Avenir-Medium", size: UI_USER_INTERFACE_IDIOM() == .pad ? 20 : 16)!
-        popTip.show(text: "Tipps:\n1) Pan with one finger to rotate the camera around the model.\n2) Pan with two fingers to move the camera.\n3) Pinch to zoom in or zoom out", direction: .down, maxWidth: 0.92*self.view.frame.size.width, in: self.view, from: sender.frame.offsetBy(dx: 40, dy: 100), duration: 8)
+        popTip.show(text: infoText!, direction: .down, maxWidth: 0.92*self.view.frame.size.width, in: self.view, from: sender.frame.offsetBy(dx: 40, dy: 100), duration: 10)
     }
     
     @IBAction func animationButtonTouched(_ sender: Any) {

@@ -1,3 +1,6 @@
+// System buttons
+"SYSTEM_BACK" = "Atrás";
+
 // Tabbar
 "TABBAR_HOME" = "Inicio";
 "TABBAR_PLAN" = "Plan";
@@ -29,7 +32,9 @@
 "ANATOMY_SEGMENTED_1" = "Anterior";
 "ANATOMY_ANIMATION" = "Animación";
 "ANATOMY_BOTHSIDES" = "ambos lados";
-"ANATOMY_INFO_TEXT" = "Consejo:\nPuedes hacer zoom (es decir ampliar) sobre la figura humana para ver en detalle cada músculo y su nombre.";
+"ANATOMY_INFO_TEXT" = "Consejo:\nPellizca con dos dedos sobre la figura humana para ver en detalle cada músculo y su nombre.";
+"ANIMATION_TITLE" = "Explorar grupos musculares";
+"ANIMATION_INFO_TEXT" = "Consejos:\n1) Pulsa con un dedo sobre un grupo de músculos para obtener su nombre.\n2) Desliza un dedo hacia izquierda o hacia  derecha para girar la figura.\n3) Desliza dos dedos para mover la figura horizontalmente o verticalmente.\n4) Pellizca con dos dedos para aumentar o reducir el zoom.";
 
 // PremiumController
 "PREMIUM_TITLE" = "Premium App freischalten";

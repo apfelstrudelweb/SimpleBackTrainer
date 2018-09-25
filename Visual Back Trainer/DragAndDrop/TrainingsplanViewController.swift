@@ -73,7 +73,7 @@ class TrainingsplanViewController: BaseViewController, DragDropCollectionViewDel
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
+        super.viewWillAppear(animated)
         self.title = "TABBAR_PLAN".localized()
         
         self.getTrainingsplan()

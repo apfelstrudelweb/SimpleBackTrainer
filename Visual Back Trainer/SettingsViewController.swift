@@ -80,6 +80,11 @@ class SettingsViewController: BaseViewController {
             self?.tabBarController?.tabBar.items![1].title = "TABBAR_PLAN".localized()
             self?.tabBarController?.tabBar.items![2].title = "TABBAR_PREMIUM".localized()
             self?.tabBarController?.tabBar.items![3].title = "TABBAR_SETTINGS".localized()
+            
+            let animationController = self?.tabBarController?.viewControllers?.first as! UINavigationController
+            let backButton = UIBarButtonItem()
+            backButton.title = "SYSTEM_BACK".localized()
+            animationController.navigationBar.backItem?.backBarButtonItem = backButton
         }
     }
     
