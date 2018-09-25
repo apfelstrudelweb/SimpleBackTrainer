@@ -28,7 +28,7 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="das ist ein längerer Label und kann Umbrüche beinhalten" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ed7-Wb-eg8">
-                        <rect key="frame" x="216.5" y="4" width="389" height="109.5"/>
+                        <rect key="frame" x="216.5" y="-8" width="389" height="110"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -37,6 +37,9 @@
                         </variation>
                         <variation key="heightClass=compact-widthClass=regular">
                             <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <fontDescription key="fontDescription" type="system" pointSize="28"/>
                         </variation>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="upgrade" translatesAutoresizingMaskIntoConstraints="NO" id="gYg-Qj-GgR">
@@ -63,34 +66,34 @@
                         </constraints>
                     </view>
                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="M91-l3-17N">
-                        <rect key="frame" x="581" y="0.0" width="145" height="117.5"/>
+                        <rect key="frame" x="617" y="0.0" width="109" height="117.5"/>
                         <subviews>
                             <view tag="6" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dsA-Of-I3P">
-                                <rect key="frame" x="0.0" y="0.0" width="20.5" height="117.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="15.5" height="117.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view tag="5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7pm-HU-mhm">
-                                <rect key="frame" x="20.5" y="0.0" width="21" height="117.5"/>
+                                <rect key="frame" x="15.5" y="0.0" width="15.5" height="117.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view tag="4" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Ie-fF-EQi">
-                                <rect key="frame" x="41.5" y="0.0" width="20.5" height="117.5"/>
+                                <rect key="frame" x="31" y="0.0" width="15.5" height="117.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hou-ii-wzT">
-                                <rect key="frame" x="62" y="0.0" width="21" height="117.5"/>
+                                <rect key="frame" x="46.5" y="0.0" width="16" height="117.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="co5-Ak-riU">
-                                <rect key="frame" x="83" y="0.0" width="20.5" height="117.5"/>
+                                <rect key="frame" x="62.5" y="0.0" width="15.5" height="117.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="93j-kc-e1D">
-                                <rect key="frame" x="103.5" y="0.0" width="21" height="117.5"/>
+                                <rect key="frame" x="78" y="0.0" width="15.5" height="117.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZQq-Je-ZrN">
-                                <rect key="frame" x="124.5" y="0.0" width="20.5" height="117.5"/>
+                                <rect key="frame" x="93.5" y="0.0" width="15.5" height="117.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
@@ -127,17 +130,21 @@
                     <constraint firstItem="NOx-os-zH7" firstAttribute="top" secondItem="CtG-TN-H2f" secondAttribute="top" id="U7J-UR-NBd"/>
                     <constraint firstAttribute="bottom" secondItem="qcA-fB-XAO" secondAttribute="bottom" constant="4" id="UOg-5k-qJh"/>
                     <constraint firstAttribute="trailing" secondItem="M91-l3-17N" secondAttribute="trailing" id="YfU-3v-pH0"/>
-                    <constraint firstItem="ed7-Wb-eg8" firstAttribute="leading" secondItem="qcA-fB-XAO" secondAttribute="trailing" constant="12" id="dhI-Xp-XIW"/>
+                    <constraint firstItem="ed7-Wb-eg8" firstAttribute="leading" secondItem="qcA-fB-XAO" secondAttribute="trailing" constant="12" id="dhI-Xp-XIW">
+                        <variation key="heightClass=regular-widthClass=regular" constant="40"/>
+                    </constraint>
                     <constraint firstItem="ed7-Wb-eg8" firstAttribute="width" secondItem="qcA-fB-XAO" secondAttribute="width" multiplier="2" id="hc3-7P-MGA"/>
-                    <constraint firstItem="ed7-Wb-eg8" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="i3B-7s-39h"/>
+                    <constraint firstItem="ed7-Wb-eg8" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" multiplier="0.8" id="i3B-7s-39h"/>
                     <constraint firstItem="ed7-Wb-eg8" firstAttribute="height" secondItem="qcA-fB-XAO" secondAttribute="height" id="jay-le-PTp"/>
                     <constraint firstItem="CtG-TN-H2f" firstAttribute="leading" secondItem="NOx-os-zH7" secondAttribute="trailing" constant="10" id="k8n-SA-4ev"/>
-                    <constraint firstItem="NOx-os-zH7" firstAttribute="leading" secondItem="ed7-Wb-eg8" secondAttribute="trailing" constant="10" id="kiO-eF-Wew"/>
+                    <constraint firstItem="NOx-os-zH7" firstAttribute="leading" secondItem="ed7-Wb-eg8" secondAttribute="trailing" constant="10" id="kiO-eF-Wew">
+                        <variation key="heightClass=regular-widthClass=regular" constant="40"/>
+                    </constraint>
                     <constraint firstItem="t99-Uq-HuB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="mOQ-3k-sjl"/>
                 </constraints>
             </tableViewCellContentView>
             <constraints>
-                <constraint firstItem="M91-l3-17N" firstAttribute="width" secondItem="KGk-i7-Jjw" secondAttribute="width" multiplier="0.2" id="60a-tP-efT"/>
+                <constraint firstItem="M91-l3-17N" firstAttribute="width" secondItem="KGk-i7-Jjw" secondAttribute="width" multiplier="0.15" id="60a-tP-efT"/>
             </constraints>
             <connections>
                 <outlet property="favoriteButton" destination="CtG-TN-H2f" id="zwa-Ig-QKb"/>

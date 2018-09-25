@@ -23,6 +23,11 @@ class AnimationTorsoViewController: UIViewController, CAAnimationDelegate, UIGes
     let popTip = PopTip()
     @IBOutlet weak var infoButton: UIButton!
     @IBOutlet weak var animationButton: UIButton!
+    @IBOutlet weak var infoButtonWidth: NSLayoutConstraint!
+    
+    
+
+    
 //    @IBOutlet weak var slider: UISlider! {
 //        didSet {
 //            slider.transform = CGAffineTransform(rotationAngle: -CGFloat.pi/2)
@@ -46,10 +51,11 @@ class AnimationTorsoViewController: UIViewController, CAAnimationDelegate, UIGes
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        infoButton.layer.cornerRadius = 0.5*infoButton.frame.size.width
+        let fact:CGFloat = UI_USER_INTERFACE_IDIOM() == .pad ? 1.2 : 1.0
+        infoButton.layer.cornerRadius = 0.5 * infoButtonWidth.constant * fact
         infoButton.backgroundColor = (navigationController?.navigationBar.barTintColor)!
         animationButton.tintColor = infoButton.backgroundColor
-        
+
         self.setupSceneView()
  
         let move = SCNAction.moveBy(x: 0, y: yPos, z: zPos, duration: 1.4)

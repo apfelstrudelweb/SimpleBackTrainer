@@ -168,7 +168,7 @@ class TrainingsplanViewController: BaseViewController, DragDropCollectionViewDel
         collectionViewFlowLayout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         let availableWidth = self.view.frame.size.width - 2*collectionViewFlowLayout.minimumInteritemSpacing
         let itemWidth = 0.3*availableWidth
-        collectionViewFlowLayout.itemSize = CGSize(width: itemWidth, height: 1.1*itemWidth)
+        collectionViewFlowLayout.itemSize = CGSize(width: itemWidth, height: itemWidth)
         
         collectionViewFlowLayout.headerReferenceSize = CGSize(width: 0, height: 50)
         dragDropCollectionView.collectionViewLayout = collectionViewFlowLayout
