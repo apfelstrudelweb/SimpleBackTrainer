@@ -68,7 +68,9 @@ class SlideMenuViewController: UIViewController, UITableViewDataSource, UITableV
         arrayMenuOptions.append(["title":"SIDEMENU_EXERCISES".localized(), "icon":"side_uebungen"])
         arrayMenuOptions.append(["title":"SIDEMENU_PREMIUM".localized(), "icon":"side_premium"])
         arrayMenuOptions.append(["title":"SIDEMENU_SETTINGS".localized(), "icon":"side_settings"])
+        arrayMenuOptions.append(["title":"SIDEMENU_TELLAFRIEND".localized(), "icon":"side_tellafriend"])
         arrayMenuOptions.append(["title":"SIDEMENU_CONTACT".localized(), "icon":"side_contact"])
+        
         
         tblMenuOptions.reloadData()
     }

@@ -26,6 +26,7 @@
 "SIDEMENU_PREMIUM" = "Premium Version";
 "SIDEMENU_SETTINGS" = "Einstellungen";
 "SIDEMENU_CONTACT" = "Kontakt";
+"SIDEMENU_TELLAFRIEND" = "Tell a friend";
 
 // AnatomyViewController
 "ANATOMY_SEGMENTED_0" = "Rückseite";
