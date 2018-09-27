@@ -12,6 +12,7 @@ import DropDown
 import UserNotifications
 import OneSignal
 
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -87,9 +88,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //Thread.sleep(forTimeInterval: 2.0)
         
         ReviewHandler.incrementAppOpenedCount()
+        
+        //return SDKApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
 
         return true
     }
+    
+    
     
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         // Convert token to string
@@ -430,7 +435,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
+    
+//    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+//
+//        let appname:String = options.first?.value as! String
+//        print(appname)
+//        if appname == "com.facebook.Facebook" {
+//            return FBSDKApplicationDelegate.sharedInstance().application(
+//                app,
+//                open: url as URL?,
+//                sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as! String,
+//                annotation: options[UIApplicationOpenURLOptionsKey.annotation]
+//            )
+//        }
+//        // TODO: check if correct
+//        return false
+//        //return Twitter.sharedInstance().application(app, open: url, options: options)
+//    }
 
 }
 

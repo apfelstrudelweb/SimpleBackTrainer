@@ -11,6 +11,7 @@ import CoreData
 import SwiftSpinner
 import Reachability
 
+
 class MainMenuViewController: BaseViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     
@@ -33,8 +34,7 @@ class MainMenuViewController: BaseViewController, UICollectionViewDataSource, UI
         self.collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: adsBottomSpace, right: 0)
         
     }
-    
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.title = "TABBAR_HOME".localized()

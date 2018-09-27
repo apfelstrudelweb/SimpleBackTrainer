@@ -152,6 +152,10 @@ extension BaseViewController: SlideMenuDelegate {
         case 5:
             self.openViewControllerBasedOnIdentifier(StoryboardId.settings.rawValue)
         case 6:
+            let items = [URL(string: "https://itunes.apple.com/us/app/simple-ukulele-tuner/id1095159631?mt=8")!]
+            let ac = UIActivityViewController(activityItems: items, applicationActivities: nil)
+            present(ac, animated: true)
+        case 7:
             self.openViewControllerBasedOnIdentifier(StoryboardId.contact.rawValue)
         default:
             print("default\n", terminator: "")

@@ -31,6 +31,7 @@ enum StoryboardId: String {
     case mobilisation = "MobilisationsController"
     case backTherapy = "BackTherapyController"
     case anatomy = "AnatomyController"
+    case tellafriend = "TellafriendController"
     
     func title() -> String {
         switch self {
