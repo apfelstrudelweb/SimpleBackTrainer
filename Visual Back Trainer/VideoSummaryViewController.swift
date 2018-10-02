@@ -14,17 +14,18 @@ class VideoSummaryViewController: UIViewController {
     
     @IBOutlet weak var videoTitleLabel: UILabel!
     @IBOutlet weak var intensityLabel: UILabel!
-    @IBOutlet weak var devicesLabel: UILabel!
     @IBOutlet weak var intensityText: UILabel!
-    @IBOutlet weak var devicesText: UILabel!
-    @IBOutlet weak var guidelineLabel: UILabel!
-    @IBOutlet weak var guidelineText: UILabel!
-    @IBOutlet weak var changeIntensityLabel: UILabel!
-    @IBOutlet weak var changeIntensityText: UILabel!
+    @IBOutlet weak var equipmentLabel: UILabel!
+    @IBOutlet weak var equipmentText: UILabel!
+    @IBOutlet weak var targetMusclesLabel: UILabel!
+    @IBOutlet weak var targetMusclesText: UILabel!
+    @IBOutlet weak var instructionsLabel: UILabel!
+    @IBOutlet weak var instructionsText: UILabel!
+    @IBOutlet weak var remarksLabel: UILabel!
+    @IBOutlet weak var remarksText: UILabel!
     @IBOutlet weak var cancelButton: UIButton!
     
     
-    // TODO: localize labels also
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,6 +33,27 @@ class VideoSummaryViewController: UIViewController {
         
         cancelButton.tintColor = navigationBarAppearace.barTintColor
         
+        intensityLabel.text = "VIDEO_TITLE_INTENSITY".localized()
+        equipmentLabel.text = "VIDEO_TITLE_EQUIPMENT".localized()
+        targetMusclesLabel.text = "VIDEO_TITLE_TARGETMUSCLES".localized()
+        instructionsLabel.text = "VIDEO_TITLE_INSTRUCTIONS".localized()
+        remarksLabel.text = "VIDEO_TITLE_REMARKS".localized()
+        
+        // TODO: get values from CoreData
+        intensityText.text = "VIDEO_INTENSITY_2".localized()
+        equipmentText.text = "VIDEO_EQUIPMENT_NONE".localized()
+        
+        // TODO: populate main and aux muscles
+        let memberships = workout?.membership!.allObjects as! [GroupWorkoutMembership]
+        var musclegroupList = [String]()
+        
+        for member in memberships {
+            let name = member.group?.alias?.localized() ?? ""
+            musclegroupList.append(name)
+        }
+        targetMusclesText.attributedText = add(stringList: musclegroupList, font: targetMusclesText.font)
+        
+
         var locale = NSLocale(localeIdentifier: Locale.current.languageCode!)
         
         if let savedAppLanguage = UserDefaults.standard.object(forKey: "AppLanguage") as? String {
@@ -54,7 +76,7 @@ class VideoSummaryViewController: UIViewController {
             for instruction in instructions {
                 instructionList.append((instruction as! Instruction).text ?? "")
             }
-            guidelineText.attributedText = add(stringList: instructionList, font: guidelineText.font)
+            instructionsText.attributedText = add(stringList: instructionList, font: instructionsText.font)
         }
         
         if let remarks = workout?.remarks?.filtered(using: predicate), remarks.count > 0 {
@@ -62,7 +84,7 @@ class VideoSummaryViewController: UIViewController {
             for remark in remarks {
                 remarkList.append((remark as! Remark).text ?? "")
             }
-            changeIntensityText.attributedText = add(stringList: remarkList, font: guidelineText.font)
+            remarksText.attributedText = add(stringList: remarkList, font: remarksText.font)
         }
     }
     
@@ -122,7 +144,7 @@ class VideoSummaryViewController: UIViewController {
     @IBAction func cancelButtonTouched(_ sender: UIButton) {
         self.dismiss(animated: true) {
             // TODO: make sure it's only called once!
-            ReviewHandler.checkAndAskForReview()
+            //ReviewHandler.checkAndAskForReview()
         }
     }
     

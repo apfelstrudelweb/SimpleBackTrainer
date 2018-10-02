@@ -50,5 +50,40 @@
 "PREMIUM_MOBIL_TITLE" = "Mobilisierungsübungen";
 "PREMIUM_MOBIL_DESCR" = "Finde heraus, wie du zusätzlich zur Stärkung des Rückens deine Flexibilität erhöhst und beweglich bleibst.";
 
+// VideoSummaryViewController
+"VIDEO_TITLE_INTENSITY" = "Intensidad:";
+"VIDEO_TITLE_EQUIPMENT" = "Equipamiento necesario:";
+"VIDEO_TITLE_TARGETMUSCLES" = "Músculos de destino:";
+"VIDEO_TITLE_INSTRUCTIONS" = "Instrucciones";
+"VIDEO_TITLE_REMARKS" = "Cambiar intensidad";
+"VIDEO_INTENSITY_1" = "baja";
+"VIDEO_INTENSITY_2" = "media";
+"VIDEO_INTENSITY_3" = "alta";
+"VIDEO_EQUIPMENT_NONE" = "ningún";
+"VIDEO_EQUIPMENT_DUMBBELL" = "pesa";
+"VIDEO_EQUIPMENT_MAT" = "esterilla";
+"VIDEO_EQUIPMENT_BAND" = "banda de theraband";
+"VIDEO_EQUIPMENT_BALL" = "pelota";
+"VIDEO_EQUIPMENT_BENCH" = "banco";
+
 // Settings
 "SETTINGS_LANGUAGE_LABEL" = "Idioma";
+
+"straight_abdominal" = "músculos abdominales rectos";
+"in_oblique_abdominal" = "abdominales oblicuos internos";
+"ext_oblique_abdominal" = "Äußere schräge Bauchmuskeln";
+"upper_trapezius" = "Trapezmuskel (oberer Anteil)";
+"head_turners" = "Kopfwender";
+"back_extensors" = "Rückenstrecker";
+"wide_back" = "Breiter Rückenmuskel";
+"middle_trapezius" = "mittlerer Trapezmuskel";
+"upper_trapezius" = "oberer Trapezmuskel";
+"middle_lower_trapezius" = "Trapezmuskel (mittlerer und unterer Teil)";
+"rhomb" = "Rautenmuskel";
+"scapula" = "Schulterblattmuskulatur (Untergrätenmuskel, kleine und große Rundmuskel)";
+"scapula_infraspinatus" = "Untergrätenmuskel";
+"scapula_teres_minor" = "kleiner Rundmuskel";
+"scapula_teres_major" = "großer Rundmuskel";
+"deltoid" = "Deltamuskel (hintere Teil)";
+"upper_trapezius" = "Trapezmuskel (oberer Teil)";
+"neck" = "Halsmuskel (schräger Kopfmuskel, gerader hinterer Kopfmuskel)";

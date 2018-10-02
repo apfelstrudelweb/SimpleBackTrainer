@@ -50,12 +50,28 @@
 "PREMIUM_MOBIL_TITLE" = "Mobilisierungsübungen";
 "PREMIUM_MOBIL_DESCR" = "Finde heraus, wie du zusätzlich zur Stärkung des Rückens deine Flexibilität erhöhst und beweglich bleibst.";
 
+// VideoSummaryViewController
+"VIDEO_TITLE_INTENSITY" = "Intensity:";
+"VIDEO_TITLE_EQUIPMENT" = "Required equipment:";
+"VIDEO_TITLE_TARGETMUSCLES" = "Target muscles:";
+"VIDEO_TITLE_INSTRUCTIONS" = "Instructions";
+"VIDEO_TITLE_REMARKS" = "Change intensity";
+"VIDEO_INTENSITY_1" = "low";
+"VIDEO_INTENSITY_2" = "middle";
+"VIDEO_INTENSITY_3" = "high";
+"VIDEO_EQUIPMENT_NONE" = "none";
+"VIDEO_EQUIPMENT_DUMBBELL" = "dumbbell";
+"VIDEO_EQUIPMENT_MAT" = "mat";
+"VIDEO_EQUIPMENT_BAND" = "theraband";
+"VIDEO_EQUIPMENT_BALL" = "ball";
+"VIDEO_EQUIPMENT_BENCH" = "bench";
+
 // Settings
 "SETTINGS_LANGUAGE_LABEL" = "Language";
 
 // muscle groups
-"straight_abdominal" = "Gerade Bauchmuskeln";
-"in_oblique_abdominal" = "Innere schräge Bauchmuskeln";
+"straight_abdominal" = "straight abdominals";
+"in_oblique_abdominal" = "inner oblique abdominals";
 "ext_oblique_abdominal" = "Äußere schräge Bauchmuskeln";
 "upper_trapezius" = "Trapezmuskel (oberer Anteil)";
 "head_turners" = "Kopfwender";
