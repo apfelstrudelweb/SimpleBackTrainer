@@ -88,7 +88,7 @@ class MainMenuViewController: BaseViewController, UICollectionViewDataSource, UI
     }
     
     func populateModel() {
-
+        
         self.trainingModel.hasUpdates() { (success)  in
             
             if success == true {

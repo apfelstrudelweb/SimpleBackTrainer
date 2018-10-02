@@ -24,34 +24,46 @@ class VideoSummaryViewController: UIViewController {
     @IBOutlet weak var cancelButton: UIButton!
     
     
-
+    // TODO: localize labels also
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let navigationBarAppearace = UINavigationBar.appearance()
         
         cancelButton.tintColor = navigationBarAppearace.barTintColor
-  
-        videoTitleLabel.text = workout?.alias  // TODO: change later
         
-        let guidelineList = [
-            "Unteren Rücken flach auf der Matte halten.",
-            "Ausgangsposition: Beine auf 90° anwinkeln und Füße hüftbreit positionieren.",
-            "Oberkörper fast bis zur Senkrechten anheben und dabei ausatmen.",
-            "In der Endposition Spannung 2 Sekunden lang halten.",
-            "Anschließend den oberkörper langsam aber nicht ganz absenken und dabei einatmen.",
-            "Weitere Wiederholungen bis zur Muskelerschöpfung durchführen."
-        ]
+        var locale = NSLocale(localeIdentifier: Locale.current.languageCode!)
         
-        guidelineText.attributedText = add(stringList: guidelineList, font: guidelineText.font)
+        if let savedAppLanguage = UserDefaults.standard.object(forKey: "AppLanguage") as? String {
+            locale = NSLocale(localeIdentifier: savedAppLanguage)
+        }
         
-        let changeInensityList = [
-            "Sind keine 8 Wiederholungen möglich, so kann man die Arme seitlich am Rumpf halten.",
-            "Bei mehr als 12 Wiederholungen kann man die Übung intensivieren, indem man Gewichtsscheiben auf die Brust legt."
-        ]
+        let predicate = NSPredicate(format: "language == %@", locale.languageCode)
         
-        changeIntensityText.attributedText = add(stringList: changeInensityList, font: guidelineText.font)
-
+//        guard let titles = workout?.titles?.filtered(using: predicate), titles.count > 0, let instructions = workout?.instructions?.filtered(using: predicate), instructions.count > 0, let remarks = workout?.remarks?.filtered(using: predicate), remarks.count > 0 else {
+//            return
+//        }
+        
+        if let titles = workout?.titles?.filtered(using: predicate), titles.count > 0 {
+            let title = titles.first as! Title
+            videoTitleLabel.text = title.text
+        }
+        
+        if let instructions = workout?.instructions?.filtered(using: predicate), instructions.count > 0 {
+            var instructionList = [String]()
+            for instruction in instructions {
+                instructionList.append((instruction as! Instruction).text ?? "")
+            }
+            guidelineText.attributedText = add(stringList: instructionList, font: guidelineText.font)
+        }
+        
+        if let remarks = workout?.remarks?.filtered(using: predicate), remarks.count > 0 {
+            var remarkList = [String]()
+            for remark in remarks {
+                remarkList.append((remark as! Remark).text ?? "")
+            }
+            changeIntensityText.attributedText = add(stringList: remarkList, font: guidelineText.font)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

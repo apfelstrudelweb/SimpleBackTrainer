@@ -12,6 +12,15 @@ class WorkoutResponse: Codable {
     let workouts: [WorkoutData]?
 }
 
+typealias LanguageValues = [String: String]
+typealias LanguageArray = [String: [String]]
+
+struct Info : Codable {
+    var title: LanguageValues
+    var instructions: LanguageArray
+    var remarks: LanguageArray
+}
+
 struct WorkoutData: Codable {
     
     let alias: String?
@@ -27,6 +36,7 @@ struct WorkoutData: Codable {
     let isTheraband: Int?
     let videoUrl: String?
     let musclegroups: [Int]?
+    let info: Info?
 }
 
 class TrainingsplanResponse: Codable {
@@ -37,4 +47,19 @@ struct TrainingsplanData: Codable {
     
     let id: Int?
     let position: Int?
+}
+
+extension WorkoutData {
+
+    var title: LanguageValues  {
+        return info!.title
+    }
+
+    var instructions: LanguageArray {
+        return info!.instructions
+    }
+
+    var remarks: LanguageArray {
+        return info!.remarks
+    }
 }

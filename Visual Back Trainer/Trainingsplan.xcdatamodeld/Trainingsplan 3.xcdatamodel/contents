@@ -1,20 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14135" systemVersion="17G65" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14315.18" systemVersion="17G65" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="GroupWorkoutMembership" representedClassName="GroupWorkoutMembership" syncable="YES">
         <relationship name="group" maxCount="1" deletionRule="Nullify" destinationEntity="Musclegroup" inverseName="membership" inverseEntity="Musclegroup" syncable="YES"/>
         <relationship name="workout" toMany="YES" deletionRule="Nullify" destinationEntity="Workout" inverseName="membership" inverseEntity="Workout" syncable="YES"/>
     </entity>
     <entity name="Instruction" representedClassName="Instruction" syncable="YES">
-        <relationship name="language" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Language" inverseName="instructions" inverseEntity="Language" syncable="YES"/>
+        <attribute name="language" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="workout" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Workout" inverseName="instructions" inverseEntity="Workout" syncable="YES"/>
-    </entity>
-    <entity name="Language" representedClassName="Language" syncable="YES">
-        <attribute name="de" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="en" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="es" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="instructions" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Instruction" inverseName="language" inverseEntity="Instruction" syncable="YES"/>
-        <relationship name="remarks" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Remark" inverseName="language" inverseEntity="Remark" syncable="YES"/>
-        <relationship name="title" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Title" inverseName="language" inverseEntity="Title" syncable="YES"/>
     </entity>
     <entity name="Musclegroup" representedClassName="Musclegroup" syncable="YES">
         <attribute name="alias" attributeType="String" syncable="YES"/>
@@ -28,12 +21,14 @@
         </fetchIndex>
     </entity>
     <entity name="Remark" representedClassName="Remark" syncable="YES">
-        <relationship name="language" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Language" inverseName="remarks" inverseEntity="Language" syncable="YES"/>
+        <attribute name="language" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="workout" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Workout" inverseName="remarks" inverseEntity="Workout" syncable="YES"/>
     </entity>
     <entity name="Title" representedClassName="Title" syncable="YES">
-        <relationship name="language" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Language" inverseName="title" inverseEntity="Language" syncable="YES"/>
-        <relationship name="workout" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Workout" inverseName="title" inverseEntity="Workout" syncable="YES"/>
+        <attribute name="language" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="workout" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Workout" inverseName="titles" inverseEntity="Workout" syncable="YES"/>
     </entity>
     <entity name="Trainingsplan" representedClassName="Trainingsplan" syncable="YES">
         <attribute name="id" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
@@ -58,10 +53,10 @@
         <attribute name="isPremium" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="isTheraband" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="videoUrl" attributeType="String" syncable="YES"/>
-        <relationship name="instructions" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Instruction" inverseName="workout" inverseEntity="Instruction" syncable="YES"/>
+        <relationship name="instructions" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Instruction" inverseName="workout" inverseEntity="Instruction" syncable="YES"/>
         <relationship name="membership" toMany="YES" deletionRule="No Action" destinationEntity="GroupWorkoutMembership" inverseName="workout" inverseEntity="GroupWorkoutMembership" syncable="YES"/>
-        <relationship name="remarks" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Remark" inverseName="workout" inverseEntity="Remark" syncable="YES"/>
-        <relationship name="title" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Title" inverseName="workout" inverseEntity="Title" syncable="YES"/>
+        <relationship name="remarks" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Remark" inverseName="workout" inverseEntity="Remark" syncable="YES"/>
+        <relationship name="titles" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Title" inverseName="workout" inverseEntity="Title" syncable="YES"/>
         <relationship name="traininsgplanId" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="Trainingsplan" inverseName="workouts" inverseEntity="Trainingsplan" syncable="YES"/>
         <fetchIndex name="byIndex">
             <fetchIndexElement property="id" type="Binary" order="ascending"/>
@@ -69,12 +64,11 @@
     </entity>
     <elements>
         <element name="GroupWorkoutMembership" positionX="-351" positionY="3204" width="153" height="73"/>
-        <element name="Instruction" positionX="171" positionY="3273" width="128" height="73"/>
-        <element name="Language" positionX="349" positionY="3402" width="128" height="133"/>
+        <element name="Instruction" positionX="173.4140625" positionY="3135.69921875" width="128" height="90"/>
         <element name="Musclegroup" positionX="-605" positionY="3197" width="128" height="133"/>
-        <element name="Remark" positionX="178" positionY="3393" width="128" height="73"/>
-        <element name="Title" positionX="187" positionY="3138" width="128" height="73"/>
+        <element name="Remark" positionX="174.8671875" positionY="3373.87890625" width="128" height="90"/>
+        <element name="Title" positionX="167.58984375" positionY="3556.4609375" width="128" height="90"/>
         <element name="Trainingsplan" positionX="-369" positionY="3492" width="128" height="88"/>
-        <element name="Workout" positionX="-72" positionY="3168" width="128" height="328"/>
+        <element name="Workout" positionX="-72" positionY="3168" width="128" height="330"/>
     </elements>
 </model>

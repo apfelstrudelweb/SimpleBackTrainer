@@ -109,7 +109,7 @@ class CoreDataManager: NSObject {
     }
     
 
-    func insertWorkout(id:Int16, imgName: String?, isLive: Bool, isPremium: Bool, alias: String?, videoUrl: String?, isDumbbell: Bool, isMat: Bool, isBall: Bool, isTheraband: Bool, isMachine: Bool, intensity: Int16, musclegroupIds: [Int]) -> Workout {
+    func insertWorkout(id:Int16, imgName: String?, isLive: Bool, isPremium: Bool, alias: String?, videoUrl: String?, isDumbbell: Bool, isMat: Bool, isBall: Bool, isTheraband: Bool, isMachine: Bool, intensity: Int16, musclegroupIds: [Int], titles: LanguageValues, instructions: LanguageArray, remarks: LanguageArray) -> Workout {
         
         let workout = NSEntityDescription.insertNewObject(forEntityName: "Workout", into: self.managedObjectContext) as! Workout
         
@@ -125,6 +125,33 @@ class CoreDataManager: NSObject {
         workout.isTheraband = isTheraband
         workout.isMachine = isMachine
         workout.intensity = intensity
+        // localization issues
+        for (languageKey, value) in titles {
+            let title = NSEntityDescription.insertNewObject(forEntityName: "Title", into: self.managedObjectContext) as! Title
+            title.language = languageKey
+            title.text = value
+            workout.addToTitles(title)
+            title.workout = workout
+        }
+        for (languageKey, valuesArr) in instructions {
+            for value in valuesArr {
+                let instructions = NSEntityDescription.insertNewObject(forEntityName: "Instruction", into: self.managedObjectContext) as! Instruction
+                instructions.language = languageKey
+                instructions.text = value
+                workout.addToInstructions(instructions)
+                instructions.workout = workout
+            }
+        }
+        for (languageKey, valuesArr) in remarks {
+            for value in valuesArr {
+                let remarks = NSEntityDescription.insertNewObject(forEntityName: "Remark", into: self.managedObjectContext) as! Remark
+                remarks.language = languageKey
+                remarks.text = value
+                workout.addToRemarks(remarks)
+                remarks.workout = workout
+            }
+        }
+
         
         // recover relation to trainingsplan (won't be emptied after deletion of workouts)
         let fetchRequest1 = NSFetchRequest<NSFetchRequestResult>(entityName: "Trainingsplan")
@@ -356,7 +383,7 @@ class CoreDataManager: NSObject {
             
             for workout in workouts {
 
-                let _ = CoreDataManager.sharedInstance.insertWorkout(id: Int16(workout.id!), imgName: workout.imageName, isLive: workout.isLive==1, isPremium: workout.isPremium==1, alias: workout.alias, videoUrl: workout.videoUrl!, isDumbbell: workout.isDumbbell==1, isMat: workout.isMat==1, isBall: workout.isBall==1, isTheraband: workout.isTheraband==1, isMachine: workout.isMachine==1, intensity: Int16(workout.intensity!), musclegroupIds: workout.musclegroups!)
+                let _ = CoreDataManager.sharedInstance.insertWorkout(id: Int16(workout.id!), imgName: workout.imageName, isLive: workout.isLive==1, isPremium: workout.isPremium==1, alias: workout.alias, videoUrl: workout.videoUrl!, isDumbbell: workout.isDumbbell==1, isMat: workout.isMat==1, isBall: workout.isBall==1, isTheraband: workout.isTheraband==1, isMachine: workout.isMachine==1, intensity: Int16(workout.intensity!), musclegroupIds: workout.musclegroups!, titles: workout.title, instructions: workout.instructions, remarks: workout.remarks)
             }
             
             do {
