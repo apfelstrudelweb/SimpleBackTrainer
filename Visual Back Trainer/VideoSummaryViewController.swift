@@ -39,11 +39,37 @@ class VideoSummaryViewController: UIViewController {
         instructionsLabel.text = "VIDEO_TITLE_INSTRUCTIONS".localized()
         remarksLabel.text = "VIDEO_TITLE_REMARKS".localized()
         
-        // TODO: get values from CoreData
-        intensityText.text = "VIDEO_INTENSITY_2".localized()
-        equipmentText.text = "VIDEO_EQUIPMENT_NONE".localized()
+        // TODO: maybe we should display various intensities?
+        switch workout?.intensity {
+            case 1: intensityText.text = "VIDEO_INTENSITY_1".localized()
+            case 2: intensityText.text = "VIDEO_INTENSITY_2".localized()
+            default: intensityText.text = "VIDEO_INTENSITY_3".localized()
+        }
         
-        // TODO: populate main and aux muscles
+        var equipmentList = [String]()
+        
+        if workout?.isDumbbell == true {
+            equipmentList.append("VIDEO_EQUIPMENT_DUMBBELL".localized())
+        }
+        if workout?.isTheraband == true {
+            equipmentList.append("VIDEO_EQUIPMENT_BAND".localized())
+        }
+        if workout?.isMat == true {
+            equipmentList.append("VIDEO_EQUIPMENT_MAT".localized())
+        }
+        if workout?.isBall == true {
+            equipmentList.append("VIDEO_EQUIPMENT_BALL".localized())
+        }
+        if workout?.isMachine == true {
+            equipmentList.append("VIDEO_EQUIPMENT_BENCH".localized())
+        }
+        
+        if equipmentList.count == 0 {
+            equipmentList.append("VIDEO_EQUIPMENT_NONE".localized())
+        }
+        
+        equipmentText.attributedText = add(stringList: equipmentList, font: equipmentText.font)
+        
         let memberships = workout?.membership!.allObjects as! [GroupWorkoutMembership]
         var musclegroupList = [String]()
         
@@ -120,8 +146,8 @@ class VideoSummaryViewController: UIViewController {
         paragraphStyle.headIndent = indentation
         
         let bulletList = NSMutableAttributedString()
-        for string in stringList {
-            let formattedString = "\(bullet)\t\(string)\n"
+        for (index, string) in stringList.enumerated() {
+            let formattedString = index < stringList.count-1 ? "\(bullet)\t\(string)\n" : "\(bullet)\t\(string)"
             let attributedString = NSMutableAttributedString(string: formattedString)
             
             attributedString.addAttributes(
