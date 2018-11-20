@@ -10,6 +10,7 @@
 // Main Menu
 "MAINMENU_TITLE" = "Your Exercise Program";
 "MAINMENU_BACK_FOR_ACTIVITIES" = "Strong back for professions";
+//"MAINMENU_BACK_FOR_ACTIVITIES" = "abcdefghijk lmnopqrstuvwxyz123 abcdefghijkl mnopqrstuvwxyz1 abcd rookie";
 "MAINMENU_BACK_FOR_SPORTS" = "Back muscles for athletes";
 "MAINMENU_BACK_MUSCLE_ANATOMY" = "Muscle anatomy";
 "MAINMENU_BACK_TRAININGSPLAN" = "Training plan";

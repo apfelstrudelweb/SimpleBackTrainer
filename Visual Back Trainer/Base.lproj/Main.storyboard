@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tAx-2F-BMn">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tAx-2F-BMn">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -14,12 +14,12 @@
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController restorationIdentifier="Home" storyboardIdentifier="Home" title="Hauptmenu" id="vXZ-lx-hvc" customClass="MainMenuViewController" customModule="Visual_Back_Trainer" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="GTM-bT-963">
-                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="zZo-Ym-FO0">
                                     <size key="itemSize" width="272" height="307"/>
@@ -41,8 +41,8 @@
                                                         <constraint firstAttribute="width" secondItem="PII-id-Jex" secondAttribute="height" multiplier="1:1" id="8O4-EO-3cM"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="28l-sO-u6R">
-                                                    <rect key="frame" x="13" y="225.33333333333334" width="246" height="76.666666666666657"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="28l-sO-u6R">
+                                                    <rect key="frame" x="10" y="225.33333333333334" width="252" height="76.666666666666657"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                                                     <color key="textColor" red="0.1529663205" green="0.40549850459999998" blue="0.73860585690000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -60,14 +60,16 @@
                                             <constraint firstItem="28l-sO-u6R" firstAttribute="height" secondItem="HFq-44-xbP" secondAttribute="height" multiplier="0.25" id="A31-ty-2w1"/>
                                             <constraint firstAttribute="bottom" secondItem="28l-sO-u6R" secondAttribute="bottom" constant="5" id="Kt6-fC-s4n"/>
                                             <constraint firstItem="PII-id-Jex" firstAttribute="top" secondItem="HFq-44-xbP" secondAttribute="topMargin" constant="4" id="TOc-3T-9eE"/>
-                                            <constraint firstAttribute="trailingMargin" secondItem="28l-sO-u6R" secondAttribute="trailing" constant="5" id="Uj5-j1-yTY"/>
-                                            <constraint firstItem="28l-sO-u6R" firstAttribute="leading" secondItem="HFq-44-xbP" secondAttribute="leadingMargin" constant="5" id="f93-JW-pzN"/>
+                                            <constraint firstAttribute="trailing" secondItem="28l-sO-u6R" secondAttribute="trailing" constant="10" id="Uj5-j1-yTY"/>
+                                            <constraint firstItem="28l-sO-u6R" firstAttribute="leading" secondItem="HFq-44-xbP" secondAttribute="leading" constant="10" id="f93-JW-pzN"/>
                                             <constraint firstItem="PII-id-Jex" firstAttribute="centerX" secondItem="HFq-44-xbP" secondAttribute="centerX" id="jcK-wS-J6z"/>
                                             <constraint firstItem="28l-sO-u6R" firstAttribute="top" secondItem="PII-id-Jex" secondAttribute="bottom" constant="10" id="pQq-CV-3ko"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="imageView" destination="PII-id-Jex" id="U84-N5-g6r"/>
                                             <outlet property="label" destination="28l-sO-u6R" id="ohC-5p-V0l"/>
+                                            <outlet property="labelLeadingSpace" destination="f93-JW-pzN" id="Re9-pw-0AT"/>
+                                            <outlet property="labelTrailingSpace" destination="Uj5-j1-yTY" id="UM9-jm-DDz"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -99,12 +101,11 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="GTM-bT-963" firstAttribute="leading" secondItem="YvP-QD-udc" secondAttribute="leading" id="V7S-hd-BEL"/>
-                            <constraint firstItem="YvP-QD-udc" firstAttribute="bottom" secondItem="GTM-bT-963" secondAttribute="bottom" id="bKh-AQ-udA"/>
-                            <constraint firstItem="YvP-QD-udc" firstAttribute="trailing" secondItem="GTM-bT-963" secondAttribute="trailing" id="bQH-8u-gEf"/>
-                            <constraint firstItem="GTM-bT-963" firstAttribute="top" secondItem="YvP-QD-udc" secondAttribute="top" id="w0P-jT-PZS"/>
+                            <constraint firstItem="GTM-bT-963" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="V7S-hd-BEL"/>
+                            <constraint firstAttribute="bottom" secondItem="GTM-bT-963" secondAttribute="bottom" id="bKh-AQ-udA"/>
+                            <constraint firstAttribute="trailing" secondItem="GTM-bT-963" secondAttribute="trailing" id="bQH-8u-gEf"/>
+                            <constraint firstItem="GTM-bT-963" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="w0P-jT-PZS"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="YvP-QD-udc"/>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="a1u-Ki-tSz"/>
                     <connections>
@@ -962,7 +963,7 @@ Please turn on your Internet Conncetion - as soon your device is connected to th
             <objects>
                 <viewController storyboardIdentifier="AnimationTorso3D" id="PyW-Ma-bM4" customClass="AnimationTorsoViewController" customModule="Visual_Back_Trainer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="spx-kC-G0D">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uXc-LN-hju">

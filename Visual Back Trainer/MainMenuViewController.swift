@@ -17,7 +17,8 @@ class MainMenuViewController: BaseViewController, UICollectionViewDataSource, UI
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var cellWidth : CGFloat!
+    var idealFontSize: CGFloat?
+    
     var flowLayout : UICollectionViewFlowLayout!
     
     var trainingModel = TrainingModel()
@@ -54,6 +55,11 @@ class MainMenuViewController: BaseViewController, UICollectionViewDataSource, UI
             ["title":"MAINMENU_BACK_FOR_THERAPY".localized(), "icon":"sitting", "id":StoryboardId.backTherapy.rawValue],
             ["title":"MAINMENU_PREMIUM_VERSION".localized(), "icon":"pokal", "id":StoryboardId.premium.rawValue]
         ]
+
+        var numberOfItemsPerRow = UIScreen.main.bounds.height > UIScreen.main.bounds.width ? 2 : 3
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            numberOfItemsPerRow *= 2
+        }
         
         self.tabBarController?.tabBar.isHidden = false
         
@@ -131,22 +137,36 @@ class MainMenuViewController: BaseViewController, UICollectionViewDataSource, UI
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         var numberOfItemsPerRow = UIScreen.main.bounds.height > UIScreen.main.bounds.width ? 2 : 3
         if UIDevice.current.userInterfaceIdiom == .pad {
-            numberOfItemsPerRow *= 2
+            numberOfItemsPerRow = UIScreen.main.bounds.height > UIScreen.main.bounds.width ? 3 : 4
         }
-        
-        let margin = 0.08*UIScreen.main.bounds.width
-        flowLayout = collectionViewLayout as! UICollectionViewFlowLayout
-        flowLayout.minimumInteritemSpacing = 20
-        flowLayout.minimumLineSpacing = 20
+
+        let margin: CGFloat = 0.06*UIScreen.main.bounds.width
+        flowLayout = collectionViewLayout as? UICollectionViewFlowLayout
+        flowLayout.minimumInteritemSpacing = margin
+        flowLayout.minimumLineSpacing = margin
         flowLayout.sectionInset = UIEdgeInsetsMake(0, margin, 0, margin)
         let totalSpace = flowLayout.sectionInset.left
             + flowLayout.sectionInset.right
             + (flowLayout.minimumInteritemSpacing * CGFloat(numberOfItemsPerRow - 1))
-        let size = CGFloat((collectionView.bounds.width - totalSpace) / CGFloat(numberOfItemsPerRow))
-        
-        let fact: CGFloat = 1//UIScreen.main.bounds.width > UIScreen.main.bounds.height ? 1.1 : 1.3
-        
-        return CGSize(width: size, height: fact*size)
+
+        let size = floor(CGFloat((collectionView.bounds.size.width - totalSpace) / CGFloat(numberOfItemsPerRow)))
+
+        // do the calculation only once
+        if indexPath.row == 0 {
+            let representativeCell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: IndexPath(item: 0, section: indexPath.section)) as! ItemsCollectionViewCell
+            let margins = representativeCell.labelLeadingSpace.constant + representativeCell.labelTrailingSpace.constant
+            
+            let labelMaxWidth = size - margins
+            let labelMaxHeight = floor(0.25 * size)
+            print(labelMaxHeight)
+
+            if let maxCharLen = items[0].max(by: {$1.value.count > $0.value.count}) {
+                representativeCell.label.text = maxCharLen.value
+                idealFontSize = representativeCell.label.getFittingFontSize(maxWidth: labelMaxWidth, maxHeight: labelMaxHeight)
+            }
+        }
+
+        return CGSize(width: size, height: size)
     }
     
     
@@ -160,15 +180,17 @@ class MainMenuViewController: BaseViewController, UICollectionViewDataSource, UI
     
     // make a cell for each cell index path
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         // get a reference to our storyboard cell
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! ItemsCollectionViewCell
-        
-        if UIDevice.current.userInterfaceIdiom == .pad {
-            cell.label.font = cell.label.font.withSize(18)
-        }
-        
+
         cell.label.text = items[indexPath.row]["title"]!
+        
+        if let fontSize = idealFontSize {
+            DispatchQueue.main.async {
+                cell.label.font = cell.label.font.withSize(fontSize)
+            }
+        }
+
         cell.imageView.image = UIImage(named: items[indexPath.row]["icon"]!)
         cell.layer.borderColor = UIColor.darkGray.cgColor
         cell.layer.borderWidth = 1
@@ -244,5 +266,38 @@ extension MainMenuViewController:TrainingModelDelegate {
         let action = UIAlertAction(title: "OK", style: .default, handler: nil)
         alert.addAction(action)
         self.present(alert, animated: true, completion: nil)
+    }
+}
+
+extension UILabel {
+    
+    func getFittingFontSize(maxWidth: CGFloat, maxHeight: CGFloat) -> CGFloat {
+
+        // we need it for device rotation
+        self.frame = CGRect(x: 0, y: 0, width: 1.5*maxWidth, height: 1.5*maxHeight)
+        
+        var size: CGFloat = 20
+
+        while self.frame.size.height > maxHeight{
+            self.font = self.font.withSize(size)
+            self.sizeToFit()
+            size -= 0.5
+        }
+        
+//        let spaceCount = CGFloat(self.text!.filter{$0 == " "}.count)
+//        let charCount = CGFloat(self.text!.count)
+//        let ratio = CGFloat((charCount - spaceCount) / charCount)
+//
+//        while self.frame.size.width > maxWidth  {
+//            self.font = self.font.withSize(size)
+//            self.sizeToFit()
+//            size -= 0.5
+//        }
+
+        print(self.intrinsicContentSize.width )
+        print(maxWidth)
+        print(size)
+        
+        return size
     }
 }
